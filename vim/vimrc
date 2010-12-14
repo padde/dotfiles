@@ -1,0 +1,13 @@
+" global settings
+set number
+set autoindent
+set noshowmatch
+set nowrap
+set tabstop=4
+set visualbell
+" set background=dark
+syntax on
+
+" key mappings
+map <S-Enter> O<Esc>
+map <CR>      o<Esc>

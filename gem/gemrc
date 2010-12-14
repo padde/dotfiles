@@ -1,0 +1,2 @@
+gem: --rdoc --no-ri --no-yard --run-tests
+search: --remote

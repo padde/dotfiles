@@ -1,0 +1,58 @@
+# miscellaneous
+alias bye='logout'
+alias reload='source ~/.bash_profile'
+
+# coreutils
+alias ls='gls --color=auto -F'
+alias ll='gls -lhAF --color=auto'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+
+source ~/.dotfiles/mactrash/trash
+alias rm='rm -i'
+
+function pwd_pbcopy {
+	pwd | sed 's/ /\\ /g' | pbcopy
+}
+alias pcp=pwd_pbcopy
+alias pcd='cd $(pbpaste)'
+
+alias tree='tree -F'
+
+# git
+alias g='git'
+alias gra='git rm $(git ls-files -d)'
+alias gs='git status'
+
+function git_branch {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[git:\1] /'
+}
+
+# rubygems
+alias gi='gem install'
+
+# mercurial
+alias hg_branch="hg branch 2> /dev/null | awk '{printf \"[hg:%s] \",\$1}'"
+
+# ruby on rails
+alias r='rails'
+alias rs='rails server'
+alias rc='rails console'
+alias rg='rails generate'
+alias rgs='rails generate scaffold'
+alias rmig='rake db:migrate'
+
+# textmate
+alias m='mate .'
+
+# meta
+function topten {
+	history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+}
+
+function aliases {
+	mate -w ~/.dotfiles/bash/aliases
+	reload
+}
+alias al=aliases

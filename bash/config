@@ -1,0 +1,6 @@
+# be forgiving with typos
+shopt -s cdspell
+
+# get a lossless history across multiple shells
+shopt -s histappend
+PROMPT_COMMAND='history -a'

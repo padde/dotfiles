@@ -1,0 +1,19 @@
+require 'rubygems'
+require 'wirble'
+
+# # define own prompt mode
+# IRB.conf[:PROMPT][:PADDE] = {
+# 	#:AUTO_INDENT => true,              # auto indentation
+# 	#:RETURN      => "         --> \n", # return value
+# 	:RETURN      => "--> %s\n",
+# 	:PROMPT_I    => "%m:%03n:%i | ",   # normal prompt
+# 	:PROMPT_N    => "%m:%03n:%i | ",   # ?
+# 	:PROMPT_S    => "%m:%03n:%i%l ",   # string continuation
+# 	:PROMPT_C    => "%m:%03n:%i + "}   # code continuation
+# 
+# # use own prompt mode
+# IRB.conf[:PROMPT_MODE] = :PADDE
+
+# initialize wirble and colorize irb
+Wirble.init
+Wirble.colorize

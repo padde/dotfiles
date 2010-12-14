@@ -1,0 +1,38 @@
+[user]
+  name = Patrick Oscity
+  email = patrick.oscity@gmail.com
+
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log
+  lgv = log -p
+  lgp = log --pretty=oneline --abbrev-commit
+  lgg = log --graph --pretty=oneline --abbrev-commit
+
+[core]
+  excludesfile = ~/.gitignore

@@ -1,0 +1,19 @@
+# up arrow: go to previous line in history
+# that starts with the typed characters
+# down arrow: opposite of up arrow
+"\e[B": history-search-forward
+"\e[A": history-search-backward
+
+# case-insensitive tab completion
+set completion-ignore-case on
+
+# magic space expansion
+$if Bash
+  Space: magic-space
+$endif
+
+# make ambiguous completion hassle-free
+set show-all-if-ambiguous on
+Tab: menu-complete
+#"\C-a": menu-complete-backward
+

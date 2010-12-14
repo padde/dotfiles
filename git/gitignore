@@ -1,0 +1,11 @@
+# generic
+*~
+*.lock
+*.sw?
+
+# OSX noise
+.DS_Store
+.localized
+
+# WIN noise
+Thumbs.db
