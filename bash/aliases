@@ -9,6 +9,11 @@ alias ll='gls -lhAF --color=auto'
 alias ..='cd ..'
 alias ...='cd ../..'
 
+function take {
+	mkdir $1
+	cd $1
+}
+
 source ~/.dotfiles/mactrash/trash
 alias rm='rm -i'
 
