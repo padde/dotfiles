@@ -4,3 +4,23 @@ shopt -s cdspell
 # get a lossless history across multiple shells
 shopt -s histappend
 PROMPT_COMMAND='history -a'
+
+# loooong history! yay!
+export HISTFILESIZE=10000
+export HISTSIZE=10000
+
+# styling the prompt
+export PS1="$GREEN\$(git_branch)$YELLOW\$(hg_branch)$BLUE\u@\h$NO_COLOR:$RED\W$EBLACK\$$NO_COLOR "
+
+# colorize listings
+LS_COLORS="no=00:di=34:ln=35:so=33"
+LS_COLORS="ex=37;41:$LS_COLORS"
+LS_COLORS="*.zip=36:*.rar=36:*.tar=36:*.gz=36:*.tar.gz=36:*.7z=36:$LS_COLORS"
+LS_COLORS="*.c=32:*.cpp=32:*.rb=32:*.pl=32:*.php=32:$LS_COLORS"
+LS_COLORS="*.h=33:*.hpp=33:$LS_COLORS"
+LS_COLORS="*.o=30:*.d=30:$LS_COLORS"
+LS_COLORS="*Makefile=35:*.mk=35:$LS_COLORS"
+export LS_COLORS
+
+# make grep highlight keywords
+export GREP_OPTIONS="--color=always"
