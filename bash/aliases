@@ -22,8 +22,12 @@ alias tree='tree -F'
 
 # git
 alias g='git'
-alias gra='git rm $(git ls-files -d)'
 alias gs='git status'
+alias ga='git add'
+alias gd='git diff'
+alias gdh='git diff HEAD'
+alias gp='git push origin master'
+alias gra='git rm $(git ls-files -d)'
 
 function git_branch {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[git:\1] /'
