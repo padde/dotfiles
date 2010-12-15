@@ -14,6 +14,8 @@ function take {
 	cd $1
 }
 
+alias tab=terminaltab
+
 source ~/.dotfiles/mactrash/trash
 alias rm='rm -i'
 

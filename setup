@@ -103,6 +103,7 @@ link  "gem/gemrc"        , ".gemrc"
 link  "git/gitconfig"    , ".gitconfig"
 link  "git/gitignore"    , ".gitignore"
 link  "irb/irbrc"        , ".irbrc"
+link  "bin/terminaltab"  , "bin/terminaltab"
 
 
 # copy to clipboard
