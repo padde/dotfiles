@@ -2,6 +2,15 @@
 alias bye='logout'
 alias reload='source ~/.bash_profile'
 
+function confirm {
+	read -r -p "$1 [Y/n] " response
+	
+	if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
+	then
+		return 1
+	fi
+}
+
 # coreutils
 alias ls='gls --color=auto -F'
 alias ll='gls -lhAF --color=auto'
@@ -45,12 +54,28 @@ alias tree='tree -F'
 
 # git
 alias g='git'
-alias gs='git status'
 alias ga='git add'
+alias gc='git commit'
 alias gd='git diff'
 alias gdh='git diff HEAD'
+alias gl='git log'
+alias glg='git log --graph --pretty=oneline --abbrev-commit'
 alias gp='git push origin master'
-alias gra='git rm $(git ls-files -d)'
+alias gs='git status'
+
+function gra {
+	if [[ `git ls-files -d | wc -l` -eq 0 ]]
+	then
+		echo "No deleted files to unstage."
+		return 0
+	fi
+	
+	confirm "Remove all deleted files from stage?"
+	if [[ $? == 1 ]]
+	then
+	    git rm $(git ls-files -d)
+	fi
+}
 
 function git_branch {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[git:\1] /'
