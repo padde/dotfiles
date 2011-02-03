@@ -13,7 +13,6 @@ $if Bash
 $endif
 
 # make ambiguous completion hassle-free
-set show-all-if-ambiguous on
 Tab: menu-complete
 #"\C-a": menu-complete-backward
-
+set show-all-if-ambiguous on
