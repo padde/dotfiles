@@ -1,0 +1,5 @@
+#! /usr/bin/ruby
+
+c = `cal #{ARGV.join("")}`
+c[" #{Time.now.day} "] = "\033[0;31m #{Time.now.day} \033[0m"
+puts c

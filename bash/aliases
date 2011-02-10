@@ -11,6 +11,9 @@ function confirm {
 	fi
 }
 
+# highlight day in cal
+alias cal='colorcal'
+
 # coreutils
 alias ls='gls --color=auto -F'
 alias ll='gls -lhAF --color=auto'

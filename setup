@@ -104,6 +104,7 @@ link  "git/gitconfig"    , ".gitconfig"
 link  "git/gitignore"    , ".gitignore"
 link  "irb/irbrc"        , ".irbrc"
 link  "bin/terminaltab"  , "bin/terminaltab"
+link  "bin/colorcal"     , "bin/colorcal"
 
 
 # copy to clipboard
