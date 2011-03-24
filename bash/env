@@ -1,6 +1,9 @@
 # search for binaries in user directory first
 export PATH=~/bin:$PATH
 
+# operating system string
+OS=`uname`
+
 # default editor is textmate, but
 # use vim if textmate not available
 if [ `type -P mate` ]; then
