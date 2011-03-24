@@ -15,7 +15,7 @@ function confirm {
 alias cal='colorcal'
 
 # coreutils
-if [ $OS == 'Darwin' ] #---------------- Mac
+if [[ $OS == 'Darwin' ]] #---------------- Mac
 then
 	alias ls='gls --color=auto -F'
 	alias ll='gls -lhAF --color=auto'
@@ -51,13 +51,13 @@ function tabs {
 	fi
 }
 
-if [ $OS == 'Darwin' ] #---------------- Mac
+if [[ $OS == 'Darwin' ]] #---------------- Mac
 then
 	source ~/.dotfiles/mactrash/trash
 fi
 alias rm='rm -i'
 
-if [ $OS == 'Darwin' ] #---------------- Mac
+if [[ $OS == 'Darwin' ]] #---------------- Mac
 then
 	function pwd_pbcopy {
 		pwd | sed 's/ /\\ /g' | pbcopy
@@ -112,7 +112,7 @@ alias rgs='rails generate scaffold'
 alias rmig='rake db:migrate'
 
 # textmate
-if [ $OS == 'Darwin' ] #---------------- Mac
+if [[ $OS == 'Darwin' ]] #---------------- Mac
 then
 	alias m='mate .'
 fi
@@ -122,7 +122,7 @@ function topten {
 	history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
 }
 
-if [ $os == 'Darwin' ] #---------------- Mac
+if [[ $OS == 'Darwin' ]] #---------------- Mac
 then
 	function aliases {
 		mate -w ~/.dotfiles/bash/aliases
