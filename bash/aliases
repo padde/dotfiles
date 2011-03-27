@@ -122,6 +122,12 @@ function topten {
 	history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
 }
 
+function genpass {
+	for ((n=0;n<10;n++)); do
+		dd if=/dev/urandom count=1 2> /dev/null | uuencode -m -| sed -ne 2p | cut -c-8; 
+	done
+}
+
 if [[ $OS == 'Darwin' ]] #---------------- Mac
 then
 	function aliases {
