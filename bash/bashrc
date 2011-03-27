@@ -2,3 +2,7 @@ source ~/.dotfiles/bash/env
 source ~/.dotfiles/bash/colors
 source ~/.dotfiles/bash/config
 source ~/.dotfiles/bash/aliases
+
+if [[ $OS == 'Darwin' ]]; then # only Mac
+	source ~/.dotfiles/bash/aliases_mac
+fi

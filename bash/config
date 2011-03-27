@@ -24,3 +24,9 @@ export LS_COLORS
 
 # make grep highlight keywords
 export GREP_OPTIONS="--color=always"
+
+if [[ $OS == 'Darwin' ]]; then # Mac
+	export EDITOR="mate_wait"
+else # Linux
+	export EDITOR="vim"
+fi
