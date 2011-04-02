@@ -11,3 +11,6 @@ syntax on
 " key mappings
 map <S-Enter> O<Esc>
 map <CR>      o<Esc>
+
+" aliases
+command Wsudo :w !sudo tee %
