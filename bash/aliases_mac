@@ -32,4 +32,12 @@ alias pcp=pwd_pbcopy
 alias pcd='cd $(pbpaste)'
 
 # textmate
-alias m='mate .'
+function mate_arg {
+	if test -z "$1"
+	then
+	  mate .
+	else
+	  mate $1
+	fi
+}
+alias m='mate_arg'
