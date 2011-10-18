@@ -1,19 +1,41 @@
 require 'rubygems'
 require 'wirble'
+require 'irb/ext/save-history'
 
-# # define own prompt mode
-# IRB.conf[:PROMPT][:PADDE] = {
-# 	#:AUTO_INDENT => true,              # auto indentation
-# 	#:RETURN      => "         --> \n", # return value
-# 	:RETURN      => "--> %s\n",
-# 	:PROMPT_I    => "%m:%03n:%i | ",   # normal prompt
-# 	:PROMPT_N    => "%m:%03n:%i | ",   # ?
-# 	:PROMPT_S    => "%m:%03n:%i%l ",   # string continuation
-# 	:PROMPT_C    => "%m:%03n:%i + "}   # code continuation
-# 
-# # use own prompt mode
-# IRB.conf[:PROMPT_MODE] = :PADDE
+# save history
+ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
+IRB.conf[:SAVE_HISTORY] = 1000
+IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
+
+# define and use own prompt mode
+IRB.conf[:PROMPT][:PADDE] = {
+  :AUTO_INDENT => true,              # auto indentation
+  :RETURN      => "=> %s\n",
+  :PROMPT_I    => "%m:%03n:%i> ",   # normal prompt
+  :PROMPT_C    => "%m:%03n:%i> ",   # code continuation
+  :PROMPT_N    => "%m:%03n:%i> ",   # ?
+  :PROMPT_S    => "%m:%03n:%i  "    # string continuation
+}
+IRB.conf[:PROMPT_MODE] = :PADDE
 
 # initialize wirble and colorize irb
 Wirble.init
 Wirble.colorize
+
+# please only interesting methods!
+class Object
+  # Return only the methods not present on basic objects
+  def interesting_methods
+    (self.methods - Object.new.methods).sort
+  end
+end
+
+# quick benchmarking
+def quick_benchmark(repetitions=100, &block)
+  require 'benchmark'
+
+  Benchmark.bmbm do |b|
+    b.report {repetitions.times &block} 
+  end
+  nil
+end

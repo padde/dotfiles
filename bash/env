@@ -1,6 +1,10 @@
 # search for binaries in user directory first
 export PATH=~/bin:$PATH
 
+# node package manager (npm)
+export NODE_PATH="/usr/local/lib/node"
+export PATH=/usr/local/share/npm/bin:$PATH
+
 # operating system string
 OS=`uname`
 
@@ -10,18 +14,24 @@ if [ `type -P mate` ]; then
 	if [ ! `type -P mate_wait` ]; then
 		mkdir -p ~/bin
 		ln -s `which mate` ~/bin/mate_wait
-	fi;
-	export EDITOR="mate_wait";
+	fi
+	export EDITOR="mate_wait"
 elif [ `type -P vim` ]; then
-	export EDITOR="vim";
-fi;
+	export EDITOR="vim"
+fi
 
 # pager
 if [ `type -P most` ]; then
-	export PAGER="most";
-fi;
+	export PAGER="most"
+fi
 
 # RVM - Ruby Version Manager
 if [[ -s /Users/padde/.rvm/scripts/rvm ]]; then
-	source /Users/padde/.rvm/scripts/rvm;
-fi;
+	source /Users/padde/.rvm/scripts/rvm
+fi
+
+# logged in via ssh?
+export LOGGED_IN_VIA_SSH=false
+if [[ $(who am i) =~ \([a-z0-9\.]+\)$ ]]; then
+    LOGGED_IN_VIA_SSH=true
+fi
