@@ -9,15 +9,13 @@ export PATH=/usr/local/share/npm/bin:$PATH
 OS=`uname`
 
 # default editor is textmate, but
-# use vim if textmate not available
+# only if available
 if [ `type -P mate` ]; then
 	if [ ! `type -P mate_wait` ]; then
 		mkdir -p ~/bin
 		ln -s `which mate` ~/bin/mate_wait
 	fi
 	export EDITOR="mate_wait"
-elif [ `type -P vim` ]; then
-	export EDITOR="vim"
 fi
 
 # pager
