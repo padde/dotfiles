@@ -17,6 +17,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias rm='rm -i'
 alias tree='tree -F'
+alias colorgrep='grep --color=always'
+alias cgrep='colorgrep'
 function take {
 	mkdir $1
 	cd $1
