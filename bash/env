@@ -10,8 +10,11 @@ OS=`uname`
 
 # pager
 if [ `type -P most` ]; then
-	export PAGER="most"
+	export PAGER=most
 fi
+
+# editor
+export EDITOR=vim
 
 # RVM - Ruby Version Manager
 if [[ -s /Users/padde/.rvm/scripts/rvm ]]; then
