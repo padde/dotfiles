@@ -1,6 +1,6 @@
 " global settings
 set number
-set autoindent
+" set autoindent
 set noshowmatch
 set nowrap
 set tabstop=4
