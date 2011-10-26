@@ -8,16 +8,6 @@ export PATH=/usr/local/share/npm/bin:$PATH
 # operating system string
 OS=`uname`
 
-# default editor is textmate, but
-# only if available
-if [ `type -P mate` ]; then
-	if [ ! `type -P mate_wait` ]; then
-		mkdir -p ~/bin
-		ln -s `which mate` ~/bin/mate_wait
-	fi
-	export EDITOR="mate_wait"
-fi
-
 # pager
 if [ `type -P most` ]; then
 	export PAGER="most"

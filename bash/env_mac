@@ -1,0 +1,12 @@
+# homebrew path stuff
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+# default editor is textmate, but
+# only if available
+if [ `type -P mate` ]; then
+	if [ ! `type -P mate_wait` ]; then
+		mkdir -p ~/bin
+		ln -s `which mate` ~/bin/mate_wait
+	fi
+	export EDITOR="mate_wait"
+fi
