@@ -1,121 +1,42 @@
-#!/usr/bin/ruby -w
+#!/bin/bash
 
-require "ftools"
-require "optparse"
+source $0/../bash/colors
 
+BACKUPDIR=~/.backup-$(date +%s)
+mkdir $BACKUPDIR
 
-HOME_DIR = File.expand_path '~/'
-CONF_DIR = Dir.pwd
+printf $GREEN
+echo "Backing up old dotfiles to $BACKUPDIR..."
+printf $NO_COLOR
 
-$options = {
-  :verbose => true,
-  :backups => true
-}
+cp -v ~/.bash_profile $BACKUPDIR
+cp -v ~/.bashrc $BACKUPDIR
+cp -v ~/.inputrc $BACKUPDIR
+cp -v ~/.vimrc $BACKUPDIR
+cp -v ~/.gemrc $BACKUPDIR
+cp -v ~/.gitconfig $BACKUPDIR
+cp -v ~/.gitignore $BACKUPDIR
+cp -v ~/.irbrc $BACKUPDIR
+cp -v /bin/terminaltab $BACKUPDIR
+cp -v /bin/colorcal $BACKUPDIR
 
-opts = OptionParser.new
-# opts.on('-v', '--version')    { output_version ; exit 0 }
-# opts.on('-h', '--help')       { output_help }
-# opts.on('-V', '--verbose')    { $options[:verbose] = true }  
-opts.on('-q', '--quiet')      { $options[:verbose] = false }
-# opts.on('-b', '--backup')     { $options[:backups] = true }
-opts.on('-B', '--no-backup')  { $options[:backups] = false }
-opts.parse!(ARGV)
+printf $GREEN
+echo "Installing Padde’s dotfiles..."
+printf $NO_COLOR
 
-def colorize *colorlist
-  colors = { :NO_COLOR => '\033[0m',
-    :BLACK  => '\033[0;30m', :RED      => '\033[0;31m', :GREEN  => '\033[0;32m', :YELLOW  => '\033[0;33m', 
-    :BLUE   => '\033[0;34m', :MAGENTA  => '\033[0;35m', :CYAN   => '\033[0;36m', :WHITE   => '\033[0;37m',
-    :EBLACK => '\033[1;30m', :ERED     => '\033[1;31m', :EGREEN => '\033[1;32m', :EYELLOW => '\033[1;33m', 
-    :EBLUE  => '\033[1;34m', :EMAGENTA => '\033[1;35m', :ECYAN  => '\033[1;36m', :EWHITE  => '\033[1;37m',
-    :UBLACK => '\033[4;30m', :URED     => '\033[4;31m', :UGREEN => '\033[4;32m', :UYELLOW => '\033[4;33m', 
-    :UBLUE  => '\033[4;34m', :UMAGENTA => '\033[4;35m', :UCYAN  => '\033[4;36m', :UWHITE  => '\033[4;37m',
-    :BBLACK => '\033[40m'  , :BRED     => '\033[41m'  , :BGREEN => '\033[42m'  , :BYELLOW => '\033[43m'  , 
-    :BBLUE  => '\033[44m'  , :BMAGENTA => '\033[45m'  , :BCYAN  => '\033[46m'  , :BWHITE  => '\033[47m'  }
-  
-  colorlist.each do |color|
-    system "printf '#{colors[color]}'"
-  end
-end
+cp -vR $0/.. ~/.dotfiles
+cp -v ~/.dotfiles/home/bash_profile ~/.bash_profile
+cp -v ~/.dotfiles/home/bashrc ~/.bashrc
+ln -vs ~/.dotfiles/input/inputrc ~/.inputrc
+ln -vs ~/.dotfiles/vim/vimrc ~/.vimrc
+ln -vs ~/.dotfiles/gem/gemrc ~/.gemrc
+ln -vs ~/.dotfiles/git/gitconfig ~/.gitconfig
+ln -vs ~/.dotfiles/git/gitignore ~/.gitignore
+ln -vs ~/.dotfiles/irb/irbrc ~/.irbrc
+ln -vs ~/.dotfiles/bin/terminaltab /bin/terminaltab
+ln -vs ~/.dotfiles/bin/colorcal /bin/colorcal
 
-def copy source, destination
-  source      = "#{CONF_DIR}/#{source}"      unless File.fnmatch "#{CONF_DIR}/*", source
-  destination = "#{HOME_DIR}/#{destination}" unless File.fnmatch "#{HOME_DIR}/*", destination
-  
-  colorize :GREEN
-  print "  copy "; STDOUT.flush
-  File.copy source, destination, true
-  colorize :NO_COLOR
-end
-
-def link old_file, new_file
-  old_file = "#{CONF_DIR}/#{old_file}" unless File.fnmatch "#{CONF_DIR}/*", old_file
-  new_file = "#{HOME_DIR}/#{new_file}" unless File.fnmatch "#{HOME_DIR}/*", new_file
-  
-  backup new_file if File.exist? new_file or File.symlink? new_file
-  
-  colorize :GREEN
-  puts "  link #{new_file} -> #{old_file}"
-  colorize :NO_COLOR
-  
-  File.symlink old_file, new_file
-end
-
-def backup file
-  if $options[:backups]
-    colorize :YELLOW
-    puts "backup #{file} -> #{file}.backup"
-    colorize :NO_COLOR
-  
-    File.rename file, "#{file}.backup"
-  else
-    colorize :RED
-    puts "delete #{file}"
-    colorize :NO_COLOR
-  
-    File.delete file
-  end
-end
-
-def mkdir path
-  colorize :YELLOW
-  puts " mkdir #{path}"
-  colorize :NO_COLOR
-  
-  File.makedirs path
-end
-
-
-colorize :WHITE, :BBLACK
-puts
-puts "                                                                          "
-puts "                         BASH CUSTOMIZATION SETUP                         "
-puts "                                                                          "
-puts
-colorize :NO_COLOR
-
-
-# do setup
-copy  "home/bash_profile", ".bash_profile"
-copy  "home/bashrc"      , ".bashrc"
-link  "input/inputrc"    , ".inputrc"
-link  "vim/vimrc"        , ".vimrc"
-link  "gem/gemrc"        , ".gemrc"
-link  "git/gitconfig"    , ".gitconfig"
-link  "git/gitignore"    , ".gitignore"
-link  "irb/irbrc"        , ".irbrc"
-link  "bin/terminaltab"  , "bin/terminaltab"
-link  "bin/colorcal"     , "bin/colorcal"
-
-
-# copy to clipboard
-IO.popen('pbcopy', 'r+') { |clipboard| clipboard.puts "source ~/.bashrc" }
-
-
-colorize :WHITE, :BBLACK
-puts
-puts "                                                                          "
-puts "   run source ~/.bashrc to apply changes (has been copied to clipboard)   "
-puts "   the gnu readline configuration will only affect new windows or tabs!   "
-puts "                                                                          "
-puts
-colorize :NO_COLOR
+printf $GREEN
+echo "Done."
+printf $NO_COLOR
+echo "Now restart your terminal."
