@@ -10,7 +10,7 @@ export HISTFILESIZE=10000
 export HISTSIZE=10000
 
 # styling the prompt
-export PS1="$GREEN\$(git_branch)$YELLOW\$(hg_branch)$BLUE\u@\h$NO_COLOR:$RED\W$EBLACK\$$NO_COLOR "
+export PS1="$PS1_GREEN\$(git_branch)$PS1_YELLOW\$(hg_branch)$PS1_BLUE\u@\h$PS1_NO_COLOR:$PS1_RED\W$PS1_EBLACK\$$PS1_NO_COLOR "
 
 # colorize listings
 LS_COLORS="no=00:di=34:ln=35:so=33"
