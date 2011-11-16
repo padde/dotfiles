@@ -49,7 +49,12 @@ function gra {
 }
 
 function git_branch {
-	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[git:\1] /'
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[git:\1] /'
+}
+
+# subversion
+function svn_revision {
+    svn info 2> /dev/null | grep Revision | grep -oE "[[:digit:]]{1,}" | sed -e "s/\(.*\)/[svn:r\1] /"
 }
 
 # rubygems
