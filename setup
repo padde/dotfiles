@@ -2,39 +2,39 @@
 
 source $0/../bash/colors
 
-BACKUPDIR=~/.backup-$(date +%s)
-mkdir $BACKUPDIR
-
-printf $GREEN
-echo "Backing up old dotfiles to $BACKUPDIR..."
-printf $NO_COLOR
-
-cp -v ~/.bash_profile $BACKUPDIR
-cp -v ~/.bashrc $BACKUPDIR
-cp -v ~/.inputrc $BACKUPDIR
-cp -v ~/.vimrc $BACKUPDIR
-cp -v ~/.gemrc $BACKUPDIR
-cp -v ~/.gitconfig $BACKUPDIR
-cp -v ~/.gitignore $BACKUPDIR
-cp -v ~/.irbrc $BACKUPDIR
-cp -v /bin/terminaltab $BACKUPDIR
-cp -v /bin/colorcal $BACKUPDIR
+# BACKUPDIR=~/.backup-$(date +%s)
+# mkdir $BACKUPDIR
+# 
+# printf $GREEN
+# echo "Backing up old dotfiles to $BACKUPDIR..."
+# printf $NO_COLOR
+# 
+# cp -v ~/.bash_profile $BACKUPDIR
+# cp -v ~/.bashrc $BACKUPDIR
+# cp -v ~/.inputrc $BACKUPDIR
+# cp -v ~/.vimrc $BACKUPDIR
+# cp -v ~/.gemrc $BACKUPDIR
+# cp -v ~/.gitconfig $BACKUPDIR
+# cp -v ~/.gitignore $BACKUPDIR
+# cp -v ~/.irbrc $BACKUPDIR
 
 printf $GREEN
 echo "Installing Padde’s dotfiles..."
 printf $NO_COLOR
 
-cp -vR $0/.. ~/.dotfiles
-cp -v ~/.dotfiles/home/bash_profile ~/.bash_profile
-cp -v ~/.dotfiles/home/bashrc ~/.bashrc
-ln -vs ~/.dotfiles/input/inputrc ~/.inputrc
-ln -vs ~/.dotfiles/vim/vimrc ~/.vimrc
+# cp -vR $0/.. ~/.dotfiles
+ln -vs ~/.dotfiles/home/bash_profile ~/.bash_profile
+ln -vs ~/.dotfiles/home/bashrc ~/.bashrc
 ln -vs ~/.dotfiles/gem/gemrc ~/.gemrc
 ln -vs ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -vs ~/.dotfiles/git/gitignore ~/.gitignore
+ln -vs ~/.dotfiles/input/inputrc ~/.inputrc
 ln -vs ~/.dotfiles/irb/irbrc ~/.irbrc
-ln -vs ~/.dotfiles/bin/terminaltab /bin/terminaltab
-ln -vs ~/.dotfiles/bin/colorcal /bin/colorcal
+ln -vs ~/.dotfiles/latexmk/latexmkrc ~/.latexmkrc
+ln -vs ~/.dotfiles/oh-my-zsh/padde.zsh-theme ~/.oh-my-zsh/custom/padde.zsh-theme
+ln -vs ~/.dotfiles/oh-my-zsh/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
+ln -vs ~/.dotfiles/vim/vimrc ~/.vimrc
+ln -vs ~/.dotfiles/zsh/zshrc ~/.zshrc
 
 printf $GREEN
 echo "Done."

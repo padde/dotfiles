@@ -7,36 +7,10 @@ else
     alias ll='ls -GlAh'
 fi
 
-# manage tabs
-alias tab=terminaltab
-function tabs {
-	if echo $1 | grep "^[0-9]*$" > /dev/null
-	then
-		# numerical value, open X tabs
-		local counter=$1
-		while [ $counter -gt 0 ]
-			do tab $2
-			counter=$((counter-1))
-		done
-	else
-		# open tabs with list of directories
-		for i in $*
-			do tab $i
-		done
-	fi
-}
-
 # use mactrash for deleting files
 source ~/.dotfiles/mactrash/trash
 
 if [ ! LOGGED_IN_VIA_SSH ]; then
-    # copy and paste pwd to clipboard
-    function pwd_pbcopy {
-    	pwd | sed 's/ /\\ /g' | pbcopy
-    }
-    alias pcp=pwd_pbcopy
-    alias pcd='cd $(pbpaste)'
-
     # textmate
     function mate_arg {
     	if test -z "$1"
