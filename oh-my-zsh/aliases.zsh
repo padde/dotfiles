@@ -1,6 +1,7 @@
 alias bye='exit'
 alias lla='ll -a'
 alias dotfiles="mate ~/.dotfiles"
+alias cdd="cd ~/.dotfiles"
 
 # textmate
 function mate_arg {
