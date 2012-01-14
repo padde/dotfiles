@@ -26,9 +26,6 @@ ZSH_THEME="padde"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-# Load RVM Function
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -38,3 +35,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:/Users/padde/.rvm/gems/ruby-1.9.2-p180/bin:/Users/padde/.rvm/gems/ruby-1.9.2-p180@global/bin:/Users/padde/.rvm/rubies/ruby-1.9.2-p180/bin:/Users/padde/.rvm/bin:/usr/local/share/npm/bin:/Users/padde/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin
+
+# Load RVM Function
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
