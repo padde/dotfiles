@@ -1,12 +1,26 @@
 " global settings
+set nocompatible      " We're running Vim, not Vi!
 set number
 " set autoindent
 set noshowmatch
 set nowrap
-set tabstop=4
+" set tabstop=4
 set visualbell
+" set autoindent
 " set background=dark
-syntax on
+
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+
+if has('mac')
+  set clipboard+=unnamed " Share clipboard on osx
+endif
 
 " key mappings
 map <S-Enter> O<Esc>

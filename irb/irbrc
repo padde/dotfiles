@@ -1,6 +1,8 @@
 require 'rubygems'
-require 'wirble'
 require 'irb/ext/save-history'
+
+$LOAD_PATH << '~/.dotfiles/irb/palette'
+require 'palette'
 
 # save history
 ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
@@ -18,9 +20,8 @@ IRB.conf[:PROMPT][:PADDE] = {
 }
 IRB.conf[:PROMPT_MODE] = :PADDE
 
-# initialize wirble and colorize irb
-Wirble.init
-Wirble.colorize
+# colorize irb
+Palette.enable
 
 # please only interesting methods!
 class Object

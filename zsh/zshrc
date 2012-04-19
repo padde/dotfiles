@@ -29,7 +29,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew bundler gem git github rails3 ruby rvm)
+plugins=(brew bundler gem git github osx rails3 ruby rvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -38,3 +38,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:/Users/padde/.rvm/gems/ruby-1.9.2-p18
 
 # Load RVM Function
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
