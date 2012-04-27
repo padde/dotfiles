@@ -9,3 +9,6 @@
 
 # WIN noise
 Thumbs.db
+
+# vim history
+vim/vim/.netrwhist
