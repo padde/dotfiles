@@ -8,6 +8,9 @@ set expandtab         " i like soft tabs
 set shiftwidth=2
 set softtabstop=2
 
+set wildmenu          " complete all the commands!
+set wildmode=list:longest,full
+
 set mouse=a           " mouse support
 
 syntax on             " Enable syntax highlighting
