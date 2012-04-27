@@ -23,6 +23,9 @@ IRB.conf[:PROMPT_MODE] = :PADDE
 # colorize irb
 Palette.enable
 
+# colorized p command
+require 'awesome_print'
+
 # please only interesting methods!
 class Object
   # Return only the methods not present on basic objects
