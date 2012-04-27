@@ -4,6 +4,8 @@ set noshowmatch
 set nowrap
 set visualbell
 
+set nohidden          " do not store data about old buffers
+
 set expandtab         " i like soft tabs
 set shiftwidth=2
 set softtabstop=2
