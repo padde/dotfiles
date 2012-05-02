@@ -20,6 +20,9 @@ export PATH=/usr/local/bin:/usr/local/sbin:/Users/padde/.rvm/bin:/usr/local/shar
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+# use macvim binary (has clipboard support)
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+
 # fix history search 
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward 
