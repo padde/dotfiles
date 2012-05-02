@@ -21,7 +21,11 @@ export PATH=/usr/local/bin:/usr/local/sbin:/Users/padde/.rvm/bin:/usr/local/shar
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # use macvim binary (has clipboard support)
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+if [[ -d /Applications/MacVim.app ]]; then
+  alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+elif [[ -d ~/Applications/MacVim.app ]]; then
+  alias vim='~/Applications/MacVim.app/Contents/MacOS/Vim'
+fi
 
 # fix history search 
 bindkey '\e[A' history-beginning-search-backward
