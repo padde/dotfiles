@@ -1,26 +1,33 @@
-set nocompatible      " We're running Vim, not Vi!
+set nocompatible               " We're running Vim, not Vi!
 set number
 set noshowmatch
 set nowrap
 set visualbell
 
-set nohidden          " do not store data about old buffers
+set nohidden                   " do not store data about old buffers
 
-set expandtab         " i like soft tabs
+set expandtab                  " i like soft tabs
 set shiftwidth=2
 set softtabstop=2
 
-set wildmenu          " complete all the commands!
+set wildmenu                   " complete all the commands!
 set wildmode=list:longest,full
 
-set mouse=a           " mouse support
+set mouse=a                    " mouse support
 
-syntax on             " Enable syntax highlighting
-filetype on           " Enable filetype detection
-filetype indent on    " Enable filetype-specific indenting
-filetype plugin on    " Enable filetype-specific plugins
+runtime macros/matchit.vim     " Needed for textobj-rubyblock
 
-if has('mac')         " Share clipboard on osx
+filetype off                   " set filetype off for pathogen
+call pathogen#infect()         " use pathogen
+
+syntax on                      " Enable syntax highlighting
+filetype on                    " Enable filetype detection
+filetype indent on             " Enable filetype-specific indenting
+filetype plugin on             " Enable filetype-specific plugins
+
+let mapleader = ","            " Nobody likes \ as leader!
+
+if has('mac')                  " Share clipboard on osx
 set clipboard+=unnamed
 endif
 
