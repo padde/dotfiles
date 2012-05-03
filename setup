@@ -8,9 +8,7 @@ ln -vs ~/.dotfiles/git/gitignore ~/.gitignore
 ln -vs ~/.dotfiles/input/inputrc ~/.inputrc
 ln -vs ~/.dotfiles/irb/irbrc ~/.irbrc
 ln -vs ~/.dotfiles/latexmk/latexmkrc ~/.latexmkrc
-ln -vs ~/.dotfiles/oh-my-zsh/padde.zsh-theme ~/.oh-my-zsh/custom/padde.zsh-theme
-ln -vs ~/.dotfiles/oh-my-zsh/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
-ln -vs ~/.dotfiles/oh-my-zsh/plugins/ ~/.oh-my-zsh/custom/plugins
+ln -vs ~/.dotfiles/oh-my-zsh/oh-my-zsh/ ~/.oh-my-zsh
 ln -vs ~/.dotfiles/vim/vimrc ~/.vimrc
 ln -vs ~/.dotfiles/vim/vim/ ~/.vim
 ln -vs ~/.dotfiles/zsh/zshrc ~/.zshrc

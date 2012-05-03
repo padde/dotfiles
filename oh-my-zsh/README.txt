@@ -1,1 +1,0 @@
-ALL FILES IN THIS DIRECTORY ARE ALIASED TO ~/.oh-my-zsh/custom/*

@@ -1,4 +1,0 @@
-#compdef untrash
-#autoload
-
-_arguments "*:Files in Trash:($(ls ~/.Trash))"
