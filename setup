@@ -1,28 +1,7 @@
-#!/bin/bash
+#!usr/bin/env sh
 
-source $0/../bash/colors
-
-# BACKUPDIR=~/.backup-$(date +%s)
-# mkdir $BACKUPDIR
-# 
-# printf $GREEN
-# echo "Backing up old dotfiles to $BACKUPDIR..."
-# printf $NO_COLOR
-# 
-# cp -v ~/.bash_profile $BACKUPDIR
-# cp -v ~/.bashrc $BACKUPDIR
-# cp -v ~/.inputrc $BACKUPDIR
-# cp -v ~/.vimrc $BACKUPDIR
-# cp -v ~/.gemrc $BACKUPDIR
-# cp -v ~/.gitconfig $BACKUPDIR
-# cp -v ~/.gitignore $BACKUPDIR
-# cp -v ~/.irbrc $BACKUPDIR
-
-printf $GREEN
 echo "Installing Padde’s dotfiles..."
-printf $NO_COLOR
 
-# cp -vR $0/.. ~/.dotfiles
 ln -vs ~/.dotfiles/gem/gemrc ~/.gemrc
 ln -vs ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -vs ~/.dotfiles/git/gitignore ~/.gitignore
@@ -31,11 +10,10 @@ ln -vs ~/.dotfiles/irb/irbrc ~/.irbrc
 ln -vs ~/.dotfiles/latexmk/latexmkrc ~/.latexmkrc
 ln -vs ~/.dotfiles/oh-my-zsh/padde.zsh-theme ~/.oh-my-zsh/custom/padde.zsh-theme
 ln -vs ~/.dotfiles/oh-my-zsh/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
+ln -vs ~/.dotfiles/oh-my-zsh/plugins/ ~/.oh-my-zsh/custom/plugins
 ln -vs ~/.dotfiles/vim/vimrc ~/.vimrc
 ln -vs ~/.dotfiles/vim/vim/ ~/.vim
 ln -vs ~/.dotfiles/zsh/zshrc ~/.zshrc
+ln -vs ~/.dotfiles/zsh/zsh/ ~/.zsh
 
-printf $GREEN
 echo "Done."
-printf $NO_COLOR
-echo "Now restart your terminal."

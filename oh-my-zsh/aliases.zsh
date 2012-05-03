@@ -24,3 +24,8 @@ function mate2_arg {
 	fi
 }
 alias m2='mate2_arg'
+
+# untrash
+function untrash() {
+  cp ~/.Trash/$1 .
+} 
