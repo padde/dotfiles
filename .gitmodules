@@ -46,3 +46,6 @@
 [submodule "vim/vim/bundle/textobj-user"]
 	path = vim/vim/bundle/textobj-user
 	url = git://github.com/kana/vim-textobj-user.git
+[submodule "vim/pathogen"]
+	path = vim/pathogen
+	url = git://github.com/tpope/vim-pathogen.git
