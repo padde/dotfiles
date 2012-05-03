@@ -31,9 +31,9 @@ if has('mac')                  " Share clipboard on osx
 set clipboard+=unnamed
 endif
 
-" key mappings
-map <S-Enter> O<Esc>
-map <CR>      o<Esc>
-
 " aliases
 command Wsudo :w !sudo tee %
+command WQ wq
+command Wq wq
+command W w
+command Q q
