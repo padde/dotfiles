@@ -1,7 +1,10 @@
+# Custom directory outside of ~/.oh-my-zsh/ so we can track it with git
+ZSH_CUSTOM="$HOME/.dotfiles/zsh/custom/"
+
 # Path to oh-my-zsh conf
 ZSH=$HOME/.oh-my-zsh
 
-# Thene
+# Theme
 ZSH_THEME="padde"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
