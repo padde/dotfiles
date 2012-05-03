@@ -1,1 +1,1 @@
-vim/pathogen/autoload/pathogen.vim
+/Users/padde/.dotfiles/vim/pathogen/autoload/pathogen.vim
