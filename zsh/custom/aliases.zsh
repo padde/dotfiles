@@ -29,3 +29,11 @@ alias m2='mate2_arg'
 function untrash() {
   cp ~/.Trash/$1 .
 } 
+
+# update dotfiles etc
+function update_dotfiles {
+    cd ~/.dotfiles
+    git pull origin master
+    git submodule foreach git pull origin master
+    cd -
+}
