@@ -25,11 +25,6 @@ function mate2_arg {
 }
 alias m2='mate2_arg'
 
-# untrash
-function untrash() {
-  cp ~/.Trash/$1 .
-} 
-
 # update dotfiles etc
 function update_dotfiles {
     cd ~/.dotfiles
