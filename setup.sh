@@ -7,6 +7,8 @@ echo "Installing Padde’s dotfiles..."
 
 # move containing directory to ~/.dotfiles and go there
 cp -r . ~/.dotfiles
+cd ..
+rm -rf dotfiles
 cd ~/.dotfiles
 
 # create symlinks
