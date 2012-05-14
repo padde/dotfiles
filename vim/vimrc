@@ -25,6 +25,11 @@ filetype on                    " Enable filetype detection
 filetype indent on             " Enable filetype-specific indenting
 filetype plugin on             " Enable filetype-specific plugins
 
+set background=light
+colorscheme solarized          " use solarized colorscheme
+
+set guifont=Menlo\ Regular:h12 " prettier font for MacVim
+
 let mapleader = ","            " Nobody likes \ as leader!
 
 if has('mac')                  " Share clipboard on osx
