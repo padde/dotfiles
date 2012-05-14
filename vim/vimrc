@@ -31,6 +31,10 @@ if has('mac')                  " Share clipboard on osx
 set clipboard+=unnamed
 endif
 
+if has("gui_running")          " hide menu bar in MacVim
+    set guioptions=egmrt
+endif
+
 " aliases
 command Wsudo :w !sudo tee %
 command WQ wq
