@@ -32,3 +32,5 @@ function update_dotfiles {
     git submodule foreach git pull origin master
     cd -
 }
+
+alias guard-latex='guard --guardfile ~/.dotfiles/guard/pdflatex-biber/Guardfile'

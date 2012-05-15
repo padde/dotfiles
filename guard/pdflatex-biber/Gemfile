@@ -1,0 +1,6 @@
+source :rubygems
+
+gem 'growl'
+gem 'guard'
+gem 'guard-shell'
+
