@@ -13,18 +13,8 @@ COMPLETION_WAITING_DOTS="true"
 # Plugins
 plugins=(brew bundler gem git github osx rails3 ruby rvm)
 
-# TODO: remove this when bug is fixed in oh-my-zsh
-# Workaround for loading theme from $ZSH_CUSTOM
-# Github issue: https://github.com/robbyrussell/oh-my-zsh/pull/1107
-MY_ZSH_THEME=$ZSH_THEME; ZSH_THEME=''
-
 # OH MY ZSH!
 source $ZSH/oh-my-zsh.sh
-
-# TODO: remove this when bug is fixed in oh-my-zsh
-# Workaround for loading theme from $ZSH_CUSTOM
-# Github issue: https://github.com/robbyrussell/oh-my-zsh/pull/1107
-source "$ZSH_CUSTOM/$MY_ZSH_THEME.zsh-theme"
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:/Users/padde/.rvm/bin:/usr/local/share/npm/bin:/Users/padde/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin
