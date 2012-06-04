@@ -1,0 +1,68 @@
+notification :growl
+
+def xelatex(file)
+  system "xelatex -interaction=nonstopmode #{file}"
+end
+
+def biber(file)
+  system "biber #{file}"
+end
+
+def activate(app)
+  script = <<-OSASCRIPT
+    tell application "#{app}"
+      activate
+    end tell
+  OSASCRIPT
+
+  system "osascript -e '#{script}'"
+end
+
+guard :shell do
+  watch /(.*)\.tex$/ do |m|
+    file = m[0]
+    
+    n 'Running xelatex', file, :pending
+    
+    if xelatex(file)
+      n 'Success running xelatex', file, :success
+      activate('Preview')
+      "Success running xelatex on #{file}"
+    else
+      n 'Error running xelatex', file, :failed
+      "Error running xelatex on #{file}"
+    end
+  end
+  
+  watch /.*\.bib$/ do |m|
+    bib_file = m[0]
+    
+    # each tex file using biber generates a .bcf file
+    # so run xelatex-biber-xelatex for all of them
+    Dir.glob('**/*.bcf') do |bcf_file|
+      bare_file = bcf_file.gsub(/\.bcf$/,'')
+      tex_file = "#{bare_file}.tex"
+      
+      n "Running xelatex-Biber-xelatex\nbib: #{bib_file}", tex_file
+      
+      if xelatex(tex_file)
+        if biber(bare_file)
+          if xelatex(tex_file)
+            n 'Success running xelatex-Biber-xelatex', tex_file, :success
+            activate('Preview')
+            "Success running xelatex-Biber-xelatex on #{tex_file}"
+          else
+            n 'Error running xelatex after Biber', tex_file, :failed
+            "Error running xelatex after Biber on #{tex_file}"
+          end
+        else
+          n 'Error running Biber', tex_file, :failed
+          "Error running Biber on #{tex_file}"
+        end
+      else
+        n 'Error running xelatex before Biber', tex_file, :failed
+        "Error running xelatex before Biber on #{tex_file}"
+      end
+    end
+  end
+end

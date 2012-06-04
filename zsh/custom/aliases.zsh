@@ -33,4 +33,5 @@ function update_dotfiles {
     cd -
 }
 
-alias guard-latex='guard --guardfile ~/.dotfiles/guard/pdflatex-biber/Guardfile'
+alias guard-pdflatex='guard --guardfile ~/.dotfiles/guard/pdflatex-biber/Guardfile'
+alias guard-xelatex='guard --guardfile ~/.dotfiles/guard/xelatex-biber/Guardfile'
