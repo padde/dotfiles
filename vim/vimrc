@@ -29,14 +29,18 @@ filetype plugin on             " Enable filetype-specific plugins
 
 set guifont=Menlo\ Regular:h12 " prettier font for MacVim
 
+if has("gui_running")          " use railscasts theme in MacVim
+  colorscheme railscasts
+endif
+
 let mapleader = ","            " Nobody likes \ as leader!
 
 if has('mac')                  " Share clipboard on osx
-set clipboard+=unnamed
+  set clipboard+=unnamed
 endif
 
 if has("gui_running")          " hide menu bar in MacVim
-    set guioptions=egmrt
+  set guioptions=egmrt
 endif
 
 " aliases

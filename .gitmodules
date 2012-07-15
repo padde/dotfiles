@@ -58,3 +58,6 @@
 [submodule "vim/vim/bundle/nerdtree-tabs"]
 	path = vim/vim/bundle/nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs.git
+[submodule "vim/vim/bundle/railscasts-theme"]
+	path = vim/vim/bundle/railscasts-theme
+	url = git://github.com/jpo/vim-railscasts-theme.git
