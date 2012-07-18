@@ -61,3 +61,6 @@
 [submodule "vim/vim/bundle/railscasts-theme"]
 	path = vim/vim/bundle/railscasts-theme
 	url = git://github.com/jpo/vim-railscasts-theme.git
+[submodule "vim/vim/bundle/rvm"]
+	path = vim/vim/bundle/rvm
+	url = git://github.com/tpope/vim-rvm.git

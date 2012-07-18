@@ -22,6 +22,7 @@ ln -vs ~/.dotfiles/vim/vimrc         ~/.vimrc
 ln -vs ~/.dotfiles/vim/vim/          ~/.vim
 ln -vs ~/.dotfiles/zsh/zsh/          ~/.zsh
 ln -vs ~/.dotfiles/zsh/zshrc         ~/.zshrc
+ln -vs ~/.dotfiles/zsh/zshenv        ~/.zshenv
 ln -vs ~/.dotfiles/zsh/oh-my-zsh/    ~/.oh-my-zsh
 
 # install oh-my-zsh
