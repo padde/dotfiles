@@ -12,10 +12,10 @@ IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
 # define and use own prompt mode
 IRB.conf[:PROMPT][:PADDE] = {
   :RETURN      => "=> %s\n",
-  :PROMPT_I    => "%m:%03n:%i> ",   # normal prompt
-  :PROMPT_C    => "%m:%03n:%i> ",   # code continuation
-  :PROMPT_N    => "%m:%03n:%i> ",   # ?
-  :PROMPT_S    => "%m:%03n:%i  "    # string continuation
+  :PROMPT_I    => "%03n> ",   # normal prompt
+  :PROMPT_C    => "%03n> ",   # code continuation
+  :PROMPT_N    => "%03n> ",   # ?
+  :PROMPT_S    => "%03n  "    # string continuation
 }
 IRB.conf[:PROMPT_MODE] = :PADDE
 
