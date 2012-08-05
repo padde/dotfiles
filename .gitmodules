@@ -64,3 +64,6 @@
 [submodule "vim/vim/bundle/rvm"]
 	path = vim/vim/bundle/rvm
 	url = git://github.com/tpope/vim-rvm.git
+[submodule "colors/tomorrow-theme"]
+	path = colors/tomorrow-theme
+	url = git://github.com/chriskempson/tomorrow-theme.git

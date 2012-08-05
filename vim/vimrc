@@ -30,9 +30,11 @@ filetype plugin on             " Enable filetype-specific plugins
 
 set guifont=Menlo\ Regular:h12 " prettier font for MacVim
 
-if has("gui_running")          " use railscasts theme in MacVim
-  colorscheme railscasts
-endif
+"if has("gui_running")          " use railscasts theme in MacVim
+"  colorscheme railscasts
+"endif
+
+colorscheme Tomorrow-Night     " use tomorrow night color scheme
 
 let mapleader = ","            " Nobody likes \ as leader!
 
