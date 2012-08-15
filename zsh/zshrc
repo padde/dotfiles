@@ -17,11 +17,12 @@ plugins=(brew bundler gem git github osx rails3 ruby rvm)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/Users/padde/.rvm/bin:/usr/local/share/npm/bin:/Users/padde/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/Users/padde/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin
 
 # Load RVM Function
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+rvm use default # XXX is this really necessary?
 
 # Pick up npm Libraries
 NODE_PATH=/usr/local/lib/node_modules
