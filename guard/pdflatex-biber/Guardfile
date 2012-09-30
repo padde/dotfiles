@@ -28,7 +28,7 @@ guard :shell do
     
     if pdflatex(file)
       n 'Success running PDFLaTeX', file, :success
-      activate('Preview')
+      # activate('Preview')
       "Success running PDFLaTeX on #{file}"
     else
       n 'Error running PDFLaTeX', file, :failed
@@ -49,7 +49,7 @@ guard :shell do
 
       if biber(bare_file)
         n 'Success running Biber', tex_file, :success
-        activate('Preview')
+        # activate('Preview')
         "Success running Biber on #{tex_file}"
       else
         n 'Error running Biber', tex_file, :failed

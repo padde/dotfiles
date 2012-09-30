@@ -1,7 +1,7 @@
 notification :growl
 
 def xelatex(file)
-  system "xelatex -interaction=nonstopmode #{file}"
+  system "xelatex -interaction=nonstopmode --shell-escape #{file}"
 end
 
 def biber(file)
