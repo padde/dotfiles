@@ -15,6 +15,7 @@ cd ~/.dotfiles
 ln -vs ~/.dotfiles/gem/gemrc         ~/.gemrc
 ln -vs ~/.dotfiles/git/gitconfig     ~/.gitconfig
 ln -vs ~/.dotfiles/git/gitignore     ~/.gitignore
+ln -vs ~/.dotfiles/hg/hgrc           ~/.hgrc
 ln -vs ~/.dotfiles/input/inputrc     ~/.inputrc
 ln -vs ~/.dotfiles/irb/irbrc         ~/.irbrc
 ln -vs ~/.dotfiles/latexmk/latexmkrc ~/.latexmkrc

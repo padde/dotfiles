@@ -17,6 +17,8 @@ COMPLETION_WAITING_DOTS="true"
 # Plugins
 plugins=(brew bundler gem git github osx rails3 ruby rvm)
 
+source $ZSH_CUSTOM/lib/hg.zsh
+
 # OH MY ZSH!
 source $ZSH/oh-my-zsh.sh
 
