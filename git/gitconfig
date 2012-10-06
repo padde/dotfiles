@@ -24,11 +24,15 @@
   untracked = cyan
 
 [alias]
+  au = add -u
   st = status
   ci = commit
+  cm = commit -m
+  cam = commit -am
   br = branch
   co = checkout
   df = diff
+  dfs = diff --staged
   lg = log
   lgv = log -p
   lgp = log --pretty=oneline --abbrev-commit
