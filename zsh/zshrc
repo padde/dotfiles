@@ -18,8 +18,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Load RVM Function
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
-rvm use default # XXX is this really necessary?
 
 # Pick up npm Libraries
 NODE_PATH=/usr/local/lib/node_modules
