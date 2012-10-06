@@ -67,3 +67,12 @@
 [submodule "colors/tomorrow-theme"]
 	path = colors/tomorrow-theme
 	url = git://github.com/chriskempson/tomorrow-theme.git
+[submodule "vim/vim/bundle/surround"]
+	path = vim/vim/bundle/surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "vim/vim/bundle/rake"]
+	path = vim/vim/bundle/rake
+	url = git://github.com/tpope/vim-rake.git
+[submodule "vim/vim/bundle/bundler"]
+	path = vim/vim/bundle/bundler
+	url = git://github.com/tpope/vim-bundler.git
