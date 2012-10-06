@@ -24,9 +24,11 @@ NODE_PATH=/usr/local/lib/node_modules
 
 # use macvim binary (has clipboard support)
 if [[ -d /Applications/MacVim.app ]]; then
-  alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+  # alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+  alias vim=mvim
 elif [[ -d ~/Applications/MacVim.app ]]; then
-  alias vim='~/Applications/MacVim.app/Contents/MacOS/Vim'
+  # alias vim='~/Applications/MacVim.app/Contents/MacOS/Vim'
+  alias vim=mvim
 fi
 
 # fix history search 
