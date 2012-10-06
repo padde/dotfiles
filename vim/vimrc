@@ -21,7 +21,6 @@ filetype off                   " set filetype off for pathogen
 call pathogen#infect()         " use pathogen
 
 let g:NERDTreeChDirMode=2      " enable running commands in current dir
-let g:nerdtree_tabs_open_on_gui_startup=0
 
 syntax on                      " Enable syntax highlighting
 filetype on                    " Enable filetype detection
