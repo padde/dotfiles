@@ -20,9 +20,6 @@ plugins=(brew bundler gem git github osx rails3 ruby rvm)
 # OH MY ZSH!
 source $ZSH/oh-my-zsh.sh
 
-# Load RVM Function
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
 # Pick up npm Libraries
 NODE_PATH=/usr/local/lib/node_modules
 
