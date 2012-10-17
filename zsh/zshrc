@@ -34,3 +34,9 @@ fi
 # fix history search 
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward 
+
+# Use most as pager, if available
+if most -v &> /dev/null; then
+  PAGER=most
+fi
+
