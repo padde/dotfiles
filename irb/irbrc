@@ -1,9 +1,6 @@
 require 'rubygems'
 require 'irb/ext/save-history'
 
-$LOAD_PATH << '~/.dotfiles/irb/palette'
-require 'palette'
-
 # save history
 ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
 IRB.conf[:SAVE_HISTORY] = 1000
@@ -20,7 +17,7 @@ IRB.conf[:PROMPT][:PADDE] = {
 IRB.conf[:PROMPT_MODE] = :PADDE
 
 # colorize irb
-Palette.enable
+require 'matisse/autoload'
 
 # colorized p command
 require 'awesome_print'
