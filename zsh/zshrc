@@ -49,3 +49,9 @@ LS_COLORS="*.h=33:*.hpp=33:$LS_COLORS"
 LS_COLORS="*.o=30:*.d=30:$LS_COLORS"
 LS_COLORS="*Makefile=35:*.mk=35:*Rakefile=35:$LS_COLORS"
 export LS_COLORS
+
+# heroku toolbelt
+HEROKU_TOOLBELT_DIR="/usr/local/heroku/bin"
+if [ -d "$HEROKU_TOOLBELT_DIR" ]; then
+  export PATH="$HEROKU_TOOLBELT_DIR:$PATH"
+fi
