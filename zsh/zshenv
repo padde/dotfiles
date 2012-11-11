@@ -5,5 +5,8 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # /usr/local/bin should be in front of /usr/bin for homebrew
 PATH=/usr/local/bin:$PATH
 
+# TeX live
+PATH=/usr/texbin:$PATH
+
 # Pick up npm Libraries
 NODE_PATH=/usr/local/lib/node_modules
