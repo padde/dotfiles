@@ -7,21 +7,12 @@
 [submodule "vim/vim/bundle/snip-mate"]
 	path = vim/vim/bundle/snip-mate
 	url = git://github.com/msanders/snipmate.vim.git
-[submodule "vim/vim/bundle/supertab-continued"]
-	path = vim/vim/bundle/supertab-continued
-	url = git://github.com/vim-scripts/SuperTab-continued..git
 [submodule "vim/vim/bundle/coffee-script"]
 	path = vim/vim/bundle/coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
 [submodule "vim/vim/bundle/commentary"]
 	path = vim/vim/bundle/commentary
 	url = git://github.com/tpope/vim-commentary.git
-[submodule "vim/vim/bundle/endwise"]
-	path = vim/vim/bundle/endwise
-	url = git://github.com/tpope/vim-endwise.git
-[submodule "vim/vim/bundle/fugitive"]
-	path = vim/vim/bundle/fugitive
-	url = git://github.com/tpope/vim-fugitive.git
 [submodule "vim/vim/bundle/haml"]
 	path = vim/vim/bundle/haml
 	url = git://github.com/tpope/vim-haml.git
@@ -52,24 +43,9 @@
 [submodule "vim/vim/bundle/nerdtree"]
 	path = vim/vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/vim/bundle/nerdtree-tabs"]
-	path = vim/vim/bundle/nerdtree-tabs
-	url = https://github.com/jistr/vim-nerdtree-tabs.git
 [submodule "vim/vim/bundle/railscasts-theme"]
 	path = vim/vim/bundle/railscasts-theme
 	url = git://github.com/jpo/vim-railscasts-theme.git
-[submodule "vim/vim/bundle/rvm"]
-	path = vim/vim/bundle/rvm
-	url = git://github.com/tpope/vim-rvm.git
 [submodule "colors/tomorrow-theme"]
 	path = colors/tomorrow-theme
 	url = git://github.com/chriskempson/tomorrow-theme.git
-[submodule "vim/vim/bundle/surround"]
-	path = vim/vim/bundle/surround
-	url = git://github.com/tpope/vim-surround.git
-[submodule "vim/vim/bundle/rake"]
-	path = vim/vim/bundle/rake
-	url = git://github.com/tpope/vim-rake.git
-[submodule "vim/vim/bundle/bundler"]
-	path = vim/vim/bundle/bundler
-	url = git://github.com/tpope/vim-bundler.git
