@@ -1,6 +1,7 @@
-# Load RVM Function
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# Use rbenv
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)";
+fi
 
 # /usr/local/bin should be in front of /usr/bin for homebrew
 PATH=/usr/local/bin:$PATH
