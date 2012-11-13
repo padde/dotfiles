@@ -6,8 +6,14 @@ fi
 # /usr/local/bin should be in front of /usr/bin for homebrew
 PATH=/usr/local/bin:$PATH
 
-### Added by the Heroku Toolbelt
-PATH="/usr/local/heroku/bin:$PATH"
+# Heroku Toolbelt
+HEROKU_TOOLBELT_DIR="/usr/local/heroku/bin"
+if [ -d "$HEROKU_TOOLBELT_DIR" ]; then
+  export PATH="$HEROKU_TOOLBELT_DIR:$PATH"
+fi
+
+# TeX live
+PATH=/usr/texbin:$PATH
 
 # Pick up npm Libraries
 NODE_PATH=/usr/local/lib/node_modules
@@ -17,7 +23,7 @@ if most -v &> /dev/null; then
   PAGER=most
 fi
 
-# colorize listings (especially in `tree`)
+# Colorize listings (especially in `tree`)
 LS_COLORS="no=00:di=34:ln=35:so=33"
 LS_COLORS="ex=37;41:$LS_COLORS"
 LS_COLORS="*.zip=36:*.rar=36:*.tar=36:*.gz=36:*.tar.gz=36:*.7z=36:$LS_COLORS"
