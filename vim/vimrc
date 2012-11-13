@@ -59,3 +59,10 @@ function! s:DiffWithSaved()
   exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
+
+" nerd tree shortcuts in gui
+if has("gui_running") && has("mac")
+  nnoremap <D-d>      :NERDTreeToggle<CR><C-w>p
+  inoremap <D-d> <Esc>:NERDTreeToggle<CR><C-w>pa
+  vnoremap <D-d> <Esc>:NERDTreeToggle<CR><C-w>pgv
+endif
