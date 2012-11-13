@@ -26,6 +26,9 @@ ln -vs ~/.dotfiles/zsh/zshrc         ~/.zshrc
 ln -vs ~/.dotfiles/zsh/zshenv        ~/.zshenv
 ln -vs ~/.dotfiles/zsh/oh-my-zsh/    ~/.oh-my-zsh
 
+# fonts for vim powerline
+cp -v ~/.dotfiles/fonts/* ~/Library/Fonts/
+
 # install oh-my-zsh
 chsh -s `which zsh`
 /usr/bin/env zsh
