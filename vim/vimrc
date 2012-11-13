@@ -76,3 +76,8 @@ endif
 " show invisibles as in Text Mate (with improvements)
 set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<
 set list
+
+" blank line indentation
+command IndentBlankOn  :inoremap <CR> <CR>+<Esc>xa
+command IndentBlankOff :inoremap <CR> <CR>
+IndentBlankOn
