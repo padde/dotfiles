@@ -66,3 +66,7 @@ if has("gui_running") && has("mac")
   inoremap <D-d> <Esc>:NERDTreeToggle<CR><C-w>pa
   vnoremap <D-d> <Esc>:NERDTreeToggle<CR><C-w>pgv
 endif
+
+" show invisibles as in Text Mate (with improvements)
+set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<
+set list
