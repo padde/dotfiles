@@ -5,5 +5,8 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # /usr/local/bin should be in front of /usr/bin for homebrew
 PATH=/usr/local/bin:$PATH
 
+### Added by the Heroku Toolbelt
+PATH="/usr/local/heroku/bin:$PATH"
+
 # Pick up npm Libraries
 NODE_PATH=/usr/local/lib/node_modules
