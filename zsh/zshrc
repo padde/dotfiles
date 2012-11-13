@@ -15,20 +15,19 @@ ZSH_THEME="padde"
 COMPLETION_WAITING_DOTS="true"
 
 # Plugins
-plugins=(brew bundler gem git github osx rails3 ruby rvm)
-
+plugins=(brew bundler gem git github osx rails3 ruby)
 source $ZSH_CUSTOM/lib/hg.zsh
 
 # OH MY ZSH!
 source $ZSH/oh-my-zsh.sh
 
-# use macvim binary (has clipboard and mouse support)
+# Use macvim binary (has clipboard and mouse support)
 if [[ -d /Applications/MacVim.app ]]; then
   alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 elif [[ -d ~/Applications/MacVim.app ]]; then
   alias vim='~/Applications/MacVim.app/Contents/MacOS/Vim'
 fi
 
-# fix history search 
+# Fix history search 
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward 
