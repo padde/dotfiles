@@ -63,10 +63,6 @@ endfunction
 com! DiffSaved call s:DiffWithSaved()
 
 " nerd tree shortcuts in gui
-nnoremap <C-S-d>      :NERDTreeToggle<CR><C-w>p
-inoremap <C-S-d> <Esc>:NERDTreeToggle<CR><C-w>pa
-vnoremap <C-S-d> <Esc>:NERDTreeToggle<CR><C-w>pgv
-
 if has("gui_running") && has("mac")
   nnoremap <D-d>      :NERDTreeToggle<CR><C-w>p
   inoremap <D-d> <Esc>:NERDTreeToggle<CR><C-w>pa
