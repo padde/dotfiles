@@ -83,3 +83,6 @@ let g:Powerline_symbols = 'fancy'
 
 " enable going to previous/next line with left/right arrow keys
 set whichwrap+=<,>,[,]
+
+" hightlight current line by default
+set cursorline
