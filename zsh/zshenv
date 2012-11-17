@@ -13,7 +13,7 @@ if [ -d "$HEROKU_TOOLBELT_DIR" ]; then
 fi
 
 # TeX live
-TEX_BIN_DIR="/usr/texbin:$PATH"
+TEX_BIN_DIR="/usr/texbin"
 if [ -d "$TEX_BIN_DIR" ]; then
   export PATH="$TEX_BIN_DIR:$PATH"
 fi
