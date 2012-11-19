@@ -73,11 +73,6 @@ endif
 set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<
 set list
 
-" blank line indentation
-command IndentBlankOn  :inoremap <CR> <CR>+<Esc>xa
-command IndentBlankOff :inoremap <CR> <CR>
-IndentBlankOn
-
 " powerline
 let g:Powerline_symbols = 'fancy'
 
