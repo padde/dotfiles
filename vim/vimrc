@@ -81,3 +81,8 @@ set whichwrap+=<,>,[,]
 
 " hightlight current line by default
 set cursorline
+
+" better search highlighting
+hi Search cterm=NONE ctermbg=yellow ctermfg=darkred
+hi Search guibg=#eac43c guifg=#b5382d
+set hlsearch
