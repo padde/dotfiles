@@ -2,4 +2,14 @@
 username= Patrick Oscity <patrick.oscity@gmail.com>
 
 [extensions]
-color=
+color =
+graphlog =
+highlight =
+mq =
+extdiff =
+purge =
+hgext.bookmarks =
+hggit = /usr/local/mercurial/hg-git/hggit 
+
+[extdiff]
+cmd.opendiff = opendiff
