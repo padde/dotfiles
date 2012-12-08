@@ -35,3 +35,14 @@ function update_dotfiles {
 
 alias guard-pdflatex='guard --guardfile ~/.dotfiles/guard/pdflatex-biber/Guardfile'
 alias guard-xelatex='guard --guardfile ~/.dotfiles/guard/xelatex-biber/Guardfile'
+
+# use manservant for manpages if available
+manservant () {
+  open "http://man.dev/$1"
+}
+alias mans=manservant
+
+# if [ -d "/Users/$(echo $USER)/.pow/man" ]; then
+#   alias man_=man
+#   alias man=manservant
+# fi
