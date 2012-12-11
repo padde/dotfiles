@@ -8,6 +8,8 @@ set encoding=utf-8             " utf-8 ftw!
 
 set nohidden                   " do not store data about old buffers
 
+set tabstop=4                  " show tabs as 4 spaces
+
 set expandtab                  " i like soft tabs
 set shiftwidth=2
 set softtabstop=2
