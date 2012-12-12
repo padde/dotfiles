@@ -1,6 +1,5 @@
 set nocompatible               " We're running Vim, not Vi!
 set number
-set noshowmatch
 set nowrap
 set visualbell
 set laststatus=2               " always show the statusline
