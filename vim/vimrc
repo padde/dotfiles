@@ -4,7 +4,9 @@ set noshowmatch
 set nowrap
 set visualbell
 set laststatus=2               " always show the statusline
+
 set encoding=utf-8             " utf-8 ftw!
+set fileencoding=utf-8
 
 set nohidden                   " do not store data about old buffers
 
