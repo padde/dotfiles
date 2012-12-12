@@ -1,7 +1,11 @@
-set nocompatible               " We're running Vim, not Vi!
-set number
-set nowrap
-set visualbell
+set nocompatible               " we're running Vim, not Vi!
+
+set number                     " show line numbers
+
+set nowrap                     " do not wrap lines
+
+set visualbell                 " no beeps please!
+
 set laststatus=2               " always show the statusline
 
 set encoding=utf-8             " utf-8 ftw!
@@ -20,17 +24,17 @@ set wildmode=list:longest,full
 
 set mouse=a                    " mouse support
 
-runtime macros/matchit.vim     " Needed for textobj-rubyblock
+runtime macros/matchit.vim     " needed for textobj-rubyblock
 
 filetype off                   " set filetype off for pathogen
 call pathogen#infect()         " use pathogen
 
 let g:NERDTreeChDirMode=2      " enable running commands in current dir
 
-syntax on                      " Enable syntax highlighting
-filetype on                    " Enable filetype detection
-filetype indent on             " Enable filetype-specific indenting
-filetype plugin on             " Enable filetype-specific plugins
+syntax on                      " enable syntax highlighting
+filetype on                    " enable filetype detection
+filetype indent on             " enable filetype-specific indenting
+filetype plugin on             " enable filetype-specific plugins
 
 set guifont=Menlo\ Regular:h12 " prettier font for MacVim
 
@@ -38,9 +42,9 @@ if has("gui_running")          " use railscasts theme in MacVim
   colorscheme railscasts
 endif
 
-let mapleader = ","            " Nobody likes \ as leader!
+let mapleader = ","            " nobody likes \ as leader!
 
-if has('mac')                  " Share clipboard on osx
+if has('mac')                  " share clipboard on osx
   set clipboard+=unnamed
 endif
 
@@ -74,7 +78,7 @@ endif
 
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 
-" Close all open buffers on entering a window if the only
+" close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer
 function! s:CloseIfOnlyNerdTreeLeft()
   if exists("t:NERDTreeBufName")
