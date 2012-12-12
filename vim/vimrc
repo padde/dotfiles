@@ -100,8 +100,10 @@ let g:Powerline_symbols = 'fancy'
 " enable going to previous/next line with left/right arrow keys
 set whichwrap+=<,>,[,]
 
-" hightlight current line by default
-set cursorline
+" hightlight current line in gui
+if has("gui_running")
+  set cursorline
+endif
 
 " better search highlighting
 hi Search cterm=NONE ctermbg=yellow ctermfg=darkred
