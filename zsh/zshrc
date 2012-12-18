@@ -21,13 +21,6 @@ source $ZSH_CUSTOM/lib/hg.zsh
 # OH MY ZSH!
 source $ZSH/oh-my-zsh.sh
 
-# Use macvim binary (has clipboard and mouse support)
-if [[ -d /Applications/MacVim.app ]]; then
-  alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-elif [[ -d ~/Applications/MacVim.app ]]; then
-  alias vim='~/Applications/MacVim.app/Contents/MacOS/Vim'
-fi
-
 # Fix history search 
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward 
