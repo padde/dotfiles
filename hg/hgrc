@@ -11,6 +11,7 @@ purge =
 hgext.bookmarks =
 hggit = /usr/local/mercurial/hg-git/hggit 
 hgext.crecord = /usr/local/mercurial/crecord/crecord
+histedit = /usr/local/mercurial/histedit/hg_histedit.py
 record =
 
 [extdiff]
