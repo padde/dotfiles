@@ -24,3 +24,8 @@ source $ZSH/oh-my-zsh.sh
 # Fix history search 
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward 
+
+# Use most as pager, if available
+if which most > /dev/null; then
+  export PAGER=most
+fi
