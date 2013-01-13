@@ -113,3 +113,6 @@ set hlsearch
 " do not append newlines to files
 " au BufWritePre * :set binary | set noeol
 " au BufWritePost * :set nobinary | set eol
+
+" clear search string
+command Clearsearch :let @/ = ""

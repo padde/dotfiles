@@ -1,5 +1,5 @@
 [ui]
-username= Patrick Oscity <patrick.oscity@gmail.com>
+username = Patrick Oscity <p.oscity@oncommerce.de>
 
 [extensions]
 color =
@@ -10,6 +10,9 @@ extdiff =
 purge =
 hgext.bookmarks =
 hggit = /usr/local/mercurial/hg-git/hggit 
+hgext.crecord = /usr/local/mercurial/crecord/crecord
+histedit = /usr/local/mercurial/histedit/hg_histedit.py
+record =
 
 [extdiff]
 cmd.opendiff = opendiff
