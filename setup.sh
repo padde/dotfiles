@@ -19,6 +19,7 @@ ln -vs ~/.dotfiles/hg/hgrc           ~/.hgrc
 ln -vs ~/.dotfiles/input/inputrc     ~/.inputrc
 ln -vs ~/.dotfiles/irb/irbrc         ~/.irbrc
 ln -vs ~/.dotfiles/latexmk/latexmkrc ~/.latexmkrc
+ln -vs ~/.dotfiles/tmux/tmux.conf    ~/.tmux.conf
 ln -vs ~/.dotfiles/vim/vimrc         ~/.vimrc
 ln -vs ~/.dotfiles/vim/vim/          ~/.vim
 ln -vs ~/.dotfiles/zsh/zsh/          ~/.zsh
