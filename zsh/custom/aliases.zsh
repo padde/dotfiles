@@ -46,3 +46,6 @@ alias mans=manservant
 #   alias man_=man
 #   alias man=manservant
 # fi
+
+alias cl=clear
+alias c=clear
