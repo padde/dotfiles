@@ -49,3 +49,5 @@ alias mans=manservant
 
 alias cl=clear
 alias c=clear
+
+alias todo='grep -rnE "[tT][oO][dD][oO].*" --exclude=".*" --exclude-dir=".*"'
