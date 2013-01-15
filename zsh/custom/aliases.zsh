@@ -50,4 +50,4 @@ alias mans=manservant
 alias cl=clear
 alias c=clear
 
-alias todo='grep -rnE "([tT][oO][dD][oO])|([fF][iI][xX][mM][eE])|([xX]{3}).*" --exclude=".*" --exclude-dir=".*" -C 3'
+alias todo='grep -rnE "([tT][oO][dD][oO])|([fF][iI][xX][mM][eE])|([xX]{3}).*" --exclude=".*" --exclude-dir=".*" -C 3 | grep -E "^(\w|[./ ])+:[0-9]+:.+" -C999'
