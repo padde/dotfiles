@@ -29,3 +29,6 @@ bindkey '\e[B' history-beginning-search-forward
 if which most > /dev/null; then
   export PAGER=most
 fi
+
+# Highlight grep results with bold red
+export GREP_COLOR="1;31"
