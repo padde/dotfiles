@@ -32,3 +32,10 @@ fi
 
 # Highlight grep results with bold red
 export GREP_COLOR="1;31"
+
+# Use macvim binary (has clipboard support)
+if [[ -d /Applications/MacVim.app ]]; then
+  alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+elif [[ -d ~/Applications/MacVim.app ]]; then
+  alias vim='~/Applications/MacVim.app/Contents/MacOS/Vim'
+fi
