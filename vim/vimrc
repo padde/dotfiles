@@ -130,3 +130,6 @@ function! RemoveTrailingWhitespace()
 endfunction
 command RemoveTrailingWhitespace :call RemoveTrailingWhitespace()
 command RT :RemoveTrailingWhitespace
+
+" clear screen before issuing shell commands
+noremap :! :!clear; 
