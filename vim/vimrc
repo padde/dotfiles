@@ -116,4 +116,13 @@ set hlsearch
 " au BufWritePost * :set nobinary | set eol
 
 " clear search string
-command Clearsearch :let @/ = ""
+command ClearSearch :let @/ = ""
+command CS :ClearSearch
+
+" remove trailing whitespace including non-breaking spaces
+function! RemoveTrailingWhitespace()
+  %s/\(\s\| \)\+$//e
+  ClearSearch
+endfunction
+command RemoveTrailingWhitespace :call RemoveTrailingWhitespace()
+command RT :RemoveTrailingWhitespace
