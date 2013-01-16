@@ -26,6 +26,7 @@ set mouse=a                    " mouse support
 
 runtime macros/matchit.vim     " needed for textobj-rubyblock
 
+filetype on                    " fix exit code
 filetype off                   " set filetype off for pathogen
 call pathogen#infect()         " use pathogen
 
