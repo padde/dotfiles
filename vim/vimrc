@@ -43,6 +43,10 @@ if has("gui_running")          " use railscasts theme in MacVim
   colorscheme railscasts
 endif
 
+if !has("gui_running")         " better visual mode highlight in terminal
+  hi Visual term=reverse cterm=reverse ctermfg=23 ctermbg=7
+endif
+
 let mapleader = ","            " nobody likes \ as leader!
 
 if has('mac')                  " share clipboard on osx
