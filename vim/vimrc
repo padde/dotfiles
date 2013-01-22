@@ -168,3 +168,9 @@ endfunction
 
 set updatetime=1000
 au CursorHold * :call SetFold()
+
+" persist undo history
+set undodir=~/.vim/undo
+set undofile
+set undolevels=1000
+set undoreload=10000
