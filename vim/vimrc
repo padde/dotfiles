@@ -141,3 +141,7 @@ command RT :RemoveTrailingWhitespace
 
 " clear screen before issuing shell commands
 noremap :! :!clear; 
+
+" persist folds
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview
