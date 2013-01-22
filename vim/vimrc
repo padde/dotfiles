@@ -145,3 +145,26 @@ noremap :! :!clear;
 " persist folds
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
+
+" show foldcolumn when there are folds
+function HasFoldedLine()
+  let lnum=1
+  while lnum <= line("$")
+    if (foldclosed(lnum) > -1)
+      return 1
+    endif
+    let lnum+=1
+  endwhile
+  return 0
+endfunction
+
+function SetFold()
+  if HasFoldedLine()
+    set foldcolumn=1
+  else
+    set foldcolumn=0
+  endif
+endfunction
+
+set updatetime=1000
+au CursorHold * :call SetFold()
