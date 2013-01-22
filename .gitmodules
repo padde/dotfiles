@@ -58,3 +58,6 @@
 [submodule "vim/vim/bundle/command-t"]
 	path = vim/vim/bundle/command-t
 	url = git://github.com/wincent/Command-T.git
+[submodule "vim/vim/bundle/gundo"]
+	path = vim/vim/bundle/gundo
+	url = git://github.com/sjl/gundo.vim.git

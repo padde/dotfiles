@@ -81,6 +81,13 @@ if has("gui_running") && has("mac")
   vnoremap <D-d> <Esc>:NERDTreeToggle<CR><C-w>pgv
 endif
 
+" gundo shortcuts in gui
+if has("gui_running") && has("mac")
+  nnoremap <D-u>      :GundoToggle<CR><C-w>p
+  inoremap <D-u> <Esc>:GundoToggle<CR><C-w>pa
+  vnoremap <D-u> <Esc>:GundoToggle<CR><C-w>pgv
+endif
+
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 
 " close all open buffers on entering a window if the only
