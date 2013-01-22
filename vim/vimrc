@@ -157,3 +157,6 @@ set undodir=~/.vim/undo
 set undofile
 set undolevels=1000
 set undoreload=10000
+
+" Automatically reload changes if detected
+set autoread
