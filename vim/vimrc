@@ -84,9 +84,9 @@ endif
 
 " gundo shortcuts in gui
 if has("gui_running") && has("mac")
-  nnoremap <D-u>      :GundoToggle<CR><C-w>p
-  inoremap <D-u> <Esc>:GundoToggle<CR><C-w>pa
-  vnoremap <D-u> <Esc>:GundoToggle<CR><C-w>pgv
+  nnoremap <D-u>      :GundoToggle<CR>
+  inoremap <D-u> <Esc>:GundoToggle<CR>
+  vnoremap <D-u> <Esc>:GundoToggle<CR>
 endif
 
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
