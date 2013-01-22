@@ -149,6 +149,8 @@ au BufWinEnter * silent! loadview
 " show foldcolumn
 set foldcolumn=2
 
+" fold column colors
+hi FoldColumn ctermfg=red ctermbg=none guifg=red guibg=#333435
 
 " persist undo history
 set undodir=~/.vim/undo
