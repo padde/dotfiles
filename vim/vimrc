@@ -159,6 +159,7 @@ hi FoldColumn ctermfg=red ctermbg=none guifg=red guibg=#333435
 hi SignColumn ctermfg=red ctermbg=none guifg=red guibg=#333435
 
 " Show marks on the left
+set updatetime=500
 autocmd BufEnter * DoShowMarks
 
 " Colors for showmarks plugin
