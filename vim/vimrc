@@ -174,7 +174,11 @@ set undoreload=10000
 set autoread
 
 " resize shortcuts
-nnoremap <D-left> :vertical resize -5<cr>
-nnoremap <D-down> :resize +5<cr>
-nnoremap <D-up> :resize -5<cr>
-nnoremap <D-right> :vertical resize +5<cr>
+nnoremap <D-up>      :resize          -5<cr>
+nnoremap <D-down>    :resize          +5<cr>
+nnoremap <D-left>    :vertical resize -5<cr>
+nnoremap <D-right>   :vertical resize +5<cr>
+nnoremap <D-S-up>    :resize          -1<cr>
+nnoremap <D-S-down>  :resize          +1<cr>
+nnoremap <D-S-left>  :vertical resize -1<cr>
+nnoremap <D-S-right> :vertical resize +1<cr>
