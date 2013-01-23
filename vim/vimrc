@@ -160,6 +160,10 @@ hi SignColumn ctermfg=red ctermbg=none guifg=red guibg=#333435
 
 " Colors for showmarks plugin
 hi hlShowMarks ctermfg=lightgrey ctermbg=none guifg=#bbbbbb guibg=#333435
+
+" Dark line number colors in terminal
+hi LineNr ctermfg=0
+
 " persist undo history
 set undodir=~/.vim/undo
 set undofile
