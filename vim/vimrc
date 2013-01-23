@@ -150,13 +150,16 @@ au BufWinEnter * silent! loadview
 hi Folded ctermfg=248 ctermbg=0
 
 " show foldcolumn
-set foldcolumn=2
+set foldcolumn=1
 
 " fold column colors
 hi FoldColumn ctermfg=red ctermbg=none guifg=red guibg=#333435
 
 " Sign column colors
 hi SignColumn ctermfg=red ctermbg=none guifg=red guibg=#333435
+
+" Show marks on the left
+autocmd BufEnter * DoShowMarks
 
 " Colors for showmarks plugin
 hi hlShowMarks ctermfg=lightgrey ctermbg=none guifg=#bbbbbb guibg=#333435
