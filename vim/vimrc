@@ -155,6 +155,11 @@ set foldcolumn=2
 " fold column colors
 hi FoldColumn ctermfg=red ctermbg=none guifg=red guibg=#333435
 
+" Sign column colors
+hi SignColumn ctermfg=red ctermbg=none guifg=red guibg=#333435
+
+" Colors for showmarks plugin
+hi hlShowMarks ctermfg=lightgrey ctermbg=none guifg=#bbbbbb guibg=#333435
 " persist undo history
 set undodir=~/.vim/undo
 set undofile

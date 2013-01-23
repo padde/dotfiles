@@ -82,3 +82,7 @@
 	path = vim/vim/bundle/gundo
 	url = git://github.com/sjl/gundo.vim.git
 	ignore = untracked
+[submodule "vim/vim/bundle/showmarks"]
+	path = vim/vim/bundle/showmarks
+	url = git://github.com/jacquesbh/vim-showmarks.git
+	ignore = untracked
