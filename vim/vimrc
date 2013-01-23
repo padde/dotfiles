@@ -146,6 +146,9 @@ noremap :! :!clear;
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
 
+" fold colors in terminal
+hi Folded ctermfg=248 ctermbg=0
+
 " show foldcolumn
 set foldcolumn=2
 
