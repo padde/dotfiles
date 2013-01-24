@@ -192,13 +192,25 @@ noremap <C-n> <ESC>//<CR>v//e<CR>
 noremap <C-m> <ESC>NN//<CR>v//e<CR>
 
 " automatically reload Gundo buffer if open
-function! s:GundoReloadIfOpen()
-  let gundoWin = bufwinnr('__Gundo__')
-  if gundoWin != -1 && gundoWin != winnr("$")
-    let currWin = winnr()
-    :GundoRenderGraph
-    execute currWin . "wincmd w"
+function! s:GundoRefresh()
+  " abort when there were no changes
+  if b:gundoChangedtick == b:changedtick | return | endif
+  let b:gundoChangedtick = b:changedtick
+
+  let gundoWin    = bufwinnr('__Gundo__')
+  let gundoPreWin = bufwinnr('__Gundo_Preview__')
+  let currentWin  = bufwinnr('%')
+
+  " abort if Gundo is closed or is current window
+  if (gundoWin == -1) || (gundoPreWin == -1) || (gundoWin == currentWin) || (gundoPreWin == currentWin)
+    return
   endif
+
+  :GundoRenderGraph
+
+  " switch back to previous window
+  execute currentWin . 'wincmd w'
 endfunction
 
-au CursorHold * :call s:GundoReloadIfOpen()
+au CursorHold * call s:GundoRefresh()
+au BufEnter * let b:gundoChangedtick = 0
