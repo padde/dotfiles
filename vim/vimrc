@@ -186,3 +186,7 @@ nnoremap <D-S-up>    :resize          -1<cr>
 nnoremap <D-S-down>  :resize          +1<cr>
 nnoremap <D-S-left>  :vertical resize -1<cr>
 nnoremap <D-S-right> :vertical resize +1<cr>
+
+" visually select matches
+noremap <C-n> <ESC>//<CR>v//e<CR>
+noremap <C-m> <ESC>NN//<CR>v//e<CR>
