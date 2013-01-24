@@ -190,3 +190,15 @@ nnoremap <D-S-right> :vertical resize +1<cr>
 " visually select matches
 noremap <C-n> <ESC>//<CR>v//e<CR>
 noremap <C-m> <ESC>NN//<CR>v//e<CR>
+
+" automatically reload Gundo buffer if open
+function! s:GundoReloadIfOpen()
+  let gundoWin = bufwinnr('__Gundo__')
+  if gundoWin != -1 && gundoWin != winnr("$")
+    let currWin = winnr()
+    :GundoRenderGraph
+    execute currWin . "wincmd w"
+  endif
+endfunction
+
+au CursorHold * :call s:GundoReloadIfOpen()
