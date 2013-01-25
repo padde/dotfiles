@@ -229,3 +229,8 @@ function! s:CloseIfOnlyGundoLeft()
 endfunction
 
 au WinEnter * call s:CloseIfOnlyGundoLeft()
+
+" preserve selection when shifting and yanking
+vnoremap > ><CR>gv
+vnoremap < <<CR>gv
+vnoremap y y<CR>gv
