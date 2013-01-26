@@ -86,3 +86,7 @@
 	path = vim/vim/bundle/showmarks
 	url = git://github.com/jacquesbh/vim-showmarks.git
 	ignore = untracked
+[submodule "vim/vim/bundle/tabular"]
+	path = vim/vim/bundle/tabular
+	url = git://github.com/godlygeek/tabular.git
+	ignore = untracked
