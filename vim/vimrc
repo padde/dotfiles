@@ -206,7 +206,6 @@ endfunction
 
 au WinEnter * call s:CloseIfOnlyGundoLeft()
 
-" preserve selection when shifting and yanking
+" preserve selection when shifting
 vnoremap > ><CR>gv
 vnoremap < <<CR>gv
-vnoremap y y<CR>gv
