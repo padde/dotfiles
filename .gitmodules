@@ -90,3 +90,7 @@
 	path = vim/vim/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
 	ignore = untracked
+[submodule "vim/vim/bundle/less"]
+	path = vim/vim/bundle/less
+	url = git://github.com/groenewege/vim-less.git
+	ignore = untracked
