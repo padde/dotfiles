@@ -51,3 +51,6 @@ alias cl=clear
 alias c=clear
 
 alias todo='grep -rnE "^.*(([tT][oO][dD][oO])|([fF][iI][xX][mM][eE])|([xX]{3})).*$" --exclude=".*" --exclude-dir=".*" -C3'
+
+# shortcut for Postgres' pg_ctl
+alias pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log'
