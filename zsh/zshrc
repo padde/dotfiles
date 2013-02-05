@@ -39,3 +39,7 @@ if [[ -d /Applications/MacVim.app ]]; then
 elif [[ -d ~/Applications/MacVim.app ]]; then
   alias vim='~/Applications/MacVim.app/Contents/MacOS/Vim'
 fi
+
+if which vim > /dev/null; then
+  export EDITOR=vim
+fi
