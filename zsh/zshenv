@@ -6,6 +6,9 @@ if which rbenv > /dev/null; then
   eval "$(rbenv init -)";
 fi
 
+# Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin 
+
 # Heroku Toolbelt
 HEROKU_TOOLBELT_DIR="/usr/local/heroku/bin"
 if [ -d "$HEROKU_TOOLBELT_DIR" ]; then
