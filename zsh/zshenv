@@ -25,6 +25,7 @@ fi
 NODE_MODULES_DIR="/usr/local/lib/node_modules"
 if [ -d "$NODE_MODULES_DIR" ]; then
   export NODE_PATH=NODE_MODULES_DIR
+  export PATH="/usr/local/share/npm/bin:$PATH"
 fi
 
 # Colorize listings (especially in `tree`)
