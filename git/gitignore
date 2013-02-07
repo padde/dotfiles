@@ -9,3 +9,6 @@
 
 # WIN noise
 Thumbs.db
+
+# powder files
+.powder
