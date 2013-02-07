@@ -52,4 +52,4 @@
   trustExitCode = true
 
 [push]
-  default = simple
+  default = matching
