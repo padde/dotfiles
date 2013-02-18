@@ -2,7 +2,7 @@
 
 ZSH_THEME_GIT_PROMPT_SHA_BEFORE="%{$fg[black]%}|%{$fg[yellow]%}"
 ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$fg[black]%}]%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[black]%}[git:%{$fg[green]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{ $fg[black]%}[git:%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}●"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
@@ -11,7 +11,7 @@ ZSH_THEME_HG_PROMPT_REV_BEFORE="%{$fg[black]%}|%{$fg[yellow]%}"
 ZSH_THEME_HG_PROMPT_REV_AFTER=":"
 ZSH_THEME_HG_PROMPT_SHA_BEFORE=""
 ZSH_THEME_HG_PROMPT_SHA_AFTER="%{$fg[black]%}]%{$reset_color%}"
-ZSH_THEME_HG_PROMPT_PREFIX="%{$fg[black]%}[hg:%{$fg[green]%}"
+ZSH_THEME_HG_PROMPT_PREFIX="%{ $fg[black]%}[hg:%{$fg[green]%}"
 ZSH_THEME_HG_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_HG_PROMPT_DIRTY="%{$fg[red]%}●"
 ZSH_THEME_HG_PROMPT_CLEAN=""
@@ -25,7 +25,7 @@ else
 fi
 
 PROMPT="%{$PROMPT_BG%}%{$fg[black]%}%T %{$NCOLOR%}%n%{$reset_color$fg[black]%}@%{$fg[blue]%}%m%{$fg[black]%}:%{$fg[red]%}%2c%{$fg[black]%}$ %{$reset_color%}"
-RPROMPT=$'$(git_prompt_info)$(git_prompt_short_sha)$(hg_prompt_info)$(hg_prompt_rev)$(hg_prompt_short_sha)${EXIT_CODE}'
+RPROMPT=$'${EXIT_CODE}$(git_prompt_info)$(git_prompt_short_sha)$(hg_prompt_info)$(hg_prompt_rev)$(hg_prompt_short_sha)'
 
 function accept-line-and-enable-warning {
   if [ -z "$BUFFER" ]; then
