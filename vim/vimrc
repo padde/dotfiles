@@ -202,3 +202,6 @@ function! s:CloseIfOnlyGundoLeft()
 endfunction
 
 au WinEnter * call s:CloseIfOnlyGundoLeft()
+
+" check syntax when opening a file
+let g:syntastic_check_on_open=1
