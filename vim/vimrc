@@ -211,3 +211,6 @@ let g:syntastic_error_symbol='●'
 let g:syntastic_warning_symbol='■'
 let g:syntastic_style_error_symbol='○'
 let g:syntastic_style_warning_symbol='□'
+
+hi Error ctermfg=red ctermbg=none guifg=red guibg=#333435
+hi Todo ctermfg=yellow ctermbg=none guifg=orange guibg=#333435
