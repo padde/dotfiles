@@ -94,3 +94,7 @@
 	path = vim/vim/bundle/less
 	url = git://github.com/groenewege/vim-less.git
 	ignore = untracked
+[submodule "vim/vim/bundle/endwise"]
+	path = vim/vim/bundle/endwise
+	url = git://github.com/tpope/vim-endwise.git
+	ignore = untracked
