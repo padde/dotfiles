@@ -16,6 +16,7 @@ set nohidden                   " do not store data about old buffers
 set tabstop=4                  " show tabs as 4 spaces
 
 set expandtab                  " i like soft tabs
+set smarttab
 set shiftwidth=2
 set softtabstop=2
 
