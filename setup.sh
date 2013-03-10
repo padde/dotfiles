@@ -37,4 +37,7 @@ chsh -s `which zsh`
 source ~/.zshrc
 cd
 
+# fix rvm in vim (see https://github.com/tpope/vim-rvm)
+sudo mv -v /etc/zshenv /etc/zshrc
+
 echo "Done."
