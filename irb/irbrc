@@ -41,7 +41,9 @@ def quick_benchmark(repetitions=100, &block)
   require 'benchmark'
 
   Benchmark.bmbm do |b|
-    b.report {repetitions.times &block} 
+    b.report do
+      repetitions.times(&block)
+    end
   end
   nil
 end
