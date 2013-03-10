@@ -121,3 +121,7 @@
 	path = vim/vim/bundle/characterize
 	url = git://github.com/tpope/vim-characterize.git
 	ignore = untracked
+[submodule "vim/vim/bundle/clojure"]
+	path = vim/vim/bundle/clojure
+	url = git://github.com/vim-scripts/VimClojure.git
+	ignore = untracked
