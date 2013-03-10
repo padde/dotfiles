@@ -17,10 +17,14 @@ IRB.conf[:PROMPT][:PADDE] = {
 IRB.conf[:PROMPT_MODE] = :PADDE
 
 # colorize irb
-require 'matisse/autoload'
+begin
+  require 'matisse/autoload'
+rescue LoadError; end
 
 # colorized p command
-require 'awesome_print'
+begin
+  require 'awesome_print'
+rescue LoadError; end
 
 # please only interesting methods!
 class Object
