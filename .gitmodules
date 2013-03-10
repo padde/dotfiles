@@ -98,3 +98,7 @@
 	path = vim/vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
 	ignore = untracked
+[submodule "vim/vim/bundle/rvm"]
+	path = vim/vim/bundle/rvm
+	url = git://github.com/tpope/vim-rvm.git
+	ignore = untracked
