@@ -102,3 +102,10 @@
 	path = vim/vim/bundle/rvm
 	url = git://github.com/tpope/vim-rvm.git
 	ignore = untracked
+[submodule "vim/vim/bundle/sleuth"]
+	path = vim/vim/bundle/sleuth
+	url = git://github.com/tpope/vim-sleuth.git
+	ignore = untracked
+[submodule "vim/vim/bundle/sleuth"]
+	path = vim/vim/bundle/sleuth
+	url = git://github.com/tpope/vim-sleuth.git
