@@ -117,3 +117,7 @@
 	path = vim/vim/bundle/webapi
 	url = git://github.com/mattn/webapi-vim.git
 	ignore = untracked
+[submodule "vim/vim/bundle/characterize"]
+	path = vim/vim/bundle/characterize
+	url = git://github.com/tpope/vim-characterize.git
+	ignore = untracked
