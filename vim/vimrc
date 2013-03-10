@@ -215,3 +215,7 @@ let g:syntastic_style_warning_symbol='□'
 
 hi Error ctermfg=red ctermbg=none guifg=red guibg=#333435
 hi Todo ctermfg=yellow ctermbg=none guifg=orange guibg=#333435
+
+" Gist settings
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1

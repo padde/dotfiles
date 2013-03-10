@@ -2,6 +2,9 @@
   name = Patrick Oscity
   email = patrick.oscity@gmail.com
 
+[github]
+  user = padde
+
 [color]
   branch = auto
   diff = auto
