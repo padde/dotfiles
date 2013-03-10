@@ -106,9 +106,6 @@
 	path = vim/vim/bundle/sleuth
 	url = git://github.com/tpope/vim-sleuth.git
 	ignore = untracked
-[submodule "vim/vim/bundle/sleuth"]
-	path = vim/vim/bundle/sleuth
-	url = git://github.com/tpope/vim-sleuth.git
 [submodule "vim/vim/bundle/gist"]
 	path = vim/vim/bundle/gist
 	url = git://github.com/mattn/gist-vim.git
