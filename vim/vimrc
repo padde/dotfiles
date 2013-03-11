@@ -40,6 +40,7 @@ Bundle 'mattn/gist-vim'
 Bundle 'tpope/vim-sleuth'
 Bundle 'sjl/gundo.vim'
 Bundle 'scrooloose/syntastic'
+Bundle 'majutsushi/tagbar'
 
 " Syntax
 Bundle 'vim-scripts/VimClojure'
