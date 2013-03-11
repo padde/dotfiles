@@ -28,9 +28,43 @@ set mouse=a                    " mouse support
 runtime macros/matchit.vim     " needed for textobj-rubyblock
 
 filetype on                    " fix exit code
-filetype off                   " set filetype off for pathogen
-call pathogen#infect()         " use pathogen
-call pathogen#helptags()
+filetype off                   " set filetype off for vundle
+
+set rtp+=~/.vim/bundle/vundle/ " enable vundle
+call vundle#rc()
+
+" Vundle
+
+Bundle 'gmarik/vundle'
+Bundle 'vim-scripts/closetag.vim'
+Bundle 'Raimondi/delimitMate'
+Bundle 'msanders/snipmate.vim'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-markdown'
+Bundle 'tsaleh/vim-matchit'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-repeat'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'kana/vim-textobj-user'
+Bundle 'scrooloose/nerdtree'
+Bundle 'jpo/vim-railscasts-theme'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'wincent/Command-T'
+Bundle 'sjl/gundo.vim'
+Bundle 'jacquesbh/vim-showmarks'
+Bundle 'godlygeek/tabular'
+Bundle 'groenewege/vim-less'
+Bundle 'tpope/vim-endwise'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-rvm'
+Bundle 'tpope/vim-sleuth'
+Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
+Bundle 'tpope/vim-characterize'
+Bundle 'vim-scripts/VimClojure'
+Bundle 'tpope/vim-surround'
 
 let g:NERDTreeChDirMode=2      " enable running commands in current dir
 

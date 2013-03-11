@@ -31,6 +31,9 @@ ln -vs ~/.dotfiles/zsh/oh-my-zsh/         ~/.oh-my-zsh
 # fonts for vim powerline
 cp -v ~/.dotfiles/fonts/* ~/Library/Fonts/
 
+# vundle
+vim +BundleInstall +qall
+
 # install oh-my-zsh
 chsh -s `which zsh`
 /usr/bin/env zsh
