@@ -1,281 +1,55 @@
-set nocompatible               " we're running Vim, not Vi!
+set nocompatible
 
-set number                     " show line numbers
+filetype on
+filetype off
 
-set nowrap                     " do not wrap lines
-
-set visualbell                 " no beeps please!
-
-set laststatus=2               " always show the statusline
-
-set encoding=utf-8             " utf-8 ftw!
-set fileencoding=utf-8
-
-set nohidden                   " do not store data about old buffers
-
-set tabstop=4                  " show tabs as 4 spaces
-
-set expandtab                  " i like soft tabs
-set smarttab
-set shiftwidth=2
-set softtabstop=2
-
-set wildmenu                   " complete all the commands!
-set wildmode=list:longest,full
-
-set mouse=a                    " mouse support
-
-runtime macros/matchit.vim     " needed for textobj-rubyblock
-
-filetype on                    " fix exit code
-filetype off                   " set filetype off for vundle
-
-set rtp+=~/.vim/bundle/vundle/ " enable vundle
+set runtimepath+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" Vundle
+" Dependencies
+Bundle 'tpope/vim-repeat'
+Bundle 'kana/vim-textobj-user'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'tsaleh/vim-matchit'
+Bundle 'mattn/webapi-vim'
 
-Bundle 'gmarik/vundle'
-Bundle 'vim-scripts/closetag.vim'
-Bundle 'Raimondi/delimitMate'
-Bundle 'msanders/snipmate.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tpope/vim-commentary'
+" Ruby/Rails
+Bundle 'tpope/vim-rvm'
+Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
-Bundle 'tsaleh/vim-matchit'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-repeat'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'kana/vim-textobj-user'
-Bundle 'scrooloose/nerdtree'
-Bundle 'jpo/vim-railscasts-theme'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'wincent/Command-T'
-Bundle 'sjl/gundo.vim'
-Bundle 'jacquesbh/vim-showmarks'
-Bundle 'godlygeek/tabular'
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'groenewege/vim-less'
+
+" File management
+Bundle 'scrooloose/nerdtree'
+Bundle 'wincent/Command-T'
+
+" Smart input
+Bundle 'Raimondi/delimitMate'
+Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-endwise'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-rvm'
-Bundle 'tpope/vim-sleuth'
-Bundle 'mattn/gist-vim'
-Bundle 'mattn/webapi-vim'
-Bundle 'tpope/vim-characterize'
-Bundle 'vim-scripts/VimClojure'
+Bundle 'vim-scripts/closetag.vim'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-commentary'
 
-let g:NERDTreeChDirMode=2      " enable running commands in current dir
+" Little helpers
+Bundle 'godlygeek/tabular'
+Bundle 'tpope/vim-characterize'
+Bundle 'mattn/gist-vim'
+Bundle 'tpope/vim-sleuth'
+Bundle 'sjl/gundo.vim'
+Bundle 'scrooloose/syntastic'
 
-syntax on                      " enable syntax highlighting
-filetype on                    " enable filetype detection
-filetype indent on             " enable filetype-specific indenting
-filetype plugin on             " enable filetype-specific plugins
+" Syntax
+Bundle 'vim-scripts/VimClojure'
 
-set guifont=Menlo\ Regular:h12 " prettier font for MacVim
+" Fancyness
+Bundle 'jacquesbh/vim-showmarks'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'jpo/vim-railscasts-theme'
 
-if has("gui_running")          " use railscasts theme in MacVim
-  colorscheme railscasts
-endif
+filetype plugin indent on
 
-if !has("gui_running")         " better visual mode highlight in terminal
-  hi Visual term=reverse cterm=reverse ctermfg=23 ctermbg=7
-endif
-
-let mapleader = ","            " nobody likes \ as leader!
-
-if has('mac')                  " share clipboard on osx
-  set clipboard+=unnamed
-endif
-
-if has("gui_running")          " hide menu bar in MacVim
-  set guioptions=egmrt
-endif
-
-" aliases
-command Wsudo :w !sudo tee %
-command WQ wq
-command Wq wq
-command W w
-command Q q
-
-" diff with last saved version
-function! s:DiffWithSaved()
-  let filetype=&ft
-  diffthis
-  vnew | r # | normal! 1Gdd
-  diffthis
-  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
-endfunction
-com! DiffSaved call s:DiffWithSaved()
-
-" nerd tree shortcuts in gui
-if has("gui_running") && has("mac")
-  nnoremap <D-d>      :NERDTreeToggle<CR><C-w>p
-  inoremap <D-d> <Esc>:NERDTreeToggle<CR><C-w>pa
-  vnoremap <D-d> <Esc>:NERDTreeToggle<CR><C-w>pgv
-endif
-
-" gundo shortcuts in gui
-if has("gui_running") && has("mac")
-  nnoremap <D-u>      :GundoToggle<CR>
-  inoremap <D-u> <Esc>:GundoToggle<CR>
-  vnoremap <D-u> <Esc>:GundoToggle<CR>
-endif
-
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-
-" close all open buffers on entering a window if the only
-" buffer that's left is the NERDTree buffer
-function! s:CloseIfOnlyNerdTreeLeft()
-  if exists("t:NERDTreeBufName")
-    if bufwinnr(t:NERDTreeBufName) != -1
-      if winnr("$") == 1
-        q
-      endif
-    endif
-  endif
-endfunction
-
-" show invisibles as in Text Mate (with improvements)
-set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<
-set list
-
-" powerline
-let g:Powerline_symbols = 'fancy'
-
-" enable going to previous/next line with left/right arrow keys
-set whichwrap+=<,>,[,]
-
-" hightlight current line in gui
-if has("gui_running")
-  set cursorline
-endif
-
-" better search highlighting
-hi Search cterm=NONE ctermbg=yellow ctermfg=darkred
-hi Search guibg=#eac43c guifg=#b5382d
-set hlsearch
-
-" do not append newlines to files
-" au BufWritePre * :set binary | set noeol
-" au BufWritePost * :set nobinary | set eol
-
-" clear search string
-command ClearSearch :let @/ = ""
-command CS :ClearSearch
-
-" remove trailing whitespace including non-breaking spaces
-function! RemoveTrailingWhitespace()
-  %s/\(\s\| \)\+$//e
-  ClearSearch
-endfunction
-command RemoveTrailingWhitespace :call RemoveTrailingWhitespace()
-command RT :RemoveTrailingWhitespace
-
-" persist folds
-au BufWinLeave * silent! mkview
-au BufWinEnter * silent! loadview
-
-" fold colors in terminal
-hi Folded ctermfg=248 ctermbg=0
-
-" show foldcolumn
-set foldcolumn=1
-
-" fold column colors
-hi FoldColumn ctermfg=red ctermbg=none guifg=red guibg=#333435
-
-" Sign column colors
-hi SignColumn ctermfg=red ctermbg=none guifg=red guibg=#333435
-
-" Show marks on the left
-set updatetime=500
-autocmd BufEnter * DoShowMarks
-
-" Colors for showmarks plugin
-hi hlShowMarks ctermfg=lightgrey ctermbg=none guifg=#bbbbbb guibg=#333435
-
-" Dark line number colors in terminal
-hi LineNr ctermfg=0
-
-" persist undo history
-set undodir=~/.vim/undo
-set undofile
-set undolevels=1000
-set undoreload=10000
-
-" Automatically reload changes if detected
-set autoread
-
-" resize shortcuts
-nnoremap <D-up>      :resize          -5<cr>
-nnoremap <D-down>    :resize          +5<cr>
-nnoremap <D-left>    :vertical resize -5<cr>
-nnoremap <D-right>   :vertical resize +5<cr>
-nnoremap <D-S-up>    :resize          -1<cr>
-nnoremap <D-S-down>  :resize          +1<cr>
-nnoremap <D-S-left>  :vertical resize -1<cr>
-nnoremap <D-S-right> :vertical resize +1<cr>
-
-" visually select matches
-noremap <C-n> <ESC>//<CR>v//e<CR>
-noremap <C-m> <ESC>NN//<CR>v//e<CR>
-
-" close all open buffers on entering a window if the only
-" buffers that are left are Gundo buffers
-function! s:CloseIfOnlyGundoLeft()
-  let gundoOpen    = ( bufwinnr('__Gundo__')         != -1 )
-  let gundoPreOpen = ( bufwinnr('__Gundo_Preview__') != -1 )
-
-  " If only Gundo windows are left
-  if winnr('$') == (gundoOpen + gundoPreOpen)
-    :GundoHide
-    quit
-  endif
-endfunction
-
-au WinEnter * call s:CloseIfOnlyGundoLeft()
-
-" check syntax when opening a file
-let g:syntastic_check_on_open=1
-
-" syntastic symbols
-let g:syntastic_error_symbol='●'
-let g:syntastic_warning_symbol='■'
-let g:syntastic_style_error_symbol='○'
-let g:syntastic_style_warning_symbol='□'
-
-hi Error ctermfg=red ctermbg=none guifg=red guibg=#333435
-hi Todo ctermfg=yellow ctermbg=none guifg=orange guibg=#333435
-
-" Gist settings
-let g:gist_detect_filetype = 1
-let g:gist_open_browser_after_post = 1
-
-" open up dotfiles dir in new tab
-command Dotfiles :tabnew | :cd ~/.dotfiles | :NERDTree
-command Dot :Dotfiles
-
-" filetype shortcuts
-command Apex :set ft=apex
-command Xml  :set ft=xml
-command Ruby :set ft=ruby
-
-" disable arrow keys
-map  <up>    <nop>
-map  <down>  <nop>
-map  <left>  <nop>
-map  <right> <nop>
-imap <up>    <nop>
-imap <down>  <nop>
-imap <left>  <nop>
-imap <right> <nop>
-
-" use delimitmate cr and space expansion
-let delimitMate_expand_cr=1
-let delimitMate_expand_space=1
-
-" use gp to highlight last pasted text
-nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+runtime! init/**.vim
+runtime! init/fancyness.vim
