@@ -44,6 +44,7 @@ Bundle 'tpope/vim-sleuth'
 Bundle 'sjl/gundo.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
+Bundle 'michaeljsmith/vim-indent-object'
 
 " Syntax
 Bundle 'vim-scripts/VimClojure'
