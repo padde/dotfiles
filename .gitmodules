@@ -122,3 +122,7 @@
 	path = vim/vim/bundle/clojure
 	url = git://github.com/vim-scripts/VimClojure.git
 	ignore = untracked
+[submodule "vim/vim/bundle/surround"]
+	path = vim/vim/bundle/surround
+	url = git://github.com/tpope/vim-surround.git
+	ignore = untracked
