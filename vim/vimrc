@@ -37,6 +37,10 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-commentary'
 Bundle 'scrooloose/nerdcommenter'
 
+" Version control
+Bundle 'vim-scripts/hgrev'
+Bundle 'tpope/vim-fugitive'
+
 " Little helpers
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-characterize'
