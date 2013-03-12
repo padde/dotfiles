@@ -4,3 +4,4 @@
 !.gitignore
 # and vundle
 !vundle/
+.netrwhist
