@@ -45,6 +45,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'michaeljsmith/vim-indent-object'
+Bundle 'thinca/vim-quickrun'
 
 " Syntax
 Bundle 'vim-scripts/VimClojure'
