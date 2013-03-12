@@ -35,6 +35,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'vim-scripts/closetag.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-commentary'
+Bundle 'scrooloose/nerdcommenter'
 
 " Little helpers
 Bundle 'godlygeek/tabular'
