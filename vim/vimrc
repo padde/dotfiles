@@ -51,6 +51,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'thinca/vim-quickrun'
+Bundle 'Lokaltog/vim-easymotion'
 
 " Syntax
 Bundle 'vim-scripts/VimClojure'
