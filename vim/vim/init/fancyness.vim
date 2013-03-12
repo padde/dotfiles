@@ -2,12 +2,12 @@
 set guifont=Menlo\ Regular:h12
 
 " Color scheme
-if has('gui_running')
+" if has('gui_running')
   colorscheme railscasts
-endif
+" endif
 
 " Show invisibles as in Text Mate (with improvements)
-set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<
+set listchars=tab:│\ ,eol:¬,trail:·,extends:>,precedes:<
 set list
 
 " Hightlight current line in gui
@@ -43,3 +43,9 @@ hi Visual term=reverse cterm=reverse ctermfg=23 ctermbg=7
 
 " Line numbers
 hi LineNr ctermfg=0
+
+" Invisibles
+hi NonText    term=bold ctermfg=0 guifg=#333333
+hi SpecialKey term=bold ctermfg=0 guifg=#333333
+let g:indentLine_color_term=0
+let g:indentLine_color_gui='#333333'
