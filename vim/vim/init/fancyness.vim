@@ -45,7 +45,7 @@ hi Visual term=reverse cterm=reverse ctermfg=23 ctermbg=7
 hi LineNr ctermfg=0
 
 " Invisibles
-hi NonText    term=bold ctermfg=0 guifg=#333333
-hi SpecialKey term=bold ctermfg=0 guifg=#333333
+hi NonText    term=bold ctermfg=0 guifg=#666666
+hi SpecialKey term=bold ctermfg=0 guifg=#666666
 let g:indentLine_color_term=0
-let g:indentLine_color_gui='#333333'
+let g:indentLine_color_gui='#666666'
