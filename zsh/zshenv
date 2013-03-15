@@ -1,11 +1,6 @@
 # /usr/local/bin should be in front of /usr/bin for homebrew
 export PATH=/usr/local/bin:$PATH
 
-# Use rbenv
-if which rbenv > /dev/null; then
-  eval "$(rbenv init -)";
-fi
-
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin 
 
