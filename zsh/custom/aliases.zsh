@@ -57,3 +57,4 @@ alias pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.lo
 
 
 alias a=ant
+alias cdc='cd ~/Code/'
