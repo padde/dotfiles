@@ -54,3 +54,7 @@ alias todo='grep -rnE "^.*(([tT][oO][dD][oO])|([fF][iI][xX][mM][eE])|([xX]{3})).
 
 # shortcut for Postgres' pg_ctl
 alias pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log'
+
+
+alias a=ant
+alias cdc='cd ~/Code/'
