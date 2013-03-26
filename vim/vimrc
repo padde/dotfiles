@@ -20,6 +20,7 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'groenewege/vim-less'
+Bundle 'ecomba/vim-ruby-refactoring'
 
 " File management
 Bundle 'scrooloose/nerdtree'
