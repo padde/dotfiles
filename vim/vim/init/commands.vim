@@ -20,11 +20,14 @@ command CS :ClearSearch
 
 " Remove trailing whitespace including non-breaking spaces
 function! RemoveTrailingWhitespace()
-  %s/\(\s\| \)\+$//e
-  ClearSearch
+  for lineno in range(a:firstline, a:lastline)
+    let line = getline(lineno)
+    let cleanLine = substitute(line, '\(\s\| \)\+$', '', 'e')
+    call setline(lineno, cleanLine)
+  endfor
 endfunction
-command RemoveTrailingWhitespace :call RemoveTrailingWhitespace()
-command RT :RemoveTrailingWhitespace
+command -range RemoveTrailingWhitespace <line1>,<line2>call RemoveTrailingWhitespace()
+command -range RT                       <line1>,<line2>call RemoveTrailingWhitespace()
 
 " Diff with last saved version
 function! s:DiffWithSaved()
