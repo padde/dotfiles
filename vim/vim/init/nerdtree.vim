@@ -8,6 +8,8 @@ if has('gui_running')
   vnoremap <D-d> <Esc>:NERDTreeToggle<CR><C-w>pgv
 endif
 
+nmap <Leader>d :NERDTreeToggle<CR>
+
 " Close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer
 function! s:CloseIfOnlyNerdTreeLeft()
