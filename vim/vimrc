@@ -63,5 +63,6 @@ Bundle 'Yggdroot/indentLine'
 
 filetype plugin indent on
 
+runtime! init/settings.vim
 runtime! init/**.vim
 runtime! init/fancyness.vim
