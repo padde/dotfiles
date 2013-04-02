@@ -5,6 +5,8 @@ if has('gui_running')
   vnoremap <D-u> <Esc>:GundoToggle<CR>
 endif
 
+nmap <Leader>u :GundoToggle<CR>
+
 " Close all open buffers on entering a window if the only
 " buffers that are left are Gundo buffers
 function! s:CloseIfOnlyGundoLeft()
