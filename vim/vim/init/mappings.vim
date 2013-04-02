@@ -13,3 +13,7 @@ imap <right> <nop>
 
 " enable going to previous/next line with left/right arrow keys
 " set whichwrap+=<,>,[,]
+
+" add four lines below current line, positioning cursor on second of these
+" lines
+nmap <Leader>o o<CR><ESC>O<ESC>O<ESC>i
