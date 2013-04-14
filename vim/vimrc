@@ -54,6 +54,7 @@ Bundle 'chrisbra/NrrwRgn'
 
 " Syntax
 Bundle 'vim-scripts/VimClojure'
+Bundle 'othree/html5.vim'
 
 " Fancyness
 Bundle 'jacquesbh/vim-showmarks'
