@@ -27,7 +27,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'wincent/Command-T'
 
 " Smart input
-Bundle 'Raimondi/delimitMate'
+Bundle 'vim-scripts/Auto-Pairs'
 Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'vim-scripts/closetag.vim'
