@@ -58,7 +58,7 @@ Bundle 'chrisbra/NrrwRgn'
 " Syntax
 Bundle 'vim-scripts/VimClojure'
 Bundle 'othree/html5.vim'
-
+Bundle 'neowit/vim-force.com'
 " Fancyness
 Bundle 'jacquesbh/vim-showmarks'
 Bundle 'Lokaltog/vim-powerline'
