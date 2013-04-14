@@ -6,6 +6,9 @@ filetype off
 set runtimepath+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" Vundle the Vundle
+Bundle 'vundle'
+
 " Dependencies
 Bundle 'tpope/vim-repeat'
 Bundle 'kana/vim-textobj-user'
