@@ -58,3 +58,5 @@ alias pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.lo
 
 alias a=ant
 alias cdc='cd ~/Code/'
+
+alias bitbucket='open `cat .hg/hgrc | grep "default = " | sed "s/default \= .*@/http:\/\//"`'
