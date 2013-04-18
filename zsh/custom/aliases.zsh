@@ -59,4 +59,19 @@ alias pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.lo
 alias a=ant
 alias cdc='cd ~/Code/'
 
-alias bitbucket='open `cat .hg/hgrc | grep "default = " | sed "s/default \= .*@/http:\/\//"`'
+# bitbucket stuff
+alias hg-remote-url='cat .hg/hgrc | grep "default = " | sed "s/default \= .*@/https:\/\//"'
+
+alias bitbucket='open "`hg-remote-url`"'
+alias bb='bitbucket'
+
+alias bitbucket-source='open "`hg-remote-url`/src"'
+alias bitbucket-src='bitbucket-source'
+alias bbs='bitbucket-source'
+
+alias bitbucket-commits='open "`hg-remote-url`/commits"'
+alias bitbucket-com='bitbucket-commits'
+alias bbc='bitbucket-commits'
+
+bitbucket-blame(){ open "`hg-remote-url`/annotate/`hg log -l1 --template '{node}'`/$1" }
+alias bbb='bitbucket-blame'
