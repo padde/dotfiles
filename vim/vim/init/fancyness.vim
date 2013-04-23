@@ -7,7 +7,7 @@ set guifont=Menlo\ Regular:h12
 " endif
 
 " Show invisibles as in Text Mate (with improvements)
-set listchars=tab:│\ ,eol:¬,trail:·,extends:>,precedes:<
+set listchars=eol:¬,trail:·,extends:>,precedes:<
 set list
 
 " Hightlight current line in gui
