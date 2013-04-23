@@ -19,7 +19,7 @@ command ClearSearch :let @/ = ""
 command CS :ClearSearch
 
 " Remove trailing whitespace including non-breaking spaces
-command -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$//
+command -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$// | norm! ``
 command -range=% RT                       <line1>,<line2>RemoveTrailingWhitespace
 nnoremap <Leader>rt :RemoveTrailingWhitespace<CR>
 vnoremap <Leader>rt :RemoveTrailingWhitespace<CR>
