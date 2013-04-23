@@ -54,6 +54,7 @@ Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'thinca/vim-quickrun'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'chrisbra/NrrwRgn'
+Bundle 'vim-scripts/mru.vim'
 
 " Syntax
 Bundle 'vim-scripts/VimClojure'
