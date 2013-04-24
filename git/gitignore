@@ -1,7 +1,13 @@
+syntax: glob
+
 # generic
 *~
 *.lock
 *.sw?
+
+# VIM noise
+*.swp
+*.swo
 
 # OSX noise
 .DS_Store
