@@ -19,3 +19,7 @@ cmd.opendiff = opendiff
 
 [alias]
 giveup = !$HG revert --all --no-backup; $HG purge
+recent = glog -l5
+rct = recent
+brecent = glog -l5 -b.
+brct = brecent
