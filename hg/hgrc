@@ -1,5 +1,6 @@
 [ui]
 username = Patrick Oscity <p.oscity@oncommerce.de>
+ignore = ~/.hgignore
 
 [extensions]
 color =

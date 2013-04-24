@@ -1,0 +1,20 @@
+syntax: glob
+
+# generic
+*~
+*.lock
+*.sw?
+
+# VIM noise
+*.swp
+*.swo
+
+# OSX noise
+.DS_Store
+.localized
+
+# WIN noise
+Thumbs.db
+
+# powder files
+.powder
