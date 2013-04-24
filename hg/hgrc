@@ -16,3 +16,6 @@ record =
 
 [extdiff]
 cmd.opendiff = opendiff
+
+[alias]
+giveup = !$HG revert --all --no-backup; $HG purge
