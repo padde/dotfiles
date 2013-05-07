@@ -76,6 +76,7 @@ alias bbc='bitbucket-commits'
 bitbucket-blame(){ open "`hg-remote-url`/annotate/`hg log -l1 --template '{node}'`/$1" }
 alias bbb='bitbucket-blame'
 
+alias tx='tmux'
 alias txn='tmux new -s'
 alias txa='tmux attach -t'
 alias txs='tmux switch -t'
