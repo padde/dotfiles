@@ -29,3 +29,18 @@ set hlsearch                   " Search highlighting
 set incsearch                  " Highlight as you type
 
 set foldcolumn=1               " Show foldcolumn
+
+" Share clipboard
+if has('mac')
+  set clipboard+=unnamed
+endif
+
+" persist undo history
+set undodir=~/.vim/undo
+set undofile
+set undolevels=1000
+set undoreload=10000
+
+" persist folds
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview

@@ -11,9 +11,7 @@ set listchars=tab:\ \ ,eol:¬,trail:·,extends:>,precedes:<
 set list
 
 " Hightlight current line in gui
-if has('gui_running')
-  set cursorline
-endif
+set cursorline
 
 " Hide menu bar in MacVim
 if has('gui_running')
@@ -25,24 +23,18 @@ hi Search cterm=NONE ctermbg=yellow ctermfg=darkred
 hi Search guibg=#eac43c guifg=#b5382d
 
 " Folds
-hi Folded ctermfg=248 ctermbg=0
-hi FoldColumn ctermfg=red ctermbg=none guifg=red guibg=#333435
+" hi Folded ctermfg=248 ctermbg=0
+hi FoldColumn ctermfg=red ctermbg=none guifg=red guibg=NONE
 
 " Signs
-hi SignColumn ctermfg=red ctermbg=none guifg=red guibg=#333435
+hi SignColumn ctermfg=red ctermbg=none guifg=red guibg=NONE
 
 " Marks
-hi hlShowMarks ctermfg=lightgrey ctermbg=none guifg=#bbbbbb guibg=#333435
+hi hlShowMarks ctermfg=lightgrey ctermbg=none guifg=#bbbbbb guibg=NONE
 
 " Error, Todo, Syntastic symbols
-hi Error ctermfg=red ctermbg=none guifg=red guibg=#333435
-hi Todo ctermfg=yellow ctermbg=none guifg=orange guibg=#333435
-
-" Visual selection
-hi Visual term=reverse cterm=reverse ctermfg=23 ctermbg=7
-
-" Line numbers
-hi LineNr ctermfg=0
+hi Error ctermfg=red ctermbg=none guifg=red guibg=NONE
+hi Todo ctermfg=yellow ctermbg=none guifg=orange guibg=NONE
 
 " Invisibles
 hi NonText    term=bold ctermfg=0 guifg=#666666
