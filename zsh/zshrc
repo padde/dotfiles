@@ -85,4 +85,4 @@ if [ -d "$NODE_MODULES_DIR" ]; then
 fi
 
 # enable autojump
-[[ -s `brew --prefix`/etc/autojump.sh  ]] && . `brew --prefix`/etc/autojump.sh
+[[ -s `brew --prefix`/etc/autojump.zsh   ]] && . `brew --prefix`/etc/autojump.zsh
