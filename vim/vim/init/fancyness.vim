@@ -2,9 +2,7 @@
 set guifont=Menlo\ Regular:h12
 
 " Color scheme
-" if has('gui_running')
-  colorscheme railscasts
-" endif
+colorscheme railscasts
 
 " Show invisibles as in Text Mate (with improvements)
 set listchars=tab:\ \ ,eol:¬,trail:·,extends:>,precedes:<

@@ -67,7 +67,7 @@ Bundle 'neowit/vim-force.com'
 " Fancyness
 Bundle 'jacquesbh/vim-showmarks'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'jpo/vim-railscasts-theme'
+Bundle 'dhruvasagar/vim-railscasts-theme'
 
 filetype plugin indent on
 
