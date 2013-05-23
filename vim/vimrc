@@ -57,6 +57,7 @@ Bundle 'thinca/vim-quickrun'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'vim-scripts/mru.vim'
+Bundle 'tpope/vim-abolish'
 
 " Syntax
 Bundle 'vim-scripts/VimClojure'
