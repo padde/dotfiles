@@ -24,3 +24,4 @@ recent = glog -l5
 rct = recent
 brecent = glog -l5 -b.
 brct = brecent
+hash = parents --template="{node|short}"
