@@ -23,6 +23,7 @@ ln -vs ~/.dotfiles/latexmk/latexmkrc      ~/.latexmkrc
 ln -vs ~/.dotfiles/tmux/tmux.conf         ~/.tmux.conf
 ln -vs ~/.dotfiles/tmux/tmux-powerlinerc  ~/.tmux-powerlinerc
 ln -vs ~/.dotfiles/vim/vimrc              ~/.vimrc
+ln -vs ~/.dotfiles/vim/vimpagerrc         ~/.vimpagerrc
 ln -vs ~/.dotfiles/vim/vim/               ~/.vim
 ln -vs ~/.dotfiles/zsh/zsh/               ~/.zsh
 ln -vs ~/.dotfiles/zsh/zshrc              ~/.zshrc

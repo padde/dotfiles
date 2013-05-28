@@ -31,7 +31,9 @@ bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward 
 
 # Use most as pager, if available
-if which most > /dev/null; then
+if which vimpager > /dev/null; then
+  export PAGER=vimpager
+elif which most > /dev/null; then
   export PAGER=most
 fi
 
