@@ -58,6 +58,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'vim-scripts/mru.vim'
 Bundle 'tpope/vim-abolish'
+Bundle 'mileszs/ack.vim'
 
 " Syntax
 Bundle 'vim-scripts/VimClojure'
