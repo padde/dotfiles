@@ -59,6 +59,7 @@ Bundle 'chrisbra/NrrwRgn'
 Bundle 'vim-scripts/mru.vim'
 Bundle 'tpope/vim-abolish'
 Bundle 'mileszs/ack.vim'
+Bundle 'hexman.vim'
 
 " Syntax
 Bundle 'vim-scripts/VimClojure'
