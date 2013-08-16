@@ -17,3 +17,10 @@ imap <right> <nop>
 " add four lines below current line, positioning cursor on second of these
 " lines
 nmap <Leader>o o<CR><ESC>O<ESC>O<ESC>i
+
+" add 'very magic' modifier to regexes
+nnoremap / /\v
+cnoremap s/ s/\v
+cnoremap g/ g/\v
+cnoremap g!/ g!/\v
+cnoremap v/ v/\v
