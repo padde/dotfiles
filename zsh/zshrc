@@ -93,3 +93,6 @@ fi
 
 # enable autojump
 [[ -s `brew --prefix`/etc/autojump.zsh   ]] && . `brew --prefix`/etc/autojump.zsh
+
+# added by travis gem
+source /Users/padde/.travis/travis.sh

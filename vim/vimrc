@@ -43,6 +43,7 @@ Bundle 'scrooloose/nerdcommenter'
 " Version control
 Bundle 'vim-scripts/hgrev'
 Bundle 'tpope/vim-fugitive'
+Bundle 'phleet/vim-mercenary'
 
 " Little helpers
 Bundle 'godlygeek/tabular'

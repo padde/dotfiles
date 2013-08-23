@@ -60,7 +60,7 @@ alias a=ant
 alias cdc='cd ~/Code/'
 
 # bitbucket stuff
-alias hg-remote-url='cat .hg/hgrc | grep "default = " | sed "s/default \= .*@/https:\/\//"'
+alias hg-remote-url='cat .hg/hgrc hgrc.default | grep "^default = .*ssh://" | sed "s/default \= .*@/https:\/\//" | tail -n1'
 
 alias bitbucket='open "`hg-remote-url`"'
 alias bb='bitbucket'
