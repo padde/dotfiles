@@ -2,11 +2,6 @@
 command Dotfiles :cd ~/.dotfiles | :NERDTree
 command Dot :Dotfiles
 
-" Filetype shortcuts
-command Apex :set ft=apex
-command Xml  :set ft=xml
-command Ruby :set ft=ruby
-
 " Write and quit
 command Wsudo :w !sudo tee %
 command WQ wq
