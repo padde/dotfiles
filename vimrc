@@ -57,7 +57,6 @@ Bundle 'groenewege/vim-less'
 
 " Fancyness
 Bundle 'jacquesbh/vim-showmarks'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'dhruvasagar/vim-railscasts-theme'
 
 filetype plugin indent on
