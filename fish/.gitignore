@@ -1,0 +1,3 @@
+# Ignore fish generated files
+fish_history
+fishd*

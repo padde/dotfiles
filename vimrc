@@ -3,6 +3,11 @@ set nocompatible
 filetype on
 filetype off
 
+" Teach Vim to fish
+if &shell =~# 'fish$'
+  set shell=sh
+endif
+
 set runtimepath+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -54,6 +59,7 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'groenewege/vim-less'
+Bundle 'dag/vim-fish'
 
 " Fancyness
 Bundle 'jacquesbh/vim-showmarks'

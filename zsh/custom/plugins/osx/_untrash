@@ -1,8 +1,0 @@
-#compdef untrash
-#autoload
-
-function files_in_trash() {
-  ls ~/.Trash | sed -E 's/^(.*)$/"\1"/'
-}
-
-_arguments "*:Files in Trash:($(files_in_trash))"

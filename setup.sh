@@ -11,6 +11,13 @@ cd ..
 rm -rf dotfiles
 cd ~/.dotfiles
 
+# eat fish!
+echo `which fish` | sudo tee -a /etc/shells
+chsh -s `which fish`
+/usr/bin/env fish
+mkdir -p ~/.config
+cd
+
 # create symlinks
 ln -vs ~/.dotfiles/gemrc          ~/.gemrc
 ln -vs ~/.dotfiles/gitconfig      ~/.gitconfig
@@ -23,29 +30,13 @@ ln -vs ~/.dotfiles/tmux.conf      ~/.tmux.conf
 ln -vs ~/.dotfiles/vimrc          ~/.vimrc
 ln -vs ~/.dotfiles/vimpagerrc     ~/.vimpagerrc
 ln -vs ~/.dotfiles/vim/           ~/.vim
-ln -vs ~/.dotfiles/zsh/zsh/       ~/.zsh
-ln -vs ~/.dotfiles/zsh/zshrc      ~/.zshrc
-ln -vs ~/.dotfiles/zsh/zshenv     ~/.zshenv
-ln -vs ~/.dotfiles/zsh/oh-my-zsh/ ~/.oh-my-zsh
+ln -vs ~/.dotfiles/fishrc         ~/.fishrc
+ln -vs ~/.dotfiles/fish           ~/.config/fish
 
 # fonts for vim powerline
 cp -v ~/.dotfiles/fonts/* ~/Library/Fonts/
 
 # vundle
 vim +BundleInstall +qall
-
-# install oh-my-zsh
-chsh -s `which zsh`
-/usr/bin/env zsh
-source ~/.zshrc
-cd
-
-# fix rvm in vim (see https://github.com/tpope/vim-rvm)
-sudo mv -v /etc/zshenv /etc/zshrc
-
-# Powerline
-brew update
-brew install python
-pip install --user git+git://github.com/Lokaltog/powerline
 
 echo "Done."
