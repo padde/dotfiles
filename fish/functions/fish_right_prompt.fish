@@ -1,3 +1,46 @@
+function __fast_find_git_root
+  git rev-parse --show-toplevel > /dev/null 2>&1
+end
+
+function __fast_git_dirty
+  test (count (git status --porcelain)) != 0
+end
+
+function __fast_git_branch
+  git rev-parse --abbrev-ref HEAD
+end
+
+function __fast_git_shorthash
+  git log -1 --format="%h"
+end
+
+
+
+function __fast_find_hg_root
+  set -l dir (pwd)
+  while test $dir != "/"
+    if test -d $dir'/.hg'
+      set -g HG_ROOT $dir"/.hg"
+      return 0
+    end
+    set -l dir (dirname $dir)
+  end
+end
+
+function __fast_hg_dirty
+  test (count (hg status --cwd $HG_ROOT)) != 0
+end
+
+function __fast_hg_branch
+  cat "$HG_ROOT/branch"
+end
+
+function __fast_hg_shorthash
+  hexdump -n 4 -e '1/1 "%02x"' "$HG_ROOT/dirstate" | cut -c-7
+end
+
+
+
 function fish_right_prompt
   set last_status $status
 
@@ -8,11 +51,11 @@ function fish_right_prompt
     printf "⚡$last_status "
   end
 
-  if git branch > /dev/null 2>&1
+  if __fast_find_git_root
     set_color black
     printf '['
 
-    if test (count (git status --porcelain)) != 0
+    if __fast_git_dirty
       set_color red
       printf '●'
     end
@@ -21,23 +64,24 @@ function fish_right_prompt
     printf 'git:'
 
     set_color green
-    printf '%s' (git rev-parse --abbrev-ref HEAD)
+    printf '%s' (__fast_git_branch)
 
     set_color black
     printf '@'
 
     set_color yellow
-    printf '%s' (git log -1 --format="%h")
+    printf '%s' (__fast_git_shorthash)
 
     set_color black
     printf ']'
   end
 
-  if hg root > /dev/null 2>&1
+
+  if __fast_find_hg_root
     set_color black
     printf '['
 
-    if test (count (hg status)) != 0
+    if __fast_hg_dirty
       set_color red
       printf '●'
     end
@@ -46,13 +90,13 @@ function fish_right_prompt
     printf 'hg:'
 
     set_color green
-    printf '%s' (hg branch)
+    printf '%s' (__fast_hg_branch)
 
     set_color black
     printf '@'
 
     set_color yellow
-    printf '%s' (hg parents --template="{node}" | cut -c-7)
+    printf '%s' (__fast_hg_shorthash)
 
     set_color black
     printf ']'
