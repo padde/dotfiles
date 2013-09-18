@@ -39,6 +39,7 @@ else if type 'most' > /dev/null
   set -x PAGER most
 end
 
+# RVM
 rvm > /dev/null
 
 # Colorize listings (especially in `tree`)
