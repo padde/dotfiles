@@ -1,3 +1,22 @@
+function find_index -d "Find index of first occurence in array variable"
+  set i 0
+  for x in $$argv[1]
+    set i (expr $i + 1)
+    if test $x = $argv[2]
+      echo $i; return 0
+    end
+  end
+  return 1
+end
+
+function remove -d "Remove element from array variable"
+  set -e $argv[1][(find_index $argv[1] $argv[2])]
+end
+
+# Move /usr/local/bin to the front of $PATH
+remove PATH "/usr/local/bin"
+set -x PATH "/usr/local/bin" $PATH
+
 # Use macvim binary (has clipboard support)
 if test -d /Applications/MacVim.app
   function vim
