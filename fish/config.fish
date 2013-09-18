@@ -54,4 +54,6 @@ set -x LS_COLORS "*Makefile=35:*.mk=35:*Rakefile=35:" $LS_COLORS
 # Highlight grep results with bold red
 set -x GREP_COLOR "1;31"
 
-
+# Autojump script
+# eventually replace with call to script inside Homebrew package
+. ~/.config/fish/functions/autojump.fish
