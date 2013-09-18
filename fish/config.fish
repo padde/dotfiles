@@ -1,3 +1,19 @@
+# Use macvim binary (has clipboard support)
+if test -d /Applications/MacVim.app
+  function vim
+    /Applications/MacVim.app/Contents/MacOS/Vim $argv
+  end
+else if test -d ~/Applications/MacVim.app
+  function vim
+    ~/Applications/MacVim.app/Contents/MacOS/Vim $argv
+  end
+end
+
+# Use Vim!
+if which vim > /dev/null
+  set -x EDITOR vim
+end
+
 if type 'vimpager' > /dev/null
   set -x PAGER vimpager
 else if type 'most' > /dev/null
