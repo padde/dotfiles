@@ -9,7 +9,7 @@ function fish_prompt
   printf '@'
 
   set_color blue
-  printf '%s' $__fish_prompt_hostname
+  printf '%s' (hostname|cut -d . -f 1)
 
   set_color black
   printf ':'
