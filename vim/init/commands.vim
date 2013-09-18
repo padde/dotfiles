@@ -9,10 +9,6 @@ command Wq wq
 command W w
 command Q q
 
-" Clear search string
-command ClearSearch :let @/ = ""
-command CS :ClearSearch
-
 " Remove trailing whitespace including non-breaking spaces
 command -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$// | norm! ``
 command -range=% RT                       <line1>,<line2>RemoveTrailingWhitespace
