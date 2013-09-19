@@ -31,6 +31,8 @@ ln -vs ~/.dotfiles/vimrc          ~/.vimrc
 ln -vs ~/.dotfiles/vimpagerrc     ~/.vimpagerrc
 ln -vs ~/.dotfiles/vim/           ~/.vim
 ln -vs ~/.dotfiles/fishrc         ~/.fishrc
+mkdir -p ~/.config/fish
+mv -v  ~/.config/fish/            ~/.config/fish.bak
 ln -vs ~/.dotfiles/fish           ~/.config/fish
 
 # fonts for vim powerline
