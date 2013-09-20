@@ -24,3 +24,6 @@ cnoremap s/ s/\v
 cnoremap g/ g/\v
 cnoremap g!/ g!/\v
 cnoremap v/ v/\v
+
+" clear search
+nnoremap <Leader>cs :nohlsearch<CR>
