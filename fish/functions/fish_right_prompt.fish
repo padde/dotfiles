@@ -36,7 +36,8 @@ function __fast_hg_dirty
 end
 
 function __fast_hg_branch
-  cat "$HG_ROOT/branch"
+  cat "$HG_ROOT/branch" 2>/dev/null
+  or hg branch
 end
 
 function __fast_hg_shorthash
