@@ -25,6 +25,7 @@ ln -vs ~/.dotfiles/gitignore      ~/.gitignore
 ln -vs ~/.dotfiles/hgrc           ~/.hgrc
 ln -vs ~/.dotfiles/hgignore       ~/.hgignore
 ln -vs ~/.dotfiles/irbrc          ~/.irbrc
+ln -vs ~/.dotfiles/pryrc          ~/.pryrc
 ln -vs ~/.dotfiles/latexmkrc      ~/.latexmkrc
 ln -vs ~/.dotfiles/tmux.conf      ~/.tmux.conf
 ln -vs ~/.dotfiles/vimrc          ~/.vimrc
