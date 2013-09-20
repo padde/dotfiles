@@ -18,13 +18,17 @@ end
 
 function __fast_find_hg_root
   set -l dir (pwd)
+  set -e HG_ROOT
+
   while test $dir != "/"
-    if test -d $dir'/.hg'
+    if test -f $dir'/.hg/dirstate'
       set -g HG_ROOT $dir"/.hg"
       return 0
     end
     set -l dir (dirname $dir)
   end
+
+  return 1
 end
 
 function __fast_hg_dirty
