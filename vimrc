@@ -60,6 +60,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'groenewege/vim-less'
 Bundle 'dag/vim-fish'
+Bundle 'nelstrom/vim-visual-star-search'
 
 " Fancyness
 Bundle 'jacquesbh/vim-showmarks'
