@@ -20,6 +20,10 @@ set wildmenu                   " complete all the commands!
 set wildmode=list:longest,full
 
 set mouse=a                    " mouse support
+if &term =~ '^screen'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
 
 let mapleader = ","            " nobody likes \ as leader!
 
