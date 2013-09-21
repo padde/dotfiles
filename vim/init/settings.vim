@@ -48,3 +48,11 @@ set undoreload=10000
 " persist folds
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
+
+" use syntax omnicomplete if no ft specific is available
+if has("autocmd") && exists("+omnifunc")
+  autocmd Filetype *
+  \	if &omnifunc == "" |
+  \	 setlocal omnifunc=syntaxcomplete#Complete |
+  \	endif
+endif
