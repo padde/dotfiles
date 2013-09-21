@@ -66,6 +66,7 @@ Bundle 'nelstrom/vim-visual-star-search'
 " Fancyness
 Bundle 'jacquesbh/vim-showmarks'
 Bundle 'dhruvasagar/vim-railscasts-theme'
+Bundle 'bling/vim-airline'
 
 filetype plugin indent on
 

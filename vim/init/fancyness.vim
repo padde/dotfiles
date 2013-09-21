@@ -39,3 +39,30 @@ hi NonText    term=bold ctermfg=0 guifg=#666666
 hi SpecialKey term=bold ctermfg=0 guifg=#666666
 let g:indentLine_color_term=0
 let g:indentLine_color_gui='#666666'
+
+" Airline
+set laststatus=2
+set noshowmode
+
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_detect_modified=0
+
+let g:airline_theme='powerlineish'
+let g:airline_theme_patch_func = 'AirlineThemePatch'
+function! AirlineThemePatch(palette)
+  if g:airline_theme == 'powerlineish'
+    let a:palette.normal.airline_x[1] = '#404040'
+    let a:palette.normal.airline_x[3] = 236
+    let a:palette.normal.airline_b[1] = '#505050'
+    let a:palette.normal.airline_b[3] = 238
+    let a:palette.normal.airline_c[1] = '#404040'
+    let a:palette.normal.airline_c[3] = 236
+    let a:palette.normal.airline_y[1] = '#505050'
+    let a:palette.normal.airline_y[3] = 238
+    let a:palette.normal.airline_file[1] = '#404040'
+    let a:palette.normal.airline_file[3] = 236
+  endif
+endfunction
+
+let g:airline_section_z = 'L %l/%L C %c %p%%'
