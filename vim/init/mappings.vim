@@ -27,3 +27,9 @@ cnoremap v/ v/\v
 
 " clear search
 nnoremap <Leader>cs :nohlsearch<CR>
+
+" seeing is believing
+nmap <buffer> <Leader>sr <Plug>(seeing-is-believing-run)
+xmap <buffer> <Leader>sr <Plug>(seeing-is-believing-run)
+nmap <buffer> <Leader>sm <Plug>(seeing-is-believing-mark)
+xmap <buffer> <Leader>sm <Plug>(seeing-is-believing-mark)
