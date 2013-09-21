@@ -36,8 +36,9 @@ Bundle 'tpope/vim-commentary'
 
 " Version control
 Bundle 'tpope/vim-fugitive'
-Bundle 'vim-scripts/hgrev'
 Bundle 'phleet/vim-mercenary'
+Bundle 'ludovicchabant/vim-lawrencium'
+Bundle 'mhinz/vim-signify'
 
 " Little helpers
 Bundle 'tpope/vim-rails'

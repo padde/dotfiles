@@ -66,3 +66,5 @@ function! AirlineThemePatch(palette)
 endfunction
 
 let g:airline_section_z = 'L %l/%L C %c %p%%'
+
+let g:airline#extensions#branch#enabled = 1
