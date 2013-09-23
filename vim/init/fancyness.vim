@@ -60,8 +60,10 @@ function! AirlineThemePatch(palette)
     let a:palette.normal.airline_c[3] = 236
     let a:palette.normal.airline_y[1] = '#505050'
     let a:palette.normal.airline_y[3] = 238
-    let a:palette.normal.airline_file[1] = '#404040'
-    let a:palette.normal.airline_file[3] = 236
+    if get(a:palette.normal, 'airline_file')
+      let a:palette.normal.airline_file[1] = '#404040'
+      let a:palette.normal.airline_file[3] = 236
+    endif
   endif
 endfunction
 
