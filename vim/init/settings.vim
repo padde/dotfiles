@@ -45,9 +45,9 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 
-" persist folds
-au BufWinLeave * silent! mkview
-au BufWinEnter * silent! loadview
+" " persist folds
+" au BufWinLeave * silent! mkview
+" au BufWinEnter * silent! loadview
 
 " use syntax omnicomplete if no ft specific is available
 if has("autocmd") && exists("+omnifunc")
