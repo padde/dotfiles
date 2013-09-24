@@ -20,3 +20,7 @@ end
   end
 end
 alias imeth interesting_methods
+
+
+
+# vim: ft=ruby
