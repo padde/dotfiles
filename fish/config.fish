@@ -57,3 +57,12 @@ set -x GREP_COLOR "1;31"
 # Autojump script
 # eventually replace with call to script inside Homebrew package
 . ~/.config/fish/functions/autojump.fish
+
+# Vi mode
+. ~/.config/fish/vi-mode.fish
+function fish_user_keybindings # Deprecated
+ vi_mode_insert
+end
+function fish_user_key_bindings
+ vi_mode_insert
+end
