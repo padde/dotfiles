@@ -42,7 +42,7 @@ function fish_right_prompt
   end
 
   function __fast_hg_hash
-    hexdump -n 4 -e '1/1 "%02x"' "$HG_ROOT/dirstate" | cut -c-7
+    hexdump -n 4 -e '2/1 "%02x"' "$HG_ROOT/dirstate" | cut -c-7
   end
 
 
