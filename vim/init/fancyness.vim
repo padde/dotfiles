@@ -60,7 +60,7 @@ function! AirlineThemePatch(palette)
     let a:palette.normal.airline_c[3] = 236
     let a:palette.normal.airline_y[1] = '#505050'
     let a:palette.normal.airline_y[3] = 238
-    if get(a:palette.normal, 'airline_file')
+    if type(get(a:palette.normal, 'airline_file')) == type([])
       let a:palette.normal.airline_file[1] = '#404040'
       let a:palette.normal.airline_file[3] = 236
     endif
