@@ -13,6 +13,9 @@ function remove -d "Remove element from array variable"
   set -e $argv[1][(find_index $argv[1] $argv[2])]
 end
 
+# Ada stuff
+set -x PATH "/usr/local/gnat/bin" $PATH
+
 # Move /usr/local/bin to the front of $PATH
 remove PATH "/usr/local/bin"
 set -x PATH "/usr/local/bin" $PATH
