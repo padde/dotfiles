@@ -53,6 +53,7 @@ Bundle 'tpope/vim-abolish'
 Bundle 'mileszs/ack.vim'
 Bundle 'rking/ag.vim'
 Bundle 'hwartig/vim-seeing-is-believing'
+Bundle 'christoomey/vim-tmux-navigator'
 
 " Syntax
 Bundle 'othree/html5.vim'
