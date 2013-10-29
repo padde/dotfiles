@@ -21,3 +21,6 @@ nmap <buffer> <Leader>sr <Plug>(seeing-is-believing-run)
 xmap <buffer> <Leader>sr <Plug>(seeing-is-believing-run)
 nmap <buffer> <Leader>sm <Plug>(seeing-is-believing-mark)
 xmap <buffer> <Leader>sm <Plug>(seeing-is-believing-mark)
+
+" ack/ag
+nmap <leader>a :Ack<space>
