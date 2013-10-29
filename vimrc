@@ -51,6 +51,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'tpope/vim-abolish'
 Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
 Bundle 'hwartig/vim-seeing-is-believing'
 
 " Syntax
