@@ -25,7 +25,7 @@ Bundle 'tomtom/tlib_vim'
 
 " File management
 Bundle 'scrooloose/nerdtree'
-Bundle 'wincent/Command-T'
+Bundle 'kien/ctrlp.vim'
 
 " Smart input
 Bundle 'vim-scripts/Auto-Pairs'
