@@ -13,13 +13,6 @@ imap <down>  <esc>gja
 " lines
 nmap <Leader>o o<CR><ESC>O<ESC>O<ESC>i
 
-" add 'very magic' modifier to regexes
-nnoremap / /\v
-cnoremap s/ s/\v
-cnoremap g/ g/\v
-cnoremap g!/ g!/\v
-cnoremap v/ v/\v
-
 " clear search
 nnoremap <Leader>cs :nohlsearch<CR>
 
