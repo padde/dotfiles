@@ -1,3 +1,7 @@
+# hide welcome message
+set fish_greeting ""
+
+# helpers
 function find_index -d "Find index of first occurence in array variable"
   set i 0
   for x in $$argv[1]
