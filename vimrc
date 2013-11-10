@@ -33,7 +33,6 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-commentary'
-Bundle 'padde/UncommEnter.vim'
 
 " Version control
 Bundle 'tpope/vim-fugitive'
