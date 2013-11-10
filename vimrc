@@ -71,6 +71,7 @@ Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'jacquesbh/vim-showmarks'
 Bundle 'dhruvasagar/vim-railscasts-theme'
 Bundle 'bling/vim-airline'
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 
