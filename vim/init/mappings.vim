@@ -28,3 +28,6 @@ nmap <leader>a :Ack<space>
 " ctrl-p
 nmap <leader>t :CtrlP<CR>
 nmap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
+
+" substitution
+nmap <leader>s :%s///g<left><left>
