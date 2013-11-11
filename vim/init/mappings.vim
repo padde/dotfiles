@@ -31,3 +31,16 @@ nmap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 
 " substitution
 nmap <leader>s :%s///g<left><left>
+
+" toggle wrap
+au BufEnter * :let b:toggleWrap=0
+function! ToggleWrap()
+  if b:toggleWrap != 1
+    let b:toggleWrap=1
+    set nolist wrap lbr
+  else
+    let b:toggleWrap=0
+    set list nowrap nolbr
+  endif
+endfunction
+nmap <leader>w :call ToggleWrap()<cr>
