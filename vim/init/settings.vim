@@ -32,7 +32,8 @@ set autoread                   " Reload changes if detected
 set hlsearch                   " Search highlighting
 set incsearch                  " Highlight as you type
 
-set formatoptions=croqlj
+set formatoptions=croql
+silent! set formatoptions+=j   " j is not always available
 
 set foldcolumn=1               " Show foldcolumn
 
