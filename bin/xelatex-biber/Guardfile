@@ -9,13 +9,13 @@ def biber(file)
 end
 
 def activate(app)
-  script = <<-OSASCRIPT
-    tell application "#{app}"
-      activate
-    end tell
-  OSASCRIPT
+  # script = <<-OSASCRIPT
+  #   tell application "#{app}"
+  #     activate
+  #   end tell
+  # OSASCRIPT
 
-  system "osascript -e '#{script}'"
+  # system "osascript -e '#{script}'"
 end
 
 guard :shell do
