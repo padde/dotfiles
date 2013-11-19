@@ -8,6 +8,11 @@ command WQ wq
 command Wq wq
 command W w
 command Q q
+command Qa qa
+command QA qa
+command Wqa wqa
+command WQa wqa
+command WQA wqa
 
 " Remove trailing whitespace including non-breaking spaces
 command -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$// | norm! ``
