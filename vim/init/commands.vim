@@ -31,3 +31,6 @@ endfunction
 command DiffWithSaved call s:DiffWithSaved()
 command DiffSaved call s:DiffWithSaved()
 command DS call s:DiffWithSaved()
+
+" Reformat JSON
+command FormatJson %!python -m json.tool
