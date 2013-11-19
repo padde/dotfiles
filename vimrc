@@ -22,6 +22,7 @@ Bundle 'tsaleh/vim-matchit'
 Bundle 'mattn/webapi-vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
+Bundle 'rizzatti/funcoo.vim'
 
 " File management
 Bundle 'scrooloose/nerdtree'
@@ -54,6 +55,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'hwartig/vim-seeing-is-believing'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'tpope/vim-speeddating'
+Bundle 'rizzatti/dash.vim'
 
 " Syntax
 Bundle 'othree/html5.vim'
