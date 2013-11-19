@@ -44,3 +44,7 @@ function! ToggleWrap()
   endif
 endfunction
 nmap <leader>w :call ToggleWrap()<cr>
+
+" quick comment toggle
+nmap <leader><leader> \\\
+vmap <leader><leader> \\
