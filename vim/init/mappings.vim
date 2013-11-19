@@ -48,3 +48,9 @@ nmap <leader>w :call ToggleWrap()<cr>
 " quick comment toggle
 nmap <leader><leader> \\\
 vmap <leader><leader> \\
+
+" jump to beginning/end of indentation level
+com! StartOfIndent exe "norm vii\<esc>^"
+com! EndOfIndent exe "norm viio\<esc>^"
+nmap <leader>bi :StartOfIndent<cr>
+nmap <leader>ei :EndOfIndent<cr>
