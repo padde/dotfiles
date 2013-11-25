@@ -33,13 +33,10 @@ nmap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nmap <leader>s :%s///g<left><left>
 
 " toggle wrap
-au BufEnter * :let b:toggleWrap=0
 function! ToggleWrap()
-  if b:toggleWrap != 1
-    let b:toggleWrap=1
+  if &list
     set nolist wrap lbr
   else
-    let b:toggleWrap=0
     set list nowrap nolbr
   endif
 endfunction

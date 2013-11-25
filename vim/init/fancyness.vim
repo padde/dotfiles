@@ -7,7 +7,6 @@ colorscheme railscasts
 
 " Show invisibles as in Text Mate (with improvements)
 set listchars=tab:\ \ ,eol:¬,trail:·,extends:>,precedes:<
-set list
 
 " Hightlight current line in gui
 set cursorline

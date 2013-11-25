@@ -7,8 +7,6 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
-set nowrap                     " do not wrap lines
-
 set visualbell                 " no beeps please!
 
 set encoding=utf-8             " utf-8 ftw!
@@ -31,6 +29,10 @@ set autoread                   " Reload changes if detected
 
 set hlsearch                   " Search highlighting
 set incsearch                  " Highlight as you type
+
+set nolist                     " Do not show invisibles
+set wrap                       " Wrap lines
+set linebreak                  " Soft wrap
 
 set formatoptions=croql
 silent! set formatoptions+=j   " j is not always available
