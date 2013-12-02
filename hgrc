@@ -25,3 +25,5 @@ brct = brecent
 hash = parents --template="{node|short}"
 p = pull
 pu = pull -u
+rel = resolve -l
+rem = resolve -m
