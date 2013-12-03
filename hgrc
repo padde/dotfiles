@@ -2,6 +2,9 @@
 username = Patrick Oscity <p.oscity@oncommerce.de>
 ignore = ~/.hgignore
 
+[web]
+cacerts = /etc/hg-dummy-cert.pem
+
 [extensions]
 color =
 graphlog =
