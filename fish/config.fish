@@ -24,20 +24,22 @@ set -x PATH "/usr/local/gnat/bin" $PATH
 remove PATH "/usr/local/bin"
 set -x PATH "/usr/local/bin" $PATH
 
+# Use Vim!
+if which vim > /dev/null
+  set -x EDITOR vim
+end
+
 # Use macvim binary (has clipboard support)
 if test -d /Applications/MacVim.app
   function vim
     /Applications/MacVim.app/Contents/MacOS/Vim $argv
   end
+  set -x EDITOR /Applications/MacVim.app/Contents/MacOS/Vim
 else if test -d ~/Applications/MacVim.app
   function vim
     ~/Applications/MacVim.app/Contents/MacOS/Vim $argv
   end
-end
-
-# Use Vim!
-if which vim > /dev/null
-  set -x EDITOR vim
+  set -x EDITOR ~/Applications/MacVim.app/Contents/MacOS/Vim
 end
 
 if type 'vimpager' > /dev/null
