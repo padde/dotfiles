@@ -24,7 +24,7 @@ function fish_prompt
   end
 
   printf '%s%s %s%s%s%s%s%s%s%s%s%s%s%s%s ' \
-    $__fish_prompt_color_delimiter (date "+%H:%M:%S") \
+    $__fish_prompt_color_delimiter (date "+%H:%M") \
     $__fish_prompt_color_username  $USER \
     $__fish_prompt_color_delimiter '@' \
     $__fish_prompt_color_hostname  $__fish_prompt_hostname \
