@@ -1,3 +1,0 @@
-" Do not append newlines to files
-au BufWritePre * :set binary | set noeol
-au BufWritePost * :set nobinary | set eol

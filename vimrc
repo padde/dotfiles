@@ -70,6 +70,303 @@ Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 
-runtime! init/settings.vim
-runtime! init/**.vim
-runtime! init/fancyness.vim
+syntax on                      " enable syntax highlighting
+set number                     " show line numbers
+
+set expandtab                  " i like soft tabs
+set smarttab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+
+set visualbell                 " no beeps please!
+
+set encoding=utf-8             " utf-8 ftw!
+set fileencoding=utf-8
+
+set nohidden                   " do not store data about old buffers
+
+set wildmenu                   " complete all the commands!
+set wildmode=list:longest,full
+
+set mouse=a                    " mouse support
+if &term =~ '^screen'
+  " tmux knows the extended mouse mode
+  set ttymouse=xterm2
+endif
+
+let mapleader = ","            " nobody likes \ as leader!
+
+set autoread                   " Reload changes if detected
+
+set hlsearch                   " Search highlighting
+set incsearch                  " Highlight as you type
+
+set nolist                     " Do not show invisibles
+set wrap                       " Wrap lines
+set linebreak                  " Soft wrap
+
+set formatoptions=croql
+silent! set formatoptions+=j   " j is not always available
+
+set foldcolumn=1               " Show foldcolumn
+
+" Share clipboard
+if has('mac')
+  set clipboard+=unnamed
+endif
+
+" persist undo history
+set undodir=~/.vim/undo
+set undofile
+set undolevels=1000
+set undoreload=10000
+
+" " persist folds
+" au BufWinLeave * silent! mkview
+" au BufWinEnter * silent! loadview
+
+" use syntax omnicomplete if no ft specific is available
+if has("autocmd") && exists("+omnifunc")
+  autocmd Filetype *
+        \	if &omnifunc == "" |
+        \	 setlocal omnifunc=syntaxcomplete#Complete |
+        \	endif
+endif
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  let g:ackprg = 'ag --nogroup --column'
+
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+" Fix Cursor in TMUX
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+" Show marks on the left
+set updatetime=500
+autocmd BufEnter * DoShowMarks
+
+" Check syntax when opening a file
+let g:syntastic_check_on_open=1
+
+" Syntastic symbols
+let g:syntastic_error_symbol='●'
+let g:syntastic_warning_symbol='■'
+let g:syntastic_style_error_symbol='○'
+let g:syntastic_style_warning_symbol='□'
+
+" force.com plugin settings
+let g:apex_backup_folder        ='~/.force.com/backup'
+let g:apex_temp_folder          ='~/.force.com/temp'
+let g:apex_deployment_error_log ='~/.force.com/error.log'
+let g:apex_properties_folder    ='~/.force.com/properties'
+
+" Gist plugin settings
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
+
+" Gundo plugin settings
+function! s:CloseIfOnlyGundoLeft()
+  let gundoOpen    = ( bufwinnr('__Gundo__')         != -1 )
+  let gundoPreOpen = ( bufwinnr('__Gundo_Preview__') != -1 )
+  if winnr('$') == (gundoOpen + gundoPreOpen)
+    :GundoHide
+    quit
+  endif
+endfunction
+au WinEnter * call s:CloseIfOnlyGundoLeft()
+
+" NERD tree settings
+let g:NERDTreeChDirMode=2
+
+function! s:CloseIfOnlyNerdTreeLeft()
+  if exists('t:NERDTreeBufName')
+    if bufwinnr(t:NERDTreeBufName) != -1
+      if winnr('$') == 1
+        q
+      endif
+    endif
+  endif
+endfunction
+autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+
+" Open up dotfiles dir
+command Dotfiles :cd ~/.dotfiles | :NERDTree
+command Dot :Dotfiles
+
+" Write and quit
+command Wsudo :w !sudo tee %
+command WQ wq
+command Wq wq
+command W w
+command Q q
+command Qa qa
+command QA qa
+command Wqa wqa
+command WQa wqa
+command WQA wqa
+
+" Remove trailing whitespace including non-breaking spaces
+command -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$// | norm! ``
+command -range=% RT                       <line1>,<line2>RemoveTrailingWhitespace
+nnoremap <Leader>rt :RemoveTrailingWhitespace<CR>
+vnoremap <Leader>rt :RemoveTrailingWhitespace<CR>
+
+" Diff with last saved version
+function! s:DiffWithSaved()
+  let filetype=&ft
+  diffthis
+  vnew | r # | normal! 1Gdd
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+command DiffWithSaved call s:DiffWithSaved()
+command DiffSaved call s:DiffWithSaved()
+command DS call s:DiffWithSaved()
+
+" Reformat JSON
+command FormatJson %!python -m json.tool
+
+" Highlight last pasted text
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+
+" remap arrow keys to act 'normal' for 'normal' users
+map  <up>    gk
+map  <down>  gj
+imap <up>    <esc>gka
+imap <down>  <esc>gja
+
+" enable going to previous/next line with left/right arrow keys
+" set whichwrap+=<,>,[,]
+
+" add four lines below current line, positioning cursor on second of these
+" lines
+nmap <Leader>o o<CR><ESC>O<ESC>O<ESC>i
+
+" clear search
+nnoremap <Leader>cs :nohlsearch<CR>
+
+" seeing is believing
+nmap <buffer> <Leader>sr <Plug>(seeing-is-believing-run)
+xmap <buffer> <Leader>sr <Plug>(seeing-is-believing-run)
+nmap <buffer> <Leader>sm <Plug>(seeing-is-believing-mark)
+xmap <buffer> <Leader>sm <Plug>(seeing-is-believing-mark)
+
+" ack/ag
+nmap <leader>a :Ack<space>
+
+" ctrl-p
+nmap <leader>t :CtrlP<CR>
+nmap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
+
+" gundo
+nmap <Leader>u :GundoToggle<CR>
+
+" nerdtree
+nmap <Leader>d :NERDTreeToggle<CR>
+
+" substitution
+nmap <leader>s :%s///g<left><left>
+
+" toggle wrap
+function! ToggleWrap()
+  if &list
+    set nolist wrap lbr
+  else
+    set list nowrap nolbr
+  endif
+endfunction
+nmap <leader>w :call ToggleWrap()<cr>
+
+" quick comment toggle
+nmap <leader><leader> \\\
+vmap <leader><leader> \\
+
+" jump to beginning/end of indentation level
+com! StartOfIndent exe "norm vii\<esc>^"
+com! EndOfIndent exe "norm viio\<esc>^"
+nmap <leader>bi :StartOfIndent<cr>
+nmap <leader>ei :EndOfIndent<cr>
+
+" Font
+set guifont=Menlo\ Regular:h12
+
+" Color scheme
+if $PRESENTATION_MODE == 1
+  colorscheme solarized
+else
+  colorscheme railscasts
+endif
+
+" Show invisibles as in Text Mate (with improvements)
+set listchars=tab:\ \ ,eol:¬,trail:·,extends:>,precedes:<
+
+" Hightlight current line in gui
+set cursorline
+
+" Hide menu bar in MacVim
+if has('gui_running')
+  set guioptions=egmrt
+endif
+
+if g:colors_name == 'railscasts'
+  " Search results
+  hi Search cterm=NONE ctermbg=238 ctermfg=NONE
+  hi Search guibg=#eac43c guifg=#b5382d
+
+  " Folds
+  hi FoldColumn ctermfg=red ctermbg=none guifg=red guibg=NONE
+
+  " Signs
+  hi SignColumn ctermfg=red ctermbg=none guifg=red guibg=NONE
+
+  " Marks
+  hi hlShowMarks ctermfg=lightgrey ctermbg=none guifg=#bbbbbb guibg=NONE
+
+  " Error, Todo, Syntastic symbols
+  hi Error ctermfg=red ctermbg=none guifg=red guibg=NONE
+  hi Todo ctermfg=178 ctermbg=none guifg=orange guibg=NONE
+endif
+
+" Airline
+set laststatus=2
+set noshowmode
+
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_detect_modified=0
+
+let g:airline_theme='powerlineish'
+let g:airline_theme_patch_func = 'AirlineThemePatch'
+function! AirlineThemePatch(palette)
+  if g:airline_theme == 'powerlineish'
+    let a:palette.normal.airline_x[1] = '#404040'
+    let a:palette.normal.airline_x[3] = 236
+    let a:palette.normal.airline_b[1] = '#505050'
+    let a:palette.normal.airline_b[3] = 238
+    let a:palette.normal.airline_c[1] = '#404040'
+    let a:palette.normal.airline_c[3] = 236
+    let a:palette.normal.airline_y[1] = '#505050'
+    let a:palette.normal.airline_y[3] = 238
+    if type(get(a:palette.normal, 'airline_file')) == type([])
+      let a:palette.normal.airline_file[1] = '#404040'
+      let a:palette.normal.airline_file[3] = 236
+    endif
+  endif
+endfunction
+
+let g:airline_section_z = '%l:%c %p%%'
+
+let g:airline#extensions#branch#enabled = 1
