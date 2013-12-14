@@ -1,1 +1,0 @@
-set $fish_function_path ~/.dotfiles/fish/functions $fish_function_path

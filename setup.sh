@@ -11,30 +11,25 @@ cd ..
 rm -rf dotfiles
 cd ~/.dotfiles
 
-# eat fish!
-echo `which fish` | sudo tee -a /etc/shells
-chsh -s `which fish`
-/usr/bin/env fish
-mkdir -p ~/.config
-cd
-
 # create symlinks
-ln -vs ~/.dotfiles/gemrc          ~/.gemrc
-ln -vs ~/.dotfiles/gitconfig      ~/.gitconfig
-ln -vs ~/.dotfiles/gitignore      ~/.gitignore
-ln -vs ~/.dotfiles/hgrc           ~/.hgrc
-ln -vs ~/.dotfiles/hgignore       ~/.hgignore
-ln -vs ~/.dotfiles/irbrc          ~/.irbrc
-ln -vs ~/.dotfiles/pryrc          ~/.pryrc
-ln -vs ~/.dotfiles/latexmkrc      ~/.latexmkrc
-ln -vs ~/.dotfiles/tmux.conf      ~/.tmux.conf
-ln -vs ~/.dotfiles/vimrc          ~/.vimrc
-ln -vs ~/.dotfiles/vimpagerrc     ~/.vimpagerrc
-ln -vs ~/.dotfiles/vim/           ~/.vim
-ln -vs ~/.dotfiles/fishrc         ~/.fishrc
-mkdir -p ~/.config/fish
-mv -v  ~/.config/fish/            ~/.config/fish.bak
-ln -vs ~/.dotfiles/fish           ~/.config/fish
+ln -vs ~/.dotfiles/gemrc      ~/.gemrc
+ln -vs ~/.dotfiles/gitconfig  ~/.gitconfig
+ln -vs ~/.dotfiles/gitignore  ~/.gitignore
+ln -vs ~/.dotfiles/hgrc       ~/.hgrc
+ln -vs ~/.dotfiles/hgignore   ~/.hgignore
+ln -vs ~/.dotfiles/irbrc      ~/.irbrc
+ln -vs ~/.dotfiles/pryrc      ~/.pryrc
+ln -vs ~/.dotfiles/latexmkrc  ~/.latexmkrc
+ln -vs ~/.dotfiles/tmux.conf  ~/.tmux.conf
+ln -vs ~/.dotfiles/vimrc      ~/.vimrc
+ln -vs ~/.dotfiles/vimpagerrc ~/.vimpagerrc
+ln -vs ~/.dotfiles/vim/       ~/.vim
+ln -vs ~/.dotfiles/zshrc      ~/.zshrc
+
+# use zsh
+chsh -s `which zsh`
+/usr/bin/env zsh
+cd
 
 # fonts for vim powerline
 cp -v ~/.dotfiles/fonts/* ~/Library/Fonts/
