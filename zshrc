@@ -66,6 +66,9 @@ elif which most > /dev/null; then
   export PAGER=most
 fi
 
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm"  ]] && . "$HOME/.rvm/scripts/rvm" 
+
 # update submodules
 function update_dotfiles {
   cd ~/.dotfiles
