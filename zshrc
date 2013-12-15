@@ -96,16 +96,16 @@ export GREP_COLOR="1;31"
 # prompt
 export ZLE_RPROMPT_INDENT=0
 
-__PROMPT_VCS_DELIMITER_COLOR='black'
-__PROMPT_VCS_DIRTY_COLOR='red'
-__PROMPT_VCS_BRANCH_COLOR='green'
-__PROMPT_VCS_HASH_COLOR='yellow'
+__PROMPT_VCS_DELIMITER_COLOR="$fg_bold[black]"
+__PROMPT_VCS_DIRTY_COLOR="$fg[red]"
+__PROMPT_VCS_BRANCH_COLOR="$fg[green]"
+__PROMPT_VCS_HASH_COLOR="$fg[yellow]"
 __PROMPT_EXIT_CODE_STR="%(?..%{$fg[red]%}↯%?%{$reset_color%})"
-__PROMPT_DELIMITER_COLOR='black'
-__PROMPT_TIME_COLOR='black'
-__PROMPT_USER_COLOR='blue'
-__PROMPT_HOST_COLOR='blue'
-__PROMPT_PWD_COLOR='red'
+__PROMPT_DELIMITER_COLOR="$fg_bold[black]"
+__PROMPT_TIME_COLOR="$fg_bold[black]"
+__PROMPT_USER_COLOR="$fg[blue]"
+__PROMPT_HOST_COLOR="$fg[blue]"
+__PROMPT_PWD_COLOR="$fg[red]"
 
 function __accept_line_and_enable_warning {
   __PROMPT_EXIT_CODE=$__PROMPT_EXIT_CODE_STR
@@ -138,13 +138,13 @@ function __git_prompt {
     fi
 
     print " "\
-"%{$fg[$__PROMPT_VCS_DELIMITER_COLOR]%}[%{$reset_color%}"\
-"%{$fg[$__PROMPT_VCS_DIRTY_COLOR]%}${dirty_str}%{$reset_color%}"\
-"%{$fg[$__PROMPT_VCS_DELIMITER_COLOR]%}git:%{$reset_color%}"\
-"%{$fg[$__PROMPT_VCS_BRANCH_COLOR]%}$(__git_branch)%{$reset_color%}"\
-"%{$fg[$__PROMPT_VCS_DELIMITER_COLOR]%}@%{$reset_color%}"\
-"%{$fg[$__PROMPT_VCS_HASH_COLOR]%}$(__git_hash)%{$reset_color%}"\
-"%{$fg[$__PROMPT_VCS_DELIMITER_COLOR]%}]%{$reset_color%}"
+"%{$__PROMPT_VCS_DELIMITER_COLOR%}[%{$reset_color%}"\
+"%{$__PROMPT_VCS_DIRTY_COLOR%}${dirty_str}%{$reset_color%}"\
+"%{$__PROMPT_VCS_DELIMITER_COLOR%}git:%{$reset_color%}"\
+"%{$__PROMPT_VCS_BRANCH_COLOR%}$(__git_branch)%{$reset_color%}"\
+"%{$__PROMPT_VCS_DELIMITER_COLOR%}@%{$reset_color%}"\
+"%{$__PROMPT_VCS_HASH_COLOR%}$(__git_hash)%{$reset_color%}"\
+"%{$__PROMPT_VCS_DELIMITER_COLOR%}]%{$reset_color%}"
   fi
 }
 
@@ -187,13 +187,13 @@ function __hg_prompt {
     fi
 
     print " "\
-"%{$fg[$__PROMPT_VCS_DELIMITER_COLOR]%}[%{$reset_color%}"\
-"%{$fg[$__PROMPT_VCS_DIRTY_COLOR]%}${dirty_str}%{$reset_color%}"\
-"%{$fg[$__PROMPT_VCS_DELIMITER_COLOR]%}hg:%{$reset_color%}"\
-"%{$fg[$__PROMPT_VCS_BRANCH_COLOR]%}$(__hg_branch)%{$reset_color%}"\
-"%{$fg[$__PROMPT_VCS_DELIMITER_COLOR]%}@%{$reset_color%}"\
-"%{$fg[$__PROMPT_VCS_HASH_COLOR]%}$(__hg_hash)%{$reset_color%}"\
-"%{$fg[$__PROMPT_VCS_DELIMITER_COLOR]%}]%{$reset_color%}"
+"%{$__PROMPT_VCS_DELIMITER_COLOR%}[%{$reset_color%}"\
+"%{$__PROMPT_VCS_DIRTY_COLOR%}${dirty_str}%{$reset_color%}"\
+"%{$__PROMPT_VCS_DELIMITER_COLOR%}hg:%{$reset_color%}"\
+"%{$__PROMPT_VCS_BRANCH_COLOR%}$(__hg_branch)%{$reset_color%}"\
+"%{$__PROMPT_VCS_DELIMITER_COLOR%}@%{$reset_color%}"\
+"%{$__PROMPT_VCS_HASH_COLOR%}$(__hg_hash)%{$reset_color%}"\
+"%{$__PROMPT_VCS_DELIMITER_COLOR%}]%{$reset_color%}"
   fi
 }
 
@@ -208,12 +208,12 @@ function __abbrev_pwd {
 }
 
 PROMPT='${__PROMPT_BG}'\
-"%{$fg[$__PROMPT_TIME_COLOR]%}%T%{$reset_color%} "\
-"%{$fg[$__PROMPT_USER_COLOR]%}%n%{$reset_color%}"\
-"%{$fg[$__PROMPT_DELIMITER_COLOR]%}@%{$reset_color%}"\
-"%{$fg[$__PROMPT_HOST_COLOR]%}%m%{$reset_color%} "\
-"%{$fg[$__PROMPT_PWD_COLOR]%}"'$(__abbrev_pwd)'"%{$reset_color%}"\
-"%{$fg[$__PROMPT_DELIMITER_COLOR]%}$%{$reset_color%} "
+"%{$__PROMPT_TIME_COLOR%}%T%{$reset_color%} "\
+"%{$__PROMPT_USER_COLOR%}%n%{$reset_color%}"\
+"%{$__PROMPT_DELIMITER_COLOR%}@%{$reset_color%}"\
+"%{$__PROMPT_HOST_COLOR%}%m%{$reset_color%} "\
+"%{$__PROMPT_PWD_COLOR%}"'$(__abbrev_pwd)'"%{$reset_color%}"\
+"%{$__PROMPT_DELIMITER_COLOR%}$%{$reset_color%} "
 
 RPROMPT='${__PROMPT_EXIT_CODE}$(__git_prompt)$(__hg_prompt)'
 
