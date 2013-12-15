@@ -23,13 +23,16 @@ autoload -U compinit
 compinit
 
 # use vim as editor
+local VIM_BINARY=/bin/vim
 if [[ -d /Applications/MacVim.app ]]; then
-  alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+  VIM_BINARY='/Applications/MacVim.app/Contents/MacOS/Vim'
 elif [[ -d ~/Applications/MacVim.app ]]; then
-  alias vim='~/Applications/MacVim.app/Contents/MacOS/Vim'
+  VIM_BINARY='~/Applications/MacVim.app/Contents/MacOS/Vim'
 fi
-export VISUAL=/usr/local/bin/vim
-export EDITOR=$VISUAL
+export VISUAL=$VIM_BINARY
+export EDITOR=$VIM_BINARY
+alias vim=$VIM_BINARY
+alias vi=$VIM_BINARY
 
 # vi mode
 bindkey -v
