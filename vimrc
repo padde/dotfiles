@@ -348,24 +348,28 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_detect_modified=0
 
-let g:airline_theme='powerlineish'
-let g:airline_theme_patch_func = 'AirlineThemePatch'
-function! AirlineThemePatch(palette)
-  if g:airline_theme == 'powerlineish'
-    let a:palette.normal.airline_x[1] = '#404040'
-    let a:palette.normal.airline_x[3] = 236
-    let a:palette.normal.airline_b[1] = '#505050'
-    let a:palette.normal.airline_b[3] = 238
-    let a:palette.normal.airline_c[1] = '#404040'
-    let a:palette.normal.airline_c[3] = 236
-    let a:palette.normal.airline_y[1] = '#505050'
-    let a:palette.normal.airline_y[3] = 238
-    if type(get(a:palette.normal, 'airline_file')) == type([])
-      let a:palette.normal.airline_file[1] = '#404040'
-      let a:palette.normal.airline_file[3] = 236
+if $PRESENTATION_MODE == 1
+  let g:airline_theme='solarized'
+else
+  let g:airline_theme='powerlineish'
+  let g:airline_theme_patch_func = 'AirlineThemePatch'
+  function! AirlineThemePatch(palette)
+    if g:airline_theme == 'powerlineish'
+      let a:palette.normal.airline_x[1] = '#404040'
+      let a:palette.normal.airline_x[3] = 236
+      let a:palette.normal.airline_b[1] = '#505050'
+      let a:palette.normal.airline_b[3] = 238
+      let a:palette.normal.airline_c[1] = '#404040'
+      let a:palette.normal.airline_c[3] = 236
+      let a:palette.normal.airline_y[1] = '#505050'
+      let a:palette.normal.airline_y[3] = 238
+      if type(get(a:palette.normal, 'airline_file')) == type([])
+        let a:palette.normal.airline_file[1] = '#404040'
+        let a:palette.normal.airline_file[3] = 236
+      endif
     endif
-  endif
-endfunction
+  endfunction
+endif
 
 let g:airline_section_z = '%l:%c %p%%'
 
