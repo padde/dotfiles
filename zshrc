@@ -15,6 +15,7 @@ antigen bundle heroku
 antigen bundle mercurial
 antigen bundle osx
 antigen bundle pow
+antigen bundle rake
 antigen bundle ruby
 antigen bundle rvm
 antigen bundle tmux
@@ -225,3 +226,5 @@ PROMPT='${__PROMPT_BG}'\
 
 RPROMPT='${__PROMPT_EXIT_CODE}$(__git_prompt)$(__hg_prompt)'
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
