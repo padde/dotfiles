@@ -104,7 +104,7 @@ export TERM="xterm-256color"
 export GREP_COLOR="1;31"
 
 # prompt
-export ZLE_RPROMPT_INDENT=0
+# export ZLE_RPROMPT_INDENT=0
 
 __PROMPT_VCS_DELIMITER_COLOR="$fg_bold[black]"
 __PROMPT_VCS_DIRTY_COLOR="$fg[red]"
