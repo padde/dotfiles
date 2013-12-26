@@ -227,5 +227,8 @@ PROMPT='${__PROMPT_BG}'\
 
 RPROMPT='${__PROMPT_EXIT_CODE}$(__git_prompt)$(__hg_prompt)'
 
+# Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# Add GNAT binaries to path
+PATH=/usr/local/gnat/bin:$PATH
