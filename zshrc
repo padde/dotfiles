@@ -213,7 +213,7 @@ function __abbrev_pwd {
   if [[ "$pwd" == (#m)[/~] ]]; then
     print $MATCH
   else
-    print "${${(@j:/:M)${(@s:/:)pwd}##.#?}:h}/${pwd:t}"
+    print "${${${(@j:/:M)${(@s:/:)pwd}##.#?}:h}%/}/${pwd:t}"
   fi
 }
 
