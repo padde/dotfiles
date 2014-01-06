@@ -248,6 +248,10 @@ map  <down>  gj
 imap <up>    <esc>gka
 imap <down>  <esc>gja
 
+" add line above/below in insert mode
+imap jj <esc>o
+imap JJ <esc>O
+
 " enable going to previous/next line with left/right arrow keys
 " set whichwrap+=<,>,[,]
 
