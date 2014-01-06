@@ -40,7 +40,7 @@ alias vi=$VIM_BINARY
 # vi mode
 bindkey -v
 bindkey "^F" vi-cmd-mode
-bindkey jj vi-cmd-mode
+# bindkey jj vi-cmd-mode
 bindkey "^?" backward-delete-char
 
 # history search
