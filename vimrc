@@ -330,7 +330,7 @@ endif
 
 if g:colors_name == 'railscasts'
   " Search results
-  hi Search cterm=NONE ctermbg=238 ctermfg=NONE
+  hi Search cterm=NONE ctermbg=yellow ctermfg=red
   hi Search guibg=#eac43c guifg=#b5382d
 
   " Folds
