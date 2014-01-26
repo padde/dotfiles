@@ -283,6 +283,7 @@ nmap <Leader>d :NERDTreeToggle<CR>
 
 " substitution
 nmap <leader>s :%s///g<left><left>
+vmap <leader>s :s///g<left><left>
 
 " toggle wrap
 function! ToggleWrap()
