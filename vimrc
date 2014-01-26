@@ -263,10 +263,10 @@ nmap <Leader>o o<CR><ESC>O<ESC>O<ESC>i
 nnoremap <Leader>cs :nohlsearch<CR>
 
 " seeing is believing
-nmap <buffer> <Leader>sr <Plug>(seeing-is-believing-run)
-xmap <buffer> <Leader>sr <Plug>(seeing-is-believing-run)
-nmap <buffer> <Leader>sm <Plug>(seeing-is-believing-mark)
-xmap <buffer> <Leader>sm <Plug>(seeing-is-believing-mark)
+" nmap <buffer> <Leader>sr <Plug>(seeing-is-believing-run)
+" xmap <buffer> <Leader>sr <Plug>(seeing-is-believing-run)
+" nmap <buffer> <Leader>sm <Plug>(seeing-is-believing-mark)
+" xmap <buffer> <Leader>sm <Plug>(seeing-is-believing-mark)
 
 " ack/ag
 nmap <leader>a :Ack<space>
