@@ -206,8 +206,24 @@ xmap <buffer> <Leader>sr <Plug>(seeing-is-believing-run)
 nmap <buffer> <Leader>sm <Plug>(seeing-is-believing-mark)
 xmap <buffer> <Leader>sm <Plug>(seeing-is-believing-mark)
 
+" autojump
+function! s:Autojump(...)
+  let path = system('autojump '.a:000[-1])
+  exe 'cd '.escape(path, ' ')
+  pwd
+endfunction
 
+function! s:AutojumpCompletion(A,L,P)
+  let completions = []
+  for completion in split(system('autojump --complete '.a:A), "\n")
+    call add(completions, substitute(completion, '^.*__\d__', '', ''))
+  endfor
+  return completions
+endfunction
 
+command! -complete=customlist,s:AutojumpCompletion -nargs=* J call s:Autojump(<f-args>)
+
+map <leader>j :J<space>
 
 " ack/ag
 nmap <leader>a :Ack<space>
