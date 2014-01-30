@@ -223,7 +223,7 @@ function! ToggleWrap()
     set list nowrap nolbr
   endif
 endfunction
-nmap <leader>w :call ToggleWrap()<cr>
+nmap <silent> <leader>w :call ToggleWrap()<cr>
 
 " Font
 set guifont=Menlo\ Regular:h12
