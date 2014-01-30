@@ -72,52 +72,35 @@ filetype plugin indent on
 
 syntax on                      " enable syntax highlighting
 set number                     " show line numbers
-
 set expandtab                  " i like soft tabs
 set smarttab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-
 set visualbell                 " no beeps please!
-
 set encoding=utf-8             " utf-8 ftw!
 set fileencoding=utf-8
-
 set nohidden                   " do not store data about old buffers
-
 set wildmenu                   " complete all the commands!
 set wildmode=list:longest,full
-
 set mouse=a                    " mouse support
-if &term =~ '^screen'
-  " tmux knows the extended mouse mode
+if &term =~ '^screen'          " tmux knows the extended mouse mode
   set ttymouse=xterm2
 endif
-
 let mapleader = ","            " nobody likes \ as leader!
-
 set autoread                   " Reload changes if detected
-
 set hlsearch                   " Search highlighting
 set incsearch                  " Highlight as you type
-
 set nolist                     " Do not show invisibles
 set wrap                       " Wrap lines
 set linebreak                  " Soft wrap
-
 set formatoptions=croql
 silent! set formatoptions+=j   " j is not always available
-
 set foldcolumn=1               " Show foldcolumn
-
-" Share clipboard
-if has('mac')
+if has('mac')                  " Share clipboard
   set clipboard+=unnamed
 endif
-
-" persist undo history
-set undodir=~/.vim/undo
+set undodir=~/.vim/undo        " persist undo history
 set undofile
 set undolevels=1000
 set undoreload=10000
@@ -177,34 +160,8 @@ let g:apex_properties_folder    ='~/.force.com/properties'
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 
-" Gundo plugin settings
-function! s:CloseIfOnlyGundoLeft()
-  let gundoOpen    = ( bufwinnr('__Gundo__')         != -1 )
-  let gundoPreOpen = ( bufwinnr('__Gundo_Preview__') != -1 )
-  if winnr('$') == (gundoOpen + gundoPreOpen)
-    :GundoHide
-    quit
-  endif
-endfunction
-au WinEnter * call s:CloseIfOnlyGundoLeft()
-
 " NERD tree settings
 let g:NERDTreeChDirMode=2
-
-function! s:CloseIfOnlyNerdTreeLeft()
-  if exists('t:NERDTreeBufName')
-    if bufwinnr(t:NERDTreeBufName) != -1
-      if winnr('$') == 1
-        q
-      endif
-    endif
-  endif
-endfunction
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-
-" Open up dotfiles dir
-command Dotfiles :cd ~/.dotfiles | :NERDTree
-command Dot :Dotfiles
 
 " Write and quit
 command Wsudo :w !sudo tee %
@@ -220,7 +177,6 @@ command WQA wqa
 
 " Remove trailing whitespace including non-breaking spaces
 command -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$// | norm! ``
-command -range=% RT                       <line1>,<line2>RemoveTrailingWhitespace
 nnoremap <Leader>rt :RemoveTrailingWhitespace<CR>
 vnoremap <Leader>rt :RemoveTrailingWhitespace<CR>
 
@@ -233,8 +189,6 @@ function! s:DiffWithSaved()
   exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 command DiffWithSaved call s:DiffWithSaved()
-command DiffSaved call s:DiffWithSaved()
-command DS call s:DiffWithSaved()
 
 " Reformat JSON
 command FormatJson %!python -m json.tool
@@ -242,48 +196,24 @@ command FormatJson %!python -m json.tool
 " Highlight last pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
-" remap arrow keys to act 'normal' for 'normal' users
-map  <up>    gk
-map  <down>  gj
-imap <up>    <esc>gka
-imap <down>  <esc>gja
-
 " add line above/below in insert mode
 imap jj <esc>o
 imap JJ <esc>O
 
-" enable going to previous/next line with left/right arrow keys
-" set whichwrap+=<,>,[,]
-
-" add four lines below current line, positioning cursor on second of these
-" lines
-nmap <Leader>o o<CR><ESC>O<ESC>O<ESC>i
-
-" clear search
-nnoremap <Leader>cs :nohlsearch<CR>
-
 " seeing is believing
-" nmap <buffer> <Leader>sr <Plug>(seeing-is-believing-run)
-" xmap <buffer> <Leader>sr <Plug>(seeing-is-believing-run)
-" nmap <buffer> <Leader>sm <Plug>(seeing-is-believing-mark)
-" xmap <buffer> <Leader>sm <Plug>(seeing-is-believing-mark)
+nmap <buffer> <Leader>sr <Plug>(seeing-is-believing-run)
+xmap <buffer> <Leader>sr <Plug>(seeing-is-believing-run)
+nmap <buffer> <Leader>sm <Plug>(seeing-is-believing-mark)
+xmap <buffer> <Leader>sm <Plug>(seeing-is-believing-mark)
+
+
+
 
 " ack/ag
 nmap <leader>a :Ack<space>
 
-" ctrl-p
-nmap <leader>t :CtrlP<CR>
-nmap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
-
-" gundo
-nmap <Leader>u :GundoToggle<CR>
-
 " nerdtree
 nmap <Leader>d :NERDTreeToggle<CR>
-
-" substitution
-nmap <leader>s :%s///g<left><left>
-vmap <leader>s :s///g<left><left>
 
 " toggle wrap
 function! ToggleWrap()
@@ -294,16 +224,6 @@ function! ToggleWrap()
   endif
 endfunction
 nmap <leader>w :call ToggleWrap()<cr>
-
-" quick comment toggle
-nmap <leader><leader> \\\
-vmap <leader><leader> \\
-
-" jump to beginning/end of indentation level
-com! StartOfIndent exe "norm vii\<esc>^"
-com! EndOfIndent exe "norm viio\<esc>^"
-nmap <leader>bi :StartOfIndent<cr>
-nmap <leader>ei :EndOfIndent<cr>
 
 " Font
 set guifont=Menlo\ Regular:h12
@@ -329,21 +249,13 @@ if has('gui_running')
   set guioptions=egmrt
 endif
 
+" Patch Railscasts color scheme
 if g:colors_name == 'railscasts'
-  " Search results
   hi Search cterm=NONE ctermbg=yellow ctermfg=red
   hi Search guibg=#eac43c guifg=#b5382d
-
-  " Folds
   hi FoldColumn ctermfg=red ctermbg=none guifg=red guibg=NONE
-
-  " Signs
   hi SignColumn ctermfg=red ctermbg=none guifg=red guibg=NONE
-
-  " Marks
   hi hlShowMarks ctermfg=lightgrey ctermbg=none guifg=#bbbbbb guibg=NONE
-
-  " Error, Todo, Syntastic symbols
   hi Error ctermfg=red ctermbg=none guifg=red guibg=NONE
   hi Todo ctermfg=178 ctermbg=none guifg=orange guibg=NONE
 endif
@@ -351,10 +263,11 @@ endif
 " Airline
 set laststatus=2
 set noshowmode
-
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_detect_modified=0
+let g:airline_section_z = '%l:%c %p%%'
+let g:airline#extensions#branch#enabled = 1
 
 if $PRESENTATION_MODE == 1
   let g:airline_theme='solarized'
@@ -378,7 +291,3 @@ else
     endif
   endfunction
 endif
-
-let g:airline_section_z = '%l:%c %p%%'
-
-let g:airline#extensions#branch#enabled = 1
