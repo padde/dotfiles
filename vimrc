@@ -164,19 +164,19 @@ let g:gist_open_browser_after_post = 1
 let g:NERDTreeChDirMode=2
 
 " Write and quit
-command Wsudo :w !sudo tee %
-command WQ wq
-command Wq wq
-command W w
-command Q q
-command Qa qa
-command QA qa
-command Wqa wqa
-command WQa wqa
-command WQA wqa
+command! Wsudo :w !sudo tee %
+command! WQ wq
+command! Wq wq
+command! W w
+command! Q q
+command! Qa qa
+command! QA qa
+command! Wqa wqa
+command! WQa wqa
+command! WQA wqa
 
 " Remove trailing whitespace including non-breaking spaces
-command -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$// | norm! ``
+command! -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$// | norm! ``
 nnoremap <Leader>rt :RemoveTrailingWhitespace<CR>
 vnoremap <Leader>rt :RemoveTrailingWhitespace<CR>
 
@@ -188,10 +188,10 @@ function! s:DiffWithSaved()
   diffthis
   exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
-command DiffWithSaved call s:DiffWithSaved()
+command! DiffWithSaved call s:DiffWithSaved()
 
 " Reformat JSON
-command FormatJson %!python -m json.tool
+command! FormatJson %!python -m json.tool
 
 " Highlight last pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
