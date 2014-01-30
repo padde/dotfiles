@@ -175,6 +175,10 @@ command! Wqa wqa
 command! WQa wqa
 command! WQA wqa
 
+" vimrc
+command! Vimrc :e ~/.vimrc
+autocmd! bufwritepost vimrc source % | AirlineRefresh
+
 " Remove trailing whitespace including non-breaking spaces
 command! -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$// | norm! ``
 nnoremap <Leader>rt :RemoveTrailingWhitespace<CR>
