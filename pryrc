@@ -1,15 +1,3 @@
-# doc commands
-
-Pry.commands.command(/(.+) \?\z/) do |a|
-  run "show-doc", a
-end
-
-Pry.commands.command(/(.+) \?\?\z/) do |a|
-  run "show-source", a
-end
-
-
-
 # interesting methods
 
 [Object, Class, Module].each do |klass|
