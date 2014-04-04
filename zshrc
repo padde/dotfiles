@@ -19,6 +19,8 @@ antigen bundle rake
 antigen bundle ruby
 antigen bundle rvm
 antigen bundle tmux
+antigen bundle node
+antigen bundle npm
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # completion
@@ -229,3 +231,6 @@ RPROMPT='${__PROMPT_EXIT_CODE}$(__git_prompt)$(__hg_prompt)'
 
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin
+
+# node
+PATH=$PATH:/usr/local/share/npm/bin
