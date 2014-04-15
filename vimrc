@@ -91,6 +91,8 @@ let mapleader = ","            " nobody likes \ as leader!
 set autoread                   " Reload changes if detected
 set hlsearch                   " Search highlighting
 set incsearch                  " Highlight as you type
+set ignorecase
+set smartcase
 set nolist                     " Do not show invisibles
 set wrap                       " Wrap lines
 set linebreak                  " Soft wrap
