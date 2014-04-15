@@ -29,3 +29,4 @@ hash = parents --template="{node|short}"
 pu = pull -u
 rel = resolve -l
 rem = resolve -m
+whereami = glog --rev "last(0 or parents()~2)::last(tip or limit(children(children(parents()))))"
