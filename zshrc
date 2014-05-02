@@ -18,6 +18,7 @@ antigen bundle pow
 antigen bundle rake
 antigen bundle ruby
 antigen bundle rvm
+antigen bundle rbenv
 antigen bundle tmux
 antigen bundle node
 antigen bundle npm
@@ -231,6 +232,9 @@ RPROMPT='${__PROMPT_EXIT_CODE}$(__git_prompt)$(__hg_prompt)'
 
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin
+
+# Rbenv
+PATH=~/.rbenv/shims:$PATH
 
 # node
 PATH=$PATH:/usr/local/share/npm/bin
