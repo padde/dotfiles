@@ -50,7 +50,6 @@ Bundle 'mileszs/ack.vim'
 Bundle 'hwartig/vim-seeing-is-believing'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'tpope/vim-speeddating'
-Bundle 'rizzatti/dash.vim'
 
 " Syntax
 Bundle 'othree/html5.vim'
