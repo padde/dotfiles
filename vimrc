@@ -83,9 +83,11 @@ set nohidden                   " do not store data about old buffers
 set wildmenu                   " complete all the commands!
 set wildmode=list:longest,full
 set mouse=a                    " mouse support
-if &term =~ '^screen'          " tmux knows the extended mouse mode
+if has("mouse_sgr")            " fix mouse issues in wide terminal windows
+  set ttymouse=sgr
+else
   set ttymouse=xterm2
-endif
+end
 let mapleader = ","            " nobody likes \ as leader!
 set autoread                   " Reload changes if detected
 set hlsearch                   " Search highlighting
