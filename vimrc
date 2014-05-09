@@ -233,7 +233,7 @@ command! -complete=customlist,s:AutojumpCompletion -nargs=* J call s:Autojump(<f
 map <leader>j :J<space>
 
 " ack/ag
-nmap <leader>a :Ack<space>
+nmap <leader>a :Ack<space>-i ""<left>
 
 " nerdtree
 nmap <Leader>d :NERDTreeToggle<CR>
