@@ -55,7 +55,7 @@
   trustExitCode = true
 
 [push]
-  default = matching
+	default = current
 
 [help]
   autocorrect = 5
