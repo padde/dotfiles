@@ -107,6 +107,8 @@ set undodir=~/.vim/undo        " persist undo history
 set undofile
 set undolevels=1000
 set undoreload=10000
+set splitbelow                 " natural split direction
+set splitright
 
 " " persist folds
 " au BufWinLeave * silent! mkview
