@@ -111,9 +111,6 @@ set undoreload=10000
 set splitbelow                 " natural split direction
 set splitright
 
-" " persist folds
-" au BufWinLeave * silent! mkview
-" au BufWinEnter * silent! loadview
 
 " use syntax omnicomplete if no ft specific is available
 if has("autocmd") && exists("+omnifunc")
