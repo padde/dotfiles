@@ -22,6 +22,7 @@ Bundle 'rizzatti/funcoo.vim'
 " File management
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
+Bundle 'pbrisbin/vim-mkdir'
 
 " Smart input
 Bundle 'vim-scripts/Auto-Pairs'
