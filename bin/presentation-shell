@@ -1,4 +1,0 @@
-#!/usr/bin/env sh
-
-export PRESENTATION_MODE=1
-$SHELL
