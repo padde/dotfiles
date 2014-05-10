@@ -248,6 +248,9 @@ if g:colors_name == 'railscasts'
   hi hlShowMarks ctermfg=lightgrey ctermbg=none guifg=#bbbbbb guibg=NONE
   hi Error ctermfg=red ctermbg=none guifg=red guibg=NONE
   hi Todo ctermfg=178 ctermbg=none guifg=orange guibg=NONE
+  hi SignifySignAdd ctermbg=none ctermfg=107 guibg=NONE guifg=#87af5f
+  hi SignifySignDelete ctermbg=none ctermfg=167 guibg=NONE guifg=#df5f5f
+  hi SignifySignChange ctermbg=none ctermfg=221 guibg=NONE guifg=#ffdf5f
 endif
 
 " Airline
