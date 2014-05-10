@@ -255,7 +255,7 @@ set guifont=Menlo\ Regular:h12
 colorscheme railscasts
 
 " Show invisibles as in Text Mate (with improvements)
-set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<
+set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<,nbsp:␣
 
 " Prettier look for splits
 set fillchars+=vert:│
