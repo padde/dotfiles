@@ -67,7 +67,6 @@ Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'jacquesbh/vim-showmarks'
 Bundle 'dhruvasagar/vim-railscasts-theme'
 Bundle 'bling/vim-airline'
-Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 
@@ -253,13 +252,7 @@ nmap <silent> <leader>w :call ToggleWrap()<cr>
 
 " Font
 set guifont=Menlo\ Regular:h12
-
-" Color scheme
-if $PRESENTATION_MODE == 1
-  colorscheme solarized
-else
-  colorscheme railscasts
-endif
+colorscheme railscasts
 
 " Show invisibles as in Text Mate (with improvements)
 set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<
@@ -294,26 +287,21 @@ let g:airline_right_sep=''
 let g:airline_detect_modified=0
 let g:airline_section_z = '%l:%c %p%%'
 let g:airline#extensions#branch#enabled = 1
-
-if $PRESENTATION_MODE == 1
-  let g:airline_theme='solarized'
-else
-  let g:airline_theme='powerlineish'
-  let g:airline_theme_patch_func = 'AirlineThemePatch'
-  function! AirlineThemePatch(palette)
-    if g:airline_theme == 'powerlineish'
-      let a:palette.normal.airline_x[1] = '#404040'
-      let a:palette.normal.airline_x[3] = 236
-      let a:palette.normal.airline_b[1] = '#505050'
-      let a:palette.normal.airline_b[3] = 238
-      let a:palette.normal.airline_c[1] = '#404040'
-      let a:palette.normal.airline_c[3] = 236
-      let a:palette.normal.airline_y[1] = '#505050'
-      let a:palette.normal.airline_y[3] = 238
-      if type(get(a:palette.normal, 'airline_file')) == type([])
-        let a:palette.normal.airline_file[1] = '#404040'
-        let a:palette.normal.airline_file[3] = 236
-      endif
+let g:airline_theme='powerlineish'
+let g:airline_theme_patch_func = 'AirlineThemePatch'
+function! AirlineThemePatch(palette)
+  if g:airline_theme == 'powerlineish'
+    let a:palette.normal.airline_x[1] = '#404040'
+    let a:palette.normal.airline_x[3] = 236
+    let a:palette.normal.airline_b[1] = '#505050'
+    let a:palette.normal.airline_b[3] = 238
+    let a:palette.normal.airline_c[1] = '#404040'
+    let a:palette.normal.airline_c[3] = 236
+    let a:palette.normal.airline_y[1] = '#505050'
+    let a:palette.normal.airline_y[3] = 238
+    if type(get(a:palette.normal, 'airline_file')) == type([])
+      let a:palette.normal.airline_file[1] = '#404040'
+      let a:palette.normal.airline_file[3] = 236
     endif
-  endfunction
-endif
+  endif
+endfunction
