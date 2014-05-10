@@ -177,7 +177,6 @@ command! -nargs=* -complete=file Wq wq <args>
 command! Q q
 
 " vimrc
-command! Vimrc :e ~/.vimrc
 autocmd! bufwritepost vimrc source % | AirlineRefresh
 
 " Remove trailing whitespace including non-breaking spaces
@@ -185,25 +184,11 @@ command! -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$// | no
 nnoremap <Leader>rt :RemoveTrailingWhitespace<CR>
 vnoremap <Leader>rt :RemoveTrailingWhitespace<CR>
 
-" Diff with last saved version
-function! s:DiffWithSaved()
-  let filetype=&ft
-  diffthis
-  vnew | r # | normal! 1Gdd
-  diffthis
-  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
-endfunction
-command! DiffWithSaved call s:DiffWithSaved()
-
 " Reformat JSON
 command! FormatJson %!python -m json.tool
 
 " Highlight last pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
-
-" add line above/below in insert mode
-imap jj <esc>o
-imap JJ <esc>O
 
 " seeing is believing
 nmap <buffer> <Leader>sr <Plug>(seeing-is-believing-run)
@@ -250,7 +235,6 @@ function! ToggleWrap()
 endfunction
 nmap <silent> <leader>w :call ToggleWrap()<cr>
 
-" Font
 set guifont=Menlo\ Regular:h12
 colorscheme railscasts
 
