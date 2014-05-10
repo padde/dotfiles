@@ -51,6 +51,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'hwartig/vim-seeing-is-believing'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'tpope/vim-speeddating'
+Bundle 'vim-scripts/PreserveNoEOL'
 
 " Syntax
 Bundle 'othree/html5.vim'
@@ -111,6 +112,9 @@ set undoreload=10000
 set splitbelow                 " natural split direction
 set splitright
 
+" Preserve EOL
+let g:PreserveNoEOL = 1
+let g:PreserveNoEOL_Function = function('PreserveNoEOL#Internal#Preserve')
 
 " use syntax omnicomplete if no ft specific is available
 if has("autocmd") && exists("+omnifunc")
