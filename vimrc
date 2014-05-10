@@ -38,6 +38,9 @@ Bundle 'mhinz/vim-signify'
 
 " Little helpers
 Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-projectionist'
+Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-bundler'
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-characterize'
 Bundle 'mattn/gist-vim'
