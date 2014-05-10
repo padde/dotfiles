@@ -26,7 +26,6 @@ Bundle 'pbrisbin/vim-mkdir'
 
 " Smart input
 Bundle 'vim-scripts/Auto-Pairs'
-Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-commentary'
@@ -46,17 +45,12 @@ Bundle 'ciaranm/detectindent'
 Bundle 'sjl/gundo.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'tpope/vim-abolish'
 Bundle 'mileszs/ack.vim'
-Bundle 'hwartig/vim-seeing-is-believing'
 Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'tpope/vim-speeddating'
 Bundle 'vim-scripts/PreserveNoEOL'
 
 " Syntax
 Bundle 'othree/html5.vim'
-Bundle 'neowit/vim-force.com'
-Bundle 'juvenn/mustache.vim'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'kchmck/vim-coffee-script'
@@ -64,7 +58,6 @@ Bundle 'groenewege/vim-less'
 Bundle 'nelstrom/vim-visual-star-search'
 
 " Fancyness
-Bundle 'jacquesbh/vim-showmarks'
 Bundle 'dhruvasagar/vim-railscasts-theme'
 Bundle 'bling/vim-airline'
 
@@ -143,10 +136,6 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-" Show marks on the left
-set updatetime=500
-autocmd BufEnter * DoShowMarks
-
 " Check syntax when opening a file
 let g:syntastic_check_on_open=1
 
@@ -189,12 +178,6 @@ command! FormatJson %!python -m json.tool
 
 " Highlight last pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
-
-" seeing is believing
-nmap <buffer> <Leader>sr <Plug>(seeing-is-believing-run)
-xmap <buffer> <Leader>sr <Plug>(seeing-is-believing-run)
-nmap <buffer> <Leader>sm <Plug>(seeing-is-believing-mark)
-xmap <buffer> <Leader>sm <Plug>(seeing-is-believing-mark)
 
 " autojump
 function! s:Autojump(...)
