@@ -172,15 +172,10 @@ let g:NERDTreeChDirMode=2
 
 " Write and quit
 command! Wsudo :w !sudo tee %
-command! WQ wq
-command! Wq wq
-command! W w
+command! -nargs=* -complete=file W w <args>
+command! -nargs=* -complete=file WQ w <args>
+command! -nargs=* -complete=file Wq wq <args>
 command! Q q
-command! Qa qa
-command! QA qa
-command! Wqa wqa
-command! WQa wqa
-command! WQA wqa
 
 " vimrc
 command! Vimrc :e ~/.vimrc
