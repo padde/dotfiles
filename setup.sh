@@ -33,9 +33,6 @@ chsh -s `which zsh`
 /usr/bin/env zsh
 cd
 
-# fonts for vim powerline
-cp -v ~/.dotfiles/fonts/* ~/Library/Fonts/
-
 # vundle
 vim +BundleInstall +qall
 
