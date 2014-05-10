@@ -239,10 +239,14 @@ nmap <Leader>d :NERDTreeToggle<CR>
 
 " toggle wrap
 function! ToggleWrap()
-  if &list
-    set nolist wrap lbr
+  if &wrap
+    let g:ToggleWrapList = &list
+    let g:ToggleWrapLbr = &lbr
+    set list nolbr nowrap
   else
-    set list nowrap nolbr
+    if g:ToggleWrapList | set list | endif
+    if g:ToggleWrapLbr | set lbr | endif
+    set wrap
   endif
 endfunction
 nmap <silent> <leader>w :call ToggleWrap()<cr>
