@@ -51,6 +51,7 @@ Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'mileszs/ack.vim'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'vim-scripts/PreserveNoEOL'
+Bundle 'vim-scripts/ZoomWin'
 
 " Syntax
 Bundle 'othree/html5.vim'
