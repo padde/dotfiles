@@ -15,6 +15,7 @@ cd ~/.dotfiles
 ln -vs ~/.dotfiles/gemrc      ~/.gemrc
 ln -vs ~/.dotfiles/gitconfig  ~/.gitconfig
 ln -vs ~/.dotfiles/gitignore  ~/.gitignore
+ln -vs ~/.dotfiles/guard.rb   ~/.guard.rb
 ln -vs ~/.dotfiles/hgrc       ~/.hgrc
 ln -vs ~/.dotfiles/hgignore   ~/.hgignore
 ln -vs ~/.dotfiles/irbrc      ~/.irbrc
