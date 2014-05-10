@@ -2,12 +2,11 @@ set nocompatible
 
 filetype on
 filetype off
-
-set runtimepath+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 " Vundle the Vundle
-Bundle 'vundle'
+Bundle 'gmarik/Vundle.vim'
 
 " Dependencies
 Bundle 'tpope/vim-repeat'
