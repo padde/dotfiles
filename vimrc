@@ -2,7 +2,6 @@ if &compatible
   set nocompatible
 end
 
-filetype on
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
