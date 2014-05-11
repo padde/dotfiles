@@ -112,6 +112,9 @@ command! Q q
 " vimrc
 autocmd! bufwritepost vimrc source % | AirlineRefresh
 
+" Refresh crtlP after saving
+autocmd! bufwritepost * CtrlPClearCache
+
 " Remove trailing whitespace including non-breaking spaces
 command! -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$// | norm! ``
 nnoremap <Leader>rt :RemoveTrailingWhitespace<CR>
