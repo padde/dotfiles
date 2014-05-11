@@ -1,2 +1,2 @@
-gem: --rdoc --no-ri --no-yard --run-tests
+gem: --no-document
 search: --remote
