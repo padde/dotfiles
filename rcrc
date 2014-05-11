@@ -1,0 +1,2 @@
+EXCLUDES='Readme.md'
+SYMLINK_DIRS='vim zsh'

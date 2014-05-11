@@ -1,0 +1,17 @@
+tap thoughtbot/formulae
+install rcm
+install zsh
+install ack
+install the_silver_searcher
+install autojump
+install tree
+install vimpager
+install tmux
+install reattach-to-user-namespace
+install git
+install gitsh
+install rbenv
+install ruby-build
+install imagemagick
+install postgresql
+install phantomjs
