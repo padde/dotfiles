@@ -36,10 +36,9 @@
   co = checkout
   df = diff
   dfs = diff --staged
-  lg = log
-  lgv = log -p
-  lgp = log --pretty=oneline --abbrev-commit
-  lgg = log --graph --pretty=oneline --abbrev-commit
+  lgp = log --pretty='tformat:%C(blue)%h%C(red)%d%C(yellow) %s %C(green)%an%Creset, %ar'
+  lgg = log --pretty='tformat:%C(blue)%h%C(red)%d%C(yellow) %s %C(green)%an%Creset, %ar' --graph
+  l =   log --pretty='tformat:%C(blue)%h%C(red)%d%C(yellow) %s %C(green)%an%Creset, %ar' --graph -n10
 
 [core]
   excludesfile = ~/.gitignore
