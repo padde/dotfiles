@@ -74,7 +74,6 @@ set smarttab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set visualbell                 " no beeps please!
 set encoding=utf-8             " utf-8 ftw!
 set fileencoding=utf-8
 set nohidden                   " do not store data about old buffers
@@ -222,7 +221,6 @@ function! ToggleWrap()
 endfunction
 nmap <silent> <leader>w :call ToggleWrap()<cr>
 
-set guifont=Menlo\ Regular:h12
 colorscheme railscasts
 
 " Show invisibles as in Text Mate (with improvements)
@@ -231,13 +229,8 @@ set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<,nbsp:␣
 " Prettier look for splits
 set fillchars+=vert:│
 
-" Hightlight current line in gui
+" Hightlight current line
 set cursorline
-
-" Hide menu bar in MacVim
-if has('gui_running')
-  set guioptions=egmrt
-endif
 
 " Patch Railscasts color scheme
 if g:colors_name == 'railscasts'
