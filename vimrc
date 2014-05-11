@@ -216,3 +216,8 @@ function! AirlineThemePatch(palette)
     endif
   endif
 endfunction
+
+" Local config
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
