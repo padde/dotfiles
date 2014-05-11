@@ -2,68 +2,9 @@ if &compatible
   set nocompatible
 end
 
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
-
-" Vundle the Vundle
-Bundle 'gmarik/Vundle.vim'
-
-" Dependencies
-Bundle 'tpope/vim-repeat'
-Bundle 'kana/vim-textobj-user'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'vim-scripts/matchit.zip'
-Bundle 'mattn/webapi-vim'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'rizzatti/funcoo.vim'
-
-" File management
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-Bundle 'pbrisbin/vim-mkdir'
-
-" Smart input
-Bundle 'vim-scripts/Auto-Pairs'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-commentary'
-
-" Version control
-Bundle 'tpope/vim-fugitive'
-Bundle 'phleet/vim-mercenary'
-Bundle 'ludovicchabant/vim-lawrencium'
-Bundle 'mhinz/vim-signify'
-
-" Little helpers
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-projectionist'
-Bundle 'tpope/vim-rake'
-Bundle 'tpope/vim-bundler'
-Bundle 'godlygeek/tabular'
-Bundle 'tpope/vim-characterize'
-Bundle 'mattn/gist-vim'
-Bundle 'ciaranm/detectindent'
-Bundle 'sjl/gundo.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'mileszs/ack.vim'
-Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'vim-scripts/PreserveNoEOL'
-Bundle 'vim-scripts/ZoomWin'
-
-" Syntax
-Bundle 'othree/html5.vim'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-markdown'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'groenewege/vim-less'
-Bundle 'nelstrom/vim-visual-star-search'
-
-" Fancyness
-Bundle 'dhruvasagar/vim-railscasts-theme'
-Bundle 'bling/vim-airline'
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
+endif
 
 filetype plugin indent on
 
