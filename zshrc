@@ -41,7 +41,7 @@ setopt histignoredups
 export HISTSIZE=10000
 
 # autocorrect
-setopt CORRECT CORRECT_ALL
+setopt CORRECT
 
 # extended globbing
 setopt EXTENDED_GLOB
