@@ -56,9 +56,6 @@ elif which most > /dev/null; then
   export PAGER=most
 fi
 
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm"  ]] && . "$HOME/.rvm/scripts/rvm" 
-
 # update submodules
 function update_dotfiles {
   cd ~/.dotfiles
@@ -213,9 +210,6 @@ PROMPT='${__PROMPT_BG}'\
 "%{$__PROMPT_DELIMITER_COLOR%}$%{$reset_color%} "
 
 RPROMPT='${__PROMPT_EXIT_CODE}$(__git_prompt)$(__hg_prompt)'
-
-# Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/bin
 
 # Rbenv
 PATH=~/.rbenv/shims:$PATH
