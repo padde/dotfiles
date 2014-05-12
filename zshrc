@@ -4,24 +4,8 @@ source ~/.dotfiles/zsh/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 
-antigen bundle ant
 antigen bundle autojump
-antigen bundle brew
-antigen bundle bundler
-antigen bundle colorize
-antigen bundle gem
-antigen bundle git
-antigen bundle heroku
-antigen bundle mercurial
-antigen bundle osx
-antigen bundle pow
-antigen bundle rake
-antigen bundle ruby
-antigen bundle rvm
 antigen bundle rbenv
-antigen bundle tmux
-antigen bundle node
-antigen bundle npm
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # completion
