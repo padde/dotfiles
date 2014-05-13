@@ -73,13 +73,16 @@ alias guard-xelatex='guard --guardfile ~/.dotfiles/guard/xelatex-biber/Guardfile
 alias lla='ll -a'
 alias t='tmux'
 alias g='git'
+alias ga='git add'
 alias gst='git st'
 alias gl='git l'
 alias gdf='git df'
 alias gdfs='git dfs'
 alias gci='git ci'
 alias gco='git co'
+alias gp='git pull'
 alias gpu='git pull'
+alias gpush='git push'
 
 # colorize listings (especially in `tree`)
 export LS_COLORS="no=00:di=34:ln=35:so=33"
