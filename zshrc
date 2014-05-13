@@ -83,6 +83,7 @@ alias gco='git co'
 alias gp='git pull'
 alias gpu='git pull'
 alias gpush='git push'
+alias rmig='rake db:migrate'
 
 # colorize listings (especially in `tree`)
 export LS_COLORS="no=00:di=34:ln=35:so=33"
