@@ -104,12 +104,16 @@ let g:gist_open_browser_after_post = 1
 " NERD tree settings
 let g:NERDTreeChDirMode=2
 
-" Write and quit
+" Write and quit typo correction
 command! Wsudo :w !sudo tee %
-command! -nargs=* -complete=file W w <args>
-command! -nargs=* -complete=file WQ w <args>
-command! -nargs=* -complete=file Wq wq <args>
-command! Q q
+command! -nargs=* -bang -complete=file W w<bang> <args>
+command! -nargs=* -bang -complete=file WQ w<bang> <args>
+command! -nargs=* -bang -complete=file Wq wq<bang> <args>
+command! -bang Q q<bang>
+command! -bang Qa qa<bang>
+command! -bang QA qa<bang>
+command! -bang Wqa wqa<bang>
+command! -bang WQa wqa<bang>
 
 " vimrc
 autocmd! bufwritepost vimrc source % | AirlineRefresh
