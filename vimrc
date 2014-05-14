@@ -254,6 +254,19 @@ endfunction
 
 
 
+""" EXPERIMENTAL
+
+" set global flag as default for substitution
+set gdefault
+
+" Don’t reset cursor to start of line when moving around.
+set nostartofline
+
+" Start scrolling three lines before the horizontal window border
+set scrolloff=3
+
+
+
 " Local config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
