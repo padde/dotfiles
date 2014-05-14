@@ -53,6 +53,9 @@ set directory=~/.vim/swap
 set undodir=~/.vim/undo
 set viewdir=~/.vim/view
 
+" Hide startup message
+set shortmess=atI
+
 " Preserve EOL
 let g:PreserveNoEOL = 1
 let g:PreserveNoEOL_Function = function('PreserveNoEOL#Internal#Preserve')
