@@ -54,7 +54,7 @@
   trustExitCode = true
 
 [push]
-	default = current
+  default = current
 
 [help]
   autocorrect = 5

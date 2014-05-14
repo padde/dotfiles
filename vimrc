@@ -97,12 +97,6 @@ let g:syntastic_warning_symbol='■'
 let g:syntastic_style_error_symbol='○'
 let g:syntastic_style_warning_symbol='□'
 
-" force.com plugin settings
-let g:apex_backup_folder        ='~/.force.com/backup'
-let g:apex_temp_folder          ='~/.force.com/temp'
-let g:apex_deployment_error_log ='~/.force.com/error.log'
-let g:apex_properties_folder    ='~/.force.com/properties'
-
 " Gist plugin settings
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
