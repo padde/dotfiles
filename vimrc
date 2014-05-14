@@ -41,12 +41,17 @@ set foldcolumn=1               " Show foldcolumn
 if has('mac')                  " Share clipboard
   set clipboard+=unnamed
 endif
-set undodir=~/.vim/undo        " persist undo history
 set undofile
 set undolevels=1000
 set undoreload=10000
 set splitbelow                 " natural split direction
 set splitright
+
+" Centralize administrational files
+set backupdir=~/.vim/backup
+set directory=~/.vim/swap
+set undodir=~/.vim/undo
+set viewdir=~/.vim/view
 
 " Preserve EOL
 let g:PreserveNoEOL = 1
