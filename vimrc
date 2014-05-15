@@ -2,51 +2,99 @@ if &compatible
   set nocompatible
 end
 
+" Load Vundle bundles
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
+" Enable filetype detection
 filetype plugin indent on
 
-syntax on                      " enable syntax highlighting
-set number                     " show line numbers
-set expandtab                  " i like soft tabs
+" Enable syntax highlighting
+syntax on
+
+" Show line numbers
+set number
+
+" Show foldcolumn
+set foldcolumn=1
+
+" Default to soft tabs/two spaces
+set expandtab
 set smarttab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set encoding=utf-8             " utf-8 ftw!
-set fileencoding=utf-8
-set nohidden                   " do not store data about old buffers
-set wildmenu                   " complete all the commands!
+
+" Complete all the commands!
+set wildmenu
 set wildmode=list:longest,full
-set mouse=a                    " mouse support
-if has("mouse_sgr")            " fix mouse issues in wide terminal windows
+
+" Do not show invisibles
+set nolist
+
+" Wrap lines
+set wrap
+
+" Soft wrap
+set linebreak
+
+" Search highlighting
+set hlsearch
+
+" Mouse support
+set mouse=a
+
+" Fix mouse issues in wide terminal windows
+if has("mouse_sgr")
   set ttymouse=sgr
 else
   set ttymouse=xterm2
 end
-let mapleader = ","            " nobody likes \ as leader!
-set autoread                   " Reload changes if detected
-set hlsearch                   " Search highlighting
-set incsearch                  " Highlight as you type
+
+" Share clipboard
+set clipboard+=unnamed
+
+" Nobody likes \ as leader!
+let mapleader = ","
+
+" UTF-8
+set nobomb
+set encoding=utf-8
+set fileencoding=utf-8
+
+" Reload changes if detected
+set autoread
+
+" Highlight as you type
+set incsearch
 set ignorecase
 set smartcase
-set nolist                     " Do not show invisibles
-set wrap                       " Wrap lines
-set linebreak                  " Soft wrap
+
+" Auto-continue comments
 set formatoptions=croql
-silent! set formatoptions+=j   " j is not always available
-set foldcolumn=1               " Show foldcolumn
-if has('mac')                  " Share clipboard
-  set clipboard+=unnamed
-endif
-set undodir=~/.vim/undo        " persist undo history
+silent! set formatoptions+=j
+
+" Undo settings
 set undofile
 set undolevels=1000
 set undoreload=10000
-set splitbelow                 " natural split direction
+
+" Natural split direction
+set splitbelow
 set splitright
+
+" Do not store data about old buffers
+set nohidden
+
+" Centralize administrational files
+set backupdir=~/.vim/backup
+set directory=~/.vim/swap
+set undodir=~/.vim/undo
+set viewdir=~/.vim/view
+
+" Hide startup message
+set shortmess=atI
 
 " Preserve EOL
 let g:PreserveNoEOL = 1
@@ -89,12 +137,6 @@ let g:syntastic_warning_symbol='■'
 let g:syntastic_style_error_symbol='○'
 let g:syntastic_style_warning_symbol='□'
 
-" force.com plugin settings
-let g:apex_backup_folder        ='~/.force.com/backup'
-let g:apex_temp_folder          ='~/.force.com/temp'
-let g:apex_deployment_error_log ='~/.force.com/error.log'
-let g:apex_properties_folder    ='~/.force.com/properties'
-
 " Gist plugin settings
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
@@ -102,23 +144,28 @@ let g:gist_open_browser_after_post = 1
 " NERD tree settings
 let g:NERDTreeChDirMode=2
 
-" Write and quit
+" Write and quit typo correction
 command! Wsudo :w !sudo tee %
-command! -nargs=* -complete=file W w <args>
-command! -nargs=* -complete=file WQ w <args>
-command! -nargs=* -complete=file Wq wq <args>
-command! Q q
+command! -nargs=* -bang -complete=file W w<bang> <args>
+command! -nargs=* -bang -complete=file WQ w<bang> <args>
+command! -nargs=* -bang -complete=file Wq wq<bang> <args>
+command! -bang Q q<bang>
+command! -bang Qa qa<bang>
+command! -bang QA qa<bang>
+command! -bang Wqa wqa<bang>
+command! -bang WQa wqa<bang>
 
-" vimrc
+" Reload vimrc after saving it
 autocmd! bufwritepost vimrc source % | AirlineRefresh
 
-" Refresh crtlP after saving
+" Clear CtrlP cache after saving and entering buffer
 autocmd! bufwritepost * CtrlPClearCache
+autocmd! bufenter * CtrlPClearCache
 
 " Remove trailing whitespace including non-breaking spaces
 command! -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$// | norm! ``
-nnoremap <Leader>rt :RemoveTrailingWhitespace<CR>
-vnoremap <Leader>rt :RemoveTrailingWhitespace<CR>
+nnoremap <leader>rt :RemoveTrailingWhitespace<CR>
+vnoremap <leader>rt :RemoveTrailingWhitespace<CR>
 
 " Reformat JSON
 command! FormatJson %!python -m json.tool
@@ -126,13 +173,12 @@ command! FormatJson %!python -m json.tool
 " Highlight last pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
-" autojump
+" Autojump
 function! s:Autojump(...)
   let path = system('autojump '.a:000[-1])
   exe 'cd '.escape(path, ' ')
   pwd
 endfunction
-
 function! s:AutojumpCompletion(A,L,P)
   let completions = []
   for completion in split(system('autojump --complete '.a:A), "\n")
@@ -140,31 +186,20 @@ function! s:AutojumpCompletion(A,L,P)
   endfor
   return completions
 endfunction
-
 command! -complete=customlist,s:AutojumpCompletion -nargs=* J call s:Autojump(<f-args>)
+noremap <leader>j :J<space>
 
-map <leader>j :J<space>
+" Ack
+nnoremap <leader>a :Ack<space>-i ""<left>
 
-" ack/ag
-nmap <leader>a :Ack<space>-i ""<left>
+" NERDTree
+nnoremap <leader>d :NERDTreeToggle<cr>
 
-" nerdtree
-nmap <Leader>d :NERDTreeToggle<CR>
 
-" toggle wrap
-function! ToggleWrap()
-  if &wrap
-    let g:ToggleWrapList = &list
-    let g:ToggleWrapLbr = &lbr
-    set list nolbr nowrap
-  else
-    if g:ToggleWrapList | set list | endif
-    if g:ToggleWrapLbr | set lbr | endif
-    set wrap
-  endif
-endfunction
-nmap <silent> <leader>w :call ToggleWrap()<cr>
 
+""" FANCYNESS
+
+" Colors
 colorscheme railscasts
 
 " Show invisibles as in Text Mate (with improvements)
@@ -216,6 +251,21 @@ function! AirlineThemePatch(palette)
     endif
   endif
 endfunction
+
+
+
+""" EXPERIMENTAL
+
+" set global flag as default for substitution
+set gdefault
+
+" Don’t reset cursor to start of line when moving around.
+set nostartofline
+
+" Start scrolling three lines before the horizontal window border
+set scrolloff=3
+
+
 
 " Local config
 if filereadable(expand("~/.vimrc.local"))
