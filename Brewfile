@@ -12,6 +12,7 @@ install git
 install gitsh
 install rbenv
 install ruby-build
+install rbenv-gem-rehash
 install imagemagick
 install postgresql
 install phantomjs
