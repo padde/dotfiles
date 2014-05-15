@@ -13,6 +13,6 @@ Because no place is like 127.0.0.1...
     git clone git@github.com:padde/dotfiles.git
     mv dotfiles ~/.dotfiles
     brew bundle ~/.dotfiles/Brewfile
-    rcup -x Readme.md -x Brewfile
+    rcup rcrc && rcup
     vim +BundleInstall +qall
     chsh -s $(which zsh)
