@@ -7,6 +7,7 @@ antigen use oh-my-zsh
 antigen bundle autojump
 antigen bundle rbenv
 antigen bundle bundler
+antigen bundle osx
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # completion
