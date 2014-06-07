@@ -58,7 +58,7 @@ Plugin 'groenewege/vim-less'
 Plugin 'nelstrom/vim-visual-star-search'
 
 " Fancyness
-Plugin 'chrismccord/jellybeans.vim'
+Bundle 'chriskempson/base16-vim'
 Plugin 'bling/vim-airline'
 
 " Local config

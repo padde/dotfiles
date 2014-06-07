@@ -16,9 +16,6 @@ syntax on
 " Show line numbers
 set number
 
-" Show foldcolumn
-set foldcolumn=1
-
 " Default to soft tabs/two spaces
 set expandtab
 set smarttab
@@ -200,7 +197,8 @@ nnoremap <leader>d :NERDTreeToggle<cr>
 """ FANCYNESS
 
 " Colors
-colorscheme jellybeans
+set background=dark
+colorscheme base16-default
 
 " Show invisibles as in Text Mate (with improvements)
 set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<,nbsp:␣
@@ -212,6 +210,7 @@ set fillchars+=vert:│
 set cursorline
 
 " Simple gutter colors
+hi LineNr ctermbg=none guibg=NONE
 hi FoldColumn ctermbg=none guibg=NONE
 hi SignColumn ctermfg=red ctermbg=none guifg=red guibg=NONE
 hi Error ctermfg=red ctermbg=none guifg=red guibg=NONE
@@ -223,12 +222,10 @@ hi SignifySignChange ctermbg=none ctermfg=221 guibg=NONE guifg=#ffdf5f
 " Airline
 set laststatus=2
 set noshowmode
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline_detect_modified=0
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 let g:airline_section_z = '%l:%c %p%%'
-let g:airline#extensions#branch#enabled = 1
-let g:airline_theme='jellybeans'
+let g:airline_theme = 'powerlineish'
 
 
 
