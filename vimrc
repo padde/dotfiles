@@ -200,7 +200,7 @@ nnoremap <leader>d :NERDTreeToggle<cr>
 """ FANCYNESS
 
 " Colors
-colorscheme railscasts
+colorscheme jellybeans
 
 " Show invisibles as in Text Mate (with improvements)
 set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<,nbsp:␣
@@ -211,19 +211,14 @@ set fillchars+=vert:│
 " Hightlight current line
 set cursorline
 
-" Patch Railscasts color scheme
-if g:colors_name == 'railscasts'
-  hi Search cterm=NONE ctermbg=yellow ctermfg=red
-  hi Search guibg=#eac43c guifg=#b5382d
-  hi FoldColumn ctermfg=red ctermbg=none guifg=red guibg=NONE
-  hi SignColumn ctermfg=red ctermbg=none guifg=red guibg=NONE
-  hi hlShowMarks ctermfg=lightgrey ctermbg=none guifg=#bbbbbb guibg=NONE
-  hi Error ctermfg=red ctermbg=none guifg=red guibg=NONE
-  hi Todo ctermfg=178 ctermbg=none guifg=orange guibg=NONE
-  hi SignifySignAdd ctermbg=none ctermfg=107 guibg=NONE guifg=#87af5f
-  hi SignifySignDelete ctermbg=none ctermfg=167 guibg=NONE guifg=#df5f5f
-  hi SignifySignChange ctermbg=none ctermfg=221 guibg=NONE guifg=#ffdf5f
-endif
+" Simple gutter colors
+hi FoldColumn ctermbg=none guibg=NONE
+hi SignColumn ctermfg=red ctermbg=none guifg=red guibg=NONE
+hi Error ctermfg=red ctermbg=none guifg=red guibg=NONE
+hi Todo ctermfg=178 ctermbg=none guifg=orange guibg=NONE
+hi SignifySignAdd ctermbg=none ctermfg=107 guibg=NONE guifg=#87af5f
+hi SignifySignDelete ctermbg=none ctermfg=167 guibg=NONE guifg=#df5f5f
+hi SignifySignChange ctermbg=none ctermfg=221 guibg=NONE guifg=#ffdf5f
 
 " Airline
 set laststatus=2
@@ -233,24 +228,7 @@ let g:airline_right_sep=''
 let g:airline_detect_modified=0
 let g:airline_section_z = '%l:%c %p%%'
 let g:airline#extensions#branch#enabled = 1
-let g:airline_theme='powerlineish'
-let g:airline_theme_patch_func = 'AirlineThemePatch'
-function! AirlineThemePatch(palette)
-  if g:airline_theme == 'powerlineish'
-    let a:palette.normal.airline_x[1] = '#404040'
-    let a:palette.normal.airline_x[3] = 236
-    let a:palette.normal.airline_b[1] = '#505050'
-    let a:palette.normal.airline_b[3] = 238
-    let a:palette.normal.airline_c[1] = '#404040'
-    let a:palette.normal.airline_c[3] = 236
-    let a:palette.normal.airline_y[1] = '#505050'
-    let a:palette.normal.airline_y[3] = 238
-    if type(get(a:palette.normal, 'airline_file')) == type([])
-      let a:palette.normal.airline_file[1] = '#404040'
-      let a:palette.normal.airline_file[3] = 236
-    endif
-  endif
-endfunction
+let g:airline_theme='jellybeans'
 
 
 
