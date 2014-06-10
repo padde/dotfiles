@@ -189,7 +189,7 @@ command! -complete=customlist,s:AutojumpCompletion -nargs=* J call s:Autojump(<f
 noremap <leader>j :J<space>
 
 " Ack
-nnoremap <leader>a :Ack<space>-i ""<left>
+nnoremap <leader>a :Ack -i ""<left>
 
 " NERDTree
 nnoremap <leader>d :NERDTreeToggle<cr>
