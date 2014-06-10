@@ -48,6 +48,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-scripts/PreserveNoEOL'
 Plugin 'vim-scripts/ZoomWin'
+Plugin 'terryma/vim-multiple-cursors'
 
 " Syntax
 Plugin 'othree/html5.vim'
