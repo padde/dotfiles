@@ -202,6 +202,9 @@ nnoremap <leader>d :NERDTreeToggle<cr>
 set background=dark
 colorscheme base16-default
 
+" Very subtle line numbers
+hi LineNr ctermfg=10 guifg=#202020
+
 " Show invisibles as in Text Mate (with improvements)
 set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<,nbsp:␣
 
