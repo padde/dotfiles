@@ -205,6 +205,9 @@ colorscheme base16-default
 " Very subtle line numbers
 hi LineNr ctermfg=10 guifg=#202020
 
+" Very subtle splits
+hi VertSplit ctermbg=none ctermfg=10 guibg=NONE guifg=#202020
+
 " Show invisibles as in Text Mate (with improvements)
 set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<,nbsp:␣
 
@@ -220,9 +223,9 @@ hi FoldColumn ctermbg=none guibg=NONE
 hi SignColumn ctermfg=red ctermbg=none guifg=red guibg=NONE
 hi Error ctermfg=red ctermbg=none guifg=red guibg=NONE
 hi Todo ctermfg=178 ctermbg=none guifg=orange guibg=NONE
-hi SignifySignAdd ctermbg=none ctermfg=107 guibg=NONE guifg=#87af5f
-hi SignifySignDelete ctermbg=none ctermfg=167 guibg=NONE guifg=#df5f5f
-hi SignifySignChange ctermbg=none ctermfg=221 guibg=NONE guifg=#ffdf5f
+hi SignifySignAdd ctermbg=none guibg=NONE
+hi SignifySignDelete ctermbg=none guibg=NONE
+hi SignifySignChange ctermbg=none guibg=NONE
 
 " Airline
 set laststatus=2
