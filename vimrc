@@ -230,6 +230,17 @@ set noshowmode
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_section_z = '%l:%c %p%%'
+let g:airline_section_b = '%{substitute(getcwd(), ".*\/", "", "g")}'
+let g:airline_section_c = '%t'
+let g:airline_mode_map = {
+  \ 'n'  : 'N',
+  \ 'i'  : 'I',
+  \ 'R'  : 'R',
+  \ 'v'  : 'V',
+  \ 'V'  : 'VL',
+  \ 'c'  : 'CMD',
+  \ '' : 'VB',
+  \ }
 
 
 
