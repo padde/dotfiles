@@ -31,7 +31,7 @@ set wildmode=list:longest,full
 set nolist
 
 " Wrap lines
-set wrap
+set nowrap
 
 " Soft wrap
 set linebreak
