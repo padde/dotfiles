@@ -227,8 +227,5 @@ PROMPT='${__PROMPT_BG}'\
 
 RPROMPT='${__PROMPT_EXIT_CODE}$(__git_prompt)$(__hg_prompt)'
 
-# Rbenv
-PATH=~/.rbenv/shims:$PATH
-
 # node
 PATH=$PATH:/usr/local/share/npm/bin
