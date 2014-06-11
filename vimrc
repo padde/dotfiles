@@ -178,7 +178,8 @@ noremap <leader>j :J<space>
 " Ack
 nnoremap <leader>a :Ack -i ""<left>
 command! AckStar exe 'Ack -Q "' . substitute(@/, '^\\V\|^\\<\|\\>$', '', 'g') . '"'
-xmap <silent>+ *:AckStar<cr>
+nnoremap <silent>+ *:AckStar<cr>
+xnoremap <silent>+ *:AckStar<cr>
 
 " NERDTree
 nnoremap <leader>d :NERDTreeToggle<cr>
