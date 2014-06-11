@@ -30,14 +30,11 @@ set wildmode=list:longest,full
 " Do not show invisibles
 set nolist
 
-" Wrap lines
+" Do not wrap lines
 set nowrap
 
 " Soft wrap
 set linebreak
-
-" Search highlighting
-set hlsearch
 
 " Mouse support
 set mouse=a
@@ -63,10 +60,16 @@ set fileencoding=utf-8
 " Reload changes if detected
 set autoread
 
+" Search highlighting
+set hlsearch
+
 " Highlight as you type
 set incsearch
 set ignorecase
 set smartcase
+
+" set global flag as default for substitution
+set gdefault
 
 " Auto-continue comments
 set formatoptions=croql
@@ -83,6 +86,12 @@ set splitright
 
 " Do not store data about old buffers
 set nohidden
+
+" Don’t reset cursor to start of line when moving around.
+set nostartofline
+
+" Start scrolling three lines before the horizontal window border
+set scrolloff=3
 
 " Centralize administrational files
 set backupdir=~/.vim/backup
@@ -234,19 +243,6 @@ let g:airline_mode_map = {
   \ 'c'  : 'CMD',
   \ '' : 'VB',
   \ }
-
-
-
-""" EXPERIMENTAL
-
-" set global flag as default for substitution
-set gdefault
-
-" Don’t reset cursor to start of line when moving around.
-set nostartofline
-
-" Start scrolling three lines before the horizontal window border
-set scrolloff=3
 
 
 
