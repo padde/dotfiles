@@ -196,9 +196,6 @@ xmap <silent>+ *:AckStar<cr>
 " NERDTree
 nnoremap <leader>d :NERDTreeToggle<cr>
 
-" Clear search highlights
-nmap <silent><esc> :nohlsearch<cr>
-
 
 
 """ FANCYNESS
