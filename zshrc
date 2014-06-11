@@ -98,6 +98,12 @@ alias greset='git reset'
 alias gresp='git reset -p'
 alias gresetp='git reset -p'
 alias rmig='rake db:migrate'
+alias rmi='rake db:migrate'
+alias rser='rails server'
+alias rse='rails server'
+alias rcon='rails console'
+alias rco='rails console'
+alias b='bundle'
 
 # colorize listings (especially in `tree`)
 export LS_COLORS="no=00:di=34:ln=35:so=33"
