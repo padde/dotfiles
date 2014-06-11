@@ -202,9 +202,6 @@ nnoremap <leader>d :NERDTreeToggle<cr>
 set background=dark
 colorscheme base16-default
 
-" Very subtle line numbers
-hi LineNr ctermfg=10 guifg=#202020
-
 " Very subtle splits
 hi VertSplit ctermbg=none ctermfg=10 guibg=NONE guifg=#202020
 
