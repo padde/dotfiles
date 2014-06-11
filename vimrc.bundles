@@ -50,6 +50,7 @@ Plugin 'vim-scripts/PreserveNoEOL'
 Plugin 'vim-scripts/ZoomWin'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'sjl/vitality.vim'
+Plugin 'padde/jump.vim'
 
 " Syntax
 Plugin 'othree/html5.vim'
