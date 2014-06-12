@@ -196,6 +196,24 @@ xnoremap <silent>+ *:AckStar<cr>
 " NERDTree
 nnoremap <leader>d :NERDTreeToggle<cr>
 
+" Make RSpec dance with Spring
+function! SetRspecCommand()
+  call system('bundle show spring')
+  let g:turbux_command_prefix = ''
+  let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+  if !v:shell_error
+    let g:rspec_command = 'call Send_to_Tmux("spring rspec {spec}\n")'
+    let g:turbux_command_prefix = 'spring'
+  endif
+endfunction
+call SetRspecCommand()
+
+let g:no_turbux_mappings = 1
+map <leader>t <Plug>SendTestToTmux
+map <leader><leader>t <Plug>SendFocusedTestToTmux
+map <Leader>T :call RunAllSpecs()<CR>
+
+command! Rmig call Send_to_Tmux("clear\nrake db:migrate\n")
 
 
 """ FANCYNESS

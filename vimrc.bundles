@@ -52,6 +52,9 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'sjl/vitality.vim'
 Plugin 'tommcdo/vim-exchange'
 Plugin 'padde/jump.vim'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'jgdavey/tslime.vim'
+Plugin 'jgdavey/vim-turbux'
 
 " Syntax
 Plugin 'othree/html5.vim'
