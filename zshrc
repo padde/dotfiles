@@ -104,6 +104,7 @@ alias rse='rails server'
 alias rcon='rails console'
 alias rco='rails console'
 alias b='bundle'
+alias livereload='guard -G ~/.Guardfile.livereload'
 
 # colorize listings (especially in `tree`)
 export LS_COLORS="no=00:di=34:ln=35:so=33"
