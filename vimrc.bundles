@@ -65,7 +65,7 @@ Plugin 'groenewege/vim-less'
 Plugin 'nelstrom/vim-visual-star-search'
 
 " Fancyness
-Bundle 'chriskempson/base16-vim'
+Plugin 'chriskempson/base16-vim'
 Plugin 'bling/vim-airline'
 
 " Local config
