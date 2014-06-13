@@ -189,9 +189,10 @@ noremap <leader>j :J<space>
 
 " Ack
 nnoremap <leader>a :Ack -i ""<left>
-command! AckStar exe 'Ack -Q "' . substitute(@/, '^\\V\|^\\<\|\\>$', '', 'g') . '"'
-nnoremap <silent>+ *:AckStar<cr>
-xnoremap <silent>+ *:AckStar<cr>
+nnoremap <silent>+ *:AckFromSearch<cr>
+nnoremap <silent>- #:AckFromSearch<cr>
+vnoremap <silent>+ :<c-u>VStarSearch<cr>:AckFromSearch<cr>
+vnoremap <silent>- :<c-u>VPoundSearch<cr>:AckFromSearch<cr>
 
 " NERDTree
 nnoremap <leader>d :NERDTreeToggle<cr>
