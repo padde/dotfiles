@@ -234,5 +234,11 @@ PROMPT='${__PROMPT_BG}'\
 
 RPROMPT='${__PROMPT_EXIT_CODE}$(__git_prompt)$(__hg_prompt)'
 
+if [ -n $TMUX ]; then
+  precmd() {
+    tmux rename-window "$(basename $(__abbrev_pwd))"
+  }
+fi
+
 # node
 PATH=$PATH:/usr/local/share/npm/bin
