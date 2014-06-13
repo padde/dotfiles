@@ -216,6 +216,8 @@ map <Leader>T :call RunAllSpecs()<CR>
 
 command! Rmig call Send_to_Tmux("clear\nrake db:migrate\n")
 
+map <leader>. :A<CR>
+
 
 """ FANCYNESS
 
