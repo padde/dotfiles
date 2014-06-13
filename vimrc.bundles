@@ -33,8 +33,8 @@ Plugin 'ludovicchabant/vim-lawrencium'
 Plugin 'mhinz/vim-signify'
 
 " Little helpers
-Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-projectionist'
+Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-bundler'
 Plugin 'godlygeek/tabular'
