@@ -199,12 +199,18 @@ nnoremap <leader>d :NERDTreeToggle<cr>
 
 " Make RSpec dance with Spring
 function! SetRspecCommand()
+  " q - exit tmux's visual mode
+  " C-u - clear existing input
+  " C-c - abort currently running spec
+  let common_prefix = 'q'
+
+  let g:turbux_command_prefix = common_prefix
+  let g:rspec_command = 'call Send_to_Tmux("'.common_prefix.'rspec {spec}\n")'
+
   call system('bundle show spring')
-  let g:turbux_command_prefix = ''
-  let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
   if !v:shell_error
-    let g:rspec_command = 'call Send_to_Tmux("spring rspec {spec}\n")'
-    let g:turbux_command_prefix = 'spring'
+    let g:turbux_command_prefix = common_prefix.'spring'
+    let g:rspec_command = 'call Send_to_Tmux("'.common_prefix.'spring rspec {spec}\n")'
   endif
 endfunction
 call SetRspecCommand()
