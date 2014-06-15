@@ -121,15 +121,27 @@ export TERM="xterm-256color"
 # highlight grep results
 export GREP_COLOR="1;31"
 
+# aixterm color escape sequences: bright but *not* bold, work also when the
+# option "Draw bold text in bright colors" in iTerm2 is unchecked.
+typeset -A fg_bright
+fg_bright[black]="[90m"
+fg_bright[red]="[91m"
+fg_bright[green]="[92m"
+fg_bright[yellow]="[93m"
+fg_bright[blue]="[94m"
+fg_bright[magenta]="[95m"
+fg_bright[cyan]="[96m"
+fg_bright[white]="[97m"
+
 # prompt
 # export ZLE_RPROMPT_INDENT=0
 
-__PROMPT_VCS_DELIMITER_COLOR="$fg_bold[black]"
+__PROMPT_VCS_DELIMITER_COLOR="$fg_bright[black]"
 __PROMPT_VCS_DIRTY_COLOR="$fg[red]"
 __PROMPT_VCS_BRANCH_COLOR="$fg[green]"
 __PROMPT_VCS_HASH_COLOR="$fg[yellow]"
 __PROMPT_EXIT_CODE_STR="%(?..%{$fg[red]%}↯%?%{$reset_color%})"
-__PROMPT_DELIMITER_COLOR="$fg_bold[black]"
+__PROMPT_DELIMITER_COLOR="$fg_bright[black]"
 __PROMPT_PWD_COLOR="$fg[red]"
 
 function __accept_line_and_enable_warning {
