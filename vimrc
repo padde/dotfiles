@@ -148,6 +148,7 @@ let g:NERDTreeMapJumpPrevSibling=''
 
 " NERDTree
 nnoremap <silent> <leader>d :NERDTreeToggle<cr>
+nnoremap <silent> <leader><leader>d :NERDTreeFind<cr>
 
 " Write and quit typo correction
 command! Wsudo :w !sudo tee %
