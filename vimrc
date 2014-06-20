@@ -142,6 +142,10 @@ let g:gist_open_browser_after_post = 1
 " NERD tree settings
 let g:NERDTreeChDirMode=2
 
+" These mappings would interfere with vim-tmux-navigator
+let g:NERDTreeMapJumpNextSibling=''
+let g:NERDTreeMapJumpPrevSibling=''
+
 " Write and quit typo correction
 command! Wsudo :w !sudo tee %
 command! -nargs=* -bang -complete=file W w<bang> <args>
