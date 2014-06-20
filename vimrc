@@ -126,19 +126,6 @@ if has("autocmd") && exists("+omnifunc")
         \	endif
 endif
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  let g:ackprg = 'ag --nogroup --column'
-
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  " Disable caching because ag is fast enough
-  let g:ctrlp_use_caching = 0
-endif
-
 " Check syntax when opening a file
 let g:syntastic_check_on_open=1
 
@@ -172,6 +159,19 @@ autocmd! bufwritepost vimrc source % | AirlineRefresh
 " Clear CtrlP cache after saving and entering buffer
 autocmd! bufwritepost * CtrlPClearCache
 autocmd! bufenter * CtrlPClearCache
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  let g:ackprg = 'ag --nogroup --column'
+
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " Disable caching because ag is fast enough
+  let g:ctrlp_use_caching = 0
+endif
 
 " Remove trailing whitespace including non-breaking spaces
 command! -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$// | norm! ``
