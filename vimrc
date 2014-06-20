@@ -146,6 +146,9 @@ let g:NERDTreeChDirMode=2
 let g:NERDTreeMapJumpNextSibling=''
 let g:NERDTreeMapJumpPrevSibling=''
 
+" NERDTree
+nnoremap <leader>d :NERDTreeToggle<cr>
+
 " Write and quit typo correction
 command! Wsudo :w !sudo tee %
 command! -nargs=* -bang -complete=file W w<bang> <args>
@@ -200,9 +203,6 @@ nnoremap <silent>+ *:AckFromSearch<cr>
 nnoremap <silent>- #:AckFromSearch<cr>
 vnoremap <silent>+ :<c-u>VStarSearch<cr>:AckFromSearch<cr>
 vnoremap <silent>- :<c-u>VPoundSearch<cr>:AckFromSearch<cr>
-
-" NERDTree
-nnoremap <leader>d :NERDTreeToggle<cr>
 
 " Make RSpec dance with Spring
 function! SetRspecCommand()
