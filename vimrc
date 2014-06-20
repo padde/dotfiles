@@ -158,7 +158,7 @@ command! -bang Wqa wqa<bang>
 command! -bang WQa wqa<bang>
 
 " Reload vimrc after saving it
-autocmd! bufwritepost vimrc source % | AirlineRefresh
+autocmd! bufwritepost vimrc* source ~/.vimrc | AirlineRefresh
 
 " Ctrl-P
 let g:ctrlp_show_hidden = 1
