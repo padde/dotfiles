@@ -156,6 +156,9 @@ command! -bang WQa wqa<bang>
 " Reload vimrc after saving it
 autocmd! bufwritepost vimrc source % | AirlineRefresh
 
+" Ctrl-P
+let g:ctrlp_show_hidden = 1
+
 " Clear CtrlP cache after saving and entering buffer
 autocmd! bufwritepost * CtrlPClearCache
 autocmd! bufenter * CtrlPClearCache
@@ -168,7 +171,7 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
   " Disable caching because ag is fast enough
   let g:ctrlp_use_caching = 0
 endif
