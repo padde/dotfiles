@@ -40,6 +40,7 @@
 [core]
   excludesfile = ~/.gitignore
   quotepath = false
+  pager = cat
 
 [push]
   default = current
