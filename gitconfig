@@ -31,6 +31,7 @@
   co = checkout
   df = diff
   dfs = diff --staged
+  last = show HEAD~1..HEAD
   lgp = log --pretty='tformat:%C(blue)%h%C(red)%d%C(yellow) %s %C(green)%an%Creset, %ar'
   lgg = log --pretty='tformat:%C(blue)%h%C(red)%d%C(yellow) %s %C(green)%an%Creset, %ar' --graph
   l =   log --pretty='tformat:%C(blue)%h%C(red)%d%C(yellow) %s %C(green)%an%Creset, %ar' --graph -n10
