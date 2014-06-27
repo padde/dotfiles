@@ -135,6 +135,9 @@ let g:syntastic_warning_symbol='■'
 let g:syntastic_style_error_symbol='○'
 let g:syntastic_style_warning_symbol='□'
 
+" Check Ruby with Rubocop
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+
 " Gist plugin settings
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
