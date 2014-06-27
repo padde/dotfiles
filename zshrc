@@ -107,6 +107,7 @@ alias rmig='rake db:migrate'
 alias rse='rails server'
 alias rser='rails server'
 alias t='tmux'
+alias v='vim'
 
 # colorize listings (especially in `tree`)
 export LS_COLORS="no=00:di=34:ln=35:so=33"
