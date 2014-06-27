@@ -254,3 +254,6 @@ fi
 
 # node
 PATH=$PATH:/usr/local/share/npm/bin
+
+# added by travis gem
+[ -f /Users/patrickoscity/.travis/travis.sh ] && source /Users/patrickoscity/.travis/travis.sh
