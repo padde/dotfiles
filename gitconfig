@@ -35,7 +35,8 @@
   lgp = log --pretty='tformat:%C(blue)%h%C(red)%d%C(yellow) %s %C(green)%an%Creset, %ar'
   lgg = log --pretty='tformat:%C(blue)%h%C(red)%d%C(yellow) %s %C(green)%an%Creset, %ar' --graph
   l =   log --pretty='tformat:%C(blue)%h%C(red)%d%C(yellow) %s %C(green)%an%Creset, %ar' --graph -n10
-  trim = "!if [[ -z $(git branch --merged | grep -v '\\*') ]]; then echo 'no merged branches to delete'; else (git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d); fi"
+  obsolete = "!git branch --merged | grep -v '\\*\\|master'"
+  trim = "!if [[ -z $(git obsolete) ]]; then echo 'no merged branches to delete'; else (git obsolete | xargs git branch -d); fi"
 
 [core]
   excludesfile = ~/.gitignore
