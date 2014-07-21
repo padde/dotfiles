@@ -19,6 +19,10 @@ set synmaxcol=1000
 " Show line numbers
 set number
 
+" Highlight 80th column
+set textwidth=80
+set colorcolumn=+0
+
 " Default to soft tabs/two spaces
 set expandtab
 set smarttab
