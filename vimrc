@@ -153,6 +153,12 @@ let g:NERDTreeMapJumpPrevSibling=''
 nnoremap <silent> <leader>d :NERDTreeToggle<cr>
 nnoremap <silent> <leader><leader>d :NERDTreeFind<cr>
 
+" Indent guides settigns
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd cterm=none gui=NONE
+autocmd VimEnter,Colorscheme * :hi link IndentGuidesEven Folded
+" let g:indent_guides_enable_on_vim_startup = 1
+
 " Write and quit typo correction
 command! Wsudo :w !sudo tee %
 command! -nargs=* -bang -complete=file W w<bang> <args>

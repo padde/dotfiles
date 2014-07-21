@@ -68,6 +68,7 @@ Plugin 'padde/vim-visual-star-search'
 " Fancyness
 Plugin 'chriskempson/base16-vim'
 Plugin 'bling/vim-airline'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " Local config
 if filereadable(expand("~/.vimrc.bundles.local"))
