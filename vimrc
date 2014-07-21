@@ -90,8 +90,10 @@ set nohidden
 " Don’t reset cursor to start of line when moving around.
 set nostartofline
 
-" Start scrolling three lines before the horizontal window border
+" Start scrolling before hitting window border
 set scrolloff=3
+set sidescroll=1
+set sidescrolloff=10
 
 " Centralize administrational files
 set backupdir=~/.vim/backup
