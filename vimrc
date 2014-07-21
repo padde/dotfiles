@@ -114,6 +114,10 @@ endif
 " Hide startup message
 set shortmess=atI
 
+" C-p and C-n in command mode
+cnoremap <c-p> <up>
+cnoremap <c-n> <down>
+
 " Preserve EOL
 let g:PreserveNoEOL = 1
 let g:PreserveNoEOL_Function = function('PreserveNoEOL#Internal#Preserve')
