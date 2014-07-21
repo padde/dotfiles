@@ -123,6 +123,9 @@ set virtualedit+=block
 cnoremap <c-p> <up>
 cnoremap <c-n> <down>
 
+" Resize splits when the window is resized
+au VimResized * :wincmd =
+
 " Preserve EOL
 let g:PreserveNoEOL = 1
 let g:PreserveNoEOL_Function = function('PreserveNoEOL#Internal#Preserve')
