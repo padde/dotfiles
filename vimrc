@@ -264,6 +264,16 @@ command! Rmig call Send_to_Tmux("clear\nrake db:migrate\n")
 
 map <leader>. :A<CR>
 
+" Highlight VCS conflict markers
+let g:vcs_conflict_regex = '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+command! NextConflict call search(g:vcs_conflict_regex)
+command! PrevConflict call search(g:vcs_conflict_regex, 'b')
+exe "match ErrorMsg '" . g:vcs_conflict_regex . "'"
+
+" Go to next/prev VCS conflict
+nnoremap <leader><leader>j :NextConflict<cr>
+nnoremap <leader><leader>k :PrevConflict<cr>
+
 
 """ FANCYNESS
 
