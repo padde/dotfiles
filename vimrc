@@ -114,6 +114,9 @@ endif
 " Hide startup message
 set shortmess=atI
 
+" Arbitrary selection in visual block mode
+set virtualedit+=block
+
 " C-p and C-n in command mode
 cnoremap <c-p> <up>
 cnoremap <c-n> <down>
