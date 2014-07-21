@@ -159,6 +159,20 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd cterm=none gui=NONE
 autocmd VimEnter,Colorscheme * :hi link IndentGuidesEven Folded
 " let g:indent_guides_enable_on_vim_startup = 1
 
+" Open in browser
+let g:Browser = 'Google Chrome'
+set isfname-=? isfname+=?
+set isfname-=& isfname+=&
+function! PrefixWithHttp(url)
+  if filereadable(a:url)
+    return a:url
+  else
+    return substitute(a:url, '\v^(http(s)?:\/\/)?(.*)$', 'http\2://\3', '')
+  endif
+endfunction
+nnoremap <silent> gb :exe('!open -a "'.g:Browser.'" "'.PrefixWithHttp(expand('<cfile>')).'"')<cr><cr>
+nnoremap <silent> gB :exe('!open -a "'.g:Browser.'" "'.expand('%').'"')<cr><cr>
+
 " Write and quit typo correction
 command! Wsudo :w !sudo tee %
 command! -nargs=* -bang -complete=file W w<bang> <args>
