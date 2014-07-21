@@ -58,6 +58,9 @@ elif which most > /dev/null; then
   export PAGER=most
 fi
 
+# utf-8 ftw!
+export LC_ALL=en_US.UTF-8
+
 # update submodules
 function update_dotfiles {
   cd ~/.dotfiles
