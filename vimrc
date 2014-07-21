@@ -164,6 +164,9 @@ let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 
+" Gundo
+map <silent> <leader>u :silent! GundoToggle<cr>
+
 " NERD tree settings
 let g:NERDTreeChDirMode=2
 
