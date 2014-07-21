@@ -290,6 +290,10 @@ exe "match ErrorMsg '" . g:vcs_conflict_regex . "'"
 nnoremap <leader><leader>j :NextConflict<cr>
 nnoremap <leader><leader>k :PrevConflict<cr>
 
+" Prev/next item in quickfix list
+map <silent> <leader>cn :cnext<cr>
+map <silent> <leader>cp :cprev<cr>
+
 
 """ FANCYNESS
 
