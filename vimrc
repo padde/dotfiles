@@ -250,8 +250,8 @@ noremap <leader>j :J<space>
 nnoremap <leader>a :Ack -i ""<left>
 nnoremap <silent>+ *:AckFromSearch<cr>
 nnoremap <silent>- #:AckFromSearch<cr>
-vnoremap <silent>+ :<c-u>VStarSearch<cr>:AckFromSearch<cr>
-vnoremap <silent>- :<c-u>VPoundSearch<cr>:AckFromSearch<cr>
+vnoremap <silent>+ :<c-u>call VisualStarSearchSet('/', 'raw')<cr>:AckFromSearch<cr>
+vnoremap <silent>- :<c-u>call VisualStarSearchSet('?', 'raw')<cr>:AckFromSearch<cr>
 
 " Make RSpec dance with Spring
 function! SetRspecCommand()
