@@ -148,8 +148,8 @@ if has("autocmd") && exists("+omnifunc")
         \	endif
 endif
 
-" Check syntax when opening a file
-let g:syntastic_check_on_open=1
+" Do not check syntax when opening a file
+let g:syntastic_check_on_open=0
 
 " Syntastic symbols
 let g:syntastic_error_symbol='●'
