@@ -55,6 +55,8 @@ Plugin 'padde/jump.vim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'jgdavey/vim-turbux'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rbenv'
 Plugin 't9md/vim-ruby-xmpfilter'
 
 " Syntax
