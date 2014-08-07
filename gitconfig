@@ -32,9 +32,9 @@
   df = diff
   dfs = diff --staged
   last = show HEAD~1..HEAD
-  lgp = log --pretty='tformat:%C(blue)%h%C(red)%d%C(yellow) %s %C(green)%an%Creset, %ar'
-  lgg = log --pretty='tformat:%C(blue)%h%C(red)%d%C(yellow) %s %C(green)%an%Creset, %ar' --graph
-  l =   log --pretty='tformat:%C(blue)%h%C(red)%d%C(yellow) %s %C(green)%an%Creset, %ar' --graph -n10
+  lgp = log --pretty='%C(blue)%h %C(green)%aN %C(yellow)%s%C(red)%d %C(blue)%ar%Creset' --graph
+  lgg = log --pretty='%C(blue)%h %C(green)%aN %C(yellow)%s%C(red)%d %C(blue)%ar%Creset' --graph --first-parent
+  l =   log --pretty='%C(blue)%h %C(green)%aN %C(yellow)%s%C(red)%d %C(blue)%ar%Creset' --graph --first-parent -n10
   obsolete = "!git branch --merged | grep -v '\\*\\|master'"
   trim = "!if [[ -z $(git obsolete) ]]; then echo 'no merged branches to delete'; else (git obsolete | xargs git branch -d); fi"
 
