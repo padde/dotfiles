@@ -148,6 +148,9 @@ if has("autocmd") && exists("+omnifunc")
         \	endif
 endif
 
+" Do not show VCS gutter when starting
+let g:signify_disable_by_default=1
+
 " Do not check syntax when opening a file
 let g:syntastic_check_on_open=0
 
