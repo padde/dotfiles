@@ -256,6 +256,12 @@ nnoremap <silent>- #:AckFromSearch<cr>
 vnoremap <silent>+ :<c-u>call VisualStarSearchSet('/', 'raw')<cr>:AckFromSearch<cr>
 vnoremap <silent>- :<c-u>call VisualStarSearchSet('?', 'raw')<cr>:AckFromSearch<cr>
 
+" Send tmux commands to current session, current window, next pane by default:
+let g:tslime = {}
+let g:tslime['session'] = system('tmux display -p "#S"') + 0
+let g:tslime['window'] = system('tmux display -p "#I"') + 0
+let g:tslime['pane'] = system('tmux display -p "#{pane_index}"') + 1
+
 " Make RSpec dance with Spring
 function! SetRspecCommand()
   " q - exit tmux's visual mode
