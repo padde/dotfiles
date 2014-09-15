@@ -111,6 +111,11 @@ alias rse='rails server'
 alias rser='rails server'
 alias t='tmux'
 alias v='vim'
+if $(which trash); then
+  oldrm=$(which rm)
+  alias rm=trash
+  alias rmrm=$oldrm
+fi
 
 # colorize listings (especially in `tree`)
 export LS_COLORS="no=00:di=34:ln=35:so=33"
