@@ -195,7 +195,7 @@ function __git_prompt {
 }
 
 function __find_hg_root {
-  local dir=`pwd`
+  local dir="$(pwd)"
   HG_ROOT=''
 
   while [ $dir != "/" ]; do
