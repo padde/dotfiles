@@ -266,5 +266,8 @@ fi
 # node
 PATH=$PATH:/usr/local/share/npm/bin
 
+# Postgres.app
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
+
 # added by travis gem
 [ -f /Users/patrickoscity/.travis/travis.sh ] && source /Users/patrickoscity/.travis/travis.sh
