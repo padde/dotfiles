@@ -1,4 +1,4 @@
-set guifont=Menlo\ Regular:h12
+set guifont=Menlo\ Regular:h14
 
 if has('gui_running')
   set guioptions=egmrt
