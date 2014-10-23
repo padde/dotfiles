@@ -181,6 +181,24 @@ let g:NERDTreeMapJumpPrevSibling=''
 nnoremap <silent> <leader>d :NERDTreeToggle<cr>
 nnoremap <silent> <leader><leader>d :NERDTreeFind<cr>
 
+" Fugitive
+function! IsFugitiveBuffer(buffer)
+  let bufname = bufname(a:buffer)
+  if bufname =~ '^fugitive:' || bufname =~ 'fugitiveblame$'
+    return 1
+  else
+    return 0
+  endif
+endfunction
+function! CloseFugitiveBuffers()
+  for b in range(1, bufnr('$'))
+    if IsFugitiveBuffer(b)
+      exe 'bw ' . b
+    endif
+  endfor
+endfunction
+nnoremap <leader>gc :silent! call CloseFugitiveBuffers()<cr>
+
 " Indent guides settigns
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd cterm=none gui=NONE
