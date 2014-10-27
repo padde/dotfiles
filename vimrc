@@ -149,7 +149,7 @@ cnoremap <c-p> <up>
 cnoremap <c-n> <down>
 
 " Clear search
-nnoremap <silent> <leader><leader> :noh<cr>
+nnoremap <silent> <space> :noh<cr><space>
 
 " Highlight last pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
