@@ -269,5 +269,8 @@ PATH=$PATH:/usr/local/share/npm/bin
 # Postgres.app
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
 
+# OMG Java
+export JAVA_HOME=$(/usr/libexec/java_home)
+
 # added by travis gem
 [ -f /Users/patrickoscity/.travis/travis.sh ] && source /Users/patrickoscity/.travis/travis.sh
