@@ -309,8 +309,8 @@ command! Rmig call Send_to_Tmux("clear\nrake db:migrate\n")
 function! SetRspecCommand()
   " q - exit tmux's visual mode
   " C-u - clear existing input
-  " C-c - abort currently running spec
-  let common_prefix = 'q'
+  " C-c (twice) - abort currently running spec
+  let common_prefix = 'q'
 
   let g:turbux_command_prefix = common_prefix
   let g:rspec_command = 'call Send_to_Tmux("'.common_prefix.'rspec {spec}\n")'
