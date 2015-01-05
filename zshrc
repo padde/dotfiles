@@ -132,6 +132,9 @@ export TERM="xterm-256color"
 # highlight grep results
 export GREP_COLOR="1;31"
 
+# case insensitive matches in autojump
+export AUTOJUMP_IGNORE_CASE=1
+
 # aixterm color escape sequences: bright but *not* bold, work also when the
 # option "Draw bold text in bright colors" in iTerm2 is unchecked.
 typeset -A fg_bright
