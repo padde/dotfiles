@@ -37,7 +37,7 @@
   l =   log --pretty='%C(blue)%h %C(green)%aN %C(yellow)%s%C(red)%d %C(blue)%ar%Creset' --graph --first-parent -n10
   obsolete = "!git branch --merged | grep -v '\\*\\|master'"
   trim = "!if [[ -z $(git obsolete) ]]; then echo 'no merged branches to delete'; else (git obsolete | xargs git branch -d); fi"
-  giveup = "!printf 'Do you really want to discard all staged, unstaged and untracked changes? [Yn] '; read yn; if [[ $yn =~ "^[yY]([eE][sS])?$" ]]; then (git reset && git co . && git clean -f); else echo 'aborted'; fi"
+  giveup = "!printf 'Do you really want to discard all staged, unstaged and untracked changes? [Yn] '; read yn; if [[ $yn =~ "^[yY]([eE][sS])?$" ]]; then (git reset > /dev/null && for f in $(git ls-files -m); do echo "Resetting $f"; done && git co . && git clean -f); else echo 'aborted'; fi"
 
 [core]
   excludesfile = ~/.gitignore
