@@ -10,7 +10,7 @@ mq =
 extdiff =
 purge =
 hgext.bookmarks =
-hgext.crecord = /usr/local/mercurial/crecord/crecord
+# hgext.crecord = /usr/local/mercurial/crecord/crecord
 record =
 
 [extdiff]
