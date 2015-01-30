@@ -5,6 +5,7 @@ install ack
 install the_silver_searcher
 install autojump
 install tree
+install macvim --override-system-vim
 install vimpager
 install tmux
 install reattach-to-user-namespace
