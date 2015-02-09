@@ -108,6 +108,8 @@ if $(which trash); then
   alias rm=trash
   alias rmrm=$oldrm
 fi
+alias vup='vagrant up'
+alias vssh='vagrant ssh'
 
 # colorize listings (especially in `tree`)
 export LS_COLORS="no=00:di=34:ln=35:so=33"
