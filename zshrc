@@ -269,5 +269,9 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
 # OMG Java
 export JAVA_HOME=$(/usr/libexec/java_home)
 
+# Ramp up Vagrant
+export VM_RAM=4096
+export VM_CPUS=4
+
 # added by travis gem
 [ -f /Users/patrickoscity/.travis/travis.sh ] && source /Users/patrickoscity/.travis/travis.sh
