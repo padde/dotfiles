@@ -57,6 +57,8 @@ Plugin 'jgdavey/vim-turbux'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rbenv'
 Plugin 't9md/vim-ruby-xmpfilter'
+Plugin 'vim-scripts/hexman.vim'
+
 
 " Syntax
 Plugin 'othree/html5.vim'
