@@ -10,7 +10,7 @@ Because no place is like 127.0.0.1...
 
 ## Installation
 
-    git clone git@github.com:padde/dotfiles.git
+    git clone git@github.com:padde/dotfiles.git --recursive
     mv dotfiles ~/.dotfiles
     brew tap Homebrew/bundle
     brew bundle
