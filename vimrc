@@ -1,11 +1,6 @@
-""" VUNDLE
-
-if &compatible
-  set nocompatible
-end
-
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
+""" VIM-PLUG
+if filereadable(expand("~/.vimrc.plugins"))
+  source ~/.vimrc.plugins
 endif
 
 

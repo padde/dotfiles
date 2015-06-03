@@ -15,5 +15,5 @@ Because no place is like 127.0.0.1...
     brew tap Homebrew/bundle
     brew bundle
     rcup rcrc && rcup
-    vim +BundleInstall +qall
+    vim +PlugInstall +qall
     chsh -s $(which zsh)
