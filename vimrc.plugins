@@ -12,7 +12,7 @@ Plug 'rizzatti/funcoo.vim'
 
 " File management
 Plug 'scrooloose/nerdtree'
-Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf'
 Plug 'pbrisbin/vim-mkdir'
 
 " Smart input
