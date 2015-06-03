@@ -1,5 +1,4 @@
 # packages from canonical repository
-brew 'ack'
 brew 'autojump'
 brew 'fzf'
 brew 'git'
