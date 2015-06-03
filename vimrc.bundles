@@ -67,6 +67,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'groenewege/vim-less'
 Plugin 'bronson/vim-visual-star-search'
+Plugin 'elixir-lang/vim-elixir'
 
 " Fancyness
 Plugin 'chriskempson/base16-vim'
