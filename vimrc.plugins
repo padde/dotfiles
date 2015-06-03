@@ -52,7 +52,7 @@ Plug 'jgdavey/vim-turbux'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rbenv'
 Plug 't9md/vim-ruby-xmpfilter'
-Plug 'vim-scripts/hexman.vim'
+Plug 'fidian/hexmode'
 
 " Syntax
 Plug 'othree/html5.vim'
