@@ -1,11 +1,12 @@
-# Padde's Dotfiles
+# Padde’s Dotfiles
 
-Because no place is like 127.0.0.1...
+Because there’s no place like `::1`
 
 ## Dependencies
 
-* XCode
 * Homebrew
+* XCode
+* Command Line Tools
 * MacVim
 
 ## Installation
