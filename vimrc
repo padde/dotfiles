@@ -217,7 +217,7 @@ vnoremap <silent>- :<c-u>call VisualStarSearchSet('?', 'raw')<cr>:AckFromSearch<
 noremap <leader>j :J<space>
 
 " FZF
-nnoremap <C-p> :FZF<cr>
+nnoremap <silent><C-p> :FZF<cr>
 
 " Fugitive
 function! IsFugitiveBuffer(buffer)
