@@ -11,7 +11,7 @@ Because there’s no place like `::1`
 
 ## Installation
 
-    git clone git@github.com:padde/dotfiles.git --recursive
+    git clone git@github.com:padde/dotfiles.git
     mv dotfiles ~/.dotfiles
     brew tap Homebrew/bundle && brew update && brew bundle
     rcup -v rcrc && rcup -v
