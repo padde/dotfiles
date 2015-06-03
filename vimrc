@@ -175,7 +175,9 @@ command! -bang Wqa wqa<bang>
 command! -bang WQa wqa<bang>
 
 " Reload vimrc after saving it
-autocmd! bufwritepost vimrc* source ~/.vimrc | AirlineRefresh
+if filereadable(expand("~/.vim/plugged/vim-airline/plugin/airline.vim"))
+  autocmd! bufwritepost vimrc* source ~/.vimrc | AirlineRefresh
+end
 
 " Remove trailing whitespace including non-breaking spaces
 command! -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$// | norm! ``
@@ -217,9 +219,11 @@ vnoremap <silent>- :<c-u>call VisualStarSearchSet('?', 'raw')<cr>:AckFromSearch<
 noremap <leader>j :J<space>
 
 " Ctrl-P
-let g:ctrlp_show_hidden = 1
-autocmd! bufwritepost * CtrlPClearCache
-autocmd! bufenter * CtrlPClearCache
+if filereadable(expand("~/.vim/plugged/ctrlp.vim/plugin/ctrlp.vim"))
+  let g:ctrlp_show_hidden = 1
+  autocmd! bufwritepost * CtrlPClearCache
+  autocmd! bufenter * CtrlPClearCache
+end
 
 " Fugitive
 function! IsFugitiveBuffer(buffer)
@@ -326,7 +330,9 @@ nnoremap <silent> <C-w>z :ZoomWin<cr>
 
 " Colors
 set background=dark
-colorscheme base16-default
+if filereadable(expand("~/.vim/plugged/base16-vim/colors/base16-default.vim"))
+  colorscheme base16-default
+end
 
 " Hightlight current line
 set cursorline
