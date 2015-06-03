@@ -13,7 +13,7 @@ Because there’s no place like `::1`
 
     git clone git@github.com:padde/dotfiles.git --recursive
     mv dotfiles ~/.dotfiles
-    brew tap Homebrew/bundle && brew bundle
+    brew tap Homebrew/bundle && brew update && brew bundle
     rcup -v rcrc && rcup -v
     vim +PlugInstall +qall
     chsh -s $(which zsh)
