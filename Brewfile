@@ -1,6 +1,5 @@
 # packages from canonical repository
 brew 'autojump'
-brew 'fzf'
 brew 'git'
 brew 'imagemagick'
 brew 'macvim', args: ['override-system-vim']

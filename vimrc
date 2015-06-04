@@ -206,6 +206,8 @@ map <silent> <leader>cp :cprev<cr>
 if executable('ag')
   let g:ackprg = 'ag --nogroup --column'
   set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --hidden --ignore .git --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
 endif
 nnoremap <leader>a :Ack -i ""<left>
 nnoremap <silent>+ *:AckFromSearch<cr>
@@ -216,8 +218,12 @@ vnoremap <silent>- :<c-u>call VisualStarSearchSet('?', 'raw')<cr>:AckFromSearch<
 " Autojump
 noremap <leader>j :J<space>
 
-" FZF
-nnoremap <silent><C-p> :FZF<cr>
+" Ctrl-P
+if filereadable(expand("~/.vim/plugged/ctrlp.vim/plugin/ctrlp.vim"))
+  let g:ctrlp_show_hidden = 1
+  autocmd! bufwritepost * CtrlPClearCache
+  autocmd! bufenter * CtrlPClearCache
+end
 
 " Fugitive
 function! IsFugitiveBuffer(buffer)
