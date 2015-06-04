@@ -206,8 +206,6 @@ map <silent> <leader>cp :cprev<cr>
 if executable('ag')
   let g:ackprg = 'ag --nogroup --column'
   set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --hidden --ignore .git --nocolor -g ""'
-  let g:ctrlp_use_caching = 0
 endif
 nnoremap <leader>a :Ack -i ""<left>
 nnoremap <silent>+ *:AckFromSearch<cr>
@@ -223,6 +221,10 @@ if filereadable(expand("~/.vim/plugged/ctrlp.vim/plugin/ctrlp.vim"))
   let g:ctrlp_show_hidden = 1
   autocmd! bufwritepost * CtrlPClearCache
   autocmd! bufenter * CtrlPClearCache
+  if executable('ag')
+    let g:ctrlp_user_command = 'ag %s -l --hidden --ignore .git --nocolor -g ""'
+    let g:ctrlp_use_caching = 0
+  end
 end
 
 " Fugitive
