@@ -175,9 +175,7 @@ command! -bang Wqa wqa<bang>
 command! -bang WQa wqa<bang>
 
 " Reload vimrc after saving it
-if filereadable(expand("~/.vim/plugged/vim-airline/plugin/airline.vim"))
-  autocmd! bufwritepost vimrc* source ~/.vimrc | AirlineRefresh
-end
+autocmd! bufwritepost vimrc* source ~/.vimrc
 
 " Remove trailing whitespace including non-breaking spaces
 command! -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$// | norm! ``
