@@ -303,21 +303,18 @@ map <leader>t <Plug>SendTestToTmux
 map <leader><leader>t <Plug>SendFocusedTestToTmux
 map <Leader>T :call RunAllSpecs()<CR>
 
-" Tmux - Make RSpec dance with Spring
+" Tmux + RSpec + Spring
 function! SetRspecCommand()
   " q - exit tmux's visual mode
   " C-u - clear existing input
   " C-c (twice) - abort currently running spec
   let common_prefix = 'q'
-
-  let g:turbux_command_prefix = common_prefix
-  let g:rspec_command = 'call Send_to_Tmux("'.common_prefix.'rspec {spec}\n")'
-
   call system('bundle show spring')
   if !v:shell_error
-    let g:turbux_command_prefix = common_prefix.'spring'
-    let g:rspec_command = 'call Send_to_Tmux("'.common_prefix.'spring rspec {spec}\n")'
+    let common_prefix = common_prefix.'spring'
   endif
+  let g:turbux_command_prefix = common_prefix
+  let g:rspec_command = 'call VimuxRunCommand("'.common_prefix.' rspec {spec}\n")'
 endfunction
 call SetRspecCommand()
 
