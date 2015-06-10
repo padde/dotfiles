@@ -302,7 +302,6 @@ let g:no_turbux_mappings = 1
 map <leader>t <Plug>SendTestToTmux
 map <leader><leader>t <Plug>SendFocusedTestToTmux
 map <Leader>T :call RunAllSpecs()<CR>
-command! Rmig call Send_to_Tmux("clear\nrake db:migrate\n")
 
 " Tmux - Make RSpec dance with Spring
 function! SetRspecCommand()
