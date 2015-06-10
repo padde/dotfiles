@@ -294,10 +294,6 @@ let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:syntastic_mode_map = {'mode': 'passive'}
 
 " Tmux
-let g:tslime = {}
-let g:tslime['session'] = system('tmux display -p "#S"') + 0
-let g:tslime['window'] = system('tmux display -p "#I"') + 0
-let g:tslime['pane'] = system('tmux display -p "#{pane_index}"') + 1
 let g:no_turbux_mappings = 1
 map <leader>t <Plug>SendTestToTmux
 map <leader><leader>t <Plug>SendFocusedTestToTmux
