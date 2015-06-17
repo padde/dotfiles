@@ -307,10 +307,10 @@ function! SetRspecCommand()
   let common_prefix = 'q'
   call system('bundle show spring')
   if !v:shell_error
-    let common_prefix = common_prefix.'spring'
+    let common_prefix = common_prefix.'spring '
   endif
   let g:turbux_command_prefix = common_prefix
-  let g:rspec_command = 'call VimuxRunCommand("'.common_prefix.' rspec {spec}\n")'
+  let g:rspec_command = 'call VimuxRunCommand("'.common_prefix.'rspec {spec}\n")'
 endfunction
 call SetRspecCommand()
 
