@@ -18,3 +18,12 @@ brew 'zsh'
 tap 'thoughtbot/formulae'
 brew 'gitsh'
 brew 'rcm'
+
+# quicklook plugins
+cask 'qlcolorcode'
+cask 'qlstephen'
+cask 'qlmarkdown'
+cask 'quicklook-json'
+cask 'quicklook-csv'
+cask 'qlimagesize'
+cask 'webpquicklook'
