@@ -139,6 +139,9 @@ au VimResized * :wincmd =
 
 """ CUSTOM MAPPINGS AND COMMANDS
 
+" Map non-breaking space to space
+inoremap <A-space> <space>
+
 " C-p and C-n in command mode
 cnoremap <c-p> <up>
 cnoremap <c-n> <down>
