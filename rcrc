@@ -1,2 +1,2 @@
-EXCLUDES='Readme.md Brewfile install.sh'
+EXCLUDES='Readme.md Brewfile install.sh rcrc'
 SYMLINK_DIRS='vim zsh'
