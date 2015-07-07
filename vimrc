@@ -274,16 +274,12 @@ let g:PreserveNoEOL_Function = function('PreserveNoEOL#Internal#Preserve')
 let g:xmpfilter_cmd = "seeing_is_believing"
 autocmd FileType ruby nmap <buffer> <leader>sm <Plug>(seeing_is_believing-mark)
 autocmd FileType ruby xmap <buffer> <leader>sm <Plug>(seeing_is_believing-mark)
-autocmd FileType ruby imap <buffer> <leader>sm <Plug>(seeing_is_believing-mark)
 autocmd FileType ruby nmap <buffer> <leader>sc <Plug>(seeing_is_believing-clean)
 autocmd FileType ruby xmap <buffer> <leader>sc <Plug>(seeing_is_believing-clean)
-autocmd FileType ruby imap <buffer> <leader>sc <Plug>(seeing_is_believing-clean)
 autocmd FileType ruby nmap <buffer> <leader>sr <Plug>(seeing_is_believing-run)
 autocmd FileType ruby xmap <buffer> <leader>sr <Plug>(seeing_is_believing-run)
-autocmd FileType ruby imap <buffer> <leader>sr <Plug>(seeing_is_believing-run)
 autocmd FileType ruby nmap <buffer> <leader>sR <Plug>(seeing_is_believing-run_-x)
 autocmd FileType ruby xmap <buffer> <leader>sR <Plug>(seeing_is_believing-run_-x)
-autocmd FileType ruby imap <buffer> <leader>sR <Plug>(seeing_is_believing-run_-x)
 
 " Signify
 let g:signify_disable_by_default=1
