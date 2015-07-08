@@ -1,0 +1,15 @@
+% Colors
+color normal default default
+color underline red default
+color overstrike blue default
+color status brightgreen default
+
+% Vim-like key bindings
+setkey column_left h
+setkey down j
+setkey up k
+setkey column_right l
+setkey exit q
+setkey exit ^C
+setkey bob gg
+setkey eob G
