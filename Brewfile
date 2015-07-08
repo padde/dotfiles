@@ -12,7 +12,7 @@ brew 'ruby-build'
 brew 'the_silver_searcher'
 brew 'tmux'
 brew 'tree'
-brew 'vimpager'
+brew 'most'
 brew 'zsh'
 
 tap 'thoughtbot/formulae'

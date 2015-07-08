@@ -44,9 +44,7 @@ setopt EXTENDED_GLOB
 DISABLE_AUTO_TITLE=true
 
 # Use most as pager, if available
-if which vimpager > /dev/null; then
-  export PAGER=vimpager
-elif which most > /dev/null; then
+if which most > /dev/null; then
   export PAGER=most
 fi
 
