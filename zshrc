@@ -273,3 +273,8 @@ export VM_CPUS=4
 
 # added by travis gem
 [ -f /Users/patrickoscity/.travis/travis.sh ] && source /Users/patrickoscity/.travis/travis.sh
+
+# local configuration
+if [ -f ~/.zshrc.local ]; then
+  source ~/.zshrc.local
+fi
