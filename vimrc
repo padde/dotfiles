@@ -13,7 +13,7 @@ filetype plugin indent on
 syntax on
 
 " Don’t highlight after 1000th column
-set synmaxcol=1000
+set synmaxcol=200
 
 " Show line numbers
 set number
