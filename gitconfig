@@ -25,8 +25,6 @@
   au = add -u
   st = status
   ci = commit
-  cm = commit -m
-  cam = commit -am
   br = branch
   co = checkout
   df = diff
