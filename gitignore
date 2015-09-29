@@ -16,6 +16,10 @@ syntax: glob
 # WIN noise
 Thumbs.db
 
+# keep *.lock files related to dependency mgmt
+!Gemfile.lock
+!mix.lock
+
 # powder files
 .powder
 
