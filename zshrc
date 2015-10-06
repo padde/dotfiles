@@ -100,6 +100,7 @@ alias rmig='rake db:migrate'
 alias rse='rails server'
 alias rser='rails server'
 alias t='tmux'
+alias ts="awk '{print strftime(\"[%Y-%m-%d %H:%M:%S]\"), \$0; fflush();}'"
 alias v='vim'
 if $(which trash); then
   oldrm=$(which rm)
