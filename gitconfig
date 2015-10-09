@@ -48,11 +48,16 @@
 
 [push]
   default = current
+  followTags = true
+
+[pull]
+  tags = true
 
 [help]
   autocorrect = 20
 
 [include]
   path = ~/.gitconfig.local
+
 [mailmap]
-	file = /Users/patrickoscity/.mailmap
+  file = /Users/patrickoscity/.mailmap
