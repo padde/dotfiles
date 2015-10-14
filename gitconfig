@@ -60,4 +60,4 @@
   path = ~/.gitconfig.local
 
 [mailmap]
-  file = /Users/patrickoscity/.mailmap
+  file = ~/.mailmap
