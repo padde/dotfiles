@@ -290,8 +290,22 @@ function! SimpleVimuxStrategy(cmd) abort
   call VimuxRunCommand(a:cmd)
 endfunction
 let g:test#custom_strategies = {'simple_vimux': function('SimpleVimuxStrategy')}
-let test#strategy = 'simple_vimux'
-let test#ruby#rspec#executable = 'bundle exec rspec'
+let g:test#strategy = 'simple_vimux'
+let g:test#ruby#rspec#executable = 'bundle exec rspec'
+
+function! ProjectRoot()
+endfunction
+
+" Hacky hack to enable :TestSuite when no test was run yet
+try
+  let spec_path = systemlist('git rev-parse --show-toplevel')[0] . '/spec/'
+  let all_specs = split(globpath(spec_path, '**/*_spec.rb'), '\n')
+  let g:test#last_position={'file': all_specs[0], 'col': 1, 'line': 1}
+  let g:test#last_command=g:test#ruby#rspec#executable
+catch
+endtry
+
+
 nmap <silent> <leader>T :TestSuite<CR>
 nmap <silent> <leader>t :TestFile<CR>
 nmap <silent> <leader><leader>t :TestNearest<CR>
