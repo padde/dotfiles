@@ -302,8 +302,6 @@ function! SetRspecCommand()
 endfunction
 call SetRspecCommand()
 
-" ZoomWin
-nnoremap <silent> <C-w>z :ZoomWin<cr>
 
 
 """ FANCYNESS
