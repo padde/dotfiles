@@ -68,7 +68,6 @@ Plug 'spiegela/vimix'
 Plug 'tpope/vim-characterize'
 Plug 'mattn/gist-vim'
 Plug 'sjl/gundo.vim'
-Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/ZoomWin'
 Plug 'fidian/hexmode'
 

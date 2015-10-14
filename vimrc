@@ -285,14 +285,6 @@ autocmd FileType ruby xmap <buffer> <leader>sR <Plug>(seeing_is_believing-run_-x
 " Signify
 let g:signify_disable_by_default=1
 
-" Syntastic
-let g:syntastic_error_symbol='●'
-let g:syntastic_warning_symbol='■'
-let g:syntastic_style_error_symbol='○'
-let g:syntastic_style_warning_symbol='□'
-let g:syntastic_ruby_checkers = ['mri', 'rubocop']
-let g:syntastic_mode_map = {'mode': 'passive'}
-
 " Tmux
 let g:no_turbux_mappings = 1
 map <leader>t <Plug>SendTestToTmux
