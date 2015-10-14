@@ -285,22 +285,18 @@ autocmd FileType ruby xmap <buffer> <leader>sR <Plug>(seeing_is_believing-run_-x
 " Signify
 let g:signify_disable_by_default=1
 
-" Tmux
-let g:no_turbux_mappings = 1
-map <leader>t <Plug>SendTestToTmux
-map <leader><leader>t <Plug>SendFocusedTestToTmux
-map <Leader>T :call RunAllSpecs()<CR>
-
-" Tmux + RSpec
-function! SetRspecCommand()
-  " q - exit tmux's visual mode
-  " C-u - clear existing input
-  " C-c (twice) - abort currently running spec
-  let common_prefix = 'qbundle exec '
-  let g:turbux_command_prefix = common_prefix
-  let g:rspec_command = 'call VimuxRunCommand("'.common_prefix.'rspec {spec}\n")'
+" Vim-Test
+function! SimpleVimuxStrategy(cmd) abort
+  call VimuxRunCommand(a:cmd)
 endfunction
-call SetRspecCommand()
+let g:test#custom_strategies = {'simple_vimux': function('SimpleVimuxStrategy')}
+let test#strategy = 'simple_vimux'
+let test#ruby#rspec#executable = 'bundle exec rspec'
+nmap <silent> <leader>T :TestSuite<CR>
+nmap <silent> <leader>t :TestFile<CR>
+nmap <silent> <leader><leader>t :TestNearest<CR>
+nmap <silent> <leader>lt :TestLast<CR>
+nmap <silent> <leader>gt :TestVisit<CR>
 
 
 

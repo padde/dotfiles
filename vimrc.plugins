@@ -12,7 +12,6 @@ Plug 'rizzatti/funcoo.vim'
 " TMUX integration
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
-Plug 'jgdavey/vim-turbux'
 
 " File management
 Plug 'scrooloose/nerdtree'
@@ -49,13 +48,15 @@ Plug 'tpope/vim-markdown'
 Plug 'kchmck/vim-coffee-script'
 Plug 'groenewege/vim-less'
 
+" Testing
+Plug 'janko-m/vim-test'
+
 " Ruby development
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rbenv'
-Plug 'thoughtbot/vim-rspec'
 Plug 'vim-ruby/vim-ruby'
 Plug 't9md/vim-ruby-xmpfilter'
 Plug 'nelstrom/vim-textobj-rubyblock'
