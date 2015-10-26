@@ -305,12 +305,17 @@ try
 catch
 endtry
 
+" Deprecated mappings for Vim-Test
+nmap <silent> <leader><leader>t :echoerr 'DEPRECATED: use <leader>tt instead'<cr>
+nmap <silent> <leader>t :echoerr 'DEPRECATED: use <leader>tf instead'<cr>
+nmap <silent> <leader>T :echoerr 'DEPRECATED: use <leader>ts instead'<cr>
 
-nmap <silent> <leader>T :TestSuite<CR>
-nmap <silent> <leader>t :TestFile<CR>
-nmap <silent> <leader><leader>t :TestNearest<CR>
-nmap <silent> <leader>lt :TestLast<CR>
-nmap <silent> <leader>gt :TestVisit<CR>
+" Mappings for Vim-Test
+nmap <silent> <leader>tt :TestNearest<cr>
+nmap <silent> <leader>tf :TestFile<cr>
+nmap <silent> <leader>ts :TestSuite<cr>
+nmap <silent> <leader>tl :TestLast<cr>
+nmap <silent> <leader>tg :TestVisit<cr>
 
 
 
