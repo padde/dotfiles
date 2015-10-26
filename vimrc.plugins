@@ -2,7 +2,6 @@ call plug#begin('~/.vim/plugged')
 
 " Dependencies
 Plug 'tpope/vim-repeat'
-Plug 'kana/vim-textobj-user'
 Plug 'vim-scripts/matchit.zip'
 Plug 'mattn/webapi-vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -26,14 +25,23 @@ Plug 'sjl/vitality.vim'
 
 " Smart input
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'michaeljsmith/vim-indent-object'
 Plug 'tommcdo/vim-exchange'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'ciaranm/detectindent'
 Plug 'vim-scripts/PreserveNoEOL'
 Plug 'godlygeek/tabular'
+
+" Text objects
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-function'
+Plug 'kana/vim-textobj-syntax'
+Plug 'kana/vim-textobj-lastpat'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-underscore'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'tpope/vim-surround'
 
 " Version control
 Plug 'tpope/vim-fugitive'
@@ -59,7 +67,6 @@ Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rbenv'
 Plug 'vim-ruby/vim-ruby'
 Plug 't9md/vim-ruby-xmpfilter'
-Plug 'nelstrom/vim-textobj-rubyblock'
 
 " Elixir development
 Plug 'elixir-lang/vim-elixir'
