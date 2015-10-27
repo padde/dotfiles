@@ -1,6 +1,7 @@
 \set QUIET
 \set ON_ERROR_ROLLBACK interactive
 \set HISTFILE ~/.psql/history- :DBNAME
+\set HISTCONTROL ignoredups
 \pset pager off
 \pset null [null]
 \unset QUIET
