@@ -2,5 +2,5 @@
 \set ON_ERROR_ROLLBACK interactive
 \set HISTFILE ~/.psql/history- :DBNAME
 \pset pager off
-\pset null '(NULL)'
+\pset null [null]
 \unset QUIET
