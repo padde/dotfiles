@@ -2,6 +2,7 @@
 \set ON_ERROR_ROLLBACK interactive
 \set HISTFILE ~/.psql/history- :DBNAME
 \set HISTCONTROL ignoredups
+\x auto
 \pset pager off
 \pset null [null]
 \unset QUIET
