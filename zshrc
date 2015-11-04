@@ -74,11 +74,24 @@ alias rmig='rake db:migrate'
 alias rback='rake db:rollback'
 alias ts="awk '{print strftime(\"[%Y-%m-%d %H:%M:%S]\"), \$0; fflush();}'"
 
+# safe rm/trash
 if $(which trash); then
   oldrm=$(which rm)
-  alias rm=trash
-  alias rmrm=$oldrm
+  alias rm=trash_or_rm
+  alias really_rm=$oldrm
 fi
+
+function trash_or_rm {
+  printf 'Are you sure? [y]es [r]m [t]rash [a]bort '
+  read rta
+  if [[ $rta =~ "^[yY]([eE][sS])?|[rR]$" ]]; then
+    really_rm $@
+  elif [[ $rta =~ "^[tT]$" ]]; then
+    trash $@
+  else
+    echo 'aborted'
+  fi
+}
 
 # colorize listings (especially in `tree`)
 export LS_COLORS="no=00:di=34:ln=35:so=33"
