@@ -71,6 +71,7 @@ alias gl='git l'
 alias gst='git st'
 alias lla='ll -a'
 alias rmig='rake db:migrate'
+alias rback='rake db:rollback'
 alias ts="awk '{print strftime(\"[%Y-%m-%d %H:%M:%S]\"), \$0; fflush();}'"
 
 if $(which trash); then
