@@ -60,55 +60,24 @@ function update_dotfiles {
 }
 
 # aliases
-alias b='bundle'
-alias c=clear
 alias cl=clear
 alias g='git'
 alias ga='git add'
-alias gadd='git add'
-alias gaddp='git add -p'
-alias gap='git add -p'
 alias gci='git ci'
 alias gco='git co'
-alias gcommit='git commit'
-alias gcop='git co -p'
-alias gd='git df'
 alias gdf='git df'
-alias gdfs='git dfs'
-alias gdiff='git diff'
+alias gdfs='git df --staged'
 alias gl='git l'
-alias glog='git log'
-alias gp='git pull'
-alias gpu='git pull'
-alias gpull='git pull'
-alias gpush='git push'
-alias gres='git reset'
-alias greset='git reset'
-alias gresetp='git reset -p'
-alias gresp='git reset -p'
-alias gs='git st'
 alias gst='git st'
-alias gstatus= 'git status'
-alias guard-pdflatex='guard --guardfile ~/.dotfiles/guard/pdflatex-biber/Guardfile'
-alias guard-xelatex='guard --guardfile ~/.dotfiles/guard/xelatex-biber/Guardfile'
-alias livereload='/usr/local/opt/rbenv/shims/guard --no-bundler-warning -G ~/.Guardfile.livereload'
 alias lla='ll -a'
-alias rco='rails console'
-alias rcon='rails console'
-alias rmi='rake db:migrate'
 alias rmig='rake db:migrate'
-alias rse='rails server'
-alias rser='rails server'
-alias t='tmux'
 alias ts="awk '{print strftime(\"[%Y-%m-%d %H:%M:%S]\"), \$0; fflush();}'"
-alias v='vim'
+
 if $(which trash); then
   oldrm=$(which rm)
   alias rm=trash
   alias rmrm=$oldrm
 fi
-alias vup='vagrant up'
-alias vssh='vagrant ssh'
 
 # colorize listings (especially in `tree`)
 export LS_COLORS="no=00:di=34:ln=35:so=33"
