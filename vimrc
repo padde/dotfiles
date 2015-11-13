@@ -197,8 +197,8 @@ nnoremap <silent> <leader><leader>j :NextConflict<cr>
 nnoremap <silent> <leader><leader>k :PrevConflict<cr>
 
 " Prev/next item in quickfix list
-map <silent> <leader>cn :cnext<cr>
-map <silent> <leader>cp :cprev<cr>
+map <silent> <leader>n :silent cnext<cr>
+map <silent> <leader>N :silent cprev<cr>
 
 
 """ PLUGIN SPECIFIC CONFIG
