@@ -30,9 +30,10 @@
   df = diff
   dfs = diff --staged
   last = show HEAD~1..HEAD
-  lgp = log --pretty='%C(blue)%h %C(green)%aN %C(yellow)%s%C(red)%d %C(blue)%ar%Creset' --graph
-  lgg = log --pretty='%C(blue)%h %C(green)%aN %C(yellow)%s%C(red)%d %C(blue)%ar%Creset' --graph --first-parent
-  l =   log --pretty='%C(blue)%h %C(green)%aN %C(yellow)%s%C(red)%d %C(blue)%ar%Creset' --graph --first-parent -n10
+  log-pretty = log --pretty='%C(blue)%h %C(green)%aN %C(yellow)%s%C(red)%d %C(blue)%ar%Creset' --graph
+  lgp = "!git log-pretty"
+  lgg = "!git log-pretty --first-parent"
+  l = "!git log-pretty --first-parent -n10"
   up = "!git set-upstream"
   obsolete = "!git branch --merged | grep -v \"\\\\*\\\\|master\\\\|$(git symbolic-ref --short HEAD)\""
   trim-local = "!git obsolete | xargs git branch -d"
