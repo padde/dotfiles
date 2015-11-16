@@ -33,6 +33,7 @@
   lgp = log --pretty='%C(blue)%h %C(green)%aN %C(yellow)%s%C(red)%d %C(blue)%ar%Creset' --graph
   lgg = log --pretty='%C(blue)%h %C(green)%aN %C(yellow)%s%C(red)%d %C(blue)%ar%Creset' --graph --first-parent
   l =   log --pretty='%C(blue)%h %C(green)%aN %C(yellow)%s%C(red)%d %C(blue)%ar%Creset' --graph --first-parent -n10
+  up = "!git set-upstream"
   obsolete = "!git branch --merged | grep -v \"\\\\*\\\\|master\\\\|$(git symbolic-ref --short HEAD)\""
   trim-local = "!git obsolete | xargs git branch -d"
   trim-remote = fetch --prune --all
@@ -42,6 +43,7 @@
   shame = blame -w -M
   squash = commit --amend
   fixup = commit --amend --no-edit
+  set-upstream = "!git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD)"
 
 [core]
   excludesfile = ~/.gitignore
