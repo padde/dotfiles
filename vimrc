@@ -245,7 +245,7 @@ function! CloseFugitiveBuffers()
   endfor
 endfunction
 nnoremap <leader>gc :silent! call CloseFugitiveBuffers()<cr>
-autocmd User fugitive command! -bar -buffer -nargs=* Gshame :Gblame -w -M <args>
+autocmd User fugitive command! -bar -buffer -nargs=* Gshame :Gblame -w -M -C <args>
 
 " Gist
 let g:gist_detect_filetype = 1
