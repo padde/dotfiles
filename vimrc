@@ -12,8 +12,8 @@ filetype plugin indent on
 " Enable syntax highlighting
 syntax on
 
-" Don’t highlight after 1000th column
-set synmaxcol=200
+" Don’t highlight after 350th column
+set synmaxcol=350
 
 " Show line numbers
 set number
