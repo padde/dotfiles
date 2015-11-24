@@ -41,7 +41,7 @@
   trim = "!git trim-remote && git trim-local"
   giveup = "!printf 'Do you really want to discard all staged, unstaged and untracked changes? [Yn] '; read yn; if [[ $yn =~ "^[yY]([eE][sS])?$" ]]; then (git reset > /dev/null && for f in $(git ls-files -m); do echo "Resetting $f"; done && git co . && git clean -f); else echo 'aborted'; fi"
   authors = "!git log --format='%aN (%ae)' | sort -u"
-  shame = blame -w -M
+  shame = blame -w -M -C
   squash = commit --amend
   fixup = commit --amend --no-edit
   set-upstream = "!git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD)"
