@@ -250,10 +250,17 @@ PROMPT=\
 "%{$__PROMPT_DELIMITER_COLOR%}%#%{$reset_color%} "
 
 
+# tmux title
 if [ -n $TMUX ]; then
-  chpwd() {
+  function set_tmux_title {
     tmux rename-window "$(basename $(__abbrev_pwd))"
   }
+
+  chpwd() {
+    set_tmux_title
+  }
+
+  set_tmux_title
 fi
 
 # node
