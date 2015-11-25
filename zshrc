@@ -111,6 +111,19 @@ export GREP_COLOR="1;31"
 # case insensitive matches in autojump
 export AUTOJUMP_IGNORE_CASE=1
 
+# helper functions
+function truncate_string {
+  max=$1
+  ellipsis=$(if [ ! -z $2 ]; then echo $2; else echo "…"; fi)
+  read string
+  len=$(echo "${#string}")
+  if [ $len -gt $max ]; then
+    print $string[1,$(($max - 1))]$ellipsis
+  else
+    print $string
+  fi
+}
+
 # aixterm color escape sequences: bright but *not* bold, work also when the
 # option "Draw bold text in bright colors" in iTerm2 is unchecked.
 typeset -A fg_bright
@@ -124,15 +137,14 @@ fg_bright[cyan]="[96m"
 fg_bright[white]="[97m"
 
 # prompt
-# export ZLE_RPROMPT_INDENT=0
-
 __PROMPT_VCS_DELIMITER_COLOR="$fg_bright[black]"
 __PROMPT_VCS_DIRTY_COLOR="$fg[red]"
 __PROMPT_VCS_BRANCH_COLOR="$fg[green]"
 __PROMPT_VCS_HASH_COLOR="$fg[yellow]"
-__PROMPT_EXIT_CODE_STR="%(?..%{$fg[red]%}↯%?%{$reset_color%})"
+__PROMPT_EXIT_CODE_STR="%(?..%{$fg[red]%}↯%?%{$reset_color%} )"
 __PROMPT_DELIMITER_COLOR="$fg_bright[black]"
-__PROMPT_PWD_COLOR="$fg[red]"
+__PROMPT_TIME_COLOR="$fg_bright[black]"
+__PROMPT_PWD_COLOR="$fg[blue]"
 
 function __accept_line_and_enable_warning {
   __PROMPT_EXIT_CODE=$__PROMPT_EXIT_CODE_STR
@@ -153,6 +165,10 @@ function __git_branch {
   git rev-parse --abbrev-ref HEAD 2>/dev/null
 }
 
+function __git_abbrev_branch {
+  __git_branch | truncate_string 10 "⋯"
+}
+
 function __git_hash {
   git log -1 --format="%h" 2>/dev/null || print '(none)'
 }
@@ -164,12 +180,10 @@ function __git_prompt {
       dirty_str='●'
     fi
 
-    print " "\
-"%{$__PROMPT_VCS_DIRTY_COLOR%}${dirty_str}%{$reset_color%}"\
-"%{$__PROMPT_VCS_DELIMITER_COLOR%}git:%{$reset_color%}"\
-"%{$__PROMPT_VCS_BRANCH_COLOR%}$(__git_branch)%{$reset_color%}"\
+    print "%{$__PROMPT_VCS_DIRTY_COLOR%}${dirty_str}%{$reset_color%}"\
+"%{$__PROMPT_VCS_BRANCH_COLOR%}$(__git_abbrev_branch)%{$reset_color%}"\
 "%{$__PROMPT_VCS_DELIMITER_COLOR%}@%{$reset_color%}"\
-"%{$__PROMPT_VCS_HASH_COLOR%}$(__git_hash)%{$reset_color%}"
+"%{$__PROMPT_VCS_HASH_COLOR%}$(__git_hash)%{$reset_color%} "
   fi
 }
 
@@ -211,12 +225,10 @@ function __hg_prompt {
       dirty_str='●'
     fi
 
-    print " "\
-"%{$__PROMPT_VCS_DIRTY_COLOR%}${dirty_str}%{$reset_color%}"\
-"%{$__PROMPT_VCS_DELIMITER_COLOR%}hg:%{$reset_color%}"\
+    print "%{$__PROMPT_VCS_DIRTY_COLOR%}${dirty_str}%{$reset_color%}"\
 "%{$__PROMPT_VCS_BRANCH_COLOR%}$(__hg_branch)%{$reset_color%}"\
 "%{$__PROMPT_VCS_DELIMITER_COLOR%}@%{$reset_color%}"\
-"%{$__PROMPT_VCS_HASH_COLOR%}$(__hg_hash)%{$reset_color%}"
+"%{$__PROMPT_VCS_HASH_COLOR%}$(__hg_hash)%{$reset_color%} "
   fi
 }
 
@@ -230,11 +242,13 @@ function __abbrev_pwd {
   fi
 }
 
-PROMPT='${__PROMPT_BG}'\
+PROMPT=\
+"%{$__PROMPT_TIME_COLOR%}"'%D{%H:%M} '\
+'${__PROMPT_EXIT_CODE}$(__git_prompt)$(__hg_prompt)'\
+"%{$__PROMPT_DELIMITER_COLOR%}"'${__PROMPT_BG}'\
 "%{$__PROMPT_PWD_COLOR%}"'$(__abbrev_pwd)'"%{$reset_color%}"\
-"%{$__PROMPT_DELIMITER_COLOR%}$%{$reset_color%} "
+"%{$__PROMPT_DELIMITER_COLOR%}%#%{$reset_color%} "
 
-RPROMPT='${__PROMPT_EXIT_CODE}$(__git_prompt)$(__hg_prompt)'
 
 if [ -n $TMUX ]; then
   chpwd() {
