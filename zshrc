@@ -246,8 +246,8 @@ PROMPT=\
 "%{$__PROMPT_TIME_COLOR%}"'%D{%H:%M} '\
 '${__PROMPT_EXIT_CODE}$(__git_prompt)$(__hg_prompt)'\
 "%{$__PROMPT_DELIMITER_COLOR%}"'${__PROMPT_BG}'\
-"%{$__PROMPT_PWD_COLOR%}"'$(__abbrev_pwd)'"%{$reset_color%}"\
-"%{$__PROMPT_DELIMITER_COLOR%}%#%{$reset_color%} "
+"%{$__PROMPT_PWD_COLOR%}"'$(__abbrev_pwd)'"%{$reset_color%}
+%{$__PROMPT_DELIMITER_COLOR%}%#%{$reset_color%} "
 
 
 # tmux title
