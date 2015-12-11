@@ -189,12 +189,11 @@ vnoremap <leader>rt :RemoveTrailingWhitespace<CR>
 command! FormatJson %!python -m json.tool
 
 " Highlight VCS conflict markers
-let g:vcs_conflict_regex = '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
-command! NextConflict call search(g:vcs_conflict_regex)
-command! PrevConflict call search(g:vcs_conflict_regex, 'b')
-exe "match ErrorMsg '" . g:vcs_conflict_regex . "'"
-nnoremap <silent> <leader><leader>j :NextConflict<cr>
-nnoremap <silent> <leader><leader>k :PrevConflict<cr>
+match ErrorMsg "^\(<\|=\|>\)\{7\}\([^=].\+\)\?$"
+
+" Move to next VCS conflict marker
+noremap <silent> <leader><leader>j /\V\^\(=======\\|<<<<<<<\\|>>>>>>>\)<cr>
+noremap <silent> <leader><leader>k /\V\^\(=======\\|<<<<<<<\\|>>>>>>>\)<cr>
 
 " Prev/next item in quickfix list
 map <silent> <leader>n :silent cnext<cr>
