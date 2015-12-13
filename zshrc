@@ -166,7 +166,7 @@ function __git_branch {
 }
 
 function __git_abbrev_branch {
-  __git_branch | truncate_string 10 "⋯"
+  __git_branch | truncate_string 20 "⋯"
 }
 
 function __git_hash {
