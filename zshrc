@@ -8,6 +8,7 @@ antigen bundle autojump
 antigen bundle rbenv
 antigen bundle bundler
 antigen bundle osx
+antigen bundle docker
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # completion
@@ -263,4 +264,12 @@ export VM_CPUS=4
 # local configuration
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
+fi
+
+# Docker Mac
+if which docker-machine > /dev/null; then
+  function start-docker-machine {
+    docker-machine start default
+    eval "$(docker-machine env default)"
+  }
 fi
