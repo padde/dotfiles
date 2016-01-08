@@ -9,7 +9,6 @@ Plug 'tomtom/tlib_vim'
 Plug 'rizzatti/funcoo.vim'
 
 " TMUX integration
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
 
 " File management
