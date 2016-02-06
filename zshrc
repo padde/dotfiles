@@ -1,4 +1,5 @@
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
 
 source ~/.dotfiles/zsh/antigen.zsh
 
