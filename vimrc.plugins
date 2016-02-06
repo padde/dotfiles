@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugged')
 
 " Dependencies
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-abolish'
 Plug 'vim-scripts/matchit.zip'
 Plug 'mattn/webapi-vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
