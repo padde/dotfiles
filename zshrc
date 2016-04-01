@@ -240,31 +240,36 @@ if [ -n $TMUX ]; then
   set_tmux_title
 fi
 
-# node
+# Node.js
 PATH=$PATH:/usr/local/share/npm/bin
 
-# Postgres.app
+# Postgres
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
 
-# OMG Java
+# Java
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-# Ramp up Vagrant
+# Vagrant
 export VM_RAM=4096
 export VM_CPUS=4
 
-# added by travis gem
-[ -f /Users/patrickoscity/.travis/travis.sh ] && source /Users/patrickoscity/.travis/travis.sh
+# Travis
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
-# local configuration
-if [ -f ~/.zshrc.local ]; then
-  source ~/.zshrc.local
-fi
-
-# Docker Mac
+# Docker
 if which docker-machine > /dev/null; then
   function start-docker-machine {
     docker-machine start default
     eval "$(docker-machine env default)"
   }
+fi
+
+# Go
+export GOPATH=$HOME/.go
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH=$PATH:$GOPATH
+
+# local configuration
+if [ -f ~/.zshrc.local ]; then
+  source ~/.zshrc.local
 fi
