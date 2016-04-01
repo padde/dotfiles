@@ -188,6 +188,15 @@ vnoremap <leader>rt :RemoveTrailingWhitespace<CR>
 " Reformat JSON
 command! FormatJson %!python -m json.tool
 
+" Reformat SQL
+" pip install sqlparse
+command! FormatSQL %!sqlformat -r - -k upper -i lower
+
+" Reformat HTML/XML
+" brew install tidy-html5
+command! FormatHTML :%!tidy -q -i -w 0 --show-errors 0 --tidy-mark 0
+command! FormatXML :%!tidy -q -i -w 0 --show-errors 0 --tidy-mark 0 -xml
+
 " Highlight VCS conflict markers
 match ErrorMsg "^\(<\|=\|>\)\{7\}\([^=].\+\)\?$"
 
