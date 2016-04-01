@@ -20,12 +20,6 @@ compinit
 export VISUAL=vim
 export EDITOR=vim
 
-# vi mode
-bindkey -v
-bindkey "^F" vi-cmd-mode
-# bindkey jj vi-cmd-mode
-bindkey "^?" backward-delete-char
-
 # history search
 bindkey '\C-p' history-beginning-search-backward
 bindkey '\C-n' history-beginning-search-forward
