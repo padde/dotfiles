@@ -9,6 +9,10 @@
 end
 alias imeth interesting_methods
 
+Pry::Commands.block_command "continue!", "Continue and skip binding.pry until exit" do
+  def Pry.start(*); end
+  run 'continue'
+end
 
 
 # vim: ft=ruby
