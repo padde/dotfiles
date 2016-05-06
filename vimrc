@@ -45,6 +45,8 @@ set linebreak
 " Mouse support
 set mouse=a
 
+set cryptmethod=blowfish2
+
 " Fix mouse issues in wide terminal windows
 if has("mouse_sgr")
   set ttymouse=sgr
