@@ -26,6 +26,7 @@
   st = status
   ci = commit
   br = branch
+  cine = commit --no-edit
   co = checkout
   df = diff
   dfs = diff --staged
