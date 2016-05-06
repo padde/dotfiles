@@ -367,6 +367,14 @@ set background=dark
 if filereadable(expand("~/.vim/plugged/base16-vim/colors/base16-default.vim"))
   colorscheme base16-default
 end
+function! SimpleGutterColors()
+  hi VertSplit ctermbg=none guibg=NONE
+  hi LineNr ctermbg=none guibg=NONE
+  hi FoldColumn ctermbg=none guibg=NONE
+  hi SignColumn ctermbg=none guibg=NONE
+endfunction
+au ColorScheme * call SimpleGutterColors()
+call SimpleGutterColors()
 
 " Hightlight current line
 set cursorline
@@ -376,14 +384,6 @@ set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<,nbsp:␣
 
 " Splits
 set fillchars+=vert:│
-hi VertSplit ctermbg=none ctermfg=10 guibg=NONE guifg=#202020
-
-" Simple gutter colors
-hi LineNr ctermbg=none guibg=NONE
-hi FoldColumn ctermbg=none guibg=NONE
-hi SignColumn ctermfg=red ctermbg=none guifg=red guibg=NONE
-hi Error ctermfg=red ctermbg=none guifg=red guibg=NONE
-hi Todo ctermfg=178 ctermbg=none guifg=orange guibg=NONE
 
 " Airline
 set laststatus=2
