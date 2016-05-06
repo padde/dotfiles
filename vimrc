@@ -261,9 +261,6 @@ command! -bang QA qa<bang>
 command! -bang Wqa wqa<bang>
 command! -bang WQa wqa<bang>
 
-" Reload vimrc after saving it
-autocmd! bufwritepost vimrc* source ~/.vimrc
-
 " Remove trailing whitespace including non-breaking spaces
 command! -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$// | norm! ``
 nnoremap <leader>rt :RemoveTrailingWhitespace<CR>
