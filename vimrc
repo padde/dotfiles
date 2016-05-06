@@ -139,6 +139,7 @@ endif
 au VimResized * :wincmd =
 
 
+
 """ CUSTOM MAPPINGS AND COMMANDS
 
 " Map non-breaking space to space
@@ -199,16 +200,15 @@ command! FormatSQL %!sqlformat -r - -k upper -i lower
 command! FormatHTML :%!tidy -q -i -w 0 --show-errors 0 --tidy-mark 0
 command! FormatXML :%!tidy -q -i -w 0 --show-errors 0 --tidy-mark 0 -xml
 
-" Highlight VCS conflict markers
+" VCS conflict markers
 match ErrorMsg "^\(<\|=\|>\)\{7\}\([^=].\+\)\?$"
-
-" Move to next VCS conflict marker
 noremap <silent> <leader><leader>j /\V\^\(=======\\|<<<<<<<\\|>>>>>>>\)<cr>
 noremap <silent> <leader><leader>k /\V\^\(=======\\|<<<<<<<\\|>>>>>>>\)<cr>
 
 " Prev/next item in quickfix list
 map <silent> <leader>n :silent cnext<cr>
 map <silent> <leader>N :silent cprev<cr>
+
 
 
 """ PLUGIN SPECIFIC CONFIG
@@ -299,12 +299,8 @@ endfunction
 let g:test#custom_strategies = {'simple_vimux': function('SimpleVimuxStrategy')}
 let g:test#strategy = 'simple_vimux'
 let g:test#ruby#rspec#executable = 'bundle exec rspec'
-
-function! ProjectRoot()
-endfunction
-
-" Hacky hack to enable :TestSuite when no test was run yet
 try
+  " Hacky hack to enable :TestSuite when no test was run yet
   let spec_path = systemlist('git rev-parse --show-toplevel')[0] . '/spec/'
   let all_specs = split(globpath(spec_path, '**/*_spec.rb'), '\n')
   let g:test#last_position={'file': all_specs[0], 'col': 1, 'line': 1}
@@ -323,6 +319,7 @@ nmap <silent> <leader>tf :TestFile<cr>
 nmap <silent> <leader>ts :TestSuite<cr>
 nmap <silent> <leader>tl :TestLast<cr>
 nmap <silent> <leader>tg :TestVisit<cr>
+let test#runners = {'Elixir': ['Exercism']}
 
 
 
@@ -368,9 +365,6 @@ let g:airline_mode_map = {
   \ 'c'  : 'CMD',
   \ '' : 'VB',
   \ }
-
-" vim-test
-let test#runners = {'Elixir': ['Exercism']}
 
 """ LOCAL CONFIG
 
