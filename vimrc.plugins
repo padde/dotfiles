@@ -43,7 +43,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'phleet/vim-mercenary'
 Plug 'ludovicchabant/vim-lawrencium'
-Plug 'mhinz/vim-signify'
 
 " Syntax
 Plug 'othree/html5.vim'

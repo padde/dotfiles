@@ -292,9 +292,6 @@ autocmd FileType ruby xmap <buffer> <leader>sr <Plug>(seeing_is_believing-run)
 autocmd FileType ruby nmap <buffer> <leader>sR <Plug>(seeing_is_believing-run_-x)
 autocmd FileType ruby xmap <buffer> <leader>sR <Plug>(seeing_is_believing-run_-x)
 
-" Signify
-let g:signify_disable_by_default=1
-
 " Vim-Test
 function! SimpleVimuxStrategy(cmd) abort
   call VimuxRunCommand(a:cmd)
@@ -353,9 +350,6 @@ hi FoldColumn ctermbg=none guibg=NONE
 hi SignColumn ctermfg=red ctermbg=none guifg=red guibg=NONE
 hi Error ctermfg=red ctermbg=none guifg=red guibg=NONE
 hi Todo ctermfg=178 ctermbg=none guifg=orange guibg=NONE
-hi SignifySignAdd ctermbg=none guibg=NONE
-hi SignifySignDelete ctermbg=none guibg=NONE
-hi SignifySignChange ctermbg=none guibg=NONE
 
 " Airline
 set laststatus=2
