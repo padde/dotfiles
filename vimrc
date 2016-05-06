@@ -305,37 +305,14 @@ nnoremap <silent>- #:AckFromSearch<cr>
 vnoremap <silent>+ :<c-u>call VisualStarSearchSet('/', 'raw')<cr>:AckFromSearch<cr>
 vnoremap <silent>- :<c-u>call VisualStarSearchSet('?', 'raw')<cr>:AckFromSearch<cr>
 
-" Autojump
-noremap <leader>j :J<space>
-
 " Ctrl-P
-if filereadable(expand("~/.vim/plugged/ctrlp.vim/plugin/ctrlp.vim"))
-  let g:ctrlp_show_hidden = 1
-  autocmd! bufwritepost * CtrlPClearCache
-  autocmd! bufenter * CtrlPClearCache
-  if executable('ag')
-    let g:ctrlp_user_command = 'ag %s -l --hidden --ignore .git --nocolor -g ""'
-    let g:ctrlp_use_caching = 0
-  end
+let g:ctrlp_show_hidden = 1
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --hidden --ignore .git --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
 end
 
 " Fugitive
-function! IsFugitiveBuffer(buffer)
-  let bufname = bufname(a:buffer)
-  if bufname =~ '^fugitive:' || bufname =~ 'fugitiveblame$'
-    return 1
-  else
-    return 0
-  endif
-endfunction
-function! CloseFugitiveBuffers()
-  for b in range(1, bufnr('$'))
-    if IsFugitiveBuffer(b)
-      exe 'bw ' . b
-    endif
-  endfor
-endfunction
-nnoremap <leader>gc :silent! call CloseFugitiveBuffers()<cr>
 autocmd User fugitive command! -bar -buffer -nargs=* Gshame :Gblame -w -M -C <args>
 
 " Gist
@@ -362,17 +339,6 @@ nnoremap <silent> <leader><leader>d :NERDTreeFind<cr>
 let g:PreserveNoEOL = 1
 let g:PreserveNoEOL_Function = function('PreserveNoEOL#Internal#Preserve')
 
-" Seeing is believing
-let g:xmpfilter_cmd = "seeing_is_believing"
-autocmd FileType ruby nmap <buffer> <leader>sm <Plug>(seeing_is_believing-mark)
-autocmd FileType ruby xmap <buffer> <leader>sm <Plug>(seeing_is_believing-mark)
-autocmd FileType ruby nmap <buffer> <leader>sc <Plug>(seeing_is_believing-clean)
-autocmd FileType ruby xmap <buffer> <leader>sc <Plug>(seeing_is_believing-clean)
-autocmd FileType ruby nmap <buffer> <leader>sr <Plug>(seeing_is_believing-run)
-autocmd FileType ruby xmap <buffer> <leader>sr <Plug>(seeing_is_believing-run)
-autocmd FileType ruby nmap <buffer> <leader>sR <Plug>(seeing_is_believing-run_-x)
-autocmd FileType ruby xmap <buffer> <leader>sR <Plug>(seeing_is_believing-run_-x)
-
 " Vim-Test
 function! SimpleVimuxStrategy(cmd) abort
   call VimuxRunCommand(a:cmd)
@@ -388,13 +354,6 @@ try
   let g:test#last_command=g:test#ruby#rspec#executable
 catch
 endtry
-
-" Deprecated mappings for Vim-Test
-nmap <silent> <leader><leader>t :echoerr 'DEPRECATED: use <leader>tt instead'<cr>
-nmap <silent> <leader>t :echoerr 'DEPRECATED: use <leader>tf instead'<cr>
-nmap <silent> <leader>T :echoerr 'DEPRECATED: use <leader>ts instead'<cr>
-
-" Mappings for Vim-Test
 nmap <silent> <leader>tt :TestNearest<cr>
 nmap <silent> <leader>tf :TestFile<cr>
 nmap <silent> <leader>ts :TestSuite<cr>
