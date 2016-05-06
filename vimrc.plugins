@@ -1,13 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
-" Dependencies
+" Dependencies required by multiple plugins
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-abolish'
-Plug 'vim-scripts/matchit.zip'
-Plug 'mattn/webapi-vim'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'rizzatti/funcoo.vim'
 
 " TMUX integration
 Plug 'christoomey/vim-tmux-navigator'
@@ -75,6 +70,7 @@ Plug 'spiegela/vimix'
 
 " Little helpers
 Plug 'tpope/vim-characterize'
+Plug 'mattn/webapi-vim' " required by gist-vim
 Plug 'mattn/gist-vim'
 Plug 'sjl/gundo.vim'
 Plug 'fidian/hexmode'
