@@ -375,6 +375,8 @@ let g:airline_mode_map = {
   \ '' : 'VB',
   \ }
 
+" vim-test
+let test#runners = {'Elixir': ['Exercism']}
 
 """ LOCAL CONFIG
 
