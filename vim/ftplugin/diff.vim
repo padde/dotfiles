@@ -16,4 +16,4 @@ function! CycleDiffPrefixes()
   call setline('.', repl)
 endfunction
 
-nnoremap <space> :call CycleDiffPrefixes()<cr>
+nnoremap <buffer><space> :call CycleDiffPrefixes()<cr>
