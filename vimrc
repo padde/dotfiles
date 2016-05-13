@@ -81,6 +81,10 @@ Plug 'chriskempson/base16-vim'
 Plug 'bling/vim-airline'
 Plug 'nathanaelkane/vim-indent-guides'
 
+if filereadable(expand("~/.vimrc.plugins.local"))
+  source ~/.vimrc.plugins.local
+endif
+
 call plug#end()
 
 
