@@ -36,9 +36,6 @@ setopt CORRECT
 # extended globbing
 setopt EXTENDED_GLOB
 
-# do not set title automatically
-DISABLE_AUTO_TITLE=true
-
 # Use most as pager, if available
 if which most > /dev/null; then
   export PAGER=most
@@ -226,17 +223,15 @@ PROMPT=\
 "%{$__PROMPT_PWD_COLOR%}"'$(__abbrev_pwd)'"%{$reset_color%}
 %{$__PROMPT_DELIMITER_COLOR%}%#%{$reset_color%} "
 
-
-# tmux title
+# window title
+DISABLE_AUTO_TITLE=true
 if [ -n $TMUX ]; then
   function set_tmux_title {
     tmux rename-window "$(basename $(__abbrev_pwd))"
   }
-
   chpwd() {
     set_tmux_title
   }
-
   set_tmux_title
 fi
 
