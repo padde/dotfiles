@@ -44,14 +44,6 @@ fi
 # utf-8 ftw!
 export LC_ALL=en_US.UTF-8
 
-# update submodules
-function update_dotfiles {
-  cd ~/.dotfiles
-  git pull origin master
-  git submodule foreach git pull origin master
-  cd -
-}
-
 # aliases
 alias cl=clear
 alias g='git'
