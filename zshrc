@@ -55,6 +55,7 @@ alias gdfs='git df --staged'
 alias gl='git l'
 alias gst='git st'
 alias lla='ll -a'
+alias o='open'
 alias rmig='rake db:migrate'
 alias rback='rake db:rollback'
 alias ts="awk '{print strftime(\"[%Y-%m-%d %H:%M:%S.%N]\"), \$0; fflush();}'"
