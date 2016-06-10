@@ -4,6 +4,7 @@
 \set HISTCONTROL ignoredups
 \x auto
 \set VERBOSITY verbose
+\set COMP_KEYWORD_CASE upper
 \pset pager off
 \pset null [null]
 \timing
