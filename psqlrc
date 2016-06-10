@@ -5,4 +5,5 @@
 \x auto
 \pset pager off
 \pset null [null]
+\timing
 \unset QUIET
