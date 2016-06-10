@@ -52,6 +52,7 @@ Plug 'tpope/vim-haml'
 Plug 'tpope/vim-markdown'
 Plug 'kchmck/vim-coffee-script'
 Plug 'groenewege/vim-less'
+Plug 'ap/vim-css-color'
 
 " Testing
 Plug 'janko-m/vim-test'
