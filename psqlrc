@@ -3,6 +3,7 @@
 \set HISTFILE ~/.psql/history- :DBNAME
 \set HISTCONTROL ignoredups
 \x auto
+\set VERBOSITY verbose
 \pset pager off
 \pset null [null]
 \timing
