@@ -71,3 +71,5 @@
 
 [init]
 	templatedir = ~/.gittemplate
+[merge]
+	ff = false
