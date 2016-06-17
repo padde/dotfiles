@@ -14,5 +14,8 @@ Pry::Commands.block_command "continue!", "Continue and skip binding.pry until ex
   run 'continue'
 end
 
+Pry::Commands.block_command 'clear', 'Clear the screen' do
+  print "\e[H\e[2J"
+end
 
 # vim: ft=ruby
