@@ -381,9 +381,6 @@ endfunction
 au ColorScheme * call SimpleGutterColors()
 call SimpleGutterColors()
 
-" Hightlight current line
-set cursorline
-
 " Invisibles
 set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<,nbsp:␣
 
