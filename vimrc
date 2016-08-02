@@ -133,6 +133,9 @@ set mouse=a
 
 set cryptmethod=blowfish2
 
+" Dont stop command output when screen is full
+set nomore
+
 " Fix mouse issues in wide terminal windows
 if has("mouse_sgr")
   set ttymouse=sgr
