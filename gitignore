@@ -9,6 +9,10 @@ syntax: glob
 *.swp
 *.swo
 
+# EMACS noise
+*#
+.#*
+
 # OSX noise
 .DS_Store
 .localized
