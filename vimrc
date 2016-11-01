@@ -372,6 +372,7 @@ let test#runners = {'Elixir': ['Exercism']}
 """ FANCYNESS
 
 " Colors
+set termguicolors
 set background=dark
 if filereadable(expand("~/.vim/plugged/base16-vim/colors/base16-default.vim"))
   colorscheme base16-default
