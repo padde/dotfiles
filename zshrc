@@ -229,7 +229,8 @@ if [ -n $TMUX ]; then
 fi
 
 # Node.js
-PATH=$PATH:/usr/local/share/npm/bin
+export NVM_DIR="$HOME/.nvm"
+. "$(brew --prefix nvm)/nvm.sh"
 
 # Postgres
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
