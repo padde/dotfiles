@@ -122,8 +122,9 @@ set wildmode=list:longest,full
 " Do not show invisibles
 set nolist
 
-" Do not wrap lines
-set nowrap
+" Wrap lines, preserving indentation
+set wrap
+set breakindent
 
 " Soft wrap
 set linebreak
