@@ -351,7 +351,7 @@ function! SimpleVimuxStrategy(cmd) abort
 endfunction
 let g:test#custom_strategies = {'simple_vimux': function('SimpleVimuxStrategy')}
 let g:test#strategy = 'simple_vimux'
-let g:test#ruby#rspec#executable = 'bundle exec rspec'
+let g:test#ruby#rspec#executable = 'rspec'
 try
   " Hacky hack to enable :TestSuite when no test was run yet
   let spec_path = systemlist('git rev-parse --show-toplevel')[0] . '/spec/'
