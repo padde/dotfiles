@@ -245,14 +245,6 @@ export VM_CPUS=4
 # Travis
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
-# Docker
-if which docker-machine > /dev/null; then
-  function start-docker-machine {
-    docker-machine start default
-    eval "$(docker-machine env default)"
-  }
-fi
-
 # Go
 export GOPATH=$HOME/.go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
