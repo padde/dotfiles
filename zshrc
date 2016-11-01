@@ -56,8 +56,8 @@ alias gl='git l'
 alias gst='git st'
 alias lla='ll -a'
 alias o='open'
-alias rback='bundle exec rake db:rollback'
-alias rmig='bundle exec rake db:migrate'
+alias rback='rake db:rollback'
+alias rmig='rake db:migrate'
 alias ts="awk '{print strftime(\"[%Y-%m-%d %H:%M:%S.%N]\"), \$0; fflush();}'"
 
 # colorize listings (especially in `tree`)
