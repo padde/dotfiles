@@ -374,8 +374,8 @@ let test#runners = {'Elixir': ['Exercism']}
 " Colors
 set termguicolors
 set background=dark
-if filereadable(expand("~/.vim/plugged/base16-vim/colors/base16-default.vim"))
-  colorscheme base16-default
+if filereadable(expand("~/.vim/plugged/base16-vim/colors/base16-default-dark.vim"))
+  colorscheme base16-default-dark
 end
 function! SimpleGutterColors()
   hi VertSplit ctermbg=none guibg=NONE
