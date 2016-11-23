@@ -79,7 +79,6 @@ Plug 'fidian/hexmode'
 
 " Fancyness
 Plug 'chriskempson/base16-vim'
-Plug 'bling/vim-airline'
 Plug 'nathanaelkane/vim-indent-guides'
 
 if filereadable(expand("~/.vimrc.plugins.local"))
@@ -392,23 +391,14 @@ set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<,nbsp:␣
 " Splits
 set fillchars+=vert:│
 
-" Airline
+" Statusline
 set laststatus=2
 set noshowmode
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_section_b = '%{substitute(getcwd(), ".*\/", "", "g")}'
-let g:airline_section_c = '%{substitute(expand("%"), expand("~"), "~", "g")}'
-let g:airline_section_z = '%l:%c %p%%'
-let g:airline_mode_map = {
-  \ 'n'  : 'N',
-  \ 'i'  : 'I',
-  \ 'R'  : 'R',
-  \ 'v'  : 'V',
-  \ 'V'  : 'VL',
-  \ 'c'  : 'CMD',
-  \ '' : 'VB',
-  \ }
+set statusline=\ %{toupper(mode(0))}
+set statusline+=\ %t%{&modified==1?\"*\":\"\"}
+set statusline+=%=
+set statusline+=%{&ft}
+set statusline+=\ %(%l:%v\ %p%%\ %)
 
 """ LOCAL CONFIG
 
