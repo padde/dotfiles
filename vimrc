@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'kana/vim-textobj-user'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-projectionist'
 
 " TMUX integration
 Plug 'christoomey/vim-tmux-navigator'
@@ -37,6 +38,10 @@ Plug 'sheerun/vim-polyglot'
 " Testing
 Plug 'janko-m/vim-test'
 
+" Errors
+Plug 'neomake/neomake'
+autocmd! BufWritePost * silent! Neomake
+
 " Ruby development
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
@@ -44,6 +49,9 @@ Plug 'tpope/vim-rbenv'
 
 " Elixir development
 Plug 'spiegela/vimix'
+Plug 'c-brenn/phoenix.vim'
+Plug 'slashmili/alchemist.vim'
+let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
 
 " Little helpers
 Plug 'tpope/vim-fugitive'
