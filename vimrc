@@ -32,12 +32,7 @@ Plug 'vim-scripts/PreserveNoEOL'
 Plug 'godlygeek/tabular'
 
 " Syntax
-Plug 'othree/html5.vim'
-Plug 'tpope/vim-haml'
-Plug 'tpope/vim-markdown'
-Plug 'kchmck/vim-coffee-script'
-Plug 'groenewege/vim-less'
-Plug 'ap/vim-css-color'
+Plug 'sheerun/vim-polyglot'
 
 " Testing
 Plug 'janko-m/vim-test'
@@ -46,10 +41,8 @@ Plug 'janko-m/vim-test'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rbenv'
-Plug 'vim-ruby/vim-ruby'
 
 " Elixir development
-Plug 'elixir-lang/vim-elixir'
 Plug 'spiegela/vimix'
 
 " Little helpers
