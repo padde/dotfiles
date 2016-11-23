@@ -3,6 +3,7 @@
 call plug#begin('~/.vim/plugged')
 
 " Dependencies required by multiple plugins
+Plug 'kana/vim-textobj-user'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-abolish'
 
@@ -24,27 +25,11 @@ Plug 'sjl/vitality.vim'
 " Smart input
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 Plug 'tommcdo/vim-exchange'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'ciaranm/detectindent'
 Plug 'vim-scripts/PreserveNoEOL'
 Plug 'godlygeek/tabular'
-
-" Text objects
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-line'
-Plug 'kana/vim-textobj-function'
-Plug 'kana/vim-textobj-syntax'
-Plug 'kana/vim-textobj-lastpat'
-Plug 'kana/vim-textobj-indent'
-Plug 'kana/vim-textobj-underscore'
-Plug 'nelstrom/vim-textobj-rubyblock'
-Plug 'tpope/vim-surround'
-
-" Version control
-Plug 'tpope/vim-fugitive'
-Plug 'phleet/vim-mercenary'
-Plug 'ludovicchabant/vim-lawrencium'
 
 " Syntax
 Plug 'othree/html5.vim'
@@ -58,19 +43,17 @@ Plug 'ap/vim-css-color'
 Plug 'janko-m/vim-test'
 
 " Ruby development
-Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rbenv'
 Plug 'vim-ruby/vim-ruby'
-Plug 't9md/vim-ruby-xmpfilter'
 
 " Elixir development
 Plug 'elixir-lang/vim-elixir'
 Plug 'spiegela/vimix'
 
 " Little helpers
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-characterize'
 Plug 'mattn/webapi-vim' " required by gist-vim
 Plug 'mattn/gist-vim'
