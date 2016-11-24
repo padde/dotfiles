@@ -203,9 +203,9 @@ set virtualedit+=block
 " Use syntax omnicomplete if no ft specific is available
 if has("autocmd") && exists("+omnifunc")
   autocmd Filetype *
-        \	if &omnifunc == "" |
-        \	 setlocal omnifunc=syntaxcomplete#Complete |
-        \	endif
+        \ if &omnifunc == "" |
+        \   setlocal omnifunc=syntaxcomplete#Complete |
+        \ endif
 endif
 
 " Resize splits when the window is resized
@@ -323,8 +323,8 @@ map <silent> <leader>u :silent! GundoToggle<cr>
 
 " Indent guides
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd cterm=none gui=NONE
-autocmd VimEnter,Colorscheme * :hi link IndentGuidesEven Folded
+au VimEnter,ColorScheme * :hi IndentGuidesOdd cterm=none gui=NONE
+au VimEnter,ColorScheme * :hi link IndentGuidesEven Folded
 
 " NERDtree
 let g:NERDTreeChDirMode=2
@@ -376,8 +376,7 @@ function! SimpleGutterColors()
   hi FoldColumn ctermbg=none guibg=NONE
   hi SignColumn ctermbg=none guibg=NONE
 endfunction
-au ColorScheme * call SimpleGutterColors()
-call SimpleGutterColors()
+au VimEnter,ColorScheme * call SimpleGutterColors()
 
 " Invisibles
 set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<,nbsp:␣
