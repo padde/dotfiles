@@ -367,6 +367,12 @@ let test#runners = {'Elixir': ['Exercism']}
 
 " Colors
 set termguicolors
+if &term =~ '256color'
+  " disable Background Color Erase (BCE) so that color schemes
+  " render properly when inside 256-color tmux and GNU screen.
+  " https://github.com/vim/vim/issues/804#issuecomment-225085911
+  set t_ut=
+endif
 set background=dark
 if filereadable(expand("~/.vim/plugged/base16-vim/colors/base16-default-dark.vim"))
   colorscheme base16-default-dark
