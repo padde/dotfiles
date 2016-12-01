@@ -331,6 +331,7 @@ let g:NERDTreeChDirMode=2
 " These mappings would interfere with vim-tmux-navigator
 let g:NERDTreeMapJumpNextSibling=''
 let g:NERDTreeMapJumpPrevSibling=''
+let g:NERDTreeMinimalUI=1
 nnoremap <silent> <leader>d :NERDTreeToggle<cr>
 nnoremap <silent> <leader><leader>d :NERDTreeFind<cr>
 
