@@ -258,10 +258,10 @@ command! -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$// | no
 nnoremap <leader>rt :RemoveTrailingWhitespace<CR>
 vnoremap <leader>rt :RemoveTrailingWhitespace<CR>
 
-" VCS conflict markers
-match ErrorMsg "^\(<\|=\|>\)\{7\}\([^=].\+\)\?$"
-noremap <silent> <leader><leader>j /\V\^\(=======\\|<<<<<<<\\|>>>>>>>\)<cr>
-noremap <silent> <leader><leader>k /\V\^\(=======\\|<<<<<<<\\|>>>>>>>\)<cr>
+" GIT conflict markers
+match ErrorMsg '\v^[<=>]{7}.*$'
+noremap <silent> <leader>j /\v^[<=>]{7}<cr>
+noremap <silent> <leader>k r\v^[<=>]{7}<cr>
 
 " Prev/next item in quickfix list
 nnoremap <silent> <leader>n :silent cnext<cr>
