@@ -1,88 +1,13 @@
-""" PLUGINS
-
 call plug#begin('~/.vim/plugged')
 
-" Dependencies required by multiple plugins
-Plug 'kana/vim-textobj-user'
+" Global dependencies
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-projectionist'
 
-" TMUX integration
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'benmills/vimux'
-
-" File management
-Plug 'scrooloose/nerdtree'
-Plug 'pbrisbin/vim-mkdir'
-Plug 'padde/jump.vim'
-
-" Search
-Plug 'bronson/vim-visual-star-search'
-Plug 'mileszs/ack.vim'
-Plug 'kien/ctrlp.vim'
-Plug 'sjl/vitality.vim'
-
-" Smart input
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'tommcdo/vim-exchange'
-Plug 'ciaranm/detectindent'
-Plug 'vim-scripts/PreserveNoEOL'
-Plug 'godlygeek/tabular'
-
-" Syntax
-Plug 'sheerun/vim-polyglot'
-
-" Testing
-Plug 'janko-m/vim-test'
-
-" Errors
-Plug 'neomake/neomake'
-autocmd! BufWritePost * silent! Neomake
-
-" Ruby development
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-rbenv'
-
-" Elixir development
-Plug 'spiegela/vimix'
-Plug 'c-brenn/phoenix.vim'
-Plug 'slashmili/alchemist.vim'
-let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
-
-" Little helpers
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-characterize'
-Plug 'mattn/webapi-vim' " required by gist-vim
-Plug 'mattn/gist-vim'
-Plug 'sjl/gundo.vim'
-Plug 'fidian/hexmode'
-
-" Fancyness
-Plug 'chriskempson/base16-vim'
-Plug 'nathanaelkane/vim-indent-guides'
-
-if filereadable(expand("~/.vimrc.plugins.local"))
-  source ~/.vimrc.plugins.local
-endif
-
-call plug#end()
-
-
-
-""" GENERAL SETTINGS
-
-" Enable filetype detection
-filetype plugin indent on
+" Nobody likes \ as leader!
+let mapleader = ","
 
 " Enable syntax highlighting
 syntax on
-
-" Don’t highlight after 350th column
-set synmaxcol=350
 
 " Show line numbers
 set number
@@ -90,6 +15,9 @@ set number
 " Highlight 80th column
 set textwidth=80
 set colorcolumn=+0
+
+" Don’t highlight after 350th column
+set synmaxcol=350
 
 " Default to soft tabs/two spaces
 set expandtab
@@ -102,64 +30,36 @@ set softtabstop=2
 set wildmenu
 set wildmode=list:longest,full
 
-" Do not show invisibles
-set nolist
+" Share clipboard with OS
+set clipboard+=unnamed
 
-" Wrap lines, preserving indentation
-set wrap
-set breakindent
-
-" Soft wrap
-set linebreak
-
-" Mouse support
+" Enable mouse
 set mouse=a
-
-set cryptmethod=blowfish2
-
-" Dont stop command output when screen is full
-set nomore
-
-" Fix mouse issues in wide terminal windows
 if has("mouse_sgr")
   set ttymouse=sgr
 else
   set ttymouse=xterm2
 end
 
-" Share clipboard
-set clipboard+=unnamed
+" iTerm/TMUX integration
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'benmills/vimux'
+Plug 'sjl/vitality.vim'
+au VimResized * :wincmd = " Resize splits when the window is resized
 
-" Nobody likes \ as leader!
-let mapleader = ","
+" Default encryption method
+set cryptmethod=blowfish2
 
-" UTF-8
+" Dont stop command output when screen is full
+set nomore
+
+" UTF-8 all the things!
 set nobomb
 set encoding=utf-8
 set fileencoding=utf-8
 
 " Reload changes if detected
 set autoread
-
-" Search highlighting
-set hlsearch
-
-" Highlight as you type
-set incsearch
-set ignorecase
-set smartcase
-
-" Set global flag as default for substitution
-set gdefault
-
-" Auto-continue comments
-set formatoptions=croql
-silent! set formatoptions+=j
-
-" Undo settings
-set undofile
-set undolevels=1000
-set undoreload=10000
 
 " Natural split direction
 set splitbelow
@@ -175,6 +75,93 @@ set nostartofline
 set scrolloff=3
 set sidescroll=1
 set sidescrolloff=10
+
+" Indentation
+set wrap        " Wrap lines ...
+set linebreak   " ... softly ...
+set breakindent " ... preserving indentation
+
+" Autodetect indentation settings
+filetype indent on
+Plug 'ciaranm/detectindent'
+
+" Indent guides
+Plug 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_auto_colors = 0
+au VimEnter,ColorScheme * :hi IndentGuidesOdd cterm=none gui=NONE
+au VimEnter,ColorScheme * :hi link IndentGuidesEven Folded
+
+" Show invisible characters
+set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<,nbsp:␣
+set nolist " but turn off by default
+
+" Preserve EOL
+Plug 'vim-scripts/PreserveNoEOL'
+let g:PreserveNoEOL = 1
+let g:PreserveNoEOL_Function = function('PreserveNoEOL#Internal#Preserve')
+
+" Load filetype specific config
+filetype plugin on
+
+" Syntax highlighting for many languages
+Plug 'sheerun/vim-polyglot'
+
+" Search
+set hlsearch   " Search highlighting
+set incsearch  " Highlight search as you type
+set ignorecase " Ignore case in search...
+set smartcase  " ... except when pattern contains uppercase characters
+set gdefault   " Search globally by default
+
+" Clear search
+nnoremap <silent> <space> :noh<cr><space>
+
+" Search in project
+Plug 'mileszs/ack.vim'
+if executable('ag')
+  let g:ackprg = 'ag --nogroup --column'
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
+nnoremap <leader>a :Ack -i ""<left>
+nnoremap <silent>+ *:AckFromSearch<cr>
+nnoremap <silent>- #:AckFromSearch<cr>
+Plug 'bronson/vim-visual-star-search'
+vnoremap <silent>+ :<c-u>call VisualStarSearchSet('/', 'raw')<cr>:AckFromSearch<cr>
+vnoremap <silent>- :<c-u>call VisualStarSearchSet('?', 'raw')<cr>:AckFromSearch<cr>
+
+" Search file in project
+Plug 'kien/ctrlp.vim'
+let g:ctrlp_show_hidden = 1
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --hidden --ignore .git --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
+end
+
+" File explorer
+Plug 'scrooloose/nerdtree'
+let g:NERDTreeChDirMode=2
+" These mappings would interfere with vim-tmux-navigator
+let g:NERDTreeMapJumpNextSibling=''
+let g:NERDTreeMapJumpPrevSibling=''
+let g:NERDTreeMinimalUI=1
+nnoremap <silent> <leader>d :NERDTreeToggle<cr>
+nnoremap <silent> <leader><leader>d :NERDTreeFind<cr>
+
+" Make directory on the fly with :e
+Plug 'pbrisbin/vim-mkdir'
+
+" Auto-continue comments
+set formatoptions=croql
+silent! set formatoptions+=j
+
+" Undo settings
+set undofile
+set undolevels=1000
+set undoreload=10000
+
+" Graphical undo
+Plug 'sjl/gundo.vim'
+map <silent> <leader>u :silent! GundoToggle<cr>
 
 " Centralize administrational files
 set backupdir=~/.vim/backup
@@ -208,12 +195,20 @@ if has("autocmd") && exists("+omnifunc")
         \ endif
 endif
 
-" Resize splits when the window is resized
-au VimResized * :wincmd =
+" Automatically insert `end`
+Plug 'tpope/vim-endwise'
 
+" Commenting
+Plug 'tpope/vim-commentary'
 
+" Surround
+Plug 'tpope/vim-surround'
 
-""" CUSTOM MAPPINGS AND COMMANDS
+" Exchange regions
+Plug 'tommcdo/vim-exchange'
+
+" Format tabular data
+Plug 'godlygeek/tabular'
 
 " Map non-breaking space to space
 inoremap <A-space> <space>
@@ -222,10 +217,7 @@ inoremap <A-space> <space>
 cnoremap <c-p> <up>
 cnoremap <c-n> <down>
 
-" Clear search
-nnoremap <silent> <space> :noh<cr><space>
-
-" Highlight last pasted text
+" Select last pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " Open in browser
@@ -280,57 +272,8 @@ function! DeleteHiddenBuffers()
 endfunction
 command! DeleteHiddenBuffers :call DeleteHiddenBuffers()
 
-
-
-""" PLUGIN SPECIFIC CONFIG
-
-" Ack
-if executable('ag')
-  let g:ackprg = 'ag --nogroup --column'
-  set grepprg=ag\ --nogroup\ --nocolor
-endif
-nnoremap <leader>a :Ack -i ""<left>
-nnoremap <silent>+ *:AckFromSearch<cr>
-nnoremap <silent>- #:AckFromSearch<cr>
-vnoremap <silent>+ :<c-u>call VisualStarSearchSet('/', 'raw')<cr>:AckFromSearch<cr>
-vnoremap <silent>- :<c-u>call VisualStarSearchSet('?', 'raw')<cr>:AckFromSearch<cr>
-
-" Ctrl-P
-let g:ctrlp_show_hidden = 1
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --hidden --ignore .git --nocolor -g ""'
-  let g:ctrlp_use_caching = 0
-end
-
-" Fugitive
-autocmd User fugitive command! -bar -buffer -nargs=* Gshame :Gblame -w -M -C <args>
-
-" Gist
-let g:gist_detect_filetype = 1
-let g:gist_open_browser_after_post = 1
-
-" Gundo
-map <silent> <leader>u :silent! GundoToggle<cr>
-
-" Indent guides
-let g:indent_guides_auto_colors = 0
-au VimEnter,ColorScheme * :hi IndentGuidesOdd cterm=none gui=NONE
-au VimEnter,ColorScheme * :hi link IndentGuidesEven Folded
-
-" NERDtree
-let g:NERDTreeChDirMode=2
-" These mappings would interfere with vim-tmux-navigator
-let g:NERDTreeMapJumpNextSibling=''
-let g:NERDTreeMapJumpPrevSibling=''
-let g:NERDTreeMinimalUI=1
-nnoremap <silent> <leader>d :NERDTreeToggle<cr>
-nnoremap <silent> <leader><leader>d :NERDTreeFind<cr>
-
-" Preserve EOL
-let g:PreserveNoEOL = 1
-let g:PreserveNoEOL_Function = function('PreserveNoEOL#Internal#Preserve')
-
 " Vim-Test
+Plug 'janko-m/vim-test'
 function! SimpleVimuxStrategy(cmd) abort
   call VimuxRunCommand(a:cmd)
 endfunction
@@ -352,9 +295,30 @@ nmap <silent> <leader>tl :TestLast<cr>
 nmap <silent> <leader>tg :TestVisit<cr>
 let test#runners = {'Elixir': ['Exercism']}
 
+" Neomake
+Plug 'neomake/neomake'
+autocmd! BufWritePost * silent! Neomake
 
+" Ruby/Rails development
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-rbenv'
 
-""" FANCYNESS
+" Elixir/Phoenix development
+Plug 'spiegela/vimix'
+Plug 'c-brenn/phoenix.vim'
+Plug 'slashmili/alchemist.vim'
+let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
+
+" Fugitive (Git)
+Plug 'tpope/vim-fugitive'
+autocmd User fugitive command! -bar -buffer -nargs=* Gshame :Gblame -w -M -C <args>
+
+" Gist
+Plug 'mattn/webapi-vim' " required by gist-vim
+Plug 'mattn/gist-vim'
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
 
 " Colors
 set termguicolors
@@ -365,21 +329,22 @@ if &term =~ '256color'
   set t_ut=
 endif
 set background=dark
-if filereadable(expand("~/.vim/plugged/base16-vim/colors/base16-default-dark.vim"))
-  colorscheme base16-default-dark
-end
-function! SimpleGutterColors()
+Plug 'chriskempson/base16-vim'
+function! s:SetColorScheme()
+  if filereadable(expand("~/.vim/plugged/base16-vim/colors/base16-default-dark.vim"))
+    colorscheme base16-default-dark
+  end
+endfunction
+au VimEnter * call s:SetColorScheme()
+function! s:SimpleGutterColors()
   hi VertSplit ctermbg=none guibg=NONE
   hi LineNr ctermbg=none guibg=NONE
   hi FoldColumn ctermbg=none guibg=NONE
   hi SignColumn ctermbg=none guibg=NONE
 endfunction
-au VimEnter,ColorScheme * call SimpleGutterColors()
+au VimEnter,ColorScheme * call s:SimpleGutterColors()
 
-" Invisibles
-set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<,nbsp:␣
-
-" Splits
+" Nicer looking splits
 set fillchars+=vert:│
 
 " Statusline
@@ -412,8 +377,15 @@ set statusline+=%1*%=
 set statusline+=%(%1*\ %{&ft}\ %)
 set statusline+=%(%0*\ %l:%v\ %p%%\ %)
 
-""" LOCAL CONFIG
+" Show unicode codepoint under cursor with `ga`
+Plug 'tpope/vim-characterize'
 
+" Hex editor
+Plug 'fidian/hexmode'
+
+" Local/experimental configuration
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+call plug#end()
