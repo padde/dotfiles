@@ -232,9 +232,6 @@ fi
 export NVM_DIR="$HOME/.nvm"
 source "$(brew --prefix nvm)/nvm.sh"
 
-# Postgres
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
-
 # Java
 export JAVA_HOME=$(/usr/libexec/java_home)
 
