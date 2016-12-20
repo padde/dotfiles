@@ -230,7 +230,7 @@ fi
 
 # Node.js
 export NVM_DIR="$HOME/.nvm"
-. "$(brew --prefix nvm)/nvm.sh"
+source "$(brew --prefix nvm)/nvm.sh"
 
 # Postgres
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
