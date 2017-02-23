@@ -231,6 +231,7 @@ fi
 # Node.js
 export NVM_DIR="$HOME/.nvm"
 source "$(brew --prefix nvm)/nvm.sh"
+export PATH="$PATH:`yarn global bin`"
 
 # Java
 export JAVA_HOME=$(/usr/libexec/java_home)
