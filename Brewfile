@@ -13,6 +13,7 @@ brew 'tmux'
 brew 'tree'
 brew 'most'
 brew 'zsh'
+brew 'shellcheck'
 
 tap 'thoughtbot/formulae'
 brew 'gitsh'
