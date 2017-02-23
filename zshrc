@@ -216,18 +216,6 @@ PROMPT=\
 "%{$__PROMPT_PWD_COLOR%}"'$(__abbrev_pwd)'"%{$reset_color%}
 %{$__PROMPT_DELIMITER_COLOR%}%#%{$reset_color%} "
 
-# window title
-DISABLE_AUTO_TITLE=true
-if [ -n $TMUX ]; then
-  function set_tmux_title {
-    tmux rename-window "$(basename $(__abbrev_pwd))"
-  }
-  chpwd() {
-    set_tmux_title
-  }
-  set_tmux_title
-fi
-
 # Node.js
 export NVM_DIR="$HOME/.nvm"
 source "$(brew --prefix nvm)/nvm.sh"
