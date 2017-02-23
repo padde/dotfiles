@@ -14,6 +14,7 @@ brew 'tree'
 brew 'most'
 brew 'zsh'
 brew 'shellcheck'
+brew 'reattach-to-user-namespace'
 
 tap 'thoughtbot/formulae'
 brew 'gitsh'
