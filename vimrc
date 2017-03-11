@@ -381,6 +381,15 @@ set statusline+=%1*%=
 set statusline+=%(%1*\ %{&ft}\ %)
 set statusline+=%(%0*\ %l:%v\ %p%%\ %)
 
+" Show syntax highlighting groups for word under cursor
+nmap <leader>z :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
 " Show unicode codepoint under cursor with `ga`
 Plug 'tpope/vim-characterize'
 
