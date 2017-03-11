@@ -140,6 +140,7 @@ end
 " File explorer
 Plug 'scrooloose/nerdtree'
 let g:NERDTreeChDirMode=2
+let g:NERDTreeCascadeSingleChildDir=0
 " These mappings would interfere with vim-tmux-navigator
 let g:NERDTreeMapJumpNextSibling=''
 let g:NERDTreeMapJumpPrevSibling=''
