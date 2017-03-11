@@ -4,7 +4,7 @@ brew 'git'
 brew 'imagemagick'
 brew 'macvim', args: ['override-system-vim']
 brew 'phantomjs'
-brew 'postgresql'
+brew 'postgresql-common'
 brew 'rbenv'
 brew 'rbenv-gem-rehash'
 brew 'ruby-build'
