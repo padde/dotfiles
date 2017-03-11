@@ -6,7 +6,6 @@ brew 'macvim', args: ['override-system-vim']
 brew 'phantomjs'
 brew 'postgresql-common'
 brew 'rbenv'
-brew 'rbenv-gem-rehash'
 brew 'ruby-build'
 brew 'the_silver_searcher'
 brew 'tmux'
