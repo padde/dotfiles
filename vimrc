@@ -312,6 +312,10 @@ Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'slashmili/alchemist.vim'
 let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
 
+" Markdown
+Plug 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled = 1
+
 " Fugitive (Git)
 Plug 'tpope/vim-fugitive'
 autocmd User fugitive command! -bar -buffer -nargs=* Gshame :Gblame -w -M -C <args>
