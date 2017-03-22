@@ -71,6 +71,3 @@
 
 [mailmap]
   file = ~/.mailmap
-
-[init]
-	templatedir = ~/.gittemplate
