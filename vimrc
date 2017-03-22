@@ -406,3 +406,7 @@ if filereadable(expand("~/.vimrc.local"))
 endif
 
 call plug#end()
+
+" Load project specific .vimrc files
+set exrc
+set secure
