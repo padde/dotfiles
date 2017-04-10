@@ -306,6 +306,7 @@ autocmd! BufWritePost * silent! Neomake
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rbenv'
+Plug 'joker1007/vim-ruby-heredoc-syntax'
 
 " Elixir/Phoenix development
 Plug 'spiegela/vimix'
