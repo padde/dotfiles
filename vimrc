@@ -37,7 +37,7 @@ set clipboard+=unnamed
 set mouse=a
 if has("mouse_sgr")
   set ttymouse=sgr
-else
+elseif has("mouse_xterm")
   set ttymouse=xterm2
 end
 
@@ -48,7 +48,9 @@ Plug 'sjl/vitality.vim'
 au VimResized * :wincmd = " Resize splits when the window is resized
 
 " Default encryption method
-set cryptmethod=blowfish2
+if has("cryptv")
+  set cryptmethod=blowfish2
+endif
 
 " Dont stop command output when screen is full
 set nomore
