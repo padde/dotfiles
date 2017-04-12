@@ -23,9 +23,6 @@ set number
 set textwidth=80
 set colorcolumn=+0
 
-" Don’t highlight after 350th column
-set synmaxcol=350
-
 " Indentation
 set expandtab
 set smarttab
@@ -59,14 +56,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
 Plug 'sjl/vitality.vim'
 au VimResized * :wincmd = " Resize splits when the window is resized
-
-" Default encryption method
-if has("cryptv")
-  set cryptmethod=blowfish2
-endif
-
-" Dont stop command output when screen is full
-set nomore
 
 " Use UTF-8
 set nobomb
@@ -186,9 +175,6 @@ endif
 if !isdirectory(expand(&viewdir))
   call mkdir(expand(&viewdir), "p")
 endif
-
-" Arbitrary selection in visual block mode
-set virtualedit+=block
 
 " Use syntax omnicomplete if no ft specific is available
 if has("autocmd") && exists("+omnifunc")
