@@ -11,7 +11,7 @@
 Thumbs.db
 
 # vim history
-vim/.netrwhist
+vim/.netrw*
 
 # vim-plug backup
 vim/autoload/plug.vim.old
