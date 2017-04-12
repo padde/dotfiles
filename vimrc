@@ -84,11 +84,6 @@ set sidescrolloff=10
 set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<,nbsp:␣
 set nolist " but turn off by default
 
-" Preserve EOL
-Plug 'vim-scripts/PreserveNoEOL'
-let g:PreserveNoEOL = 1
-let g:PreserveNoEOL_Function = function('PreserveNoEOL#Internal#Preserve')
-
 " Load filetype specific config
 filetype plugin on
 
