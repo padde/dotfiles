@@ -180,9 +180,6 @@ Plug 'tpope/vim-surround'
 " Exchange regions
 Plug 'tommcdo/vim-exchange'
 
-" Format tabular data
-Plug 'godlygeek/tabular'
-
 " Map non-breaking space to space
 inoremap <A-space> <space>
 
