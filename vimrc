@@ -80,12 +80,6 @@ set scrolloff=3
 set sidescroll=1
 set sidescrolloff=10
 
-" Indent guides
-Plug 'nathanaelkane/vim-indent-guides'
-let g:indent_guides_auto_colors = 0
-au VimEnter,ColorScheme * :hi IndentGuidesOdd cterm=none gui=NONE
-au VimEnter,ColorScheme * :hi link IndentGuidesEven Folded
-
 " Show invisible characters
 set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<,nbsp:␣
 set nolist " but turn off by default
