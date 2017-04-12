@@ -3,6 +3,9 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
 
+" Hide startup message
+set shortmess=atI
+
 " Global dependencies
 Plug 'tpope/vim-repeat'
 
@@ -11,8 +14,9 @@ let mapleader = ","
 
 " Enable syntax highlighting
 syntax on
+Plug 'sheerun/vim-polyglot'
 
-" Show line numbers
+" Line numbers
 set number
 
 " Highlight 80th column
@@ -22,14 +26,20 @@ set colorcolumn=+0
 " Don’t highlight after 350th column
 set synmaxcol=350
 
-" Default to soft tabs/two spaces
+" Indentation
 set expandtab
 set smarttab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+filetype indent on
 
-" Complete all the commands!
+" Soft wrap
+set wrap
+set linebreak
+set breakindent
+
+" Autocomplete commands
 set wildmenu
 set wildmode=list:longest,full
 
@@ -44,7 +54,7 @@ elseif has("mouse_xterm")
   set ttymouse=xterm2
 end
 
-" iTerm/TMUX integration
+" TMUX
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
 Plug 'sjl/vitality.vim'
@@ -58,7 +68,7 @@ endif
 " Dont stop command output when screen is full
 set nomore
 
-" UTF-8 all the things!
+" Use UTF-8
 set nobomb
 set encoding=utf-8
 set fileencoding=utf-8
@@ -66,7 +76,7 @@ set fileencoding=utf-8
 " Reload changes if detected
 set autoread
 
-" Natural split direction
+" Split direction
 set splitbelow
 set splitright
 
@@ -81,10 +91,6 @@ set scrolloff=3
 set sidescroll=1
 set sidescrolloff=10
 
-" Indentation
-set wrap        " Wrap lines ...
-set linebreak   " ... softly ...
-set breakindent " ... preserving indentation
 
 " Autodetect indentation settings
 filetype indent on
@@ -108,10 +114,7 @@ let g:PreserveNoEOL_Function = function('PreserveNoEOL#Internal#Preserve')
 " Load filetype specific config
 filetype plugin on
 
-" Syntax highlighting for many languages
-Plug 'sheerun/vim-polyglot'
-
-" Search
+" Buffer search
 set hlsearch   " Search highlighting
 set incsearch  " Highlight search as you type
 set ignorecase " Ignore case in search...
@@ -121,7 +124,7 @@ set gdefault   " Search globally by default
 " Clear search
 nnoremap <silent> <space> :noh<cr><space>
 
-" Search in project
+" Project search
 Plug 'mileszs/ack.vim'
 if executable('ag')
   let g:ackprg = 'ag --nogroup --column'
@@ -134,7 +137,7 @@ Plug 'bronson/vim-visual-star-search'
 vnoremap <silent>+ :<c-u>call VisualStarSearchSet('/', 'raw')<cr>:AckFromSearch<cr>
 vnoremap <silent>- :<c-u>call VisualStarSearchSet('?', 'raw')<cr>:AckFromSearch<cr>
 
-" Search file in project
+" File search
 Plug 'kien/ctrlp.vim'
 let g:ctrlp_show_hidden = 1
 if executable('ag')
@@ -184,9 +187,6 @@ if !isdirectory(expand(&viewdir))
   call mkdir(expand(&viewdir), "p")
 endif
 
-" Hide startup message
-set shortmess=atI
-
 " Arbitrary selection in visual block mode
 set virtualedit+=block
 
@@ -201,7 +201,7 @@ endif
 " Automatically insert `end`
 Plug 'tpope/vim-endwise'
 
-" Commenting
+" Comments
 Plug 'tpope/vim-commentary'
 
 " Surround
@@ -238,7 +238,7 @@ endfunction
 nnoremap <silent> gb :call OpenInBrowser(expand('<cWORD>'))<cr>
 nnoremap <silent> gB :call OpenInBrowser(expand('%:p'))<cr>
 
-" Write and quit typo correction
+" Write with super user permissions
 command! Wsudo :w !sudo tee %
 command! -nargs=* -bang -complete=file W w<bang> <args>
 command! -nargs=* -bang -complete=file WQ w<bang> <args>
@@ -254,12 +254,12 @@ command! -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$// | no
 nnoremap <leader>rt :RemoveTrailingWhitespace<CR>
 vnoremap <leader>rt :RemoveTrailingWhitespace<CR>
 
-" GIT conflict markers
+" Higlight Git conflict markers
 match ErrorMsg '\v^[<=>]{7}.*$'
 noremap <silent> <leader>j /\v^[<=>]{7}<cr>
 noremap <silent> <leader>k r\v^[<=>]{7}<cr>
 
-" Prev/next item in quickfix list
+" Go to prev/next item in quickfix list
 nnoremap <silent> <leader>n :silent cnext<cr>
 nnoremap <silent> <leader>N :silent cprev<cr>
 nnoremap <silent> <leader>fn :silent cfnext<cr>
@@ -302,13 +302,13 @@ let test#runners = {'Elixir': ['Exercism']}
 Plug 'neomake/neomake'
 autocmd! BufWritePost * silent! Neomake
 
-" Ruby/Rails development
+" Ruby/Rails
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rbenv'
 Plug 'joker1007/vim-ruby-heredoc-syntax'
 
-" Elixir/Phoenix development
+" Elixir/Phoenix
 Plug 'spiegela/vimix'
 Plug 'c-brenn/phoenix.vim'
 Plug 'powerman/vim-plugin-AnsiEsc'
@@ -319,7 +319,7 @@ let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
 Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
 
-" Fugitive (Git)
+" Git
 Plug 'tpope/vim-fugitive'
 autocmd User fugitive command! -bar -buffer -nargs=* Gshame :Gblame -w -M -C <args>
 
@@ -331,14 +331,15 @@ let g:gist_open_browser_after_post = 1
 let g:gist_show_privates = 1
 let g:gist_post_private = 1
 
-" Colors
-set termguicolors
+" Disable Background Color Erase (BCE) so that color schemes
+" render properly when inside 256-color tmux and GNU screen.
+" https://github.com/vim/vim/issues/804#issuecomment-225085911
 if &term =~ '256color'
-  " disable Background Color Erase (BCE) so that color schemes
-  " render properly when inside 256-color tmux and GNU screen.
-  " https://github.com/vim/vim/issues/804#issuecomment-225085911
   set t_ut=
 endif
+
+" Color scheme
+set termguicolors
 set background=dark
 Plug 'chriskempson/base16-vim'
 function! s:SetColorScheme()
