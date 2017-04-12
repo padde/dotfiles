@@ -219,10 +219,8 @@ noremap <silent> <leader>j /\v^[<=>]{7}<cr>
 noremap <silent> <leader>k r\v^[<=>]{7}<cr>
 
 " Go to prev/next item in quickfix list
-nnoremap <silent> <leader>n :silent cnext<cr>
-nnoremap <silent> <leader>N :silent cprev<cr>
-nnoremap <silent> <leader>fn :silent cfnext<cr>
-nnoremap <silent> <leader>fN :silent cfprev<cr>
+nnoremap <silent> <c-n> :silent cnext!<cr>
+nnoremap <silent> <c-m> :silent cprev!<cr>
 
 " Delete all hidden buffers
 function! DeleteHiddenBuffers()
