@@ -94,9 +94,6 @@ set ignorecase " Ignore case in search...
 set smartcase  " ... except when pattern contains uppercase characters
 set gdefault   " Search globally by default
 
-" Clear search
-nnoremap <silent> <space> :noh<cr><space>
-
 " Project search
 Plug 'mileszs/ack.vim'
 if executable('ag')
