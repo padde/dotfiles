@@ -157,14 +157,11 @@ Plug 'pbrisbin/vim-mkdir'
 set formatoptions=croql
 silent! set formatoptions+=j
 
-" Undo settings
+" Undo
 set undofile
 set undolevels=1000
 set undoreload=10000
-
-" Graphical undo
 Plug 'sjl/gundo.vim'
-map <silent> <leader>u :silent! GundoToggle<cr>
 
 " Centralize administrational files
 set backupdir=~/.vim/backup
