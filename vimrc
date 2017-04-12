@@ -80,11 +80,6 @@ set scrolloff=3
 set sidescroll=1
 set sidescrolloff=10
 
-
-" Autodetect indentation settings
-filetype indent on
-Plug 'ciaranm/detectindent'
-
 " Indent guides
 Plug 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_auto_colors = 0
