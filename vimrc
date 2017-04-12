@@ -82,7 +82,7 @@ set sidescrolloff=10
 
 " Show invisible characters
 set listchars=tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<,nbsp:␣
-set nolist " but turn off by default
+set list
 
 " Load filetype specific config
 filetype plugin on
