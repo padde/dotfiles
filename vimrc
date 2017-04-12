@@ -240,14 +240,6 @@ nnoremap <silent> gB :call OpenInBrowser(expand('%:p'))<cr>
 
 " Write with super user permissions
 command! Wsudo :w !sudo tee %
-command! -nargs=* -bang -complete=file W w<bang> <args>
-command! -nargs=* -bang -complete=file WQ w<bang> <args>
-command! -nargs=* -bang -complete=file Wq wq<bang> <args>
-command! -bang Q q<bang>
-command! -bang Qa qa<bang>
-command! -bang QA qa<bang>
-command! -bang Wqa wqa<bang>
-command! -bang WQa wqa<bang>
 
 " Remove trailing whitespace including non-breaking spaces
 command! -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$// | norm! ``
