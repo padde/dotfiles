@@ -257,10 +257,6 @@ nmap <silent> <leader>tl :TestLast<cr>
 nmap <silent> <leader>tg :TestVisit<cr>
 let test#runners = {'Elixir': ['Exercism']}
 
-" Neomake
-Plug 'neomake/neomake'
-autocmd! BufWritePost * silent! Neomake
-
 " Ruby/Rails
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
