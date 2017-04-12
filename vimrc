@@ -1,3 +1,6 @@
+" Enter the 21st century
+set nocompatible
+
 call plug#begin('~/.vim/plugged')
 
 " Global dependencies
