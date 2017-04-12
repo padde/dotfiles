@@ -250,11 +250,11 @@ try
   let g:test#last_command=g:test#ruby#rspec#executable
 catch
 endtry
-nmap <silent> <leader>tt :TestNearest<cr>
-nmap <silent> <leader>tf :TestFile<cr>
-nmap <silent> <leader>ts :TestSuite<cr>
-nmap <silent> <leader>tl :TestLast<cr>
-nmap <silent> <leader>tg :TestVisit<cr>
+nnoremap <silent> <leader>tt :TestNearest<cr>
+nnoremap <silent> <leader>tf :TestFile<cr>
+nnoremap <silent> <leader>ts :TestSuite<cr>
+nnoremap <silent> <leader>tl :TestLast<cr>
+nnoremap <silent> <leader>tg :TestVisit<cr>
 let test#runners = {'Elixir': ['Exercism']}
 
 " Ruby/Rails
