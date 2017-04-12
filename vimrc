@@ -95,17 +95,37 @@ set smartcase  " ... except when pattern contains uppercase characters
 set gdefault   " Search globally by default
 
 " Project search
-Plug 'mileszs/ack.vim'
 if executable('ag')
-  let g:ackprg = 'ag --nogroup --column'
-  set grepprg=ag\ --nogroup\ --nocolor
+  set grepprg=ag\ --vimgrep\ $*
+  set grepformat=%f:%l:%c:%m
 endif
-nnoremap <leader>a :Ack -i ""<left>
-nnoremap <silent>+ *:AckFromSearch<cr>
-nnoremap <silent>- #:AckFromSearch<cr>
-Plug 'bronson/vim-visual-star-search'
-vnoremap <silent>+ :<c-u>call VisualStarSearchSet('/', 'raw')<cr>:AckFromSearch<cr>
-vnoremap <silent>- :<c-u>call VisualStarSearchSet('?', 'raw')<cr>:AckFromSearch<cr>
+command! -nargs=+ -complete=file G :silent grep! <args> | cwindow | redraw!
+nnoremap <leader>a :G ""<left>
+xnoremap <leader>a :<C-u>G ""<left>
+au Filetype qf nnoremap <buffer> o <cr>
+au Filetype qf nnoremap <buffer> go <cr><C-w><C-w>
+
+" Visual search
+function! GetSelection()
+  let [lnum1, col1] = getpos("'<")[1:2]
+  let [lnum2, col2] = getpos("'>")[1:2]
+  let lines = getline(lnum1, lnum2)
+  let lines[-1] = lines[-1][: col2 - (&selection == 'inclusive' ? 1 : 2)]
+  let lines[0] = lines[0][col1 - 1:]
+  return join(lines, "\n")
+endfunction
+
+function! SetSearchFromSelection(additionalEscapeChars)
+  let pat = GetSelection()
+  let pat = escape(pat, '\'.a:additionalEscapeChars)
+  let pat = substitute(pat, "\n", "\\\\n", 'g')
+  let @/ = '\V'.pat
+endfunction
+
+xnoremap * :<C-u>call SetSearchFromSelection('/')<cr>/<C-r>=@/<cr><cr>
+xnoremap # :<C-u>call SetSearchFromSelection('?')<cr>?<C-r>=@/<cr><cr>
+xnoremap + :<C-u>G -Q "<C-r>=GetSelection()<cr>"<cr>
+nnoremap + :G -Q "<cword>"<cr>
 
 " File search
 Plug 'kien/ctrlp.vim'
