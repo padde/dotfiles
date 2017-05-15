@@ -130,6 +130,7 @@ nnoremap + :G -Q "<cword>"<cr>
 " File search
 Plug 'kien/ctrlp.vim'
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_root_markers = ['mix.exs', 'Gemfile']
 if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --hidden --ignore .git --nocolor -g ""'
   let g:ctrlp_use_caching = 0
