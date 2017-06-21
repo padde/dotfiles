@@ -52,6 +52,7 @@
   unwip = "!if [[ "$(git log HEAD~..HEAD --format='%s')" == "WIP" ]]; then git reset HEAD~1; else echo "Not a WIP commit"; fi"
   first-child = "!bash -c 'c=${1:-HEAD}; set -- $(git rev-list --all --not \"$c\"^@ --children | grep $(git rev-parse \"$c\") ); shift; echo $1' -"
   next = "!git checkout $(git first-child)"
+  prev = "!git checkout HEAD~1"
 
 [core]
   excludesfile = ~/.gitignore
