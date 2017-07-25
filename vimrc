@@ -122,10 +122,15 @@ function! SetSearchFromSelection(additionalEscapeChars)
   let @/ = '\V'.pat
 endfunction
 
+function! ExecuteCmdWithHistory(cmd)
+  call histadd("cmd", a:cmd)
+  execute a:cmd
+endfunction
+
 xnoremap * :<C-u>call SetSearchFromSelection('/')<cr>/<C-r>=@/<cr><cr>
 xnoremap # :<C-u>call SetSearchFromSelection('?')<cr>?<C-r>=@/<cr><cr>
-xnoremap + :<C-u>G -Q "<C-r>=GetSelection()<cr>"<cr>
-nnoremap + :G -Q "<cword>"<cr>
+xnoremap + :<C-u>call ExecuteCmdWithHistory('G -Q "'.GetSelection().'"')<cr>
+nnoremap + :<C-u>call ExecuteCmdWithHistory('G -Q "'.expand('<cword>').'"')<cr>
 
 " File search
 Plug 'kien/ctrlp.vim'
