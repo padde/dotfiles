@@ -16,7 +16,6 @@ brew 'shellcheck'
 brew 'reattach-to-user-namespace'
 
 tap 'thoughtbot/formulae'
-brew 'gitsh'
 brew 'rcm'
 
 # quicklook plugins
