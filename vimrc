@@ -280,7 +280,6 @@ let test#runners = {'Elixir': ['Exercism']}
 " Ruby/Rails
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-rbenv'
 Plug 'joker1007/vim-ruby-heredoc-syntax'
 
 " Elixir/Phoenix

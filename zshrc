@@ -4,7 +4,6 @@ export PATH=/usr/local/sbin:$PATH
 source ~/.dotfiles/zsh/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle autojump
-antigen bundle rbenv
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # completion
@@ -169,6 +168,10 @@ PROMPT=\
 export GOPATH=$HOME/.go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH=$PATH:$GOPATH
+
+# ASDF version manager
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
 
 # local configuration
 if [ -f ~/.zshrc.local ]; then
