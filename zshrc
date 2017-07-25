@@ -36,6 +36,7 @@ export LC_ALL=en_US.UTF-8
 # aliases
 alias cl=clear
 alias g='git'
+compdef g='git'
 alias ga='git add'
 alias gci='git ci'
 alias gco='git co'
