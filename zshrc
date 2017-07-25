@@ -25,9 +25,6 @@ bindkey '\e[B' history-beginning-search-forward
 setopt histignoredups
 export HISTSIZE=10000
 
-# autocorrect
-setopt CORRECT
-
 # Use most as pager, if available
 if which most > /dev/null; then
   export PAGER=most
