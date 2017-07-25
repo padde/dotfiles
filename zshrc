@@ -28,9 +28,6 @@ export HISTSIZE=10000
 # autocorrect
 setopt CORRECT
 
-# extended globbing
-setopt EXTENDED_GLOB
-
 # Use most as pager, if available
 if which most > /dev/null; then
   export PAGER=most
@@ -195,8 +192,8 @@ function __hg_prompt {
 }
 
 function __abbrev_pwd {
+  setopt extendedglob
   local pwd="${PWD/#$HOME/~}"
-
   if [[ "$pwd" == (#m)[/~] ]]; then
     print $MATCH
   else
