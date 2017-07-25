@@ -2,14 +2,9 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 
 source ~/.dotfiles/zsh/antigen.zsh
-
 antigen use oh-my-zsh
-
 antigen bundle autojump
 antigen bundle rbenv
-antigen bundle bundler
-antigen bundle osx
-antigen bundle docker
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # completion
@@ -215,18 +210,6 @@ PROMPT=\
 "%{$__PROMPT_DELIMITER_COLOR%}"'${__PROMPT_BG}'\
 "%{$__PROMPT_PWD_COLOR%}"'$(__abbrev_pwd)'"%{$reset_color%}
 %{$__PROMPT_DELIMITER_COLOR%}%#%{$reset_color%} "
-
-# Node.js
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-export PATH="$PATH:`yarn global bin`"
-
-# Java
-export JAVA_HOME=$(/usr/libexec/java_home)
-
-# Vagrant
-export VM_RAM=4096
-export VM_CPUS=4
 
 # Travis
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
