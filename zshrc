@@ -145,51 +145,6 @@ function __git_prompt {
   fi
 }
 
-function __find_hg_root {
-  local dir="$(pwd)"
-  HG_ROOT=''
-
-  while [ $dir != "/" ]; do
-    if [ -d "$dir/.hg" ]; then
-      HG_ROOT="$dir/.hg"
-      return 0
-    fi
-    dir=`dirname $dir`
-  done
-
-  return 1
-}
-
-function __hg_dirty {
-  test -n "`hg status --cwd $HG_ROOT`"
-}
-
-function __hg_branch {
-  cat "$HG_ROOT/branch" 2>/dev/null || hg branch
-}
-
-function __hg_hash {
-  if [ -f "$HG_ROOT/dirstate" ]; then
-    hexdump -n 4 -e '2/1 "%02x"' "$HG_ROOT/dirstate" | cut -c-7
-  else
-    print '(none)'
-  fi
-} 
-
-function __hg_prompt {
-  if __find_hg_root; then
-    local dirty_str=''
-    if __hg_dirty; then
-      dirty_str='●'
-    fi
-
-    print "%{$__PROMPT_VCS_DIRTY_COLOR%}${dirty_str}%{$reset_color%}"\
-"%{$__PROMPT_VCS_BRANCH_COLOR%}$(__hg_branch)%{$reset_color%}"\
-"%{$__PROMPT_VCS_DELIMITER_COLOR%}@%{$reset_color%}"\
-"%{$__PROMPT_VCS_HASH_COLOR%}$(__hg_hash)%{$reset_color%} "
-  fi
-}
-
 function __abbrev_pwd {
   setopt extendedglob
   local pwd="${PWD/#$HOME/~}"
@@ -202,7 +157,7 @@ function __abbrev_pwd {
 
 PROMPT=\
 "%{$__PROMPT_TIME_COLOR%}"'%D{%H:%M} '\
-'${__PROMPT_EXIT_CODE}$(__git_prompt)$(__hg_prompt)'\
+'${__PROMPT_EXIT_CODE}$(__git_prompt)'\
 "%{$__PROMPT_DELIMITER_COLOR%}"'${__PROMPT_BG}'\
 "%{$__PROMPT_PWD_COLOR%}"'$(__abbrev_pwd)'"%{$reset_color%}
 %{$__PROMPT_DELIMITER_COLOR%}%#%{$reset_color%} "
