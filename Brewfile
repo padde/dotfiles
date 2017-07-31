@@ -13,6 +13,7 @@ brew 'most'
 brew 'zsh'
 brew 'shellcheck'
 brew 'reattach-to-user-namespace'
+brew 'direnv'
 
 tap 'thoughtbot/formulae'
 brew 'rcm'

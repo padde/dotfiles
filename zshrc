@@ -173,6 +173,9 @@ export PATH=$PATH:$GOPATH
 source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
 
+# direnv
+eval "$(direnv hook zsh)"
+
 # local configuration
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
