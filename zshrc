@@ -173,6 +173,9 @@ export PATH=$PATH:$GOPATH
 source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
 
+# Yarn package manager
+export PATH="$HOME/.yarn/bin:$PATH"
+
 # direnv
 eval "$(direnv hook zsh)"
 
