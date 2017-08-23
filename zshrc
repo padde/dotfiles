@@ -173,6 +173,9 @@ export PATH=$PATH:$GOPATH
 source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
 
+# Enable Erlang/Elixir shell history
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 # Yarn package manager
 export PATH="$HOME/.yarn/bin:$PATH"
 
