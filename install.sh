@@ -1,3 +1,6 @@
+#!/usr/bin/env sh
+set -euo pipefail
+
 DOTFILES=~/.dotfiles
 if [ -d $DOTFILES ]; then
   echo "$DOTFILES already exists! Aborting."
