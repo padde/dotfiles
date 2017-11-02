@@ -2,7 +2,6 @@
 brew 'autojump'
 brew 'git'
 brew 'imagemagick'
-brew 'macvim', args: ['override-system-vim']
 brew 'phantomjs'
 brew 'postgresql-common'
 brew 'ruby-build'
