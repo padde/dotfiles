@@ -8,7 +8,7 @@ if [ -d $DOTFILES ]; then
 fi
 
 # Fetch dotfiles
-git clone git@github.com:padde/dotfiles.git $DOTFILES
+git clone https://github.com/padde/dotfiles.git $DOTFILES
 cd $DOTFILES
 
 # Install homebrew packages
