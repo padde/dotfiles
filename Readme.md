@@ -11,7 +11,7 @@ Because there’s no place like `::1`
 
 ## Installation
 
-    curl -fsSL https://raw.githubusercontent.com/padde/dotfiles/master/install.sh | sh
+    sh <(curl -fsSL https://raw.githubusercontent.com/padde/dotfiles/master/install.sh)
 
 ## Customization
 
