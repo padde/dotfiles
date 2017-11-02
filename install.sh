@@ -36,4 +36,4 @@ exec vim +PlugInstall +qall < /dev/tty "$@"
 
 # Install ASDF version manager
 cd $HOME
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.3.0
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.0
