@@ -20,6 +20,13 @@ brew bundle
 rcup -v rcrc
 rcup -v
 
+# Install Vim plugins
+exec vim +PlugInstall +qall < /dev/tty "$@"
+
+# Install ASDF version manager
+cd $HOME
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.0
+
 # Install and use ZSH
 ZSH=/usr/local/bin/zsh
 if grep -vFxq $ZSH /etc/shells
@@ -30,10 +37,3 @@ fi
 chsh -s $ZSH
 env zsh
 . ~/.zshrc
-
-# Install Vim plugins
-exec vim +PlugInstall +qall < /dev/tty "$@"
-
-# Install ASDF version manager
-cd $HOME
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.0
