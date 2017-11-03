@@ -17,5 +17,5 @@ function! test#elixir#exercism#build_args(args) abort
 endfunction
 
 function! test#elixir#exercism#executable() abort
-  return 'EXERCISM_TEST_EXAMPLES=1 elixir'
+  return 'elixir'
 endfunction
