@@ -159,6 +159,9 @@ Plug 'pbrisbin/vim-mkdir'
 set formatoptions=croql
 silent! set formatoptions+=j
 
+" Command line history
+set history=10000
+
 " Undo
 set undofile
 set undolevels=1000
