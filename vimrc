@@ -320,35 +320,8 @@ au VimEnter,ColorScheme *
 " Nicer looking splits
 set fillchars+=vert:│
 
-" Statusline
-function! StatusLineMode()
-  let mapping = {
-  \ 'n' : 'N',
-  \ 'v' : 'V',
-  \ 'V' : 'VL',
-  \ '' : 'VB',
-  \ 'i' : 'I',
-  \ 'R' : 'R',
-  \ 'Rv' : 'VR',
-  \}
-  return get(mapping, mode(1), toupper(mode(1)))
-endfunction
-function! StatusLineModified()
-  return &modified==1 ? "*" : ""
-endfunction
-function! SetStatusLineColors()
-  hi! link StatusLine Visual
-  hi! link User1 Folded
-endfunction
-au VimEnter,ColorScheme * call SetStatusLineColors()
+" Show statusline
 set laststatus=2
-set noshowmode
-set statusline=
-set statusline+=%(%0*\ %{StatusLineMode()}\ %)
-set statusline+=%(%1*\ %t%{StatusLineModified()}\ %)
-set statusline+=%1*%=
-set statusline+=%(%1*\ %{&ft}\ %)
-set statusline+=%(%0*\ %l:%v\ %p%%\ %)
 
 " Show syntax highlighting groups for word under cursor
 nmap <leader>z :call <SID>SynStack()<CR>
