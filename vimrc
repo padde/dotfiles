@@ -297,7 +297,6 @@ let g:vim_markdown_folding_disabled = 1
 " Git
 Plug 'tpope/vim-fugitive'
 autocmd User fugitive command! -bar -buffer -nargs=* Gshame :Gblame -w -M -C <args>
-
 " Gist
 Plug 'mattn/webapi-vim' " required by gist-vim
 Plug 'mattn/gist-vim'
@@ -305,13 +304,6 @@ let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 let g:gist_show_privates = 1
 let g:gist_post_private = 1
-
-" Disable Background Color Erase (BCE) so that color schemes
-" render properly when inside 256-color tmux and GNU screen.
-" https://github.com/vim/vim/issues/804#issuecomment-225085911
-if &term =~ '256color'
-  set t_ut=
-endif
 
 " Color scheme
 set termguicolors
