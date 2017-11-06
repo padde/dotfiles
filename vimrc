@@ -308,20 +308,14 @@ let g:gist_post_private = 1
 " Color scheme
 set termguicolors
 set background=dark
+
 Plug 'chriskempson/base16-vim'
-function! s:SetColorScheme()
-  if filereadable(expand("~/.vim/plugged/base16-vim/colors/base16-default-dark.vim"))
-    colorscheme base16-default-dark
-  end
-endfunction
-au VimEnter * call s:SetColorScheme()
-function! s:SimpleGutterColors()
-  hi VertSplit ctermbg=none guibg=NONE
-  hi LineNr ctermbg=none guibg=NONE
-  hi FoldColumn ctermbg=none guibg=NONE
-  hi SignColumn ctermbg=none guibg=NONE
-endfunction
-au VimEnter,ColorScheme * call s:SimpleGutterColors()
+au VimEnter * colorscheme base16-default-dark
+au VimEnter,ColorScheme *
+  \ hi VertSplit ctermbg=none guibg=NONE |
+  \ hi LineNr ctermbg=none guibg=NONE |
+  \ hi FoldColumn ctermbg=none guibg=NONE |
+  \ hi SignColumn ctermbg=none guibg=NONE |
 
 " Nicer looking splits
 set fillchars+=vert:│
