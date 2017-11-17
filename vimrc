@@ -281,6 +281,14 @@ nnoremap <silent> <leader>tl :TestLast<cr>
 nnoremap <silent> <leader>tg :TestVisit<cr>
 let test#runners = {'Elixir': ['Exercism']}
 
+" ALE Linter
+Plug 'w0rp/ale'
+set signcolumn=yes
+let g:ale_sign_column_always = 1
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
+let g:ale_lint_delay = 0
+
 " Ruby/Rails
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
