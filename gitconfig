@@ -48,6 +48,7 @@
   set-upstream = "!git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD)"
   prdiff = "!git diff $(git merge-base HEAD ${1:-master})"
   pr = "!git prdiff"
+  prlog = "!git lgp $(git merge-base HEAD ${1:-master})..HEAD"
   pick = cherry-pick
   wip = "!git add . && git commit -m WIP"
   unwip = "!if [[ "$(git log HEAD~..HEAD --format='%s')" == "WIP" ]]; then git reset HEAD~1; else echo "Not a WIP commit"; fi"
