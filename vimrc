@@ -302,6 +302,9 @@ Plug 'tpope/vim-fugitive'
 autocmd User fugitive command! -bar -buffer -nargs=* Gshame :Gblame -w -M -C <args>
 nnoremap <leader>g :Gshame<cr>
 
+" Github
+Plug 'tpope/vim-rhubarb'
+
 " Gist
 Plug 'mattn/webapi-vim' " required by gist-vim
 Plug 'mattn/gist-vim'
