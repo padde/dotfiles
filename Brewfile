@@ -11,7 +11,6 @@ brew 'tree'
 brew 'most'
 brew 'zsh'
 brew 'shellcheck'
-brew 'reattach-to-user-namespace'
 brew 'direnv'
 
 tap 'petere/postgresql'
