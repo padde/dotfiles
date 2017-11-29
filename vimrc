@@ -219,21 +219,6 @@ cnoremap <c-n> <down>
 " Select last pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
-" Open in browser
-let g:Browser = 'com.google.Chrome'
-set isfname-=? isfname+=?
-set isfname-=& isfname+=&
-function! OpenInBrowser(string)
-  let fileOrUrl = substitute(a:string ,  "\\v(.*[\"])([^\"]+)([\"].*)", '\2', '')
-  let fileOrUrl = substitute(fileOrUrl, "\\v(.*[\'])([^\']+)([\'].*)", '\2', '')
-  if !filereadable(fileOrUrl)
-    let fileOrUrl = substitute(fileOrUrl, '\v^(http(s)?:\/\/)?(.*)$', 'http\2://\3', '')
-  endif
-  echo system("open -b '".g:Browser."' '".fileOrUrl."'")
-endfunction
-nnoremap <silent> gb :call OpenInBrowser(expand('<cWORD>'))<cr>
-nnoremap <silent> gB :call OpenInBrowser(expand('%:p'))<cr>
-
 " Write with super user permissions
 command! Wsudo :w !sudo tee %
 
