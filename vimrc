@@ -43,6 +43,9 @@ set wildmode=list:longest,full
 " Share clipboard with OS
 set clipboard+=unnamed
 
+" Backspace in insert mode
+set backspace=indent,eol,start
+
 " Enable mouse
 set mouse=a
 if has("mouse_sgr")
