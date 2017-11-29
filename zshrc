@@ -1,6 +1,3 @@
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
-
 source ~/.dotfiles/zsh/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle autojump
