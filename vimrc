@@ -98,8 +98,8 @@ set smartcase  " ... except when pattern contains uppercase characters
 set gdefault   " Search globally by default
 
 " Project search
-if executable('ag')
-  set grepprg=ag\ --vimgrep\ $*
+if executable('rg')
+  set grepprg=rg\ --smart-case\ --vimgrep\ $*
   set grepformat=%f:%l:%c:%m
 endif
 command! -nargs=+ -complete=file G :silent grep! <args> | cwindow | redraw!
@@ -132,15 +132,15 @@ endfunction
 
 xnoremap * :<C-u>call SetSearchFromSelection('/')<cr>/<C-r>=@/<cr><cr>
 xnoremap # :<C-u>call SetSearchFromSelection('?')<cr>?<C-r>=@/<cr><cr>
-xnoremap + :<C-u>call ExecuteCmdWithHistory('G -Q "'.GetSelection().'"')<cr>
-nnoremap + :<C-u>call ExecuteCmdWithHistory('G -Q "'.expand('<cword>').'"')<cr>
+xnoremap + :<C-u>call ExecuteCmdWithHistory('G --fixed-strings "'.GetSelection().'"')<cr>
+nnoremap + :<C-u>call ExecuteCmdWithHistory('G --fixed-strings "'.expand('<cword>').'"')<cr>
 
 " File search
 Plug 'kien/ctrlp.vim'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_root_markers = ['mix.exs', 'Gemfile']
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --hidden --ignore .git --nocolor -g ""'
+if executable('rg')
+  let g:ctrlp_user_command = 'rg %s --files --hidden --ignore-file=<(echo .git) --color=never --glob=""'
   let g:ctrlp_use_caching = 0
 end
 
