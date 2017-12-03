@@ -179,6 +179,7 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 Plug 'sjl/gundo.vim'
+nnoremap <leader>u :silent! GundoToggle<cr>
 
 " Centralize administrational files
 set backupdir=~/.vim/backup
