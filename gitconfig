@@ -46,7 +46,7 @@
   squash = commit --amend
   fixup = commit --amend --no-edit
   set-upstream = "!git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD)"
-  prdiff = "!f(){ git diff $(git merge-base HEAD ${1:-master}); }; f"
+  prdiff = "!f(){ git diff $(git merge-base HEAD ${1:-master}) ${@:2}; }; f"
   pr = "!git prdiff"
   prlog = "!f(){ git log-pretty $(git merge-base HEAD ${1:-master})..HEAD; }; f"
   pick = cherry-pick
