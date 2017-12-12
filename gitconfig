@@ -46,13 +46,13 @@
   squash = commit --amend
   fixup = commit --amend --no-edit
   set-upstream = "!git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD)"
-  prdiff = "!git diff $(git merge-base HEAD ${1:-master})"
+  prdiff = "!f(){ git diff $(git merge-base HEAD ${1:-master}); }; f"
   pr = "!git prdiff"
-  prlog = "!git lgp $(git merge-base HEAD ${1:-master})..HEAD"
+  prlog = "!f(){ git log-pretty $(git merge-base HEAD ${1:-master})..HEAD; }; f"
   pick = cherry-pick
   wip = "!git add . && git commit -m WIP"
   unwip = "!if [[ "$(git log HEAD~..HEAD --format='%s')" == "WIP" ]]; then git reset HEAD~1; else echo "Not a WIP commit"; fi"
-  first-child = "!bash -c 'c=${1:-HEAD}; set -- $(git rev-list --all --not \"$c\"^@ --children | grep $(git rev-parse \"$c\") ); shift; echo $1' -"
+  first-child = "!f(){ c=${1:-HEAD}; set -- $(git rev-list --all --not \"$c\"^@ --children | grep $(git rev-parse \"$c\") ); shift; echo $1; }; f"
   next = "!git checkout $(git first-child)"
   prev = "!git checkout HEAD~1"
 
