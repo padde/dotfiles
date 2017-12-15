@@ -161,6 +161,9 @@ Plug 'pbrisbin/vim-mkdir'
 " Autojump
 Plug 'padde/jump.vim'
 
+" Open file at line/char
+Plug 'kopischke/vim-fetch'
+
 " Auto-continue comments
 set formatoptions=croql
 silent! set formatoptions+=j
