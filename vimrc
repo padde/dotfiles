@@ -236,6 +236,14 @@ noremap <silent> <leader>k r\v^[<=>]{7}<cr>
 nnoremap <silent> <c-n> :silent cnext! \| cc<cr>
 nnoremap <silent> <leader><c-n> :silent cprev! \| cc<cr>
 
+" Open quickfix items in split/tab
+Plug 'yssl/QFEnter'
+let g:qfenter_enable_autoquickfix = 0
+let g:qfenter_keymap = {}
+let g:qfenter_keymap.vopen = ['<C-v>']
+let g:qfenter_keymap.hopen = ['<C-CR>', '<C-s>', '<C-x>']
+let g:qfenter_keymap.topen = ['<C-t>']
+
 " Delete all hidden buffers
 function! DeleteHiddenBuffers()
     let tpbl=[]
