@@ -158,6 +158,9 @@ nnoremap <silent> <leader><leader>d :NERDTreeFind<cr>
 " Make directory on the fly with :e
 Plug 'pbrisbin/vim-mkdir'
 
+" Autojump
+Plug 'padde/jump.vim'
+
 " Auto-continue comments
 set formatoptions=croql
 silent! set formatoptions+=j
