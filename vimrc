@@ -16,6 +16,9 @@ let mapleader = ","
 syntax on
 Plug 'sheerun/vim-polyglot'
 
+" editorconfig.org
+Plug 'editorconfig/editorconfig-vim'
+
 " Line numbers
 set number
 
