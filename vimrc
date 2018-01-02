@@ -304,8 +304,6 @@ Plug 'tpope/vim-bundler'
 Plug 'joker1007/vim-ruby-heredoc-syntax'
 
 " Elixir/Phoenix
-Plug 'spiegela/vimix'
-Plug 'c-brenn/phoenix.vim'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'slashmili/alchemist.vim'
 let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
