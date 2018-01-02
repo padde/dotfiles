@@ -168,7 +168,6 @@ nnoremap + :<C-u>call ExecuteCmdWithHistory('G --fixed-strings "'.expand('<cword
 " File search
 Plug 'kien/ctrlp.vim'
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_root_markers = ['mix.exs', 'Gemfile']
 if executable('rg')
   let g:ctrlp_user_command = 'rg %s --files --hidden --ignore-file=<(echo .git) --color=never --glob=""'
   let g:ctrlp_use_caching = 0
