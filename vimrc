@@ -14,7 +14,34 @@ let mapleader = ","
 
 " Enable syntax highlighting
 syntax on
-Plug 'sheerun/vim-polyglot'
+
+" Rust
+Plug 'rust-lang/rust.vim'
+Plug 'wellbredgrapefruit/tomdoc.vim'
+Plug 'cespare/vim-toml'
+
+" Frontend/HTML/CSS
+Plug 'othree/html5.vim'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'sheerun/vim-haml'
+Plug 'groenewege/vim-less'
+Plug 'mustache/vim-mustache-handlebars'
+
+" Javascript
+Plug 'pangloss/vim-javascript'
+Plug 'kchmck/vim-coffee-script'
+Plug 'mxw/vim-jsx'
+Plug 'posva/vim-vue'
+
+" Misc. language plugins
+Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/'}
+Plug 'fatih/vim-go'
+Plug 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'tbastos/vim-lua'
+Plug 'plasticboy/vim-markdown'
+Plug 'chr4/nginx.vim'
+Plug 'keith/tmux.vim'
+Plug 'exu/pgsql.vim'
 
 " editorconfig.org
 Plug 'editorconfig/editorconfig-vim'
@@ -299,13 +326,18 @@ let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_delay = 0
 
 " Ruby/Rails
+Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
+Plug 'sheerun/rspec.vim'
 Plug 'joker1007/vim-ruby-heredoc-syntax'
 
 " Elixir/Phoenix
+Plug 'elixir-lang/vim-elixir'
+Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'slashmili/alchemist.vim'
+Plug 'slime-lang/vim-slime-syntax'
 let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
 
 " Markdown
@@ -313,6 +345,7 @@ Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
 
 " Git
+Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 autocmd User fugitive command! -bar -buffer -nargs=* Gshame :Gblame -w -M -C <args>
 nnoremap <leader>g :Gshame<cr>
