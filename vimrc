@@ -316,6 +316,18 @@ nnoremap <silent> <leader>tl :TestLast<cr>
 nnoremap <silent> <leader>tg :TestVisit<cr>
 let test#runners = {'Elixir': ['Exercism']}
 
+" Elixir umbrella test runner
+" https://github.com/wojtekmach/dotfiles/blob/92f8607b76bb17ff5b138410a21d3ebedf0b2d37/vim/.vimrc#L131:L144
+function! ElixirUmbrellaTransform(cmd) abort
+  if match(a:cmd, 'apps/') != -1
+    return substitute(a:cmd, 'mix test apps/\([^/]*/\)\(.*\)', '(cd apps/\1 \&\& mix test \2)', '')
+  else
+    return a:cmd
+  end
+endfunction
+let g:test#custom_transformations = {'elixir_umbrella': function('ElixirUmbrellaTransform')}
+let g:test#transformation = 'elixir_umbrella'
+
 " ALE Linter
 Plug 'w0rp/ale'
 set signcolumn=yes
