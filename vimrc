@@ -336,6 +336,11 @@ let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_delay = 0
 
+" Disable elixir linters, because these will run the elixir compiler in the
+" background, unfortunately breaking Phoenix code reloading. Also see
+" https://github.com/phoenixframework/phoenix/issues/1165
+let g:ale_linters = {'elixir': []}
+
 " Ruby/Rails
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
