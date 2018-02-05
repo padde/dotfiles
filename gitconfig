@@ -58,6 +58,7 @@
 
 [core]
   excludesfile = ~/.gitignore
+  attributesfile = ~/.gitattributes
   quotepath = false
   pager = cat
 
@@ -82,3 +83,7 @@
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
+
+[merge "pofile"]
+  name = Gettext merge driver
+  driver = git merge-po %O %A %B
