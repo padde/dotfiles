@@ -31,6 +31,12 @@ export LC_ALL=en_US.UTF-8
 
 # aliases
 alias cl=clear
+alias dk=docker-compose
+alias ddn='docker-compose down'
+alias dl='docker-compose logs'
+alias dps='docker-compose ps'
+function dsh { docker-compose exec "$1" bash }
+alias dup='docker-compose up -d'
 alias g='git'
 compdef g='git'
 alias ga='git add'
