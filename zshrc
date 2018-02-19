@@ -46,6 +46,7 @@ alias gco='git co'
 alias gdf='git df'
 alias gdfs='git df --staged'
 alias gl='git l'
+function gr { git rebase -i "HEAD~$1" }
 alias gst='git st'
 alias lla='ll -a'
 alias o='open'
