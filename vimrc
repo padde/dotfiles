@@ -358,6 +358,7 @@ Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'slashmili/alchemist.vim'
 Plug 'slime-lang/vim-slime-syntax'
 let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
+au BufRead,BufNewFile mix.lock set filetype=elixir
 
 " Markdown
 Plug 'plasticboy/vim-markdown'
