@@ -55,6 +55,7 @@ alias mgen='mix ecto.gen.migration'
 alias o='open'
 alias rback='rake db:rollback'
 alias rmig='rake db:migrate'
+alias tf="terraform"
 alias ts="awk '{print strftime(\"[%Y-%m-%d %H:%M:%S.%N]\"), \$0; fflush();}'"
 alias emacs="emacsclient --alternate-editor '' -c"
 
