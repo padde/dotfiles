@@ -31,6 +31,7 @@ export LC_ALL=en_US.UTF-8
 
 # aliases
 alias cl=clear
+alias d=docker
 alias dk=docker-compose
 alias ddn='docker-compose down'
 alias dl='docker-compose logs'
