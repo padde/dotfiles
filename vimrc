@@ -42,6 +42,9 @@ Plug 'plasticboy/vim-markdown'
 Plug 'chr4/nginx.vim'
 Plug 'keith/tmux.vim'
 Plug 'exu/pgsql.vim'
+Plug 'hashivim/vim-terraform'
+au FileType terraform let &l:formatprg="terraform fmt -"
+au FileType terraform setlocal commentstring=#%s
 
 " editorconfig.org
 Plug 'editorconfig/editorconfig-vim'
