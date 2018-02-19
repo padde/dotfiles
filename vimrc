@@ -360,6 +360,9 @@ Plug 'slime-lang/vim-slime-syntax'
 let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
 au BufRead,BufNewFile mix.lock set filetype=elixir
 
+" Direnv
+au BufRead,BufNewFile .envrc* set filetype=sh
+
 " Markdown
 Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
