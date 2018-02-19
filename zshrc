@@ -173,20 +173,11 @@ PROMPT=\
 # Travis
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
-# Go
-export GOPATH=$HOME/.go
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
-export PATH=$PATH:$GOPATH
-
-# ASDF version manager
-source $HOME/.asdf/asdf.sh
-source $HOME/.asdf/completions/asdf.bash
-
 # Enable Erlang/Elixir shell history
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-# Yarn package manager
-export PATH="$HOME/.yarn/bin:$PATH"
+# ASDF version manager
+source $HOME/.asdf/completions/asdf.bash
 
 # direnv
 eval "$(direnv hook zsh)"
