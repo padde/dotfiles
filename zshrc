@@ -59,6 +59,14 @@ alias tf="terraform"
 alias ts="awk '{print strftime(\"[%Y-%m-%d %H:%M:%S.%N]\"), \$0; fflush();}'"
 alias emacs="emacsclient --alternate-editor '' -c"
 
+function poedit() {
+  app="Poedit.app"
+  osascript -e "quit app \"$app\""
+  sleep 1
+  open -a "$app" $1
+  osascript -e 'tell application "System Events" to key code 36 using command down'
+}
+
 # colorize listings (especially in `tree`)
 export LS_COLORS="no=00:di=34:ln=35:so=33"
 export LS_COLORS="ex=37;41:$LS_COLORS"
