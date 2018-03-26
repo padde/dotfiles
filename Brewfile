@@ -23,6 +23,7 @@ brew 'tree'
 brew 'vim'
 brew 'wget'
 brew 'zsh'
+brew 'jq'
 
 tap 'petere/postgresql'
 brew 'postgresql-common'
