@@ -24,6 +24,7 @@ brew 'vim'
 brew 'wget'
 brew 'zsh'
 brew 'jq'
+brew 'watch'
 
 tap 'petere/postgresql'
 brew 'postgresql-common'
