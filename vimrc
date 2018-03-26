@@ -358,6 +358,7 @@ Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'slashmili/alchemist.vim'
 Plug 'slime-lang/vim-slime-syntax'
+au FileType slime setlocal commentstring=//%s
 let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
 au BufRead,BufNewFile mix.lock set filetype=elixir
 
