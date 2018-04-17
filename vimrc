@@ -39,6 +39,7 @@ Plug 'fatih/vim-go'
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'tbastos/vim-lua'
 Plug 'plasticboy/vim-markdown'
+let g:vim_markdown_new_list_item_indent=0
 Plug 'chr4/nginx.vim'
 Plug 'keith/tmux.vim'
 Plug 'exu/pgsql.vim'
