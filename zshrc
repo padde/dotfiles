@@ -58,6 +58,7 @@ alias rmig='rake db:migrate'
 alias tf="terraform"
 alias ts="awk '{print strftime(\"[%Y-%m-%d %H:%M:%S.%N]\"), \$0; fflush();}'"
 alias emacs="emacsclient --alternate-editor '' -c"
+alias hhkb="$HOME/.hhkb/flash.sh"
 
 function poedit() {
   app="Poedit.app"
