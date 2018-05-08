@@ -2,6 +2,7 @@ source ~/.dotfiles/zsh/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle autojump
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen apply
 
 # completion
 autoload -U compinit
