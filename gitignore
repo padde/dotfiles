@@ -23,9 +23,19 @@ Thumbs.db
 # keep *.lock files related to dependency mgmt
 !Gemfile.lock
 !mix.lock
+!yarn.lock
 
 # powder files
 .powder
 
 # local rspec config
 .rspec-local
+
+# JS package manager noise
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Generic log files
+logs
+*.log
