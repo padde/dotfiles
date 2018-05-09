@@ -85,7 +85,7 @@ export LS_COLORS="*.h=33:*.hpp=33:$LS_COLORS"
 export LS_COLORS="*.o=30:*.d=30:$LS_COLORS"
 export LS_COLORS="*Makefile=35:*.mk=35:*Rakefile=35:$LS_COLORS"
 
-# use 256 colors (fixes tmux colors)
+# use 256 colors (fixes Vim colors inside Tmux)
 export TERM="xterm-256color"
 
 # highlight grep results
