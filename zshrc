@@ -32,13 +32,23 @@ export LC_ALL=en_US.UTF-8
 
 # aliases
 alias cl=clear
+alias emacs="emacsclient --alternate-editor '' -c"
+alias hhkb="$HOME/.hhkb/flash.sh"
+alias lla='ll -a'
+alias o='open'
+alias tf="terraform"
+alias ts="awk '{print strftime(\"[%Y-%m-%d %H:%M:%S.%N]\"), \$0; fflush();}'"
+
+# Docker
 alias d=docker
-alias dk=docker-compose
 alias ddn='docker-compose down'
+alias dk=docker-compose
 alias dl='docker-compose logs'
 alias dps='docker-compose ps'
 function dsh { docker-compose exec "$1" bash }
 alias dup='docker-compose up -d'
+
+# Git
 alias g='git'
 compdef g='git'
 alias ga='git add'
@@ -49,18 +59,11 @@ alias gdfs='git df --staged'
 alias gl='git l'
 function gr { git rebase -i "HEAD~$1" }
 alias gst='git st'
-alias lla='ll -a'
-alias mmig='mix ecto.migrate'
+
+# Elixir/Phoenix
 alias mback='mix ecto.rollback'
 alias mgen='mix ecto.gen.migration'
-alias o='open'
-alias rback='rake db:rollback'
-alias rmig='rake db:migrate'
-alias tf="terraform"
-alias ts="awk '{print strftime(\"[%Y-%m-%d %H:%M:%S.%N]\"), \$0; fflush();}'"
-alias emacs="emacsclient --alternate-editor '' -c"
-alias hhkb="$HOME/.hhkb/flash.sh"
-
+alias mmig='mix ecto.migrate'
 function poedit() {
   app="Poedit.app"
   osascript -e "quit app \"$app\""
@@ -68,6 +71,10 @@ function poedit() {
   open -a "$app" $1
   osascript -e 'tell application "System Events" to key code 36 using command down'
 }
+
+# Ruby/Rails
+alias rback='rake db:rollback'
+alias rmig='rake db:migrate'
 
 # colorize listings (especially in `tree`)
 export LS_COLORS="no=00:di=34:ln=35:so=33"
