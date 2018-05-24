@@ -213,6 +213,7 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 Plug 'sjl/gundo.vim'
+let g:gundo_prefer_python3 = 1
 nnoremap <leader>u :silent! GundoToggle<cr>
 
 " Centralize administrational files
