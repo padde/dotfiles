@@ -128,9 +128,6 @@ filetype plugin on
 " Buffer search
 set hlsearch   " Search highlighting
 set incsearch  " Highlight search as you type
-set ignorecase " Ignore case in search...
-set smartcase  " ... except when pattern contains uppercase characters
-set gdefault   " Search globally by default
 
 " Project search
 if executable('rg')
