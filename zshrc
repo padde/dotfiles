@@ -43,7 +43,7 @@ alias ts="awk '{print strftime(\"[%Y-%m-%d %H:%M:%S.%N]\"), \$0; fflush();}'"
 alias d=docker
 alias ddn='docker-compose down'
 alias dk=docker-compose
-alias dl='docker-compose logs'
+alias dl='docker-compose logs --tail=10 -f'
 alias dps='docker-compose ps'
 function dsh { docker-compose exec "$1" bash }
 alias dup='docker-compose up -d'
