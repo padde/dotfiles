@@ -361,6 +361,9 @@ Plug 'powerman/vim-plugin-AnsiEsc'
 
 Plug 'slashmili/alchemist.vim'
 let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
+if exists("$COMPILE_BASEPATH")
+  let g:alchemist_compile_basepath = $COMPILE_BASEPATH
+endif
 
 Plug 'slime-lang/vim-slime-syntax'
 au FileType slime setlocal commentstring=//%s
