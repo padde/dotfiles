@@ -365,6 +365,12 @@ let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
 Plug 'slime-lang/vim-slime-syntax'
 au FileType slime setlocal commentstring=//%s
 
+Plug 'mhinz/vim-mix-format'
+" let g:mix_format_on_save = 1
+let g:mix_format_options = '--check-equivalent'
+let g:mix_format_silent_errors = 1
+nnoremap <leader>mf :MixFormat<cr>
+
 " Direnv
 au BufRead,BufNewFile .envrc* set filetype=sh
 
