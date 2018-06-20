@@ -353,13 +353,17 @@ Plug 'joker1007/vim-ruby-heredoc-syntax'
 
 " Elixir/Phoenix
 Plug 'elixir-editors/vim-elixir'
+au BufRead,BufNewFile mix.lock set filetype=elixir
+
 Plug 'vim-erlang/vim-erlang-runtime'
+
 Plug 'powerman/vim-plugin-AnsiEsc'
+
 Plug 'slashmili/alchemist.vim'
+let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
+
 Plug 'slime-lang/vim-slime-syntax'
 au FileType slime setlocal commentstring=//%s
-let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
-au BufRead,BufNewFile mix.lock set filetype=elixir
 
 " Direnv
 au BufRead,BufNewFile .envrc* set filetype=sh
