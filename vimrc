@@ -352,7 +352,7 @@ Plug 'sheerun/rspec.vim'
 Plug 'joker1007/vim-ruby-heredoc-syntax'
 
 " Elixir/Phoenix
-Plug 'elixir-lang/vim-elixir'
+Plug 'elixir-editors/vim-elixir'
 Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'slashmili/alchemist.vim'
