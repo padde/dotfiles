@@ -384,6 +384,7 @@ let g:vim_markdown_folding_disabled = 1
 " Git
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
+Plug 'shumphrey/fugitive-gitlab.vim'
 autocmd User fugitive command! -bar -buffer -nargs=* Gshame :Gblame -w -M -C <args>
 nnoremap <leader>g :Gshame<cr>
 
