@@ -53,6 +53,7 @@ Plug 'exu/pgsql.vim'
 Plug 'hashivim/vim-terraform'
 au FileType terraform let &l:formatprg="terraform fmt -"
 au FileType terraform setlocal commentstring=#%s
+au FileType apache setlocal commentstring=#%s
 
 " editorconfig.org
 Plug 'editorconfig/editorconfig-vim'
