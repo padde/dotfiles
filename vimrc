@@ -26,6 +26,12 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'sheerun/vim-haml'
 Plug 'groenewege/vim-less'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'mattn/emmet-vim'
+imap <C-y><C-y> <C-y>,
+imap <C-y><CR> <C-y>,<CR><C-o>O
+let g:user_emmet_settings = {
+\   'javascript.jsx' : {'extends' : 'jsx'}
+\ }
 
 " Javascript
 Plug 'pangloss/vim-javascript'
