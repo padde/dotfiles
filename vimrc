@@ -284,7 +284,7 @@ noremap <silent> <leader>k r\v^[<=>]{7}<cr>
 
 " Go to prev/next item in quickfix list
 nnoremap <silent> <c-n> :silent cnext! \| cc<cr>
-nnoremap <silent> <leader><c-n> :silent cprev! \| cc<cr>
+nnoremap <silent> <c-b> :silent cprev! \| cc<cr>
 
 " Open quickfix items in split/tab
 Plug 'yssl/QFEnter'
