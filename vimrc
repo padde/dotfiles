@@ -37,6 +37,7 @@ let g:user_emmet_settings = {
 Plug 'pangloss/vim-javascript'
 Plug 'kchmck/vim-coffee-script'
 Plug 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
 Plug 'posva/vim-vue'
 
 " Misc. language plugins
