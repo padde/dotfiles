@@ -9,12 +9,21 @@
   branch = auto
   diff = auto
   status = auto
+  ui = true
 
 [color "diff"]
-  meta = blue
-  frag = blue
+  meta = black bold
+  frag = magenta
   old = red
   new = green
+  commit = yellow
+  whitespace = red reverse
+
+[color "diff-highlight"]
+  oldNormal = red
+  oldHighlight = red ul
+  newNormal = green
+  newHighlight = green ul
 
 [color "status"]
   added = yellow
@@ -60,7 +69,7 @@
   excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
   quotepath = false
-  pager = cat
+  pager = diff-so-fancy
 
 [push]
   default = current

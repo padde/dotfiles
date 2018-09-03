@@ -2,6 +2,7 @@
 brew 'autojump'
 brew 'chromedriver'
 brew 'coreutils'
+brew 'diff-so-fancy'
 brew 'git'
 brew 'imagemagick'
 brew 'jq'
