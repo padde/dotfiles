@@ -55,6 +55,7 @@ Plug 'hashivim/vim-terraform'
 au FileType terraform let &l:formatprg="terraform fmt -"
 au FileType terraform setlocal commentstring=#%s
 au FileType apache setlocal commentstring=#%s
+au BufRead,BufNewFile Config.in set filetype=sh
 
 " editorconfig.org
 Plug 'editorconfig/editorconfig-vim'
