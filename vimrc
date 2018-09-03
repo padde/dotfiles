@@ -35,6 +35,7 @@ let g:user_emmet_settings = {
 
 " Javascript
 Plug 'pangloss/vim-javascript'
+au BufRead,BufNewFile ionic.project set filetype=javascript
 Plug 'kchmck/vim-coffee-script'
 Plug 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
