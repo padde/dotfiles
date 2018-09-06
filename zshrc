@@ -38,6 +38,13 @@ alias lla='ll -a'
 alias o='open'
 alias tf="terraform"
 alias ts="awk '{print strftime(\"[%Y-%m-%d %H:%M:%S.%N]\"), \$0; fflush();}'"
+function pass {
+  lynx -dump -force_html <(\
+    curl -fsL http://pass.telekom.de/home\?continue\=true\
+    | xmllint --html --xpath '//div[contains(@class,"barTextBelow")]' - 2>/dev/null\
+  )\
+  | awk 'NF {print $1" "$2" of " $4" "$5" used" }'
+}
 
 # Docker
 alias d=docker
