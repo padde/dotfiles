@@ -73,6 +73,7 @@ function poedit() {
 }
 
 # Ruby/Rails
+alias be="bundle exec"
 alias rback='rake db:rollback'
 alias rmig='rake db:migrate'
 
