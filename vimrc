@@ -3,63 +3,20 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
 
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GENERAL SETTINGS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Hide startup message
 set shortmess=atI
-
-" Global dependencies
-Plug 'tpope/vim-repeat'
 
 " Nobody likes \ as leader!
 let mapleader = ","
 
 " Enable syntax highlighting
 syntax on
-
-" Rust
-Plug 'rust-lang/rust.vim'
-Plug 'wellbredgrapefruit/tomdoc.vim'
-Plug 'cespare/vim-toml'
-
-" Frontend/HTML/CSS
-Plug 'othree/html5.vim'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'sheerun/vim-haml'
-Plug 'groenewege/vim-less'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'mattn/emmet-vim'
-imap <C-y><C-y> <C-y>,
-imap <C-y><CR> <C-y>,<CR><C-o>O
-let g:user_emmet_settings = {
-\   'javascript.jsx' : {'extends' : 'jsx'}
-\ }
-
-" Javascript
-Plug 'pangloss/vim-javascript'
-au BufRead,BufNewFile ionic.project set filetype=javascript
-Plug 'kchmck/vim-coffee-script'
-Plug 'mxw/vim-jsx'
-let g:jsx_ext_required = 0
-Plug 'posva/vim-vue'
-
-" Misc. language plugins
-Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/'}
-Plug 'fatih/vim-go'
-Plug 'LaTeX-Box-Team/LaTeX-Box'
-Plug 'tbastos/vim-lua'
-Plug 'plasticboy/vim-markdown'
-let g:vim_markdown_new_list_item_indent=0
-Plug 'chr4/nginx.vim'
-Plug 'keith/tmux.vim'
-Plug 'exu/pgsql.vim'
-Plug 'hashivim/vim-terraform'
-au FileType terraform let &l:formatprg="terraform fmt -"
-au FileType terraform setlocal commentstring=#%s
-au FileType apache setlocal commentstring=#%s
-au BufRead,BufNewFile Config.in set filetype=sh
-
-" editorconfig.org
-Plug 'editorconfig/editorconfig-vim'
-let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " Line numbers
 set number
@@ -98,12 +55,6 @@ if has("mouse_sgr")
 elseif has("mouse_xterm")
   set ttymouse=xterm2
 end
-
-" TMUX
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'benmills/vimux'
-Plug 'sjl/vitality.vim'
-au VimResized * :wincmd = " Resize splits when the window is resized
 
 " Use UTF-8
 set nobomb
@@ -177,51 +128,12 @@ xnoremap # :<C-u>call SetSearchFromSelection('?')<cr>?<C-r>=@/<cr><cr>
 xnoremap + :<C-u>call ExecuteCmdWithHistory('G --fixed-strings "'.GetSelection().'"')<cr>
 nnoremap + :<C-u>call ExecuteCmdWithHistory('G --fixed-strings "'.expand('<cword>').'"')<cr>
 
-" File search
-Plug 'kien/ctrlp.vim'
-let g:ctrlp_show_hidden = 1
-if executable('rg')
-  let g:ctrlp_user_command = 'rg %s --files --hidden --ignore-file=<(echo .git) --color=never --glob=""'
-  let g:ctrlp_use_caching = 0
-end
-
-" File explorer
-Plug 'scrooloose/nerdtree'
-let g:NERDTreeChDirMode=2
-let g:NERDTreeCascadeSingleChildDir=0
-" These mappings would interfere with vim-tmux-navigator
-let g:NERDTreeMapJumpNextSibling=''
-let g:NERDTreeMapJumpPrevSibling=''
-let g:NERDTreeMinimalUI=1
-nnoremap <silent> <leader>d :NERDTreeToggle<cr>
-nnoremap <silent> <leader><leader>d :NERDTreeFind<cr>
-
-" Make directory on the fly with :e
-Plug 'pbrisbin/vim-mkdir'
-
-" Autojump
-Plug 'padde/jump.vim'
-
-" Open file at line/char
-Plug 'kopischke/vim-fetch'
-
-" UNIX tools
-Plug 'tpope/vim-eunuch'
-
 " Auto-continue comments
 set formatoptions=croql
 silent! set formatoptions+=j
 
 " Command line history
 set history=10000
-
-" Undo
-set undofile
-set undolevels=1000
-set undoreload=10000
-Plug 'sjl/gundo.vim'
-let g:gundo_prefer_python3 = 1
-nnoremap <leader>u :silent! GundoToggle<cr>
 
 " Centralize administrational files
 set backupdir=~/.vim/backup
@@ -249,17 +161,23 @@ if has("autocmd") && exists("+omnifunc")
         \ endif
 endif
 
-" Automatically insert `end`
-Plug 'tpope/vim-endwise'
+" Color scheme
+set termguicolors
+set background=dark
 
-" Comments
-Plug 'tpope/vim-commentary'
+Plug 'chriskempson/base16-vim'
+au VimEnter * colorscheme base16-default-dark
+au VimEnter,ColorScheme *
+  \ hi VertSplit ctermbg=none guibg=NONE |
+  \ hi LineNr ctermbg=none guibg=NONE |
+  \ hi FoldColumn ctermbg=none guibg=NONE |
+  \ hi SignColumn ctermbg=none guibg=NONE |
 
-" Surround
-Plug 'tpope/vim-surround'
+" Nicer looking splits
+set fillchars+=vert:│
 
-" Exchange regions
-Plug 'tommcdo/vim-exchange'
+" Show statusline
+set laststatus=2
 
 " Map non-breaking space to space
 inoremap <A-space> <space>
@@ -288,6 +206,51 @@ noremap <silent> <leader>k r\v^[<=>]{7}<cr>
 nnoremap <silent> <c-n> :silent cnext \| cc<cr>
 nnoremap <silent> <c-b> :silent cprev \| cc<cr>
 
+" Show syntax highlighting groups for word under cursor
+nmap <leader>z :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GLOBAL PLUGINS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Global dependencies
+Plug 'tpope/vim-repeat'
+
+" File search
+Plug 'kien/ctrlp.vim'
+let g:ctrlp_show_hidden = 1
+if executable('rg')
+  let g:ctrlp_user_command = 'rg %s --files --hidden --ignore-file=<(echo .git) --color=never --glob=""'
+  let g:ctrlp_use_caching = 0
+end
+
+" File explorer
+Plug 'scrooloose/nerdtree'
+let g:NERDTreeChDirMode=2
+let g:NERDTreeCascadeSingleChildDir=0
+" These mappings would interfere with vim-tmux-navigator
+let g:NERDTreeMapJumpNextSibling=''
+let g:NERDTreeMapJumpPrevSibling=''
+let g:NERDTreeMinimalUI=1
+nnoremap <silent> <leader>d :NERDTreeToggle<cr>
+nnoremap <silent> <leader><leader>d :NERDTreeFind<cr>
+
+" Undo
+set undofile
+set undolevels=1000
+set undoreload=10000
+Plug 'sjl/gundo.vim'
+let g:gundo_prefer_python3 = 1
+nnoremap <leader>u :silent! GundoToggle<cr>
+
 " Open quickfix items in split/tab
 Plug 'yssl/QFEnter'
 let g:qfenter_enable_autoquickfix = 0
@@ -305,6 +268,34 @@ function! DeleteHiddenBuffers()
     endfor
 endfunction
 command! DeleteHiddenBuffers :call DeleteHiddenBuffers()
+
+" Make directory on the fly with :e
+Plug 'pbrisbin/vim-mkdir'
+
+" Autojump
+Plug 'padde/jump.vim'
+
+" Open file at line/char
+Plug 'kopischke/vim-fetch'
+
+" UNIX tools
+Plug 'tpope/vim-eunuch'
+
+" Automatically insert `end`
+Plug 'tpope/vim-endwise'
+
+" Comments
+Plug 'tpope/vim-commentary'
+
+" Surround
+Plug 'tpope/vim-surround'
+
+" Exchange regions
+Plug 'tommcdo/vim-exchange'
+
+" editorconfig.org
+Plug 'editorconfig/editorconfig-vim'
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " Vim-Test
 Plug 'janko-m/vim-test'
@@ -354,42 +345,8 @@ let g:ale_lint_delay = 0
 " https://github.com/phoenixframework/phoenix/issues/1165
 let g:ale_linters = {'elixir': []}
 
-" Ruby/Rails
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-bundler'
-Plug 'sheerun/rspec.vim'
-Plug 'joker1007/vim-ruby-heredoc-syntax'
-
-" Elixir/Phoenix
-Plug 'elixir-editors/vim-elixir'
-au BufRead,BufNewFile mix.lock set filetype=elixir
-
-Plug 'vim-erlang/vim-erlang-runtime'
-
+" ANSI escape codes
 Plug 'powerman/vim-plugin-AnsiEsc'
-
-Plug 'slashmili/alchemist.vim'
-let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
-if exists("$COMPILE_BASEPATH")
-  let g:alchemist_compile_basepath = $COMPILE_BASEPATH
-endif
-
-Plug 'slime-lang/vim-slime-syntax'
-au FileType slime setlocal commentstring=//%s
-
-Plug 'mhinz/vim-mix-format'
-" let g:mix_format_on_save = 1
-let g:mix_format_options = '--check-equivalent'
-let g:mix_format_silent_errors = 1
-nnoremap <leader>mf :MixFormat<cr>
-
-" Direnv
-au BufRead,BufNewFile .envrc* set filetype=sh
-
-" Markdown
-Plug 'plasticboy/vim-markdown'
-let g:vim_markdown_folding_disabled = 1
 
 " Git
 Plug 'tpope/vim-git'
@@ -409,38 +366,120 @@ let g:gist_open_browser_after_post = 1
 let g:gist_show_privates = 1
 let g:gist_post_private = 1
 
-" Color scheme
-set termguicolors
-set background=dark
-
-Plug 'chriskempson/base16-vim'
-au VimEnter * colorscheme base16-default-dark
-au VimEnter,ColorScheme *
-  \ hi VertSplit ctermbg=none guibg=NONE |
-  \ hi LineNr ctermbg=none guibg=NONE |
-  \ hi FoldColumn ctermbg=none guibg=NONE |
-  \ hi SignColumn ctermbg=none guibg=NONE |
-
-" Nicer looking splits
-set fillchars+=vert:│
-
-" Show statusline
-set laststatus=2
-
-" Show syntax highlighting groups for word under cursor
-nmap <leader>z :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
-
 " Show unicode codepoint under cursor with `ga`
 Plug 'tpope/vim-characterize'
 
 " Hex editor
 Plug 'fidian/hexmode'
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" LANGUAGE SPECIFIC PLUGINS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Rust
+Plug 'rust-lang/rust.vim'
+Plug 'wellbredgrapefruit/tomdoc.vim'
+Plug 'cespare/vim-toml'
+
+" HTML
+Plug 'othree/html5.vim'
+
+" CSS, SASS, SCSS, LESS
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'groenewege/vim-less'
+
+" HTML, HAML and preprocessors
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'sheerun/vim-haml'
+Plug 'mattn/emmet-vim'
+imap <C-y><C-y> <C-y>,
+imap <C-y><CR> <C-y>,<CR><C-o>O
+let g:user_emmet_settings = {
+\   'javascript.jsx' : {'extends' : 'jsx'}
+\ }
+
+" JavaScript, CoffeeScript, JSX, React.js, Vue.js
+Plug 'pangloss/vim-javascript'
+au BufRead,BufNewFile ionic.project set filetype=javascript
+Plug 'kchmck/vim-coffee-script'
+Plug 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
+Plug 'posva/vim-vue'
+
+" Docker
+Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/'}
+
+" Go
+Plug 'fatih/vim-go'
+
+" LaTeX
+Plug 'LaTeX-Box-Team/LaTeX-Box'
+
+" Lua
+Plug 'tbastos/vim-lua'
+
+" Markdown
+Plug 'plasticboy/vim-markdown'
+let g:vim_markdown_new_list_item_indent=0
+
+" Nginx
+Plug 'chr4/nginx.vim'
+
+" Tmux
+Plug 'keith/tmux.vim'
+
+" Postgres
+Plug 'exu/pgsql.vim'
+
+" Terraform
+Plug 'hashivim/vim-terraform'
+au FileType terraform let &l:formatprg="terraform fmt -"
+au FileType terraform setlocal commentstring=#%s
+
+" Apache
+au FileType apache setlocal commentstring=#%s
+
+" Shell
+au BufRead,BufNewFile Config.in set filetype=sh
+
+" TMUX
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'benmills/vimux'
+Plug 'sjl/vitality.vim'
+au VimResized * :wincmd = " Resize splits when the window is resized
+
+" Ruby/Rails
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-bundler'
+Plug 'sheerun/rspec.vim'
+Plug 'joker1007/vim-ruby-heredoc-syntax'
+
+" Elixir/Phoenix
+Plug 'elixir-editors/vim-elixir'
+au BufRead,BufNewFile mix.lock set filetype=elixir
+Plug 'vim-erlang/vim-erlang-runtime'
+Plug 'slashmili/alchemist.vim'
+let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
+if exists("$COMPILE_BASEPATH")
+  let g:alchemist_compile_basepath = $COMPILE_BASEPATH
+endif
+Plug 'slime-lang/vim-slime-syntax'
+au FileType slime setlocal commentstring=//%s
+Plug 'mhinz/vim-mix-format'
+" let g:mix_format_on_save = 1
+let g:mix_format_options = '--check-equivalent'
+let g:mix_format_silent_errors = 1
+nnoremap <leader>mf :MixFormat<cr>
+
+" Direnv
+au BufRead,BufNewFile .envrc* set filetype=sh
+
+" Markdown
+Plug 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled = 1
 
 " Local/experimental configuration
 if filereadable(expand("~/.vimrc.local"))
