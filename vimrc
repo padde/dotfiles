@@ -17,6 +17,7 @@ let mapleader = ","
 
 " Enable syntax highlighting
 syntax on
+set synmaxcol=200
 
 " Line numbers
 set number
