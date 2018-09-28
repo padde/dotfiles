@@ -293,10 +293,6 @@ Plug 'tpope/vim-surround'
 " Exchange regions
 Plug 'tommcdo/vim-exchange'
 
-" editorconfig.org
-Plug 'editorconfig/editorconfig-vim'
-let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-
 " Vim-Test
 Plug 'janko-m/vim-test'
 function! SimpleVimuxStrategy(cmd) abort
