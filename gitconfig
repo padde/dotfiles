@@ -46,6 +46,7 @@
   l = "!git log-pretty --first-parent -n10"
   up = "!git set-upstream"
   obsolete = "!git branch --merged | grep -v \"\\\\*\\\\|master\\\\|$(git symbolic-ref --short HEAD)\""
+  touch = "commit --amend --no-edit --date=now --reset-author"
   trim-local = "!git obsolete | xargs git branch -d"
   trim-remote = fetch --prune --all
   trim = "!git trim-remote && git trim-local && git pull"
