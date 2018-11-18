@@ -7,10 +7,10 @@ antigen apply
 # completion
 autoload -U compinit
 compinit
+compdef g='git'
 
-# use vim as editor
-export VISUAL=vim
-export EDITOR=vim
+# Load environment
+source ~/.dotfiles/env
 
 # history search
 bindkey '\C-p' history-beginning-search-backward
@@ -21,86 +21,6 @@ bindkey '\e[B' history-beginning-search-forward
 # history
 setopt histignoredups
 export HISTSIZE=10000
-
-# Use most as pager, if available
-if which most > /dev/null; then
-  export PAGER=most
-fi
-
-# utf-8 ftw!
-export LC_ALL=en_US.UTF-8
-
-# aliases
-alias cl=clear
-alias emacs="emacsclient --alternate-editor '' -c"
-alias hhkb="$HOME/.hhkb/flash.sh"
-alias lla='ll -a'
-alias o='open'
-alias tf="terraform"
-alias ts="awk '{print strftime(\"[%Y-%m-%d %H:%M:%S.%N]\"), \$0; fflush();}'"
-function pass {
-  lynx -dump -force_html <(\
-    curl -fsL http://pass.telekom.de/home\?continue\=true\
-    | xmllint --html --xpath '//div[contains(@class,"barTextBelow")]' - 2>/dev/null\
-  )\
-  | awk 'NF {print $1" "$2" of " $4" "$5" used" }'
-}
-
-# Docker
-alias d=docker
-alias ddn='docker-compose down'
-alias dk=docker-compose
-alias dl='docker-compose logs --tail=10 -f'
-alias dps='docker-compose ps'
-function dsh { docker-compose exec "$1" bash }
-alias dup='docker-compose up -d'
-
-# Git
-alias g='git'
-compdef g='git'
-alias ga='git add'
-alias gci='git ci'
-alias gco='git co'
-alias gdf='git df'
-alias gdfs='git df --staged'
-alias gl='git l'
-function gr { git rebase -i "HEAD~$1" }
-alias gst='git st'
-
-# Elixir/Phoenix
-alias mback='mix ecto.rollback'
-alias mgen='mix ecto.gen.migration'
-alias mmig='mix ecto.migrate'
-function poedit() {
-  app="Poedit.app"
-  osascript -e "quit app \"$app\""
-  sleep 1
-  open -a "$app" $1
-  osascript -e 'tell application "System Events" to key code 36 using command down'
-}
-
-# Ruby/Rails
-alias be="bundle exec"
-alias rback='rake db:rollback'
-alias rmig='rake db:migrate'
-
-# colorize listings (especially in `tree`)
-export LS_COLORS="no=00:di=34:ln=35:so=33"
-export LS_COLORS="ex=37;41:$LS_COLORS"
-export LS_COLORS="*.zip=36:*.rar=36:*.tar=36:*.gz=36:*.tar.gz=36:*.7z=36:$LS_COLORS"
-export LS_COLORS="*.c=32:*.cc=32:*.cpp=32:*.m=32:*.rb=32:*.pl=32:*.php=32:*.java=32:$LS_COLORS"
-export LS_COLORS="*.h=33:*.hpp=33:$LS_COLORS"
-export LS_COLORS="*.o=30:*.d=30:$LS_COLORS"
-export LS_COLORS="*Makefile=35:*.mk=35:*Rakefile=35:$LS_COLORS"
-
-# use 256 colors (fixes Vim colors inside Tmux)
-export TERM="xterm-256color"
-
-# highlight grep results
-export GREP_COLOR="1;31"
-
-# case insensitive matches in autojump
-export AUTOJUMP_IGNORE_CASE=1
 
 # helper functions
 function truncate_string {
@@ -197,9 +117,6 @@ PROMPT=\
 
 # Travis
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
-
-# Enable Erlang/Elixir shell history
-export ERL_AFLAGS="-kernel shell_history enabled"
 
 # ASDF version manager
 source $HOME/.asdf/completions/asdf.bash
