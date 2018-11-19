@@ -173,6 +173,7 @@ au VimEnter,ColorScheme *
   \ hi LineNr ctermbg=none guibg=NONE |
   \ hi FoldColumn ctermbg=none guibg=NONE |
   \ hi SignColumn ctermbg=none guibg=NONE |
+  \ hi SpellCap term=standout ctermbg=none cterm=standout guibg=NONE gui=standout
 
 " Nicer looking splits
 set fillchars+=vert:│
