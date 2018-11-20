@@ -184,9 +184,12 @@ set laststatus=2
 " Map non-breaking space to space
 inoremap <A-space> <space>
 
-" C-p and C-n in command mode
+" Map C-p/n to up/down in command mode
 cnoremap <c-p> <up>
 cnoremap <c-n> <down>
+
+" Map C-a to start of line in command mode
+cnoremap <c-a> <c-b>
 
 " Select last pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
