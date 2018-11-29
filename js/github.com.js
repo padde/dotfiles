@@ -1,26 +1,21 @@
 var highlightReviewState = function() {
-  $('.js-issue-row').each(function() {
-    var reviewState = $(this).find('.mt-1').text();
-    if (reviewState.includes('Changes requested')) {
-      $(this).find('.d-table').css({background: 'rgba(222, 20, 11, 0.1)'});
-    } else if (reviewState.includes('Approved')) {
-      $(this).find('.d-table').css({background: 'rgba(31, 127, 21, 0.1)'});
+  const user = document.querySelector('.user-nav .avatar').alt.substring(1)
+  for (let row of document.querySelectorAll('.js-issue-row:not(.unread)')) {
+    const metaInfo = row.querySelector('.mt-1').innerText
+
+    if (metaInfo.includes('Changes requested')) {
+      row.style.boxShadow = 'inset 2px 0 0 rgba(222, 20, 11, 0.7)'
+    } else if (metaInfo.includes('Approved')) {
+      row.style.boxShadow = 'inset 2px 0 0 rgba(31, 127, 21, 0.7)'
     }
-  });
-};
 
-$(function() {
-  $('.outdated-diff-comment-container').addClass('open');
+    if (metaInfo.includes(`by ${user}`)) {
+      row.style.backgroundColor = 'rgba(230, 190, 10, 0.07)'
+    }
+  }
+}
 
-  highlightReviewState();
-  $(window).on('pushstate popstate', highlightReviewState);
-  // HACK: make sure that we highlight review states after ajax pagination or
-  // search reloaded the issues list. Maybe there's a better way to do this :/
-  $(document).on('click', function() {
-    var maxTries = 100;
-    var interval = setInterval(function() {
-      if (maxTries-- == 0) { clearInterval(interval) };
-      highlightReviewState();
-    }, 100);
-  });
-});
+highlightReviewState()
+document.addEventListener('DOMContentLoaded', highlightReviewState)
+window.addEventListener('pushstate', highlightReviewState)
+window.addEventListener('popstate', highlightReviewState)
