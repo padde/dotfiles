@@ -1,1 +1,1 @@
-autocmd BufRead,BufNewFile Brewfile set filetype=ruby
+au BufRead,BufNewFile Brewfile setlocal filetype=ruby

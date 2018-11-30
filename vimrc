@@ -404,7 +404,6 @@ let g:user_emmet_settings = {
 
 " JavaScript, CoffeeScript, JSX, React.js, Vue.js
 Plug 'pangloss/vim-javascript'
-au BufRead,BufNewFile ionic.project set filetype=javascript
 Plug 'kchmck/vim-coffee-script'
 Plug 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
@@ -443,9 +442,6 @@ au FileType terraform setlocal commentstring=#%s
 " Apache
 au FileType apache setlocal commentstring=#%s
 
-" Shell
-au BufRead,BufNewFile Config.in set filetype=sh
-
 " TMUX
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
@@ -461,7 +457,6 @@ Plug 'joker1007/vim-ruby-heredoc-syntax'
 
 " Elixir/Phoenix
 Plug 'elixir-editors/vim-elixir'
-au BufRead,BufNewFile mix.lock set filetype=elixir
 Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'slashmili/alchemist.vim'
 let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
@@ -477,7 +472,6 @@ let g:mix_format_silent_errors = 1
 nnoremap <leader>mf :MixFormat<cr>
 
 " Direnv
-au BufRead,BufNewFile .envrc* set filetype=sh
 
 " Markdown
 Plug 'plasticboy/vim-markdown'

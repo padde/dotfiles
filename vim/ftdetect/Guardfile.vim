@@ -1,2 +1,2 @@
-autocmd BufRead,BufNewFile  Guardfile set filetype=ruby
-autocmd BufRead,BufNewFile .Guardfile set filetype=ruby
+au BufRead,BufNewFile Guardfile setlocal filetype=ruby
+au BufRead,BufNewFile .Guardfile setlocal filetype=ruby

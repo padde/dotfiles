@@ -1,1 +1,1 @@
-autocmd BufRead,BufNewFile *.axlsx set filetype=ruby
+au BufRead,BufNewFile *.axlsx setlocal filetype=ruby

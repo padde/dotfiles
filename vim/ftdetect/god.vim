@@ -1,1 +1,1 @@
-autocmd BufRead,BufNewFile *.god set ft=ruby
+au BufRead,BufNewFile *.god setlocal filetype=ruby

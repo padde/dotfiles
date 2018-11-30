@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *.vue se ft=html
+au BufNewFile,BufRead *.vue setlocal filetype=html
