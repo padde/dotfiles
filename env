@@ -34,7 +34,7 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # aliases
 alias cl=clear
 alias emacs="emacsclient --alternate-editor '' -c"
-alias hhkb="~/.hhkb/flash.sh"
+alias tmk-flash="~/.tmk/flash.sh"
 alias lla='ll -a'
 alias o='open'
 alias tf="terraform"
