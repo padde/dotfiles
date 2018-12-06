@@ -70,7 +70,7 @@
   excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
   quotepath = false
-  pager = diff-so-fancy
+  pager = cat
 
 [push]
   default = current
