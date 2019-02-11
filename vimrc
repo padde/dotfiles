@@ -197,6 +197,9 @@ nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 " Write with super user permissions
 command! Wsudo :w !sudo tee %
 
+" Start fresh
+command! Fresh :bufdo bd | NERDTree
+
 " Remove trailing whitespace including non-breaking spaces
 command! -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$// | norm! ``
 nnoremap <leader>rt :RemoveTrailingWhitespace<CR>
