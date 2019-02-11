@@ -100,3 +100,5 @@
 
 [diff]
   algorithm = histogram
+[hub]
+  protocol = https

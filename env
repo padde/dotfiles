@@ -66,6 +66,7 @@ alias gdfs='git df --staged'
 alias gl='git l'
 gr() { git rebase -i "HEAD~$1"; }
 alias gst='git st'
+alias pr='hub pr list -h $(git rev-parse --abbrev-ref HEAD) -L 1 -f pull/%I | xargs hub browse --'
 
 # Elixir/Phoenix
 alias mback='mix ecto.rollback'
