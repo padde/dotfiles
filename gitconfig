@@ -56,9 +56,10 @@
   squash = commit --amend
   fixup = commit --amend --no-edit
   set-upstream = "!git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD)"
-  prdiff = "!f(){ git diff $(git merge-base HEAD ${1:-master}) ${@:2}; }; f"
-  pr = "!git prdiff"
-  prlog = "!f(){ git log-pretty $(git merge-base HEAD ${1:-master})..HEAD; }; f"
+  pr-base   = "!f(){ git merge-base HEAD ${1:-master}; }; f"
+  pr-diff   = "!f(){ git diff $* $(git pr-base); }; f"
+  pr-log    = "!f(){ git log-pretty $* $(git pr-base)..HEAD; }; f"
+  pr-rebase = "!f(){ git rebase -i $* $(git pr-base); }; f"
   pick = cherry-pick
   wip = "!git add . && git commit -m WIP"
   unwip = "!if [[ "$(git log HEAD~..HEAD --format='%s')" == "WIP" ]]; then git reset HEAD~1; else echo "Not a WIP commit"; fi"
