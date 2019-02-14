@@ -88,3 +88,5 @@
 	algorithm = histogram
 [hub]
 	protocol = https
+[rerere]
+	enabled = true
