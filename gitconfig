@@ -1,105 +1,90 @@
 [user]
-  name = Patrick Oscity
-  email = patrick.oscity@gmail.com
-
+	name = Patrick Oscity
+	email = patrick.oscity@gmail.com
 [github]
-  user = padde
-
+	user = padde
 [color]
-  branch = auto
-  diff = auto
-  status = auto
-  ui = true
-
+	branch = auto
+	diff = auto
+	status = auto
+	ui = true
 [color "diff"]
-  meta = black bold
-  frag = magenta
-  old = red
-  new = green
-  commit = yellow
-  whitespace = red reverse
-
+	meta = black bold
+	frag = magenta
+	old = red
+	new = green
+	commit = yellow
+	whitespace = red reverse
 [color "diff-highlight"]
-  oldNormal = red
-  oldHighlight = red ul
-  newNormal = green
-  newHighlight = green ul
-
+	oldNormal = red
+	oldHighlight = red ul
+	newNormal = green
+	newHighlight = green ul
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = blue
-
+	added = yellow
+	changed = green
+	untracked = blue
 [alias]
-  au = add -u
-  st = status
-  ci = commit
-  br = branch
-  cine = commit --no-edit
-  co = checkout
-  df = diff
-  dfs = diff --staged
-  last = show HEAD~1..HEAD
-  log-pretty = log --pretty='%C(blue)%h %C(green)%aN %C(yellow)%s%C(red)%d %C(blue)%ar%Creset' --graph
-  lgp = "!git log-pretty"
-  lgg = "!git log-pretty --first-parent"
-  l = "!git log-pretty --first-parent -n10"
-  up = "!git set-upstream"
-  obsolete = "!git branch --merged | grep -v \"\\\\*\\\\|master\\\\|$(git symbolic-ref --short HEAD)\""
-  touch = "commit --amend --no-edit --date=now --reset-author"
-  trim-local = "!git obsolete | xargs git branch -d"
-  trim-remote = fetch --prune --all
-  trim = "!git trim-remote && git trim-local && git pull"
-  giveup = "!printf 'Do you really want to discard all staged, unstaged and untracked changes? [Yn] '; read yn; if [[ $yn =~ "^[yY]([eE][sS])?$" ]]; then (git reset > /dev/null && for f in $(git ls-files -m); do echo "Resetting $f"; done && git co . && git clean -fd); else echo 'aborted'; fi"
-  authors = "!git log --format='%aN (%ae)' | sort -buf"
-  shame = blame -w -M -C
-  squash = commit --amend
-  fixup = commit --amend --no-edit
-  set-upstream = "!git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD)"
-  pr-base   = "!f(){ git merge-base HEAD ${1:-master}; }; f"
-  pr-diff   = "!f(){ git diff $* $(git pr-base); }; f"
-  pr-log    = "!f(){ git log-pretty $* $(git pr-base)..HEAD; }; f"
-  pr-rebase = "!f(){ git rebase -i $* $(git pr-base); }; f"
-  pick = cherry-pick
-  wip = "!git add . && git commit -m WIP"
-  unwip = "!if [[ "$(git log HEAD~..HEAD --format='%s')" == "WIP" ]]; then git reset HEAD~1; else echo "Not a WIP commit"; fi"
-  first-child = "!f(){ c=${1:-HEAD}; set -- $(git rev-list --all --not \"$c\"^@ --children | grep $(git rev-parse \"$c\") ); shift; echo $1; }; f"
-  next = "!git checkout $(git first-child)"
-  prev = "!git checkout HEAD~1"
-
+	au = add -u
+	st = status
+	ci = commit
+	br = branch
+	cine = commit --no-edit
+	co = checkout
+	df = diff
+	dfs = diff --staged
+	last = show HEAD~1..HEAD
+	log-pretty = log --pretty='%C(blue)%h %C(green)%aN %C(yellow)%s%C(red)%d %C(blue)%ar%Creset' --graph
+	lgp = "!git log-pretty"
+	lgg = "!git log-pretty --first-parent"
+	l = "!git log-pretty --first-parent -n10"
+	up = "!git set-upstream"
+	obsolete = "!git branch --merged | grep -v \"\\\\*\\\\|master\\\\|$(git symbolic-ref --short HEAD)\""
+	touch = "commit --amend --no-edit --date=now --reset-author"
+	trim-local = "!git obsolete | xargs git branch -d"
+	trim-remote = fetch --prune --all
+	trim = "!git trim-remote && git trim-local && git pull"
+	giveup = "!printf 'Do you really want to discard all staged, unstaged and untracked changes? [Yn] '; read yn; if [[ $yn =~ "^[yY]([eE][sS])?$" ]]; then (git reset > /dev/null && for f in $(git ls-files -m); do echo "Resetting $f"; done && git co . && git clean -fd); else echo 'aborted'; fi"
+	authors = "!git log --format='%aN (%ae)' | sort -buf"
+	shame = blame -w -M -C
+	squash = commit --amend
+	fixup = commit --amend --no-edit
+	set-upstream = "!git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD)"
+	pr-base   = "!f(){ git merge-base HEAD ${1:-master}; }; f"
+	pr-diff   = "!f(){ git diff $* $(git pr-base); }; f"
+	pr-log    = "!f(){ git log-pretty $* $(git pr-base)..HEAD; }; f"
+	pr-rebase = "!f(){ git rebase -i $* $(git pr-base); }; f"
+	pick = cherry-pick
+	wip = "!git add . && git commit -m WIP"
+	unwip = "!if [[ "$(git log HEAD~..HEAD --format='%s')" == "WIP" ]]; then git reset HEAD~1; else echo "Not a WIP commit"; fi"
+	first-child = "!f(){ c=${1:-HEAD}; set -- $(git rev-list --all --not \"$c\"^@ --children | grep $(git rev-parse \"$c\") ); shift; echo $1; }; f"
+	next = "!git checkout $(git first-child)"
+	prev = "!git checkout HEAD~1"
 [core]
-  excludesfile = ~/.gitignore
-  attributesfile = ~/.gitattributes
-  quotepath = false
-  pager = cat
-
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+	quotepath = false
+	pager = cat
 [push]
-  default = current
-  followTags = true
-
+	default = current
+	followTags = true
 [pull]
-  tags = true
-
+	tags = true
 [help]
-  autocorrect = 20
-
+	autocorrect = 20
 [include]
-  path = ~/.gitconfig.local
-
+	path = ~/.gitconfig.local
 [mailmap]
-  file = ~/.mailmap
-
+	file = ~/.mailmap
 [filter "lfs"]
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-  required = true
-
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [merge "pofile"]
-  name = Gettext merge driver
-  driver = git merge-po %O %A %B
-
+	name = Gettext merge driver
+	driver = git merge-po %O %A %B
 [diff]
-  algorithm = histogram
+	algorithm = histogram
 [hub]
-  protocol = https
+	protocol = https
