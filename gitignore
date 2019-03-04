@@ -31,6 +31,9 @@ Thumbs.db
 # local rspec config
 .rspec-local
 
+# local environment
+.envrc
+
 # JS package manager noise
 npm-debug.log
 yarn-debug.log
