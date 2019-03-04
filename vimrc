@@ -169,11 +169,11 @@ set background=dark
 Plug 'chriskempson/base16-vim'
 au VimEnter * colorscheme base16-default-dark
 au VimEnter,ColorScheme *
-  \ hi VertSplit ctermbg=none guibg=NONE |
-  \ hi LineNr ctermbg=none guibg=NONE |
-  \ hi FoldColumn ctermbg=none guibg=NONE |
-  \ hi SignColumn ctermbg=none guibg=NONE |
-  \ hi SpellCap term=standout ctermbg=none cterm=standout guibg=NONE gui=standout
+      \ hi VertSplit ctermbg=none guibg=NONE |
+      \ hi LineNr ctermbg=none guibg=NONE |
+      \ hi FoldColumn ctermbg=none guibg=NONE |
+      \ hi SignColumn ctermbg=none guibg=NONE |
+      \ hi SpellCap term=standout ctermbg=none cterm=standout guibg=NONE gui=standout
 
 " Nicer looking splits
 set fillchars+=vert:│
@@ -237,8 +237,8 @@ Plug 'kien/ctrlp.vim'
 let g:ctrlp_show_hidden = 1
 
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)|_build|deps|priv/static|tmp|vendor|log|public|node_modules$',
-  \ }
+      \ 'dir':  '\v[\/]\.(git|hg|svn)|_build|deps|priv/static|tmp|vendor|log|public|node_modules$',
+      \ }
 if executable('rg')
   let g:ctrlp_user_command = 'rg %s --files --hidden --ignore-file=<(echo .git) --color=never --glob=""'
   let g:ctrlp_use_caching = 0
@@ -273,11 +273,11 @@ let g:qfenter_keymap.topen = ['<C-t>']
 
 " Delete all hidden buffers
 function! DeleteHiddenBuffers()
-    let tpbl=[]
-    call map(range(1, tabpagenr('$')), 'extend(tpbl, tabpagebuflist(v:val))')
-    for buf in filter(range(1, bufnr('$')), 'bufexists(v:val) && index(tpbl, v:val)==-1')
-        silent execute 'bwipeout' buf
-    endfor
+  let tpbl=[]
+  call map(range(1, tabpagenr('$')), 'extend(tpbl, tabpagebuflist(v:val))')
+  for buf in filter(range(1, bufnr('$')), 'bufexists(v:val) && index(tpbl, v:val)==-1')
+    silent execute 'bwipeout' buf
+  endfor
 endfunction
 command! DeleteHiddenBuffers :call DeleteHiddenBuffers()
 
@@ -348,11 +348,11 @@ let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_delay = 0
 let g:ale_linters = {
-\ 'elixir': []
-\ }
+      \ 'elixir': []
+      \ }
 let g:ale_fixers = {
-\ 'javascript': ['eslint']
-\ }
+      \ 'javascript': ['eslint']
+      \ }
 
 " ANSI escape codes
 Plug 'powerman/vim-plugin-AnsiEsc'
@@ -406,8 +406,8 @@ Plug 'mattn/emmet-vim'
 imap <C-y><C-y> <C-y>,
 imap <C-y><CR> <C-y>,<CR><C-o>O
 let g:user_emmet_settings = {
-\   'javascript.jsx' : {'extends' : 'jsx'}
-\ }
+      \   'javascript.jsx' : {'extends' : 'jsx'}
+      \ }
 
 " JavaScript, CoffeeScript, JSX, React.js, Vue.js
 Plug 'pangloss/vim-javascript'
