@@ -96,9 +96,9 @@ if executable('rg')
   set grepprg=rg\ --smart-case\ --vimgrep\ $*
   set grepformat=%f:%l:%c:%m
 endif
-command! -nargs=+ -complete=file G :silent grep! <args> | cwindow | redraw!
-nnoremap <leader>a :G ""<left>
-xnoremap <leader>a :<C-u>G ""<left>
+command! -nargs=+ -complete=file Grep :silent grep! <args> | cwindow | redraw!
+nnoremap <leader>a :Grep ""<left>
+xnoremap <leader>a :<C-u>Grep ""<left>
 au Filetype qf nnoremap <buffer> o <cr>
 au Filetype qf nnoremap <buffer> go <cr><C-w><C-w>
 
@@ -126,8 +126,8 @@ endfunction
 
 xnoremap * :<C-u>call SetSearchFromSelection('/')<cr>/<C-r>=@/<cr><cr>
 xnoremap # :<C-u>call SetSearchFromSelection('?')<cr>?<C-r>=@/<cr><cr>
-xnoremap + :<C-u>call ExecuteCmdWithHistory('G --fixed-strings "'.GetSelection().'"')<cr>
-nnoremap + :<C-u>call ExecuteCmdWithHistory('G --fixed-strings "'.expand('<cword>').'"')<cr>
+xnoremap + :<C-u>call ExecuteCmdWithHistory('Grep --fixed-strings "'.GetSelection().'"')<cr>
+nnoremap + :<C-u>call ExecuteCmdWithHistory('Grep --fixed-strings "'.expand('<cword>').'"')<cr>
 
 " Auto-continue comments
 set formatoptions=croql
