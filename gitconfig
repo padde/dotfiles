@@ -33,6 +33,7 @@
 	co = checkout
 	df = diff
 	dfs = diff --staged
+	export = "!f(){ ref=${1:-HEAD}; outfile=\"$HOME/Desktop/$(basename \"$(pwd)\")-$(git rev-parse --short \"$ref\").tar.gz\"; git archive --format=tar.gz -o \"$outfile\" \"$ref\" && echo \"Exported repo to $outfile\"; }; f"
 	last = show HEAD~1..HEAD
 	log-pretty = log --pretty='%C(blue)%h %C(green)%aN %C(yellow)%s%C(red)%d %C(blue)%ar%Creset' --graph
 	lgp = "!git log-pretty"
