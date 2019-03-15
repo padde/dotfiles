@@ -93,10 +93,26 @@ set incsearch  " Highlight search as you type
 
 " Project search
 if executable('rg')
-  set grepprg=rg\ --smart-case\ --vimgrep\ $*
+  set grepprg=rg\ --vimgrep\ $*
   set grepformat=%f:%l:%c:%m
 endif
-command! -nargs=+ -complete=file Grep :silent grep! <args> | cwindow | redraw!
+
+function! Grep(pattern)
+  let flags = ' '
+  if &ignorecase
+    let flags = flags . '-i ' " --ignore-case
+  else
+    let flags = flags . '-s ' " --case-sensitive
+  endif
+  if &smartcase
+    let flags = flags . '-S ' " --smart-case
+  endif
+  silent exe 'grep! ' . flags . a:pattern
+  cwindow
+  redraw!
+endfunction
+
+command! -nargs=* -complete=file Grep :call Grep(<q-args>)
 nnoremap <leader>a :Grep ""<left>
 xnoremap <leader>a :<C-u>Grep ""<left>
 au Filetype qf nnoremap <buffer> o <cr>
@@ -124,10 +140,25 @@ function! ExecuteCmdWithHistory(cmd)
   execute a:cmd
 endfunction
 
+function! EscapePattern(pattern)
+  let pattern = a:pattern
+  let pattern = substitute(pattern, '\([#%]\)', '\\\\\1', 'g')
+  let pattern = shellescape(pattern)
+  return pattern
+endfunction
+
+function! ProjectSearch(pattern, wordRegexp)
+  let flags = '-F ' " --fixed-strings
+  if a:wordRegexp
+    let flags = flags . '-w ' " --word-regexp
+  endif
+  call ExecuteCmdWithHistory('Grep '.flags.EscapePattern(a:pattern))
+endfunction
+
 xnoremap * :<C-u>call SetSearchFromSelection('/')<cr>/<C-r>=@/<cr><cr>
 xnoremap # :<C-u>call SetSearchFromSelection('?')<cr>?<C-r>=@/<cr><cr>
-xnoremap + :<C-u>call ExecuteCmdWithHistory('Grep --fixed-strings "'.GetSelection().'"')<cr>
-nnoremap + :<C-u>call ExecuteCmdWithHistory('Grep --fixed-strings "'.expand('<cword>').'"')<cr>
+xnoremap + :<C-u>call SetSearchFromSelection('/')<cr>/<C-r>=@/<cr><cr>:call ProjectSearch(GetSelection(), 0)<cr>
+nnoremap + *:call ProjectSearch(expand('<cword>'), 1)<cr>
 
 " Auto-continue comments
 set formatoptions=croql
@@ -211,8 +242,8 @@ noremap <silent> <leader>j /\v^[<=>]{7}<cr>
 noremap <silent> <leader>k r\v^[<=>]{7}<cr>
 
 " Go to prev/next item in quickfix list
-nnoremap <silent> <c-n> :silent cnext \| cc<cr>
-nnoremap <silent> <c-b> :silent cprev \| cc<cr>
+nnoremap <silent> <c-n> :silent cnext \| silent cc<cr>
+nnoremap <silent> <c-b> :silent cprev \| silent cc<cr>
 
 " Show syntax highlighting groups for word under cursor
 nmap <leader>z :call <SID>SynStack()<CR>
