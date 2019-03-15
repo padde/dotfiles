@@ -51,7 +51,7 @@
 	squash = commit --amend
 	fixup = commit --amend --no-edit
 	set-upstream = "!git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD)"
-	pr-base   = "!f(){ git merge-base HEAD ${1:-master}; }; f"
+	pr-base   = "!f(){ git merge-base HEAD ${1:-origin/master}; }; f"
 	pr-diff   = "!f(){ git diff $* $(git pr-base); }; f"
 	pr-log    = "!f(){ git log-pretty $* $(git pr-base)..HEAD; }; f"
 	pr-rebase = "!f(){ git rebase -i $* $(git pr-base); }; f"
