@@ -223,6 +223,16 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
+" Collect results of command execution
+command! -nargs=+ C Collect<args>
+command! -nargs=+ Collect
+      \ let pos = getpos('.')
+      \ | let tmp = ''
+      \ | g<args>
+      \ | let tmp .= @"
+      \ | let @* = tmp
+      \ | call setpos('.', pos)
+
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
