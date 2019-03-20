@@ -21,6 +21,8 @@ rcup -v rcrc
 rcup -v
 
 # Install Vim plugins
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 exec vim +PlugInstall +qall < /dev/tty "$@"
 
 # Install ASDF version manager
