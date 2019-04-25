@@ -101,8 +101,6 @@ function! Grep(pattern)
   let flags = ' '
   if &ignorecase
     let flags = flags . '-i ' " --ignore-case
-  else
-    let flags = flags . '-s ' " --case-sensitive
   endif
   if &smartcase
     let flags = flags . '-S ' " --smart-case
