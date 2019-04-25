@@ -10,7 +10,7 @@ call plug#begin('~/.vim/plugged')
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Hide startup message
-set shortmess=atI
+set shortmess=atIO
 
 " Nobody likes \ as leader!
 let mapleader = ","
