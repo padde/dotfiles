@@ -226,6 +226,9 @@ cnoremap <c-a> <c-b>
 " Select last pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
+" Paste last yanked text
+noremap <leader>p "0p
+
 " Write with super user permissions
 command! Wsudo :w !sudo tee %
 
