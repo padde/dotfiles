@@ -390,6 +390,9 @@ let g:test#transformation = 'elixir_umbrella'
 Plug 'w0rp/ale'
 set signcolumn=yes
 let g:ale_sign_column_always = 1
+let g:ale_sign_info = 'i '
+let g:ale_sign_warning = '!'
+let g:ale_sign_error = 'X'
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_delay = 0
