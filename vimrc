@@ -403,6 +403,7 @@ let g:ale_fixers = {
       \ 'javascript': ['eslint'],
       \ 'ruby': ['rubocop']
       \ }
+nnoremap <leader>f :ALEFix<cr>
 
 " ANSI escape codes
 Plug 'powerman/vim-plugin-AnsiEsc'
