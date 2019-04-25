@@ -202,7 +202,10 @@ au VimEnter,ColorScheme *
       \ hi LineNr ctermbg=none guibg=NONE |
       \ hi FoldColumn ctermbg=none guibg=NONE |
       \ hi SignColumn ctermbg=none guibg=NONE |
-      \ hi SpellCap term=standout ctermbg=none cterm=standout guibg=NONE gui=standout
+      \ hi SpellBad term=underline ctermbg=none cterm=undercurl |
+      \ hi SpellCap term=underline ctermbg=none cterm=undercurl |
+      \ hi SpellRare term=underline ctermbg=none cterm=undercurl |
+      \ hi SpellLocal term=underline ctermbg=none cterm=undercurl
 
 " Nicer looking splits
 set fillchars+=vert:│
