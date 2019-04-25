@@ -400,7 +400,8 @@ let g:ale_linters = {
       \ 'elixir': []
       \ }
 let g:ale_fixers = {
-      \ 'javascript': ['eslint']
+      \ 'javascript': ['eslint'],
+      \ 'ruby': ['rubocop']
       \ }
 
 " ANSI escape codes
