@@ -128,3 +128,6 @@ eval "$(direnv hook zsh)"
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
+
+# added by travis gem
+[ -f /Users/patrickoscity/.travis/travis.sh ] && source /Users/patrickoscity/.travis/travis.sh
