@@ -304,7 +304,7 @@ let g:NERDTreeMapJumpPrevSibling=''
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeMinimalMenu=1
 nnoremap <silent> <leader>d :NERDTreeToggle<cr>
-nnoremap <silent> <leader><leader>d :NERDTreeFind<cr>
+nnoremap <silent> <leader><leader>d :NERDTreeRefreshRoot \| NERDTreeFind<cr>
 
 " Undo
 set undofile
