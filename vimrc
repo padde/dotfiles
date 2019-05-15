@@ -196,10 +196,7 @@ set termguicolors
 set background=dark
 
 " FIXME temporary workaround for https://github.com/chriskempson/base16-vim/issues/197
-function FixupBase16(info)
-  !gsed -i '/Base16hi/\! s/a:\(attr\|guisp\)/l:\1/g' ~/.vim/plugged/base16-vim/colors/*.vim
-endfunction
-Plug 'chriskempson/base16-vim', { 'do': function('FixupBase16') }
+Plug 'chriskempson/base16-vim', { 'commit': '5fc66da' }
 " Plug 'chriskempson/base16-vim'
 au VimEnter * colorscheme base16-default-dark
 au VimEnter,ColorScheme *
