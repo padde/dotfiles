@@ -55,6 +55,8 @@
 	pr-diff   = "!f(){ git diff $* $(git pr-base); }; f"
 	pr-log    = "!f(){ git log-pretty $* $(git pr-base)..HEAD; }; f"
 	pr-rebase = "!f(){ git rebase -i $* $(git pr-base); }; f"
+	pr-grep = "!f(){ git pr-diff --name-only -i -G \"$*\" | xargs rg -i \"$*\" -A 5; }; f"
+	todo = "pr-grep '\\b(todo|fixme|xxx|hack)\\b'"
 	pick = cherry-pick
 	wip = "!git add . && git commit -m WIP"
 	unwip = "!if [[ "$(git log HEAD~..HEAD --format='%s')" == "WIP" ]]; then git reset HEAD~1; else echo "Not a WIP commit"; fi"
