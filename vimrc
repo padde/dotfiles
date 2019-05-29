@@ -538,6 +538,9 @@ nnoremap <leader>mf :MixFormat<cr>
 Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
 
+" Yaml
+Plug 'lmeijvogel/vim-yaml-helper'
+
 " Local/experimental configuration
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
