@@ -54,7 +54,7 @@
 	pr-base   = "!f(){ git merge-base HEAD ${1:-origin/master}; }; f"
 	pr-diff   = "!f(){ git diff $* $(git pr-base); }; f"
 	pr-log    = "!f(){ git log-pretty $* $(git pr-base)..HEAD; }; f"
-	pr-rebase = "!f(){ git rebase -i $* $(git pr-base); }; f"
+	pr-rebase = "!f(){ git rebase $* $(git pr-base); }; f"
 	pr-grep = "!f(){ git pr-diff --name-only -i -G \"$*\" | xargs rg -i \"$*\" -A 5; }; f"
 	todo = "pr-grep '\\b(todo|fixme|xxx|hack)\\b'"
 	pick = cherry-pick
