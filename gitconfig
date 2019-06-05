@@ -51,6 +51,15 @@
 	squash = commit --amend
 	fixup = commit --amend --no-edit
 	set-upstream = "!git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD)"
+	get-upstream = "!git rev-parse --abbrev-ref --symbolic-full-name @{u}"
+	pu-base   = "get-upstream"
+	pu-diff   = "!f(){ git diff $* $(git pu-base); }; f"
+	pu-log    = "!f(){ git log-pretty $* $(git pu-base)..HEAD; }; f"
+	pu-rebase = "!f(){ git rebase $* $(git pu-base); }; f"
+	pu-grep = "!f(){ git pu-diff --name-only -i -G \"$*\" | xargs rg -i \"$*\" -A 5; }; f"
+	pud = pu-diff
+	pul = pu-log
+	pur = pu-rebase -i
 	pr-base   = "!f(){ git merge-base HEAD ${1:-origin/master}; }; f"
 	pr-diff   = "!f(){ git diff $* $(git pr-base); }; f"
 	pr-log    = "!f(){ git log-pretty $* $(git pr-base)..HEAD; }; f"
