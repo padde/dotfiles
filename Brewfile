@@ -26,6 +26,7 @@ brew 'tmux'
 brew 'tree'
 brew 'watch'
 brew 'wget'
+brew 'yamllint'
 brew 'zsh'
 
 tap 'petere/postgresql'
