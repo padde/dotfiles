@@ -245,7 +245,7 @@ vnoremap <leader>rt :RemoveTrailingWhitespace<CR>
 " Higlight Git conflict markers
 match ErrorMsg '\v^[<=>]{7}.*$'
 noremap <silent> <leader>j /\v^[<=>]{7}<cr>
-noremap <silent> <leader>k r\v^[<=>]{7}<cr>
+noremap <silent> <leader>k ?\v^[<=>]{7}<cr>
 
 " Go to prev/next item in quickfix list
 nnoremap <silent> <c-n> :silent cnext \| silent cc<cr>
