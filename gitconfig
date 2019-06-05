@@ -56,6 +56,9 @@
 	pr-log    = "!f(){ git log-pretty $* $(git pr-base)..HEAD; }; f"
 	pr-rebase = "!f(){ git rebase $* $(git pr-base); }; f"
 	pr-grep = "!f(){ git pr-diff --name-only -i -G \"$*\" | xargs rg -i \"$*\" -A 5; }; f"
+	prd = pr-diff
+	prl = pr-log
+	prr = pr-rebase -i
 	todo = "pr-grep '\\b(todo|fixme|xxx|hack)\\b'"
 	pick = cherry-pick
 	wip = "!git add . && git commit -m WIP"
