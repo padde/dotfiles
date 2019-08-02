@@ -70,6 +70,8 @@
 	prr = pr-rebase -i
 	todo = "pr-grep '\\b(todo|fixme|xxx|hack)\\b'"
 	pick = cherry-pick
+	mcon = merge --continue
+	rcon = rebase --continue
 	wip = "!git add . && git commit -m WIP"
 	unwip = "!if [[ "$(git log HEAD~..HEAD --format='%s')" == "WIP" ]]; then git reset HEAD~1; else echo "Not a WIP commit"; fi"
 	first-child = "!f(){ c=${1:-HEAD}; set -- $(git rev-list --all --not \"$c\"^@ --children | grep $(git rev-parse \"$c\") ); shift; echo $1; }; f"
