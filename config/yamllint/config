@@ -1,5 +1,14 @@
 extends: default
 
 rules:
-  line-length: disable
+  comments-indentation: disable
+  comments: disable
   document-start: disable
+  indentation: disable
+  line-length: disable
+  truthy: disable
+
+ignore: |
+  vendor/
+  spec/fixtures/
+  doc/
