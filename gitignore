@@ -25,14 +25,12 @@ Thumbs.db
 !mix.lock
 !yarn.lock
 
-# powder files
-.powder
-
-# local rspec config
-.rspec-local
-
-# local environment
+# local dev environment tools
 .envrc
+.powder
+.rgignore
+.rspec-local
+.tool-versions
 
 # JS package manager noise
 npm-debug.log
@@ -42,6 +40,3 @@ yarn-error.log
 # Generic log files
 logs
 *.log
-
-# ASDF
-.tool-versions
