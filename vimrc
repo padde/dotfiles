@@ -352,6 +352,9 @@ Plug 'tpope/vim-commentary'
 " Surround
 Plug 'tpope/vim-surround'
 
+" Replace all variants of a word
+Plug 'tpope/vim-abolish'
+
 " Exchange regions
 Plug 'tommcdo/vim-exchange'
 
