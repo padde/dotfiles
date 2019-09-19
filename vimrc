@@ -127,10 +127,12 @@ function! GetSelection()
 endfunction
 
 function! SetSearchFromSelection(additionalEscapeChars)
-  let pat = GetSelection()
-  let pat = escape(pat, '\'.a:additionalEscapeChars)
-  let pat = substitute(pat, "\n", "\\\\n", 'g')
-  let @/ = '\V'.pat
+  let @/ = '\V'.EscapeSearch(GetSelection(), a:additionalEscapeChars)
+endfunction
+
+function! EscapeSearch(string, additionalEscapeChars)
+  let pat = escape(a:string, '\'.a:additionalEscapeChars)
+  return substitute(pat, "\n", "\\\\n", 'g')
 endfunction
 
 function! ExecuteCmdWithHistory(cmd)
