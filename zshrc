@@ -9,6 +9,11 @@ autoload -U compinit
 compinit
 compdef g='git'
 
+# make completion
+# https://github.com/zsh-users/zsh-completions/issues/541#issuecomment-384223016
+zstyle ':completion:*:make:*:targets' call-command true
+zstyle ':completion:*:make:*' tag-order targets
+
 # Load environment
 source ~/.dotfiles/env
 
