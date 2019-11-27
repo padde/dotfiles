@@ -52,6 +52,7 @@
 	fixup = commit --amend --no-edit
 	set-upstream = "!git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD)"
 	get-upstream = "!git rev-parse --abbrev-ref --symbolic-full-name @{u}"
+	get-remote = "!git get-upstream | cut -d/ -f1"
 	pu-base   = "get-upstream"
 	pu-diff   = "!f(){ git diff $* $(git pu-base); }; f"
 	pu-log    = "!f(){ git log-pretty $* $(git pu-base)..HEAD; }; f"
@@ -72,6 +73,7 @@
 	pick = cherry-pick
 	mcon = merge --continue
 	rcon = rebase --continue
+	refetch = "!git fetch $(git get-remote) && git reset --hard $(git get-upstream)"
 	wip = "!git add . && git commit -m WIP"
 	unwip = "!if [[ "$(git log HEAD~..HEAD --format='%s')" == "WIP" ]]; then git reset HEAD~1; else echo "Not a WIP commit"; fi"
 	first-child = "!f(){ c=${1:-HEAD}; set -- $(git rev-list --all --not \"$c\"^@ --children | grep $(git rev-parse \"$c\") ); shift; echo $1; }; f"
