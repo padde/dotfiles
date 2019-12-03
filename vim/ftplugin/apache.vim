@@ -1,0 +1,1 @@
+apache setlocal commentstring=#%s

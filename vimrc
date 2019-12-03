@@ -502,11 +502,6 @@ Plug 'exu/pgsql.vim'
 
 " Terraform
 Plug 'hashivim/vim-terraform'
-au FileType terraform let &l:formatprg="terraform fmt -"
-au FileType terraform setlocal commentstring=#%s
-
-" Apache
-au FileType apache setlocal commentstring=#%s
 
 " TMUX
 Plug 'christoomey/vim-tmux-navigator'
@@ -530,7 +525,6 @@ if exists("$COMPILE_BASEPATH")
   let g:alchemist_compile_basepath = $COMPILE_BASEPATH
 endif
 Plug 'slime-lang/vim-slime-syntax'
-au FileType slime setlocal commentstring=//%s
 Plug 'mhinz/vim-mix-format'
 " let g:mix_format_on_save = 1
 let g:mix_format_options = '--check-equivalent'
