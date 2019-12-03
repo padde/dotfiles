@@ -334,6 +334,9 @@ command! DeleteHiddenBuffers :call DeleteHiddenBuffers()
 " Make directory on the fly with :e
 Plug 'pbrisbin/vim-mkdir'
 
+" Edit file under cursor, like gf but creates files that don't exist yet
+nnoremap GF :e <cfile><CR>
+
 " Autojump
 Plug 'padde/jump.vim'
 
