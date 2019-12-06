@@ -419,10 +419,12 @@ Plug 'powerman/vim-plugin-AnsiEsc'
 " Git
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
-Plug 'shumphrey/fugitive-gitlab.vim'
 command! -nargs=* Gshame :Gblame -w -M -C <args>
 nnoremap <leader>g :Gshame<cr>
 autocmd BufReadPost fugitive://* set bufhidden=delete
+
+" Gitlab
+Plug 'shumphrey/fugitive-gitlab.vim'
 
 " Github
 Plug 'tpope/vim-rhubarb'
