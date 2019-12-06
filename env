@@ -1,6 +1,8 @@
-# use vim as editor
-export VISUAL=vim
-export EDITOR=vim
+# use neovim as editor
+export VISUAL=nvim
+export EDITOR=nvim
+alias vi=nvim
+alias vim=nvim
 
 # Use most as pager, if available
 if command -v most > /dev/null; then
