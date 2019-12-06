@@ -197,9 +197,7 @@ endif
 set termguicolors
 set background=dark
 
-" FIXME temporary workaround for https://github.com/chriskempson/base16-vim/issues/197
-Plug 'chriskempson/base16-vim', { 'commit': '5fc66da' }
-" Plug 'chriskempson/base16-vim'
+Plug 'chriskempson/base16-vim'
 au VimEnter * colorscheme base16-default-dark
 au VimEnter,ColorScheme *
       \ hi VertSplit ctermbg=none guibg=NONE |
