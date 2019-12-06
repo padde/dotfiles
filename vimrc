@@ -293,15 +293,15 @@ end
 
 " File explorer
 Plug 'scrooloose/nerdtree'
-let g:NERDTreeChDirMode=2
-let g:NERDTreeCascadeSingleChildDir=0
+let NERDTreeChDirMode=2
+let NERDTreeCascadeSingleChildDir=0
+let NERDTreeMinimalUI=1
+let NERDTreeMinimalMenu=1
 " These mappings would interfere with vim-tmux-navigator
-let g:NERDTreeMapJumpNextSibling=''
-let g:NERDTreeMapJumpPrevSibling=''
-let g:NERDTreeMinimalUI=1
-let g:NERDTreeMinimalMenu=1
-nnoremap <silent> <leader>d :NERDTreeToggle<cr>
-nnoremap <silent> <leader><leader>d :NERDTreeRefreshRoot \| NERDTreeFind<cr>
+let NERDTreeMapJumpNextSibling=''
+let NERDTreeMapJumpPrevSibling=''
+nnoremap <leader>d :e .<cr>
+nnoremap <leader><leader>d :e %:h<cr>
 
 " Undo
 set undofile
