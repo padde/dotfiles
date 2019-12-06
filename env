@@ -1,6 +1,7 @@
 # use neovim as editor
 export VISUAL=nvim
 export EDITOR=nvim
+alias e=$EDITOR
 alias vi=nvim
 alias vim=nvim
 
