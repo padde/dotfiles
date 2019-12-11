@@ -409,7 +409,7 @@ let g:ale_linters = {
       \ 'elixir': []
       \ }
 let g:ale_fixers = {
-      \ 'javascript': ['eslint'],
+      \ 'javascript': ['eslint', 'prettier'],
       \ 'ruby': ['rubocop']
       \ }
 nnoremap <leader>f :ALEFix<cr>
