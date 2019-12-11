@@ -361,25 +361,23 @@ Plug 'tommcdo/vim-exchange'
 
 " Vim-Test
 Plug 'janko-m/vim-test'
-function! SimpleVimuxStrategy(cmd) abort
-  call VimuxRunCommand(a:cmd)
-endfunction
-let g:test#custom_strategies = {'simple_vimux': function('SimpleVimuxStrategy')}
-let g:test#strategy = 'simple_vimux'
-let g:test#ruby#rspec#executable = 'rspec'
-try
-  " Hacky hack to enable :TestSuite when no test was run yet
-  let spec_path = systemlist('git rev-parse --show-toplevel')[0] . '/spec/'
-  let all_specs = split(globpath(spec_path, '**/*_spec.rb'), '\n')
-  let g:test#last_position={'file': all_specs[0], 'col': 1, 'line': 1}
-  let g:test#last_command=g:test#ruby#rspec#executable
-catch
-endtry
 nnoremap <silent> <leader>tt :TestNearest<cr>
 nnoremap <silent> <leader>tf :TestFile<cr>
 nnoremap <silent> <leader>ts :TestSuite<cr>
 nnoremap <silent> <leader>tl :TestLast<cr>
 nnoremap <silent> <leader>gl :TestVisit<cr>
+
+" run in vimux with no additional magic (clear screen, echo command, ...)
+function! SimpleVimuxStrategy(cmd) abort
+  call VimuxRunCommand(a:cmd)
+endfunction
+let test#custom_strategies = {'simple_vimux': function('SimpleVimuxStrategy')}
+let test#strategy = 'simple_vimux'
+
+" run rspec without bundle exec, use env/binstubs instead
+let test#ruby#rspec#executable = 'rspec'
+
+" use custom elixir exercism runner, see vim/autoload/test/elixir/exercism.vim
 let test#runners = {'Elixir': ['Exercism']}
 
 " Elixir umbrella test runner
@@ -391,8 +389,8 @@ function! ElixirUmbrellaTransform(cmd) abort
     return a:cmd
   end
 endfunction
-let g:test#custom_transformations = {'elixir_umbrella': function('ElixirUmbrellaTransform')}
-let g:test#transformation = 'elixir_umbrella'
+let test#custom_transformations = {'elixir_umbrella': function('ElixirUmbrellaTransform')}
+let test#transformation = 'elixir_umbrella'
 
 " ALE Linter
 Plug 'w0rp/ale'
