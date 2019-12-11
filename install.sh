@@ -25,6 +25,10 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 exec vim +PlugInstall +qall < /dev/tty "$@"
 
+# Install TMUX plugins
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+~/.tmux/plugins/tpm/bindings/install_plugins
+
 # Install ASDF version manager
 cd $HOME
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.0
