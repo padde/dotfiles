@@ -307,9 +307,9 @@ nnoremap <leader><leader>d :e %:h<cr>
 set undofile
 set undolevels=1000
 set undoreload=10000
-Plug 'sjl/gundo.vim'
-let g:gundo_prefer_python3 = 1
-nnoremap <leader>u :silent! GundoToggle<cr>
+Plug 'simnalamburt/vim-mundo'
+let g:mundo_prefer_python3 = 1
+nnoremap <leader>u :silent! MundoToggle<cr>
 
 " Open quickfix items in split/tab
 Plug 'yssl/QFEnter'
