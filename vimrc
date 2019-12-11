@@ -365,7 +365,7 @@ nnoremap <silent> <leader>tt :TestNearest<cr>
 nnoremap <silent> <leader>tf :TestFile<cr>
 nnoremap <silent> <leader>ts :TestSuite<cr>
 nnoremap <silent> <leader>tl :TestLast<cr>
-nnoremap <silent> <leader>gl :TestVisit<cr>
+nnoremap <silent> <leader>tv :TestVisit<cr>
 
 " run in vimux with no additional magic (clear screen, echo command, ...)
 function! SimpleVimuxStrategy(cmd) abort
