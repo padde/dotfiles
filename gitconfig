@@ -29,7 +29,7 @@
 	st = status
 	ci = commit
 	br = branch
-	cine = commit --no-edit
+	cine = commit --no-edit --no-verify
 	co = checkout
 	df = diff
 	dfs = diff --staged
@@ -41,15 +41,15 @@
 	l = "!git log-pretty --first-parent -n10"
 	up = "!git set-upstream"
 	obsolete = "!git branch --merged | grep -v \"\\\\*\\\\|master\\\\|$(git symbolic-ref --short HEAD)\""
-	touch = "commit --amend --no-edit --date=now --reset-author"
+	touch = "commit --amend --no-edit --no-verify --date=now --reset-author"
 	trim-local = "!git obsolete | xargs git branch -d"
 	trim-remote = fetch --prune --all
 	trim = "!git trim-remote && git trim-local && git pull"
 	giveup = "!printf 'Do you really want to discard all staged, unstaged and untracked changes? [Yn] '; read yn; if [[ $yn =~ "^[yY]([eE][sS])?$" ]]; then (git reset > /dev/null && for f in $(git ls-files -m); do echo "Resetting $f"; done && git co . && git clean -fd); else echo 'aborted'; fi"
 	authors = "!git log --format='%aN (%ae)' | sort -buf"
 	shame = blame -w -M -C
-	squash = commit --amend
-	fixup = commit --amend --no-edit
+	squash = commit --amend --no-verify
+	fixup = commit --amend --no-edit --no-verify
 	set-upstream = "!git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD)"
 	get-upstream = "!git rev-parse --abbrev-ref --symbolic-full-name @{u}"
 	get-remote = "!git get-upstream | cut -d/ -f1"
@@ -69,12 +69,13 @@
 	prd = pr-diff
 	prl = pr-log
 	prr = pr-rebase -i
+	rebase = rebase --no-verify
 	todo = "pr-grep '\\b(todo|fixme|xxx|hack)\\b'"
 	pick = cherry-pick
 	mcon = merge --continue
 	rcon = rebase --continue
 	refetch = "!git fetch $(git get-remote) && git reset --hard $(git get-upstream)"
-	wip = "!git add . && git commit -m WIP"
+	wip = "!git add . && git commit --no-verify -m WIP"
 	unwip = "!if [[ "$(git log HEAD~..HEAD --format='%s')" == "WIP" ]]; then git reset HEAD~1; else echo "Not a WIP commit"; fi"
 	first-child = "!f(){ c=${1:-HEAD}; set -- $(git rev-list --all --not \"$c\"^@ --children | grep $(git rev-parse \"$c\") ); shift; echo $1; }; f"
 	next = "!git checkout $(git first-child)"
