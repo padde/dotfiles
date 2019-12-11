@@ -422,6 +422,7 @@ Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 command! -nargs=* Gshame :Gblame -w -M -C <args>
+command! -nargs=* Gprdiff :exec 'Gdiff '.system('git pr-base').' <args>'
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " Gitlab
