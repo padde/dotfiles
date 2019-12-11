@@ -392,6 +392,9 @@ endfunction
 let test#custom_transformations = {'elixir_umbrella': function('ElixirUmbrellaTransform')}
 let test#transformation = 'elixir_umbrella'
 
+" disable watch mode for react-scripts
+let test#javascript#reactscripts#options = '--watchAll=false'
+
 " ALE Linter
 Plug 'w0rp/ale'
 set signcolumn=yes
