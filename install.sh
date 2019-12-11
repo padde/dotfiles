@@ -31,7 +31,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Install ASDF version manager
 cd $HOME
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.0
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 
 # Install and use ZSH
 ZSH=/usr/local/bin/zsh
