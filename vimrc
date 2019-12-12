@@ -293,7 +293,6 @@ end
 
 " File explorer
 Plug 'scrooloose/nerdtree'
-let NERDTreeChDirMode=2
 let NERDTreeCascadeSingleChildDir=0
 let NERDTreeMinimalUI=1
 let NERDTreeMinimalMenu=1
