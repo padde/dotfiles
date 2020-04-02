@@ -334,6 +334,9 @@ Plug 'pbrisbin/vim-mkdir'
 " Edit file under cursor, like gf but creates files that don't exist yet
 nnoremap GF :e <cfile><CR>
 
+" Edit git object under cursor
+nnoremap GG :Gedit <cword><CR>
+
 " Autojump
 Plug 'padde/jump.vim'
 
