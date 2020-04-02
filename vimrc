@@ -299,8 +299,8 @@ let NERDTreeMinimalMenu=1
 " These mappings would interfere with vim-tmux-navigator
 let NERDTreeMapJumpNextSibling=''
 let NERDTreeMapJumpPrevSibling=''
-nnoremap <leader>d :e .<cr>
-nnoremap <leader><leader>d :e %:h<cr>
+nnoremap <silent> <leader>d :NERDTreeToggle<cr>
+nnoremap <silent> <leader><leader>d :NERDTreeRefreshRoot \| NERDTreeFind<cr>
 
 " Undo
 set undofile
