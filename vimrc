@@ -477,7 +477,6 @@ Plug 'fidian/hexmode'
 
 " Rust
 Plug 'rust-lang/rust.vim'
-Plug 'wellbredgrapefruit/tomdoc.vim'
 Plug 'cespare/vim-toml'
 
 " HTML
@@ -545,7 +544,6 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'sheerun/rspec.vim'
-Plug 'joker1007/vim-ruby-heredoc-syntax'
 
 " Elixir/Phoenix
 Plug 'elixir-editors/vim-elixir'
