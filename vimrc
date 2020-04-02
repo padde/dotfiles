@@ -429,6 +429,23 @@ Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 command! -nargs=* Gshame :Gblame -w -M -C <args>
+function! ToggleGshame() abort
+  let closing = 0
+  for buffer in tabpagebuflist()
+    if index(['fugitiveblame', 'git'], getbufvar(buffer, '&filetype')) >= 0
+      exec 'bdelete '.buffer
+      let closing = 1
+    endif
+  endfor
+  if closing
+    if expand('%') =~ '^fugitive://'
+      Gedit
+    endif
+  else
+    Gshame
+  endif
+endfunction
+nnoremap <silent> <leader>g :call ToggleGshame()<cr>
 command! -nargs=* Gprdiff :exec 'Gdiff '.system('git pr-base').' <args>'
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
