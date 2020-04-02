@@ -1,0 +1,8 @@
+body {
+  background-color: #181812 !important;
+  filter: invert(90%) hue-rotate(180deg) !important;
+}
+
+.pagetop, .pagetop a:visited, .pagetop a:link {
+  color: #fff !important;
+}
