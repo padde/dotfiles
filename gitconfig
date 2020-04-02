@@ -25,6 +25,7 @@
 	changed = green
 	untracked = blue
 [alias]
+	alias = "!f(){ git config --get alias.$1; }; f"
 	au = add -u
 	st = status
 	ci = commit
