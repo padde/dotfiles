@@ -416,6 +416,10 @@ let g:ale_fixers = {
       \ 'typescript': ['eslint', 'prettier'],
       \ 'ruby': ['rubocop']
       \ }
+let g:ale_pattern_options = {
+      \ 'db\/schema\.rb$': {'ale_fixers': []},
+      \ 'db\/migrate\/.*\.rb$': {'ale_fixers': []}
+      \ }
 nnoremap <leader>f :ALEFix<cr>
 
 " ANSI escape codes
