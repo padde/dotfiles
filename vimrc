@@ -413,6 +413,7 @@ let g:ale_linters = {
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
       \ 'javascript': ['eslint', 'prettier'],
+      \ 'typescript': ['eslint', 'prettier'],
       \ 'ruby': ['rubocop']
       \ }
 nnoremap <leader>f :ALEFix<cr>
@@ -475,10 +476,12 @@ let g:user_emmet_settings = {
       \   'javascript.jsx' : {'extends' : 'jsx'}
       \ }
 
-" JavaScript, CoffeeScript, JSX, React.js, Vue.js
+" JavaScript, TypeScript, CoffeeScript, JSX, React.js, Vue.js
 Plug 'pangloss/vim-javascript'
 Plug 'kchmck/vim-coffee-script'
 Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 let g:jsx_ext_required = 0
 Plug 'posva/vim-vue'
 
