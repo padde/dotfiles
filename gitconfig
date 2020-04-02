@@ -62,6 +62,7 @@
 	pud = pu-diff
 	pul = pu-log
 	pur = pu-rebase -i
+	pullall = "!for d in $(find . -type d -iname .git | xargs -I{} dirname {}\\;); do (echo \"Pulling $d... \" && cd $d && git pull --quiet &>/dev/null && echo \"\\033[0;32mOK\\033[0m\" || echo \"\\033[0;31mFAILED\\033[0m\"); done"
 	pr-base   = "!f(){ git merge-base HEAD ${1:-origin/master}; }; f"
 	pr-diff   = "!f(){ git diff $(git pr-base) $*; }; f"
 	pr-log    = "!f(){ git log-pretty $* $(git pr-base)..HEAD; }; f"
