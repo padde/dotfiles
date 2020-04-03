@@ -26,7 +26,7 @@ rcup -v
 # Install Vim plugins
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-exec vim +PlugInstall +qall < /dev/tty "$@"
+vim +PlugInstall +qall < /dev/tty "$@"
 
 # Install TMUX plugins
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -43,6 +43,7 @@ then
   echo "Adding $ZSH to /etc/shells"
   echo $ZSH | sudo tee -a /etc/shells
 fi
+sudo chmod -R 755 /usr/local/share/zsh
 chsh -s $ZSH
 env zsh
 . ~/.zshrc
