@@ -36,6 +36,10 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 cd "$HOME"
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 
+# Install Chrome dotfiles
+git clone https://github.com/matthewhadley/chromedotfiles.git ~/.chromedotfiles
+ln -vs ~/.js ~/.chromedotfiles/chromedotfiles
+
 # Install and use ZSH
 ZSH=/usr/local/bin/zsh
 if grep -vFxq $ZSH /etc/shells
