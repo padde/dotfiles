@@ -1,4 +1,3 @@
-# packages from canonical repository
 brew 'autojump'
 brew 'coreutils'
 brew 'direnv'
@@ -33,12 +32,4 @@ brew 'postgresql-common'
 tap 'thoughtbot/formulae'
 brew 'rcm'
 
-# quicklook plugins
-cask 'qlcolorcode'
-cask 'qlstephen'
-cask 'qlmarkdown'
-cask 'quicklook-json'
-cask 'quicklook-csv'
-cask 'qlimagesize'
-cask 'webpquicklook'
 cask 'chromedriver'
