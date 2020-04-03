@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 set -euo pipefail
 
 DOTFILES=~/.dotfiles
@@ -33,7 +33,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ~/.tmux/plugins/tpm/bindings/install_plugins
 
 # Install ASDF version manager
-cd $HOME
+cd "$HOME"
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 
 # Install and use ZSH
@@ -46,4 +46,5 @@ fi
 sudo chmod -R 755 /usr/local/share/zsh
 chsh -s $ZSH
 env zsh
+# shellcheck source=./zshrc
 . ~/.zshrc
