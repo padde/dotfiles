@@ -112,3 +112,5 @@
 	protocol = https
 [rerere]
 	enabled = true
+[credential]
+	helper = osxkeychain
