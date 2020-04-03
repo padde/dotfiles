@@ -7,6 +7,8 @@ antigen apply
 # completion
 autoload -U compinit
 compinit
+autoload bashcompinit
+bashcompinit
 compdef g='git'
 
 # make completion
