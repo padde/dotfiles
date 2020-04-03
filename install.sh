@@ -11,6 +11,9 @@ fi
 git clone https://github.com/padde/dotfiles.git $DOTFILES
 cd $DOTFILES
 
+# Install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
 # Install homebrew packages
 brew update
 brew tap Homebrew/bundle
