@@ -194,11 +194,42 @@ if has("autocmd") && exists("+omnifunc")
 endif
 
 " Color scheme
-set termguicolors
-set background=dark
-
 Plug 'chriskempson/base16-vim'
-au VimEnter * colorscheme base16-default-dark
+set termguicolors
+
+" Set color scheme based on light/dark mode
+command! Dark set background=dark | colorscheme base16-default-dark
+command! Light set background=light | colorscheme base16-default-light
+
+if has('jobs') || has('nvim')
+  function! SetColorSchemeReceive(job_id, data, event)
+    if join(a:data) =~ '^Dark' && &background != 'dark'
+      Dark
+    elseif join(a:data) =~ '^Light' && &background != 'light'
+      Light
+    endif
+  endfunction
+
+  function! SetColorscheme(...)
+    call jobstart([$HOME.'/.dotfiles/bin/os_appearance'], {'on_stdout': 'SetColorSchemeReceive'})
+  endfunction
+
+  autocmd VimEnter * set background= | call SetColorSchemeReceive(0, systemlist([$HOME.'/.dotfiles/bin/os_appearance']), 0)
+
+  if exists('##OSAppearanceChanged')
+    autocmd OSAppearanceChanged * call SetColorscheme()
+  elseif has('timers')
+    call timer_start(1000, 'SetColorscheme', {'repeat': -1})
+  end
+else
+  if system($HOME.'/.dotfiles/bin/os_appearance') =~ '^Dark'
+    autocmd VimEnter * :Dark
+  else
+    autocmd VimEnter * :Light
+  endif
+endif
+
+" Reduce colors in some areas
 au VimEnter,ColorScheme *
       \ hi VertSplit ctermbg=none guibg=NONE |
       \ hi LineNr ctermbg=none guibg=NONE |

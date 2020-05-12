@@ -1,0 +1,3 @@
+#! /bin/bash
+
+( defaults read -g AppleInterfaceStyle 2>/dev/null || echo 'Light' ) | tr -d '\n'
