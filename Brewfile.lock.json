@@ -654,6 +654,10 @@
       "heroku": {
         "version": "7.41.1",
         "bottle": false
+      },
+      "antigen": {
+        "version": "2.2.3",
+        "bottle": false
       }
     },
     "tap": {

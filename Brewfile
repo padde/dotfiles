@@ -1,3 +1,4 @@
+brew 'antigen'
 brew 'autojump'
 brew 'coreutils'
 brew 'direnv'
