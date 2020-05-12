@@ -559,7 +559,7 @@ Plug 'chr4/nginx.vim'
 Plug 'keith/tmux.vim'
 
 " Postgres
-Plug 'exu/pgsql.vim'
+Plug 'lifepillar/pgsql.vim'
 
 " Terraform
 Plug 'hashivim/vim-terraform'
