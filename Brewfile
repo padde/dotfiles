@@ -34,4 +34,7 @@ brew 'postgresql-common'
 tap 'thoughtbot/formulae'
 brew 'rcm'
 
+tap 'heroku/brew'
+brew 'heroku'
+
 cask 'chromedriver'
