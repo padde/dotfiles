@@ -1,5 +1,5 @@
 var highlightReviewState = function() {
-  const user = document.querySelector('.user-nav .avatar').alt.substring(1)
+  const user = document.querySelector('.avatar-user').alt.substring(1)
   for (let row of document.querySelectorAll('.js-issue-row:not(.unread)')) {
     const metaInfo = row.querySelector('.mt-1').innerText
 
