@@ -452,6 +452,8 @@ let g:ale_pattern_options = {
       \ 'db\/migrate\/.*\.rb$': {'ale_fixers': []}
       \ }
 nnoremap <leader>f :ALEFix<cr>
+command! ALEFixDisable :let b:ale_fix_on_save=0
+command! ALEFixEnable :unlet b:ale_fix_on_save
 
 " ANSI escape codes
 Plug 'powerman/vim-plugin-AnsiEsc'
