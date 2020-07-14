@@ -59,6 +59,9 @@ alias dps='docker-compose ps'
 dsh() { docker-compose exec "$1" sh; }
 alias dup='docker-compose up -d'
 
+# Kubernetes
+alias k=kubectl
+
 # Git
 alias g='git'
 alias ga='git add'
