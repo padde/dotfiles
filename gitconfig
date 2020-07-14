@@ -49,8 +49,8 @@
 	giveup = "!printf 'Do you really want to discard all staged, unstaged and untracked changes? [Yn] '; read yn; if [[ $yn =~ "^[yY]([eE][sS])?$" ]]; then (git reset > /dev/null && for f in $(git ls-files -m); do echo "Resetting $f"; done && git co . && git clean -fd); else echo 'aborted'; fi"
 	authors = "!git shortlog -nes --no-merges"
 	shame = blame -w -M -C
-	squash = commit --amend --no-verify
-	fixup = commit --amend --no-edit --no-verify
+	squash = commit --amend --no-verify --reset-author
+	fixup = commit --amend --no-edit --no-verify --reset-author
 	set-upstream = "!git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD)"
 	get-upstream = "!git rev-parse --abbrev-ref --symbolic-full-name @{u}"
 	get-remote = "!git get-upstream | cut -d/ -f1"
