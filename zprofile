@@ -14,3 +14,6 @@ source $HOME/.asdf/asdf.sh
 
 # Yarn package manager
 export PATH="$HOME/.yarn/bin:$PATH"
+
+# Homebrew sbin
+export PATH="/usr/local/sbin:$PATH"
