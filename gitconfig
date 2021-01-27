@@ -92,6 +92,7 @@
 	followTags = true
 [pull]
 	tags = true
+	ff = only
 [help]
 	autocorrect = 20
 [include]
