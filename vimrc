@@ -408,7 +408,7 @@ let test#custom_strategies = {'simple_vimux': function('SimpleVimuxStrategy')}
 let test#strategy = 'simple_vimux'
 
 " run rspec without bundle exec, use env/binstubs instead
-let test#ruby#rspec#executable = 'rspec'
+let test#ruby#rspec#executable = 'rspec -fdoc'
 
 " use custom elixir exercism runner, see vim/autoload/test/elixir/exercism.vim
 let test#runners = {'Elixir': ['Exercism']}
