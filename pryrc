@@ -21,4 +21,6 @@ Pry::Commands.command(/\A\z/, 'Repeat the last command') do
   _pry_.input = StringIO.new(Pry.history.to_a.last)
 end
 
+Pry.pager = false
+
 # vim: ft=ruby
