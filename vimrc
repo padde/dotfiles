@@ -313,7 +313,7 @@ Plug 'tpope/vim-repeat'
 " File search
 Plug 'kien/ctrlp.vim'
 let g:ctrlp_show_hidden = 1
-
+let g:ctrlp_root_markers = ['mix.exs']
 let g:ctrlp_custom_ignore = {
       \ 'dir':  '\v[\/]\.(git|hg|svn)|_build|deps|priv/static|tmp|vendor|log|public|node_modules$',
       \ }
