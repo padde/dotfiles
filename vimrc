@@ -461,7 +461,6 @@ Plug 'powerman/vim-plugin-AnsiEsc'
 " Git
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
-command! -nargs=* Gshame :Gblame -w -M -C <args>
 function! ToggleGshame() abort
   let closing = 0
   for buffer in tabpagebuflist()
@@ -475,7 +474,7 @@ function! ToggleGshame() abort
       Gedit
     endif
   else
-    Gshame
+    Git shame
   endif
 endfunction
 nnoremap <silent> <leader>g :call ToggleGshame()<cr>
