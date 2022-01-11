@@ -72,6 +72,8 @@
 	prl = pr-log
 	prr = pr-rebase -i
 	rebase = rebase --no-verify
+	smart-rebase = "!f(){ if [ $# -eq 0 ]; then git pr-rebase -i; else git rebase -i HEAD~$1; fi }; f"
+	r = smart-rebase
 	todo = "pr-grep '\\b(todo|fixme|xxx|hack)\\b'"
 	pick = cherry-pick
 	mcon = merge --continue
