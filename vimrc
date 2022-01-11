@@ -587,7 +587,7 @@ if exists("$COMPILE_BASEPATH")
 endif
 Plug 'slime-lang/vim-slime-syntax'
 Plug 'mhinz/vim-mix-format'
-" let g:mix_format_on_save = 1
+let g:mix_format_on_save = 1
 let g:mix_format_options = '--check-equivalent'
 let g:mix_format_silent_errors = 1
 nnoremap <leader>mf :MixFormat<cr>
