@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 def shot
   screenshot_and_open_image
 end
 
 def browse
-  system("open", current_url)
+  system('open', current_url)
 end
 
 Pry::Commands.block_command('continue!', 'Continue and skip binding.pry until exit') do
@@ -12,7 +14,7 @@ Pry::Commands.block_command('continue!', 'Continue and skip binding.pry until ex
 end
 
 Pry::Commands.block_command('clear', 'Clear the screen') do
-  print "\e[H\e[2J"
+  $stdout.print "\e[H\e[2J"
 end
 
 Pry::Commands.command(/\A\z/, 'Repeat the last command') do
