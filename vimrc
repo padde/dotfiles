@@ -152,7 +152,7 @@ function! ProjectSearch(pattern, wordRegexp)
   if a:wordRegexp
     let flags = flags . '-w ' " --word-regexp
   endif
-  call ExecuteCmdWithHistory('Grep '.flags.EscapePattern(a:pattern))
+  call ExecuteCmdWithHistory('Grep '.flags.' -- '.EscapePattern(a:pattern))
 endfunction
 
 xnoremap * :<C-u>call SetSearchFromSelection('/')<cr>/<C-r>=@/<cr><cr>
