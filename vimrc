@@ -386,6 +386,9 @@ Plug 'tpope/vim-commentary'
 " Surround
 Plug 'tpope/vim-surround'
 
+" Split single-line statements gS, join multi-line blocks gJ
+Plug 'AndrewRadev/splitjoin.vim'
+
 " Replace all variants of a word
 Plug 'tpope/vim-abolish'
 
