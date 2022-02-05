@@ -490,6 +490,9 @@ Plug 'shumphrey/fugitive-gitlab.vim'
 " Github
 Plug 'tpope/vim-rhubarb'
 
+" Azure DevOps
+Plug 'cedarbaum/fugitive-azure-devops.vim'
+
 " Gist
 Plug 'mattn/webapi-vim' " required by gist-vim
 Plug 'mattn/gist-vim'
