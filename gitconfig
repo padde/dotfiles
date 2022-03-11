@@ -42,10 +42,12 @@
 	l = "!git log-pretty --first-parent -n10"
 	up = "!git set-upstream"
 	obsolete = "!git branch --merged | grep -v \"\\\\*\\\\|master\\\\|$(git symbolic-ref --short HEAD)\""
+	gone = "!git branch -vv | grep ': gone]' | awk '{print $1}'"
 	touch = "commit --amend --no-edit --no-verify --date=now --reset-author"
-	trim-local = "!git obsolete | xargs git branch -d"
 	trim-remote = fetch --prune --all
-	trim = "!git trim-remote && git trim-local && git pull"
+	trim-obsolete = "!git obsolete | xargs git branch -d"
+	trim-gone = "!git gone | xargs git branch -D"
+	trim = "!git trim-remote && git trim-obsolete && git trim-gone && git pull"
 	giveup = "!printf 'Do you really want to discard all staged, unstaged and untracked changes? [Yn] '; read yn; if [[ $yn =~ "^[yY]([eE][sS])?$" ]]; then (git reset > /dev/null && for f in $(git ls-files -m); do echo "Resetting $f"; done && git co . && git clean -fd); else echo 'aborted'; fi"
 	authors = "!git shortlog -nes --no-merges"
 	shame = blame -w -M -C
@@ -119,3 +121,5 @@
 	helper = osxkeychain
 [init]
 	defaultBranch = main
+[fetch]
+	prune = true
