@@ -587,6 +587,7 @@ nnoremap <leader>> :R<cr>
 Plug 'tpope/vim-bundler'
 Plug 'sheerun/rspec.vim'
 Plug 'joker1007/vim-ruby-heredoc-syntax'
+autocmd BufNewFile *.rb 0r ~/.vim/skeletons/ruby.rb | norm G
 
 " Elixir/Phoenix
 Plug 'elixir-editors/vim-elixir'
