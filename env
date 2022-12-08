@@ -1,7 +1,9 @@
+#!/bin/bash
+
 # use neovim as editor
 export VISUAL=nvim
 export EDITOR=nvim
-alias e=$EDITOR
+alias e='$EDITOR'
 alias vi=nvim
 alias vim=nvim
 
@@ -41,6 +43,8 @@ alias tmk-flash="~/.tmk/flash.sh"
 alias lla='ll -a'
 alias o='open'
 alias tf="terraform"
+# https://github.com/koalaman/shellcheck/issues/2635
+# shellcheck disable=SC2142
 alias ts="awk '{print strftime(\"[%Y-%m-%d %H:%M:%S.%N]\"), \$0; fflush();}'"
 pass() {
   lynx -dump -force_html <(\
