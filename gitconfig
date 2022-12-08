@@ -86,6 +86,7 @@
 	first-child = "!f(){ c=${1:-HEAD}; set -- $(git rev-list --all --not \"$c\"^@ --children | grep $(git rev-parse \"$c\") ); shift; echo $1; }; f"
 	next = "!git checkout $(git first-child)"
 	prev = "!git checkout HEAD~1"
+	go = "!f(){ git checkout $(git branch -l \"*$1*\" --format '%(refname:short)' | head -n1); }; f"
 [core]
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
