@@ -586,6 +586,7 @@ nnoremap <leader>. :A<cr>
 nnoremap <leader>> :R<cr>
 Plug 'tpope/vim-bundler'
 Plug 'sheerun/rspec.vim'
+Plug 'joker1007/vim-ruby-heredoc-syntax'
 
 " Elixir/Phoenix
 Plug 'elixir-editors/vim-elixir'
