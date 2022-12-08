@@ -30,6 +30,7 @@ Thumbs.db
 
 # local dev environment tools
 .envrc
+.envbin
 .powder
 .rgignore
 .rspec-local
