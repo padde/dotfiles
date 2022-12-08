@@ -396,7 +396,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tommcdo/vim-exchange'
 
 " Vim-Test
-Plug 'janko-m/vim-test'
+Plug 'vim-test/vim-test'
 nnoremap <silent> <leader>tt :TestNearest<cr>
 nnoremap <silent> <leader>tf :TestFile<cr>
 nnoremap <silent> <leader>ts :TestSuite<cr>
@@ -432,7 +432,7 @@ let test#transformation = 'elixir_umbrella'
 let test#javascript#reactscripts#options = '--watchAll=false'
 
 " ALE Linter
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 set signcolumn=yes
 let g:ale_sign_column_always = 1
 let g:ale_sign_info = 'i '
