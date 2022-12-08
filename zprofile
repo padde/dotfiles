@@ -13,7 +13,7 @@ export PATH=$PATH:$GOPATH
 source $HOME/.asdf/asdf.sh
 
 # Yarn package manager
-export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Homebrew sbin
 export PATH="/usr/local/sbin:$PATH"
