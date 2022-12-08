@@ -1,1 +1,1 @@
-setlocal equalprg=python\ -m\ json.tool
+setlocal formatprg=jq\ .
