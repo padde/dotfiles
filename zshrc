@@ -25,6 +25,11 @@ bindkey '\C-n' history-beginning-search-forward
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward 
 
+# edit current command line with $EDITOR
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
 # history
 setopt histignoredups
 export HISTSIZE=10000
