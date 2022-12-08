@@ -143,3 +143,9 @@ fi
 
 # added by travis gem
 [ -f /Users/patrickoscity/.travis/travis.sh ] && source /Users/patrickoscity/.travis/travis.sh
+
+
+# Load Angular CLI autocompletion.
+if [ -x "$(command -v ng)" ]; then
+  source <(ng completion script)
+fi
