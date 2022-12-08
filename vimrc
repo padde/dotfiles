@@ -35,7 +35,7 @@ set softtabstop=2
 filetype indent on
 
 " Soft wrap
-set wrap
+set nowrap
 set linebreak
 set breakindent
 
