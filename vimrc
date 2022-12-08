@@ -582,6 +582,8 @@ au VimResized * :wincmd = " Resize splits when the window is resized
 " Ruby/Rails
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
+nnoremap <leader>. :A<cr>
+nnoremap <leader>> :R<cr>
 Plug 'tpope/vim-bundler'
 Plug 'sheerun/rspec.vim'
 
