@@ -111,8 +111,8 @@ function! Grep(pattern)
 endfunction
 
 command! -nargs=* -complete=file Grep :call Grep(<q-args>)
-nnoremap <leader>a :Grep ""<left>
-xnoremap <leader>a :<C-u>Grep ""<left>
+nnoremap <leader>a :Grep -- ""<left>
+xnoremap <leader>a :<C-u>Grep -- ""<left>
 au Filetype qf nnoremap <buffer> o <cr>
 au Filetype qf nnoremap <buffer> go <cr><C-w><C-w>
 
