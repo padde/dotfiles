@@ -34,4 +34,7 @@ brew 'rcm'
 tap 'heroku/brew'
 brew 'heroku'
 
+tap 'microsoft/git'
+cask 'git-credential-manager-core'
+
 cask 'chromedriver'

@@ -1337,6 +1337,9 @@
       },
       "heroku/brew": {
         "revision": "cedc0103fce1d4b64defaadfb2069d071e9cc3b1"
+      },
+      "microsoft/git": {
+        "revision": "728a33a0326e1104dd6ca341cdee03fea97cb065"
       }
     },
     "cask": {
@@ -1344,6 +1347,12 @@
         "version": "109.0.5414.74",
         "options": {
           "full_name": "chromedriver"
+        }
+      },
+      "git-credential-manager-core": {
+        "version": "2.0.886",
+        "options": {
+          "full_name": "git-credential-manager-core"
         }
       }
     }

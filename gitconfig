@@ -120,7 +120,11 @@
 	enabled = true
 [credential]
 	helper = osxkeychain
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
 [init]
 	defaultBranch = main
 [fetch]
 	prune = true
+[credential "https://dev.azure.com"]
+	useHttpPath = true
