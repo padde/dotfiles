@@ -39,16 +39,3 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 # Install Chrome dotfiles
 git clone https://github.com/matthewhadley/chromedotfiles.git ~/.chromedotfiles
 ln -vs ~/.js ~/.chromedotfiles/chromedotfiles
-
-# Install and use ZSH
-ZSH=/usr/local/bin/zsh
-if grep -vFxq $ZSH /etc/shells
-then
-  echo "Adding $ZSH to /etc/shells"
-  echo $ZSH | sudo tee -a /etc/shells
-fi
-sudo chmod -R 755 /usr/local/share/zsh
-chsh -s $ZSH
-env zsh
-# shellcheck source=./zshrc
-. ~/.zshrc
