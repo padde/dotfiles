@@ -1,4 +1,9 @@
-source /usr/local/share/antigen/antigen.zsh
+if [ -f /opt/homebrew/share/antigen/antigen.zsh ]; then
+  source /opt/homebrew/share/antigen/antigen.zsh
+else
+  source /usr/local/share/antigen/antigen.zsh
+fi
+
 antigen use oh-my-zsh
 antigen bundle autojump
 antigen bundle zsh-users/zsh-syntax-highlighting

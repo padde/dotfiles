@@ -15,5 +15,9 @@ source $HOME/.asdf/asdf.sh
 # Yarn package manager
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# Homebrew sbin
-export PATH="/usr/local/sbin:$PATH"
+# Homebrew bin
+if [ -d "/opt/homebrew/bin" ]; then
+  export PATH="/opt/homebrew/bin:$PATH"
+else
+  export PATH="/usr/local/sbin:$PATH"
+fi
