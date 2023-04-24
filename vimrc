@@ -49,14 +49,6 @@ set clipboard+=unnamed
 " Backspace in insert mode
 set backspace=indent,eol,start
 
-" Enable mouse
-set mouse=a
-if has("mouse_sgr")
-  set ttymouse=sgr
-elseif has("mouse_xterm")
-  set ttymouse=xterm2
-end
-
 " Use UTF-8
 set nobomb
 set encoding=utf-8
