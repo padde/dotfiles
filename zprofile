@@ -9,9 +9,6 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH=$PATH:$GOPATH
 
-# ASDF version manager
-source $HOME/.asdf/asdf.sh
-
 # Yarn package manager
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
@@ -21,3 +18,6 @@ if [ -d "/opt/homebrew/bin" ]; then
 else
   export PATH="/usr/local/sbin:$PATH"
 fi
+
+# ASDF version manager
+source $HOME/.asdf/asdf.sh
