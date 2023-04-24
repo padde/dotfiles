@@ -154,3 +154,5 @@ fi
 if [ -x "$(command -v ng)" ]; then
   source <(ng completion script)
 fi
+
+source /Users/pat/.docker/init-zsh.sh || true # Added by Docker Desktop
