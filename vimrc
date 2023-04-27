@@ -324,6 +324,8 @@ let NERDTreeMapJumpNextSibling=''
 let NERDTreeMapJumpPrevSibling=''
 nnoremap <silent> <leader>d :NERDTreeToggle<cr>
 nnoremap <silent> <leader><leader>d :NERDTreeRefreshRoot \| NERDTreeFind<cr>
+let NERDTreeRespectWildIgnore=1
+let NERDTreeIgnore=['\~$', '__pycache__$[[dir]]']
 
 " Undo
 set undofile
