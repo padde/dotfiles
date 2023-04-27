@@ -442,6 +442,7 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {
       \ 'css': ['stylelint'],
       \ 'scss': ['stylelint'],
+      \ 'html': ['prettier'],
       \ 'javascript': ['eslint', 'prettier'],
       \ 'typescript': ['eslint', 'prettier'],
       \ 'ruby': ['rubocop']
