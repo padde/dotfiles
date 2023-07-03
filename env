@@ -61,7 +61,7 @@ alias dk=docker-compose
 alias dl='docker-compose logs --tail=10 -f'
 alias dps='docker-compose ps'
 dsh() { docker-compose exec "$1" sh; }
-alias dup='docker-compose up -d'
+alias dup='docker-compose up -d --build'
 
 # Kubernetes
 alias k=kubectl
