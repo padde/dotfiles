@@ -63,6 +63,7 @@ alias dps='docker-compose ps'
 # shellcheck disable=SC2016
 dsh() { docker-compose exec "$1" sh -c 'if [ -x "$(command -v bash)" ]; then bash; else sh; fi'; }
 alias dup='docker-compose up -d --build'
+dkr() { docker-compose stop "$1" && docker-compose up -d --build "$1" && dsh "$1"; }
 
 # Kubernetes
 alias k=kubectl
