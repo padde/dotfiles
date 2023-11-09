@@ -582,6 +582,11 @@ nnoremap <leader>> :R<cr>
 Plug 'tpope/vim-bundler'
 Plug 'sheerun/rspec.vim'
 Plug 'joker1007/vim-ruby-heredoc-syntax'
+let g:ruby_heredoc_syntax_filetypes = {
+  \ "javascript" : {
+  \   "start" : '\(JS\|JAVASCRIPT\)',
+  \},
+\}
 autocmd BufNewFile *.rb 0r ~/.vim/skeletons/ruby.rb | norm G
 
 " Elixir/Phoenix
