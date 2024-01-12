@@ -56,14 +56,13 @@ pass() {
 
 # Docker
 alias d=docker
-alias ddn='docker-compose down'
 alias dk=docker-compose
 alias dl='docker-compose logs --tail=10 -f'
-alias dps='docker-compose ps'
 # shellcheck disable=SC2016
 dsh() { docker-compose exec "$1" sh -c 'if [ -x "$(command -v bash)" ]; then bash; else sh; fi'; }
-alias dup='docker-compose up -d --build'
-dkr() { docker-compose stop "$1" && docker-compose up -d --build "$1" && dsh "$1"; }
+alias dup='docker-compose up -d --build --remove-orphans'
+# shellcheck disable=SC2086
+dkr() { docker-compose stop $1 && dup $1; }
 
 # Kubernetes
 alias k=kubectl
