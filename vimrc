@@ -620,6 +620,9 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
+" Base64 encode/decode
+Plug 'christianrondeau/vim-base64'
+
 call plug#end()
 
 " Load project specific .vimrc files
