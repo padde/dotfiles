@@ -265,6 +265,11 @@ command! -range=% RemoveTrailingWhitespace <line1>,<line2>s/\(\s\| \)\+$// | no
 nnoremap <leader>rt :RemoveTrailingWhitespace<CR>
 vnoremap <leader>rt :RemoveTrailingWhitespace<CR>
 
+" Hard wrap current line/selected lines to textwidth
+command! -range=1 HardWrap exe "<line1>,<line2>!fold -w".&tw." | tr -d '^M'"
+nnoremap <leader>F :HardWrap<CR>
+vnoremap <leader>F :HardWrap<CR>
+
 " Higlight Git conflict markers
 match ErrorMsg '\v^[<=>]{7}.*$'
 noremap <silent> <leader>j /\v^[<=>]{7}<cr>
