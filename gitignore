@@ -9,6 +9,7 @@ syntax: glob
 *.swp
 *.swo
 .exrc
+.exrc-bin
 .vimrc
 .nvimrc
 
