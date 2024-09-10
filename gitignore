@@ -47,3 +47,6 @@ logs
 
 TODO
 TODO.md
+
+# Avoid potential secrets exposure
+*secret*
