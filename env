@@ -66,6 +66,8 @@ dkr() { docker compose stop $1 && dup $1; }
 
 # Kubernetes
 alias k=kubectl
+# shellcheck disable=SC2016
+ks () { kubectl -n "$1" exec -it "$(kubectl -n "$1" get pods --no-headers -o custom-columns=":metadata.name" | grep "$2" | head -n 1)" -- sh -c 'if [ -x "$(command -v bash)" ]; then bash; else sh; fi'; }
 
 # Git
 alias g='git'
