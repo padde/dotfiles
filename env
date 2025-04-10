@@ -56,7 +56,7 @@ pass() {
 
 # Docker
 alias d=docker
-alias dk=docker compose
+alias dk='docker compose'
 alias dl='docker compose logs --tail=10 -f'
 # shellcheck disable=SC2016
 dsh() { docker compose exec "$1" sh -c 'if [ -x "$(command -v bash)" ]; then bash; else sh; fi'; }
@@ -66,8 +66,17 @@ dkr() { docker compose stop $1 && dup $1; }
 
 # Kubernetes
 alias k=kubectl
+kpod () { kubectl -n "$1" get pods --no-headers -o custom-columns=":metadata.name" | grep "$2" | head -n 1; }
+kexec () {
+  ns=$1
+  shift
+  pod=$1
+  shift
+  kubectl -n "$ns" exec -it "$(kpod "$ns" "$pod")" -- "$@"
+}
 # shellcheck disable=SC2016
-ks () { kubectl -n "$1" exec -it "$(kubectl -n "$1" get pods --no-headers -o custom-columns=":metadata.name" | grep "$2" | head -n 1)" -- sh -c 'if [ -x "$(command -v bash)" ]; then bash; else sh; fi'; }
+kshell () { kexec "$1" "$2" sh -c 'if [ -x "$(command -v bash)" ]; then bash; else sh; fi'; }
+alias ks=kshell
 
 # Git
 alias g='git'
