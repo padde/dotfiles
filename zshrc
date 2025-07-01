@@ -135,8 +135,13 @@ PROMPT=\
 # Travis
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
-# ASDF version manager
-source $HOME/.asdf/completions/asdf.bash
+# ASDF completions
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+autoload -Uz compinit && compinit
+
+# ASDF completions - setup
+# mkdir -p "${ASDF_DATA_DIR:-$HOME/.asdf}/completions"
+# asdf completion zsh > "${ASDF_DATA_DIR:-$HOME/.asdf}/completions/_asdf"
 
 # direnv
 eval "$(direnv hook zsh)"

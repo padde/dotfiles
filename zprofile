@@ -20,4 +20,5 @@ else
 fi
 
 # ASDF version manager
-source $HOME/.asdf/asdf.sh
+export ASDF_DATA_DIR="$HOME/.asdf"
+export PATH="$ASDF_DATA_DIR/bin:$ASDF_DATA_DIR/shims:$PATH"
