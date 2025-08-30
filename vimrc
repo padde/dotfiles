@@ -250,26 +250,6 @@ noremap <silent> <leader>k ?\v^[<=>]{7}<cr>
 nnoremap <silent> <c-n> :silent cnext \| silent cc<cr>
 nnoremap <silent> <c-b> :silent cprev \| silent cc<cr>
 
-" Show syntax highlighting groups for word under cursor
-nmap <leader>z :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
-
-" Collect results of command execution
-command! -nargs=+ C Collect<args>
-command! -nargs=+ Collect
-      \ let pos = getpos('.')
-      \ | let tmp = ''
-      \ | g<args>
-      \ | let tmp .= @"
-      \ | let @* = tmp
-      \ | call setpos('.', pos)
-
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GLOBAL PLUGINS
