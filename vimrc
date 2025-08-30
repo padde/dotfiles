@@ -402,6 +402,9 @@ Plug 'powerman/vim-plugin-AnsiEsc'
 " Git
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
+Plug 'shumphrey/fugitive-gitlab.vim' " Gitlab
+Plug 'tpope/vim-rhubarb' " Github
+Plug 'cedarbaum/fugitive-azure-devops.vim' " Azure DevOps
 function! ToggleGshame() abort
   let closing = 0
   for buffer in tabpagebuflist()
@@ -422,15 +425,6 @@ nnoremap <silent> <leader>g :call ToggleGshame()<cr>
 command! -nargs=* Gprdiff :exec 'Gdiff '.system('git pr-base').' <args>'
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
-" Gitlab
-Plug 'shumphrey/fugitive-gitlab.vim'
-
-" Github
-Plug 'tpope/vim-rhubarb'
-
-" Azure DevOps
-Plug 'cedarbaum/fugitive-azure-devops.vim'
-
 " Gist
 Plug 'mattn/webapi-vim' " required by gist-vim
 Plug 'mattn/gist-vim'
@@ -445,11 +439,17 @@ Plug 'tpope/vim-characterize'
 " Hex editor
 Plug 'fidian/hexmode'
 
+" Base64 encode/decode
+Plug 'christianrondeau/vim-base64'
+
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LANGUAGE SPECIFIC PLUGINS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Elixir/Slime
+Plug 'slime-lang/vim-slime-syntax'
 
 " Rust
 Plug 'rust-lang/rust.vim'
@@ -538,7 +538,6 @@ let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
 if exists("$COMPILE_BASEPATH")
   let g:alchemist_compile_basepath = $COMPILE_BASEPATH
 endif
-Plug 'slime-lang/vim-slime-syntax'
 
 " Direnv
 
@@ -546,13 +545,15 @@ Plug 'slime-lang/vim-slime-syntax'
 Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FINAL STEPS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Local/experimental configuration
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
-
-" Base64 encode/decode
-Plug 'christianrondeau/vim-base64'
 
 call plug#end()
 
