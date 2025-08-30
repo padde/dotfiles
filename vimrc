@@ -287,9 +287,8 @@ let NERDTreeIgnore=['\~$', '__pycache__$[[dir]]']
 set undofile
 set undolevels=1000
 set undoreload=10000
-Plug 'simnalamburt/vim-mundo'
-let g:mundo_prefer_python3 = 1
-nnoremap <leader>u :silent! MundoToggle<cr>
+Plug 'mbbill/undotree'
+nnoremap <leader>u :silent! UndotreeToggle<cr>
 
 " Open quickfix items in split/tab
 Plug 'yssl/QFEnter'
