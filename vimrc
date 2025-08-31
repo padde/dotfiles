@@ -186,25 +186,13 @@ if has("autocmd") && exists("+omnifunc")
 endif
 
 " Color scheme
-Plug 'chriskempson/base16-vim'
 set termguicolors
+Plug 'RRethy/base16-nvim'
+" Scheme set at end of file
 
-" Set color scheme based on light/dark mode
-autocmd VimEnter * colorscheme base16-default-dark
-
-" Reduce colors in some areas
-au VimEnter,ColorScheme *
-      \ hi VertSplit ctermbg=none guibg=NONE |
-      \ hi LineNr ctermbg=none guibg=NONE |
-      \ hi FoldColumn ctermbg=none guibg=NONE |
-      \ hi SignColumn ctermbg=none guibg=NONE |
-      \ hi SpellBad term=underline ctermbg=none cterm=undercurl |
-      \ hi SpellCap term=underline ctermbg=none cterm=undercurl |
-      \ hi SpellRare term=underline ctermbg=none cterm=undercurl |
-      \ hi SpellLocal term=underline ctermbg=none cterm=undercurl
-
-" Nicer looking splits
-set fillchars+=vert:│
+" Fancy file icons
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Show statusline
 set laststatus=2
@@ -442,6 +430,11 @@ Plug 'fidian/hexmode'
 " Base64 encode/decode
 Plug 'christianrondeau/vim-base64'
 
+" Tmux
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'benmills/vimux'
+Plug 'sjl/vitality.vim'
+au VimResized * :wincmd = " Resize splits when the window is resized
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -451,99 +444,7 @@ Plug 'christianrondeau/vim-base64'
 " Elixir/Slime
 Plug 'slime-lang/vim-slime-syntax'
 
-" Rust
-Plug 'rust-lang/rust.vim'
-Plug 'cespare/vim-toml'
-
-" HTML
-Plug 'othree/html5.vim'
-
-" CSS, SASS, SCSS, LESS
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'groenewege/vim-less'
-
-" HTML, HAML and preprocessors
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'sheerun/vim-haml'
-Plug 'mattn/emmet-vim'
-imap <C-y><C-y> <C-y>,
-imap <C-y><CR> <C-y>,<CR><C-o>O
-let g:user_emmet_settings = {
-      \   'javascript.jsx' : {'extends' : 'jsx'}
-      \ }
-
-" JavaScript, TypeScript, CoffeeScript, JSX, React.js, Vue.js
-Plug 'pangloss/vim-javascript'
-Plug 'kchmck/vim-coffee-script'
-Plug 'mxw/vim-jsx'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-let g:jsx_ext_required = 0
-Plug 'posva/vim-vue'
-
-" Docker
-Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/'}
-
-" Go
-Plug 'fatih/vim-go'
-
-" LaTeX
-Plug 'LaTeX-Box-Team/LaTeX-Box'
-
-" Lua
-Plug 'tbastos/vim-lua'
-
-" Markdown
-Plug 'plasticboy/vim-markdown'
-let g:vim_markdown_new_list_item_indent=0
-
-" Nginx
-Plug 'chr4/nginx.vim'
-
-" Tmux
-Plug 'keith/tmux.vim'
-
-" Postgres
-Plug 'lifepillar/pgsql.vim'
-
-" Terraform
-Plug 'hashivim/vim-terraform'
-
-" TMUX
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'benmills/vimux'
-Plug 'sjl/vitality.vim'
-au VimResized * :wincmd = " Resize splits when the window is resized
-
-" Ruby/Rails
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rails'
-nnoremap <leader>. :A<cr>
-nnoremap <leader>> :R<cr>
-Plug 'tpope/vim-bundler'
-Plug 'sheerun/rspec.vim'
-Plug 'joker1007/vim-ruby-heredoc-syntax'
-let g:ruby_heredoc_syntax_filetypes = {
-  \ "javascript" : {
-  \   "start" : '\(JS\|JAVASCRIPT\)',
-  \},
-\}
-autocmd BufNewFile *.rb 0r ~/.vim/skeletons/ruby.rb | norm G
-
-" Elixir/Phoenix
-Plug 'elixir-editors/vim-elixir'
-Plug 'vim-erlang/vim-erlang-runtime'
-Plug 'slashmili/alchemist.vim'
-let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
-if exists("$COMPILE_BASEPATH")
-  let g:alchemist_compile_basepath = $COMPILE_BASEPATH
-endif
-
-" Direnv
-
-" Markdown
-Plug 'plasticboy/vim-markdown'
-let g:vim_markdown_folding_disabled = 1
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -556,6 +457,12 @@ if filereadable(expand("~/.vimrc.local"))
 endif
 
 call plug#end()
+
+" Color scheme
+colorscheme base16-default-dark
+hi LineNr guifg=#383838
+hi WinSeparator guifg=#383838
+hi ColorColumn guibg=#202020
 
 " Load project specific .vimrc files
 set exrc
