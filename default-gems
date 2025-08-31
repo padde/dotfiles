@@ -6,3 +6,5 @@ pry-docmore
 pry-byebug
 pry-stack_explorer
 pry-rescue
+ruby-lsp
+ruby-lsp-rspec

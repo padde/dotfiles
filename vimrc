@@ -446,6 +446,8 @@ Plug 'slime-lang/vim-slime-syntax'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+Plug 'neovim/nvim-lspconfig'
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FINAL STEPS
