@@ -22,7 +22,8 @@ zstyle ':completion:*:make:*:targets' call-command true
 zstyle ':completion:*:make:*' tag-order targets
 
 # Load environment
-source ~/.dotfiles/env
+# shellcheck source=./aliases
+source ~/.dotfiles/aliases
 
 # history search
 bindkey '\C-p' history-beginning-search-backward

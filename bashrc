@@ -1,5 +1,5 @@
-# shellcheck source=./env
-source ~/.dotfiles/env
+# shellcheck source=./aliases
+source ~/.dotfiles/aliases
 
 # Travis
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh

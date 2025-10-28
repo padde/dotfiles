@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # use neovim as editor
 export VISUAL=nvim
