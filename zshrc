@@ -133,9 +133,6 @@ PROMPT=\
 "%{$__PROMPT_PWD_COLOR%}"'$(__abbrev_pwd)'"%{$reset_color%}
 %{$__PROMPT_DELIMITER_COLOR%}%#%{$reset_color%} "
 
-# Travis
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
-
 # ASDF completions
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 autoload -Uz compinit && compinit
@@ -151,10 +148,6 @@ eval "$(direnv hook zsh)"
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
-
-# added by travis gem
-[ -f /Users/patrickoscity/.travis/travis.sh ] && source /Users/patrickoscity/.travis/travis.sh
-
 
 # Load Angular CLI autocompletion.
 if [ -x "$(command -v ng)" ]; then

@@ -10,7 +10,4 @@ source "$HOME/.asdf/completions/asdf.bash"
 # direnv
 eval "$(direnv hook bash)"
 
-# added by travis gem
-[ -f /Users/patrickoscity/.travis/travis.sh ] && source /Users/patrickoscity/.travis/travis.sh
-
 source /Users/pat/.docker/init-bash.sh || true # Added by Docker Desktop
