@@ -133,25 +133,7 @@ PROMPT=\
 "%{$__PROMPT_PWD_COLOR%}"'$(__abbrev_pwd)'"%{$reset_color%}
 %{$__PROMPT_DELIMITER_COLOR%}%#%{$reset_color%} "
 
-# ASDF completions
-fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
-autoload -Uz compinit && compinit
-
-# ASDF completions - setup
-# mkdir -p "${ASDF_DATA_DIR:-$HOME/.asdf}/completions"
-# asdf completion zsh > "${ASDF_DATA_DIR:-$HOME/.asdf}/completions/_asdf"
-
-# direnv
-eval "$(direnv hook zsh)"
-
 # local configuration
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
-
-# Load Angular CLI autocompletion.
-if [ -x "$(command -v ng)" ]; then
-  source <(ng completion script)
-fi
-
-source /Users/pat/.docker/init-zsh.sh || true # Added by Docker Desktop
