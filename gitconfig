@@ -100,8 +100,6 @@
 	ff = only
 [help]
 	autocorrect = 20
-[include]
-	path = ~/.gitconfig.local
 [mailmap]
 	file = ~/.mailmap
 [filter "lfs"]
@@ -128,3 +126,5 @@
 	prune = true
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[include]
+	path = ~/.gitconfig.local
