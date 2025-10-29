@@ -44,7 +44,7 @@ set wildmenu
 set wildmode=list:longest,full
 
 " Share clipboard with OS
-set clipboard+=unnamed
+set clipboard^=unnamed,unnamedplus
 
 " Backspace in insert mode
 set backspace=indent,eol,start
