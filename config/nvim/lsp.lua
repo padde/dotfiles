@@ -1,22 +1,33 @@
 -- Set up lspconfig.
-local lspconfig = require('lspconfig')
+vim.lsp.config('*', {
+  capabilities = {
+    textDocument = {
+      semanticTokens = {
+        multilineTokenSupport = true,
+      }
+    }
+  },
+  root_markers = { '.git' },
+})
+
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
--- Elixir
-lspconfig.elixirls.setup {
+vim.lsp.config('elixirls', {
   cmd = { vim.fn.expand("~/.elixir-ls/language_server.sh") },
   capabilities = capabilities
-}
+})
+vim.lsp.enable('elixirls')
 
-lspconfig.tailwindcss.setup({
+vim.lsp.config('tailwindcss', {
   init_options = {
     userLanguages = {
       elixir = "html-eex",
       eelixir = "html-eex",
       heex = "html-eex",
     },
-  },
+  }
 })
+vim.lsp.enable('tailwindcss')
 
 vim.diagnostic.handlers.loclist = {
   show = function(_, _, _, opts)
