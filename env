@@ -110,3 +110,4 @@ alias rmig='rake db:migrate'
 # NodeJS
 alias n="npm run"
 alias y="yarn"
+alias claude="npx @anthropic-ai/claude-code"
