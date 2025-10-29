@@ -408,8 +408,6 @@ Plug 'benmills/vimux'
 Plug 'sjl/vitality.vim'
 au VimResized * :wincmd = " Resize splits when the window is resized
 
-
-
 " Elixir/Slime
 Plug 'slime-lang/vim-slime-syntax'
 
@@ -418,6 +416,13 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " LSP (see lua config for options)
 Plug 'neovim/nvim-lspconfig'
+
+" LSP Completions
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
 
 " ALE Linter
 Plug 'dense-analysis/ale'

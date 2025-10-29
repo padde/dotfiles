@@ -9,3 +9,4 @@ let g:python3_host_prog='/usr/local/bin/python3'
 
 source ~/.config/nvim/treesitter.lua
 source ~/.config/nvim/lsp.lua
+source ~/.config/nvim/cmp.lua
