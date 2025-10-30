@@ -92,6 +92,7 @@
 	attributesfile = ~/.gitattributes
 	quotepath = false
 	pager = cat
+	hooksPath = /dev/null
 [push]
 	default = current
 	followTags = true
