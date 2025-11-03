@@ -1,2 +1,2 @@
-EXCLUDES='Readme.md Brewfile Brewfile.lock.json install.sh rcrc env bin'
-SYMLINK_DIRS='config/nvim vim zsh'
+EXCLUDES='Readme.md Brewfile Brewfile.lock.json install.sh rcrc env'
+SYMLINK_DIRS='config/nvim vim bin'

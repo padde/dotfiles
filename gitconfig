@@ -110,7 +110,8 @@
 	required = true
 [merge "pofile"]
 	name = Gettext merge driver
-	driver = git merge-po %O %A %B
+	driver = merge-po-files %A %O %B
+	recursive = binary
 [diff]
 	algorithm = histogram
 [hub]
