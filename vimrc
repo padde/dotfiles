@@ -276,7 +276,7 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 Plug 'mbbill/undotree'
-nnoremap <leader>u :silent! UndotreeToggle<cr>
+nnoremap <leader>u :silent! UndotreeToggle \| UndotreeFocus<cr>
 
 " Open quickfix items in split/tab
 Plug 'yssl/QFEnter'
