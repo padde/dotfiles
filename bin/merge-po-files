@@ -4,7 +4,7 @@
 # License: MIT
 
 ORIG_HASH=$(git hash-object "${1}")
-WORKFILE=$(git ls-tree -r HEAD | fgrep "$ORIG_HASH" | cut -b54-)
+WORKFILE=$(git ls-tree -r HEAD | grep -F "$ORIG_HASH" | cut -b54-)
 echo "Using custom merge driver for $WORKFILE..."
 
 LOCAL="${1}._LOCAL_"
