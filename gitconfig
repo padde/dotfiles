@@ -111,7 +111,6 @@
 [merge "pofile"]
 	name = Gettext merge driver
 	driver = merge-po-files %A %O %B
-	recursive = binary
 [diff]
 	algorithm = histogram
 [hub]
