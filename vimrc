@@ -399,6 +399,9 @@ let g:gist_post_private = 1
 " Show unicode codepoint under cursor with `ga`
 Plug 'tpope/vim-characterize'
 
+" Unicode character completion and search
+Plug 'chrisbra/unicode.vim'
+
 " Hex editor
 Plug 'fidian/hexmode'
 
