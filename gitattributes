@@ -20,8 +20,6 @@
 *.mm diff=objc
 *.php diff=php
 *.pl diff=perl
-*.po merge=pofile
-*.pot merge=pofile
 *.py diff=python
 *.rake diff=ruby
 *.rb diff=ruby
