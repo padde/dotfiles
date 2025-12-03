@@ -315,7 +315,10 @@ Plug 'kopischke/vim-fetch'
 Plug 'tpope/vim-eunuch'
 
 " Automatically insert `end`
-Plug 'tpope/vim-endwise'
+Plug 'RRethy/nvim-treesitter-endwise'
+
+" Automatically insert closing parentheses and quotes
+Plug 'windwp/nvim-autopairs'
 
 " Comments
 Plug 'tpope/vim-commentary'
