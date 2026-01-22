@@ -450,13 +450,13 @@ let g:ale_lint_delay = 0
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
       \ 'css': ['stylelint'],
-      \ 'elixir': ['mix_format'],
       \ 'scss': ['stylelint'],
       \ 'html': ['prettier'],
       \ 'javascript': ['eslint', 'prettier'],
       \ 'typescript': ['eslint', 'prettier'],
       \ 'ruby': ['rubocop']
       \ }
+      "\ 'elixir': ['mix_format'],
 let g:ale_pattern_options = {
       \ 'db\/schema\.rb$': {'ale_fixers': []},
       \ 'db\/migrate\/.*\.rb$': {'ale_fixers': []}

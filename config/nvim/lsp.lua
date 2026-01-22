@@ -1,16 +1,28 @@
--- Set up lspconfig.
--- vim.lsp.config('*', {
---   capabilities = {
---     textDocument = {
---       semanticTokens = {
---         multilineTokenSupport = true,
---       }
---     }
---   },
---   root_markers = { '.git' },
--- })
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
--- local capabilities = require('cmp_nvim_lsp').default_capabilities()
+vim.lsp.config('*', {
+  capabilities = {
+    textDocument = {
+      semanticTokens = {
+        multilineTokenSupport = true,
+      }
+    }
+  },
+  on_attach = function(client, bufnr)
+    if client.supports_method("textDocument/formatting") then
+      vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        group = augroup,
+        buffer = bufnr,
+        callback = function()
+          vim.lsp.buf.format()
+        end,
+      })
+    end
+  end,
+  root_markers = { '.git' },
+})
+require('cmp_nvim_lsp').default_capabilities()
 
 vim.lsp.config('expert', {
   root_markers = { 'mix.exs', '.git' },
