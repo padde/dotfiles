@@ -351,13 +351,17 @@ let test#custom_strategies = {'simple_vimux': function('SimpleVimuxStrategy')}
 let test#strategy = 'simple_vimux'
 
 " run rspec without bundle exec, use env/binstubs instead
-let test#ruby#rspec#executable = 'rspec -fdoc'
+let test#ruby#rspec#executable = 'rspec'
+let test#ruby#rspec#options = '-f doc'
 
 " use custom elixir exercism runner, see vim/autoload/test/elixir/exercism.vim
 let test#runners = {'Elixir': ['Exercism']}
 
 " disable watch mode for react-scripts
 let test#javascript#reactscripts#options = '--watchAll=false'
+
+" run elixir tests with verbose formatter
+let test#elixir#exunit#options = '--trace'
 
 " ANSI escape codes
 Plug 'powerman/vim-plugin-AnsiEsc'
