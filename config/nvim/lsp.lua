@@ -12,8 +12,23 @@
 
 -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+vim.lsp.config('expert', {
+  root_markers = { 'mix.exs', '.git' },
+  settings = {
+    workspaceSymbols = {
+      minQueryLength = 0
+    }
+  }
+})
 vim.lsp.enable 'expert'
-vim.lsp.enable('tailwindcss')
+
+vim.lsp.enable 'tailwindcss'
+vim.lsp.enable 'jsonls'
+vim.lsp.enable 'yamlls'
+vim.lsp.enable 'ts_ls'
+vim.lsp.enable 'bashls'
+vim.lsp.enable 'lua_ls'
+vim.lsp.enable 'vimls'
 
 vim.diagnostic.handlers.loclist = {
   show = function(_, _, _, opts)

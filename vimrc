@@ -421,6 +421,9 @@ au VimResized * :wincmd = " Resize splits when the window is resized
 " Elixir/Slime
 Plug 'slime-lang/vim-slime-syntax'
 
+" External dependency manager
+Plug 'mason-org/mason.nvim'
+
 " Syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 

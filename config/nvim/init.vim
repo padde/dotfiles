@@ -7,6 +7,8 @@ set inccommand=nosplit
 let g:python_host_prog='/usr/local/bin/python2'
 let g:python3_host_prog='/usr/local/bin/python3'
 
+lua require("mason").setup()
+
 source ~/.config/nvim/treesitter.lua
 source ~/.config/nvim/lsp.lua
 source ~/.config/nvim/cmp.lua
