@@ -26,12 +26,7 @@ fi
 # Travis
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
-# ASDF version manager
-export ASDF_DATA_DIR="$HOME/.asdf"
-export PATH="$ASDF_DATA_DIR/bin:$ASDF_DATA_DIR/shims:$PATH"
-
-# ASDF completions
-fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+# Completions
 autoload -Uz compinit && compinit
 
 # direnv

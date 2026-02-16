@@ -42,10 +42,6 @@ tmux-256color|tmux with 256 colors,
   use=xterm+256setaf, use=tmux,
 EOF
 
-# Install ASDF version manager
-cd "$HOME"
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf
-
 # Install Chrome dotfiles
 git clone https://github.com/matthewhadley/chromedotfiles.git ~/.chromedotfiles
 ln -vs ~/.js ~/.chromedotfiles/chromedotfiles
