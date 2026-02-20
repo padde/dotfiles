@@ -26,6 +26,9 @@ fi
 # Travis
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
+# MISE version manager
+eval "$(mise activate zsh)"
+
 # Completions
 autoload -Uz compinit && compinit
 
