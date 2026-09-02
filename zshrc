@@ -6,6 +6,7 @@ fi
 
 antigen use oh-my-zsh
 antigen bundle autojump
+antigen bundle mix
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
