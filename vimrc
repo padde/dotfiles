@@ -437,34 +437,6 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 
-" ALE Linter
-Plug 'dense-analysis/ale'
-set signcolumn=yes
-let g:ale_sign_column_always = 1
-let g:ale_sign_info = 'i '
-let g:ale_sign_warning = '!'
-let g:ale_sign_error = 'X'
-let g:ale_lint_on_text_changed = 'normal'
-let g:ale_lint_on_insert_leave = 1
-let g:ale_lint_delay = 0
-let g:ale_fix_on_save = 1
-let g:ale_fixers = {
-      \ 'css': ['stylelint'],
-      \ 'scss': ['stylelint'],
-      \ 'html': ['prettier'],
-      \ 'javascript': ['eslint', 'prettier'],
-      \ 'typescript': ['eslint', 'prettier'],
-      \ 'ruby': ['rubocop']
-      \ }
-      "\ 'elixir': ['mix_format'],
-let g:ale_pattern_options = {
-      \ 'db\/schema\.rb$': {'ale_fixers': []},
-      \ 'db\/migrate\/.*\.rb$': {'ale_fixers': []}
-      \ }
-nnoremap <leader>f :ALEFix<cr>
-command! ALEFixDisable :let b:ale_fix_on_save=0
-command! ALEFixEnable :unlet b:ale_fix_on_save
-
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
