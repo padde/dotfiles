@@ -36,6 +36,7 @@ Thumbs.db
 .rgignore
 .rspec-local
 .tool-versions
+.claude
 
 # JS package manager noise
 npm-debug.log
