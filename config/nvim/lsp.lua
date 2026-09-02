@@ -41,6 +41,8 @@ vim.lsp.enable 'ts_ls'
 vim.lsp.enable 'bashls'
 vim.lsp.enable 'lua_ls'
 vim.lsp.enable 'vimls'
+vim.lsp.enable 'marksman'
+vim.lsp.enable 'stylelint_lsp'
 
 vim.diagnostic.handlers.loclist = {
   show = function(_, _, _, opts)
