@@ -51,3 +51,13 @@ vim.diagnostic.handlers.loclist = {
     vim.api.nvim_set_current_win(winid)
   end
 }
+
+vim.diagnostic.enable = true
+vim.diagnostic.config({
+  underline = true,
+  signs = true,
+  -- loclist = {
+  --   open = true,
+  --   severity = { min = vim.diagnostic.severity.WARN },
+  -- }
+})
