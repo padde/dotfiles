@@ -46,5 +46,8 @@ if [ -f "$HOME/.docker/init-zsh.sh" ]; then
   . "$HOME/.docker/init-zsh.sh"
 fi
 
+# Claude Code
+export PATH=$HOME/.local/bin:$PATH
+
 # Custom bin scripts
 export PATH=$HOME/.bin:$PATH
