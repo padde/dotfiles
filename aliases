@@ -94,6 +94,8 @@ alias pr='hub pr list -h $(git rev-parse --abbrev-ref HEAD) -L 1 -f pull/%I | xa
 alias mback='mix ecto.rollback'
 alias mgen='mix ecto.gen.migration'
 alias mmig='mix ecto.migrate'
+alias mp='mix precommit'
+alias imix='iex -S mix'
 poedit() {
   app="Poedit.app"
   osascript -e "quit app \"$app\""
