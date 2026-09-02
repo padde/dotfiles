@@ -41,7 +41,7 @@
 	lgg = "!git log-pretty --first-parent"
 	l = "!git log-pretty --first-parent -n10"
 	up = "!git set-upstream"
-	obsolete = "!git branch --merged | grep -v \"\\\\*\\\\|master\\\\|$(git symbolic-ref --short HEAD)\""
+	obsolete = "!git branch --merged | grep -v \"\\\\*\\\\|master\\\\|main\\\\|$(git symbolic-ref --short HEAD)\""
 	gone = "!git branch -vv | grep ': gone]' | awk '{print $1}'"
 	touch = "commit --amend --no-edit --no-verify --date=now --reset-author"
 	trim-remote = fetch --prune --all
@@ -65,7 +65,7 @@
 	pul = pu-log
 	pur = pu-rebase -i
 	pullall = "!for d in $(find . -type d -iname .git | xargs -I{} dirname {}\\;); do (echo \"Pulling $d... \" && cd $d && git pull --quiet &>/dev/null && echo \"\\033[0;32mOK\\033[0m\" || echo \"\\033[0;31mFAILED\\033[0m\"); done"
-	pr-base   = "!f(){ git merge-base HEAD ${1:-origin/master}; }; f"
+	pr-base   = "!f(){ git merge-base HEAD ${1:-$(git symbolic-ref --short refs/remotes/origin/HEAD)}; }; f"
 	pr-diff   = "!f(){ git diff $(git pr-base) $*; }; f"
 	pr-log    = "!f(){ git log-pretty $* $(git pr-base)..HEAD; }; f"
 	pr-rebase = "!f(){ git rebase $* $(git pr-base); }; f"
