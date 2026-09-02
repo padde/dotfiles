@@ -118,7 +118,9 @@
 	defaultBranch = main
 [fetch]
 	prune = true
-[credential "https://dev.azure.com"]
-	useHttpPath = true
 [include]
 	path = ~/.gitconfig.local
+[credential]
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
