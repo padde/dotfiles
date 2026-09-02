@@ -85,7 +85,7 @@ set incsearch  " Highlight search as you type
 
 " Project search
 if executable('rg')
-  set grepprg=rg\ --vimgrep\ $*
+  set grepprg=rg\ --vimgrep\ --sort=path\ $*
   set grepformat=%f:%l:%c:%m
 endif
 
