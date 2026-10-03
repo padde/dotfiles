@@ -4,7 +4,7 @@ Because there’s no place like `::1`
 
 ## Installation
 
-    sh <(curl -fsSL https://raw.githubusercontent.com/padde/dotfiles/master/install.sh)
+    sh <(curl -fsSL https://raw.githubusercontent.com/padde/dotfiles/main/install.sh)
 
 ## Customization
 
