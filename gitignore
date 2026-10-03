@@ -52,3 +52,6 @@ TODO.md
 
 # Avoid potential secrets exposure
 *secret*
+
+.claude
+.mcp.json
