@@ -124,3 +124,6 @@
 	helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[diff "elixir"]
+	# Workaround for macOS 26 libc regex (TRE) segfault (FB25070049)
+	xfuncname = ^[ \t]*((defmacro|defmodule|defimpl|defprotocol|defp|def|test)[ \t].*)$

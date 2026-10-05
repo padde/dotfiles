@@ -28,6 +28,9 @@ else
   export PATH="/usr/local/sbin:$PATH"
 fi
 
+# Elixir settings
+export MIX_OS_DEPS_COMPILE_PARTITION_COUNT=$(nproc)
+
 # Travis
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
