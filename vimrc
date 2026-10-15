@@ -85,7 +85,7 @@ set incsearch  " Highlight search as you type
 
 " Project search
 if executable('rg')
-  set grepprg=rg\ --vimgrep\ --sort=path\ $*
+  set grepprg=rg\ --vimgrep\ --sort=path\ --hidden\ $*
   set grepformat=%f:%l:%c:%m
 endif
 
@@ -254,7 +254,7 @@ let g:ctrlp_custom_ignore = {
       \ 'dir':  '\v[\/]\.(git|hg|svn)|_build|deps|priv/static|tmp|vendor|log|public|node_modules$',
       \ }
 if executable('rg')
-  let g:ctrlp_user_command = 'rg %s --files --hidden --ignore-file=<(echo .git) --color=never --glob=""'
+  let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob=""'
   let g:ctrlp_use_caching = 0
 end
 
