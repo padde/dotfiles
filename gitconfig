@@ -41,13 +41,14 @@
 	lgg = "!git log-pretty --first-parent"
 	l = "!git log-pretty --first-parent -n10"
 	up = "!git set-upstream"
-	obsolete = "!git branch --merged | grep -v \"\\\\*\\\\|master\\\\|main\\\\|$(git symbolic-ref --short HEAD)\""
-	gone = "!git branch -vv | grep ': gone]' | awk '{print $1}'"
+	obsolete = "!git for-each-ref --merged=HEAD --format='%(if)%(worktreepath)%(then)%(else)%(refname:short)%(end)' refs/heads | grep -vx -e '' -e master -e main"
+	gone = "!git for-each-ref --format='%(if)%(worktreepath)%(then)%(else)%(if:equals=[gone])%(upstream:track)%(then)%(refname:short)%(end)%(end)' refs/heads | grep -v '^$'"
 	touch = "commit --amend --no-edit --no-verify --date=now --reset-author"
 	trim-remote = fetch --prune --all
 	trim-obsolete = "!git obsolete | xargs git branch -d"
 	trim-gone = "!git gone | xargs git branch -D"
-	trim = "!git trim-remote && git trim-obsolete && git trim-gone && git pull"
+	trim-worktrees = "!f() { top=$(git rev-parse --show-toplevel); { git for-each-ref --merged=HEAD --format='%(refname:short) %(worktreepath)' refs/heads; git for-each-ref --format='%(if:equals=[gone])%(upstream:track)%(then)%(refname:short) %(worktreepath)%(end)' refs/heads; } | awk 'NF >= 2 && $1 != \"main\" && $1 != \"master\"' | sort -u | while read -r br wt; do [ \"$wt\" = \"$top\" ] && continue; printf 'Remove worktree %s (branch %s)? [yN] ' \"$wt\" \"$br\"; read -r yn </dev/tty; case $yn in [yY]*) git worktree remove \"$wt\" || echo \"Keeping $wt\";; esac; done; }; f"
+	trim = "!git trim-remote && git trim-worktrees && git trim-obsolete && git trim-gone && git pull"
 	giveup = "!printf 'Do you really want to discard all staged, unstaged and untracked changes? [Yn] '; read yn; if [[ $yn =~ "^[yY]([eE][sS])?$" ]]; then (git reset > /dev/null && for f in $(git ls-files -m); do echo "Resetting $f"; done && git co . && git clean -fd); else echo 'aborted'; fi"
 	authors = "!git shortlog -nes --no-merges"
 	shame = blame -w -M -C
